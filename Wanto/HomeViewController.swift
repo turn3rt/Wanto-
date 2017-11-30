@@ -9,6 +9,11 @@
 import UIKit
 
 class HomeViewController: UITableViewController {
+    
+    let inactiveIdentifer = "InactiveCell"
+    
+    var activities = ["Gym" , "Study", "Meeting", "Lunch" , "Party", "Study Aerodynamics", "Boof Seminar"]
+    var locations = ["Southwest Recreation Center", "Library West", "Little Hall" , "Chipotle", "The Standard", "Marston Science Library", "Uranus"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,24 +33,23 @@ class HomeViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        print("\(activities.count)")
+        return activities.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: inactiveIdentifer , for: indexPath) as! InactiveCell
+        
+        cell.name.text = activities[indexPath.row]
+        cell.location.text = locations[indexPath.row]
+        
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

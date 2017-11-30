@@ -20,6 +20,10 @@
 		B32B13851FD056ED005EC45E /* settings-gears.png in Resources */ = {isa = PBXBuildFile; fileRef = B32B13811FD056EC005EC45E /* settings-gears.png */; };
 		B32B13861FD056ED005EC45E /* multiple-users-silhouette.png in Resources */ = {isa = PBXBuildFile; fileRef = B32B13821FD056EC005EC45E /* multiple-users-silhouette.png */; };
 		B32B13871FD056ED005EC45E /* explore.png in Resources */ = {isa = PBXBuildFile; fileRef = B32B13831FD056ED005EC45E /* explore.png */; };
+		B32B138A1FD064E4005EC45E /* UIViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B13891FD064E4005EC45E /* UIViewX.swift */; };
+		B32B138C1FD064F1005EC45E /* UIImageViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B138B1FD064F1005EC45E /* UIImageViewX.swift */; };
+		B32B138E1FD0652E005EC45E /* UIButtonX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B138D1FD0652E005EC45E /* UIButtonX.swift */; };
+		B32B13901FD06560005EC45E /* UILabelX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B138F1FD06560005EC45E /* UILabelX.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		B32B13811FD056EC005EC45E /* settings-gears.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-gears.png"; sourceTree = "<group>"; };
 		B32B13821FD056EC005EC45E /* multiple-users-silhouette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "multiple-users-silhouette.png"; sourceTree = "<group>"; };
 		B32B13831FD056ED005EC45E /* explore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explore.png; sourceTree = "<group>"; };
+		B32B13891FD064E4005EC45E /* UIViewX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewX.swift; sourceTree = "<group>"; };
+		B32B138B1FD064F1005EC45E /* UIImageViewX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewX.swift; sourceTree = "<group>"; };
+		B32B138D1FD0652E005EC45E /* UIButtonX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonX.swift; sourceTree = "<group>"; };
+		B32B138F1FD06560005EC45E /* UILabelX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelX.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,7 @@
 		B311CF3B1FCFFB3500730CDA /* Wanto */ = {
 			isa = PBXGroup;
 			children = (
+				B32B13921FD065CE005EC45E /* Designables */,
 				B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */,
 				B32B137C1FD05638005EC45E /* HomeViewController.swift */,
 				B32B137E1FD05656005EC45E /* InactiveCell.swift */,
@@ -149,6 +158,17 @@
 				B32B13811FD056EC005EC45E /* settings-gears.png */,
 			);
 			path = Icons;
+			sourceTree = "<group>";
+		};
+		B32B13921FD065CE005EC45E /* Designables */ = {
+			isa = PBXGroup;
+			children = (
+				B32B138F1FD06560005EC45E /* UILabelX.swift */,
+				B32B138D1FD0652E005EC45E /* UIButtonX.swift */,
+				B32B138B1FD064F1005EC45E /* UIImageViewX.swift */,
+				B32B13891FD064E4005EC45E /* UIViewX.swift */,
+			);
+			path = Designables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,10 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B32B138E1FD0652E005EC45E /* UIButtonX.swift in Sources */,
 				B32B137F1FD05656005EC45E /* InactiveCell.swift in Sources */,
 				B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */,
 				B32B137B1FD05503005EC45E /* Helper.swift in Sources */,
+				B32B13901FD06560005EC45E /* UILabelX.swift in Sources */,
 				B32B137D1FD05638005EC45E /* HomeViewController.swift in Sources */,
+				B32B138C1FD064F1005EC45E /* UIImageViewX.swift in Sources */,
+				B32B138A1FD064E4005EC45E /* UIViewX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
