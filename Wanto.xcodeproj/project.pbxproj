@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */; };
+		B311CF3F1FCFFB3500730CDA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF3E1FCFFB3500730CDA /* FirstViewController.swift */; };
+		B311CF411FCFFB3500730CDA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF401FCFFB3500730CDA /* SecondViewController.swift */; };
+		B311CF441FCFFB3500730CDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B311CF421FCFFB3500730CDA /* Main.storyboard */; };
+		B311CF461FCFFB3500730CDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B311CF451FCFFB3500730CDA /* Assets.xcassets */; };
+		B311CF491FCFFB3500730CDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B311CF471FCFFB3500730CDA /* LaunchScreen.storyboard */; };
+		B311CF541FCFFB3500730CDA /* WantoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF531FCFFB3500730CDA /* WantoTests.swift */; };
+		B311CF5F1FCFFB3600730CDA /* WantoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF5E1FCFFB3600730CDA /* WantoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B311CF501FCFFB3500730CDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B311CF311FCFFB3500730CDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B311CF381FCFFB3500730CDA;
+			remoteInfo = Wanto;
+		};
+		B311CF5B1FCFFB3600730CDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B311CF311FCFFB3500730CDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B311CF381FCFFB3500730CDA;
+			remoteInfo = Wanto;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B311CF391FCFFB3500730CDA /* Wanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B311CF3E1FCFFB3500730CDA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		B311CF401FCFFB3500730CDA /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		B311CF431FCFFB3500730CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B311CF451FCFFB3500730CDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B311CF481FCFFB3500730CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B311CF4A1FCFFB3500730CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B311CF4F1FCFFB3500730CDA /* WantoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WantoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B311CF531FCFFB3500730CDA /* WantoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantoTests.swift; sourceTree = "<group>"; };
+		B311CF551FCFFB3600730CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B311CF5A1FCFFB3600730CDA /* WantoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WantoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B311CF5E1FCFFB3600730CDA /* WantoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantoUITests.swift; sourceTree = "<group>"; };
+		B311CF601FCFFB3600730CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B311CF361FCFFB3500730CDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B311CF4C1FCFFB3500730CDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B311CF571FCFFB3600730CDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B311CF301FCFFB3500730CDA = {
+			isa = PBXGroup;
+			children = (
+				B311CF3B1FCFFB3500730CDA /* Wanto */,
+				B311CF521FCFFB3500730CDA /* WantoTests */,
+				B311CF5D1FCFFB3600730CDA /* WantoUITests */,
+				B311CF3A1FCFFB3500730CDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B311CF3A1FCFFB3500730CDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B311CF391FCFFB3500730CDA /* Wanto.app */,
+				B311CF4F1FCFFB3500730CDA /* WantoTests.xctest */,
+				B311CF5A1FCFFB3600730CDA /* WantoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B311CF3B1FCFFB3500730CDA /* Wanto */ = {
+			isa = PBXGroup;
+			children = (
+				B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */,
+				B311CF3E1FCFFB3500730CDA /* FirstViewController.swift */,
+				B311CF401FCFFB3500730CDA /* SecondViewController.swift */,
+				B311CF421FCFFB3500730CDA /* Main.storyboard */,
+				B311CF451FCFFB3500730CDA /* Assets.xcassets */,
+				B311CF471FCFFB3500730CDA /* LaunchScreen.storyboard */,
+				B311CF4A1FCFFB3500730CDA /* Info.plist */,
+			);
+			path = Wanto;
+			sourceTree = "<group>";
+		};
+		B311CF521FCFFB3500730CDA /* WantoTests */ = {
+			isa = PBXGroup;
+			children = (
+				B311CF531FCFFB3500730CDA /* WantoTests.swift */,
+				B311CF551FCFFB3600730CDA /* Info.plist */,
+			);
+			path = WantoTests;
+			sourceTree = "<group>";
+		};
+		B311CF5D1FCFFB3600730CDA /* WantoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B311CF5E1FCFFB3600730CDA /* WantoUITests.swift */,
+				B311CF601FCFFB3600730CDA /* Info.plist */,
+			);
+			path = WantoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B311CF381FCFFB3500730CDA /* Wanto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B311CF631FCFFB3600730CDA /* Build configuration list for PBXNativeTarget "Wanto" */;
+			buildPhases = (
+				B311CF351FCFFB3500730CDA /* Sources */,
+				B311CF361FCFFB3500730CDA /* Frameworks */,
+				B311CF371FCFFB3500730CDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wanto;
+			productName = Wanto;
+			productReference = B311CF391FCFFB3500730CDA /* Wanto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B311CF4E1FCFFB3500730CDA /* WantoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B311CF661FCFFB3600730CDA /* Build configuration list for PBXNativeTarget "WantoTests" */;
+			buildPhases = (
+				B311CF4B1FCFFB3500730CDA /* Sources */,
+				B311CF4C1FCFFB3500730CDA /* Frameworks */,
+				B311CF4D1FCFFB3500730CDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B311CF511FCFFB3500730CDA /* PBXTargetDependency */,
+			);
+			name = WantoTests;
+			productName = WantoTests;
+			productReference = B311CF4F1FCFFB3500730CDA /* WantoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B311CF591FCFFB3600730CDA /* WantoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B311CF691FCFFB3600730CDA /* Build configuration list for PBXNativeTarget "WantoUITests" */;
+			buildPhases = (
+				B311CF561FCFFB3600730CDA /* Sources */,
+				B311CF571FCFFB3600730CDA /* Frameworks */,
+				B311CF581FCFFB3600730CDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B311CF5C1FCFFB3600730CDA /* PBXTargetDependency */,
+			);
+			name = WantoUITests;
+			productName = WantoUITests;
+			productReference = B311CF5A1FCFFB3600730CDA /* WantoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B311CF311FCFFB3500730CDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Turner Thornberry";
+				TargetAttributes = {
+					B311CF381FCFFB3500730CDA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					B311CF4E1FCFFB3500730CDA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B311CF381FCFFB3500730CDA;
+					};
+					B311CF591FCFFB3600730CDA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B311CF381FCFFB3500730CDA;
+					};
+				};
+			};
+			buildConfigurationList = B311CF341FCFFB3500730CDA /* Build configuration list for PBXProject "Wanto" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B311CF301FCFFB3500730CDA;
+			productRefGroup = B311CF3A1FCFFB3500730CDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B311CF381FCFFB3500730CDA /* Wanto */,
+				B311CF4E1FCFFB3500730CDA /* WantoTests */,
+				B311CF591FCFFB3600730CDA /* WantoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B311CF371FCFFB3500730CDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B311CF491FCFFB3500730CDA /* LaunchScreen.storyboard in Resources */,
+				B311CF461FCFFB3500730CDA /* Assets.xcassets in Resources */,
+				B311CF441FCFFB3500730CDA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B311CF4D1FCFFB3500730CDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B311CF581FCFFB3600730CDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B311CF351FCFFB3500730CDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B311CF411FCFFB3500730CDA /* SecondViewController.swift in Sources */,
+				B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */,
+				B311CF3F1FCFFB3500730CDA /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B311CF4B1FCFFB3500730CDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B311CF541FCFFB3500730CDA /* WantoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B311CF561FCFFB3600730CDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B311CF5F1FCFFB3600730CDA /* WantoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B311CF511FCFFB3500730CDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B311CF381FCFFB3500730CDA /* Wanto */;
+			targetProxy = B311CF501FCFFB3500730CDA /* PBXContainerItemProxy */;
+		};
+		B311CF5C1FCFFB3600730CDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B311CF381FCFFB3500730CDA /* Wanto */;
+			targetProxy = B311CF5B1FCFFB3600730CDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B311CF421FCFFB3500730CDA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B311CF431FCFFB3500730CDA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B311CF471FCFFB3500730CDA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B311CF481FCFFB3500730CDA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B311CF611FCFFB3600730CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B311CF621FCFFB3600730CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B311CF641FCFFB3600730CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Wanto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.Wanto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B311CF651FCFFB3600730CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Wanto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.Wanto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B311CF671FCFFB3600730CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WantoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.WantoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wanto.app/Wanto";
+			};
+			name = Debug;
+		};
+		B311CF681FCFFB3600730CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WantoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.WantoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wanto.app/Wanto";
+			};
+			name = Release;
+		};
+		B311CF6A1FCFFB3600730CDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WantoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.WantoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Wanto;
+			};
+			name = Debug;
+		};
+		B311CF6B1FCFFB3600730CDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WantoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.WantoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Wanto;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B311CF341FCFFB3500730CDA /* Build configuration list for PBXProject "Wanto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B311CF611FCFFB3600730CDA /* Debug */,
+				B311CF621FCFFB3600730CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B311CF631FCFFB3600730CDA /* Build configuration list for PBXNativeTarget "Wanto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B311CF641FCFFB3600730CDA /* Debug */,
+				B311CF651FCFFB3600730CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B311CF661FCFFB3600730CDA /* Build configuration list for PBXNativeTarget "WantoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B311CF671FCFFB3600730CDA /* Debug */,
+				B311CF681FCFFB3600730CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B311CF691FCFFB3600730CDA /* Build configuration list for PBXNativeTarget "WantoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B311CF6A1FCFFB3600730CDA /* Debug */,
+				B311CF6B1FCFFB3600730CDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B311CF311FCFFB3500730CDA /* Project object */;
+}
