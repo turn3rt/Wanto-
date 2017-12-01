@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  AddPeopleController.swift
 //  Wanto
 //
 //  Created by Turner Thornberry on 11/30/17.
@@ -7,14 +7,8 @@
 //
 
 import UIKit
-import MapKit
 
-class HomeViewController: UITableViewController {
-    
-    let inactiveIdentifer = "InactiveCell"
-    
-    var activities = ["Gym" , "Study", "Meeting", "Lunch" , "Party", "Study Aerodynamics", "Boof Seminar"]
-    var locations = ["Southwest Recreation Center", "Library West", "Little Hall" , "Chipotle", "The Standard", "Marston Science Library", "Uranus"]
+class AddPeopleController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,36 +28,25 @@ class HomeViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("\(activities.count)")
-        return activities.count
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
 
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: inactiveIdentifer , for: indexPath) as! InactiveCell
-        
-        cell.name.text = activities[indexPath.row]
-        cell.location.text = locations[indexPath.row]
-        
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
+    */
 
-    
-    
-    @IBAction func addActivity(_ sender: UITabBarItem) {
-        print("beef")
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
-    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -99,15 +82,14 @@ class HomeViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let vc = segue.destination as! ActiveViewController
-//        vc.selectedActivity = "boof"
-//    }
- 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }

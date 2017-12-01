@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30AD7D91FD0E6F900524450 /* SegmentControlX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AD7D81FD0E6F900524450 /* SegmentControlX.swift */; };
+		B30AD7DB1FD0FEC100524450 /* PeopleInGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AD7DA1FD0FEC100524450 /* PeopleInGroupController.swift */; };
+		B30AD7DD1FD0FEDA00524450 /* AddPeopleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AD7DC1FD0FEDA00524450 /* AddPeopleController.swift */; };
 		B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */; };
 		B311CF441FCFFB3500730CDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B311CF421FCFFB3500730CDA /* Main.storyboard */; };
 		B311CF461FCFFB3500730CDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B311CF451FCFFB3500730CDA /* Assets.xcassets */; };
@@ -47,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B30AD7D81FD0E6F900524450 /* SegmentControlX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlX.swift; sourceTree = "<group>"; };
+		B30AD7DA1FD0FEC100524450 /* PeopleInGroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleInGroupController.swift; sourceTree = "<group>"; };
+		B30AD7DC1FD0FEDA00524450 /* AddPeopleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleController.swift; sourceTree = "<group>"; };
 		B311CF391FCFFB3500730CDA /* Wanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B311CF431FCFFB3500730CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +109,9 @@
 		B311CF301FCFFB3500730CDA = {
 			isa = PBXGroup;
 			children = (
+				B30AD7DC1FD0FEDA00524450 /* AddPeopleController.swift */,
+				B30AD7DA1FD0FEC100524450 /* PeopleInGroupController.swift */,
+				B30AD7D81FD0E6F900524450 /* SegmentControlX.swift */,
 				B311CF3B1FCFFB3500730CDA /* Wanto */,
 				B311CF521FCFFB3500730CDA /* WantoTests */,
 				B311CF5D1FCFFB3600730CDA /* WantoUITests */,
@@ -320,13 +329,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B32B138E1FD0652E005EC45E /* UIButtonX.swift in Sources */,
+				B30AD7DD1FD0FEDA00524450 /* AddPeopleController.swift in Sources */,
 				B32B137F1FD05656005EC45E /* InactiveCell.swift in Sources */,
 				B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */,
+				B30AD7D91FD0E6F900524450 /* SegmentControlX.swift in Sources */,
 				B32B137B1FD05503005EC45E /* Helper.swift in Sources */,
 				B32B13901FD06560005EC45E /* UILabelX.swift in Sources */,
 				B32B13961FD07DC7005EC45E /* ActiveViewController.swift in Sources */,
 				B32B13981FD07EEA005EC45E /* PersonCell.swift in Sources */,
 				B32B137D1FD05638005EC45E /* HomeViewController.swift in Sources */,
+				B30AD7DB1FD0FEC100524450 /* PeopleInGroupController.swift in Sources */,
 				B32B138C1FD064F1005EC45E /* UIImageViewX.swift in Sources */,
 				B32B138A1FD064E4005EC45E /* UIViewX.swift in Sources */,
 			);

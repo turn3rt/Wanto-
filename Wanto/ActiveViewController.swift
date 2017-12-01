@@ -14,13 +14,37 @@ class ActiveViewController: UIViewController {
     let personIdentifier = "Person"
     let noPersonIdentifier = "NoPerson"
     
+    @IBOutlet weak var timeDateSwitch: UISegmentedControl!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
     var people = ["Sally", "Alvaro", "Quinn", "Natalie", "Fernanda", "Cole", "Nick", "Ian", "Reid"]
+    
+    
+    @IBAction func switchValue(_ sender: UISegmentedControl) {
+        if timeDateSwitch.selectedSegmentIndex == 0 {
+            datePicker.datePickerMode = .countDownTimer
+        } else if timeDateSwitch.selectedSegmentIndex == 1 {
+            datePicker.datePickerMode = .dateAndTime
+        }
+    }
+    
+    
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+  
     }
+    
+    
+    
+    
+    
+   
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,6 +84,4 @@ extension ActiveViewController: UICollectionViewDataSource{
             return cell
         }
     }
-    
-    
 }
