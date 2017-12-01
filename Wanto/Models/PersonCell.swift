@@ -11,6 +11,7 @@ import UIKit
 class PersonCell: UICollectionViewCell {
     
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var profileImage: UIImageViewX!
     
     
 }

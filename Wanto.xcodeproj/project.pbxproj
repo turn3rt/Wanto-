@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B30AD7D91FD0E6F900524450 /* SegmentControlX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AD7D81FD0E6F900524450 /* SegmentControlX.swift */; };
 		B30AD7DB1FD0FEC100524450 /* PeopleInGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AD7DA1FD0FEC100524450 /* PeopleInGroupController.swift */; };
 		B30AD7DD1FD0FEDA00524450 /* AddPeopleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AD7DC1FD0FEDA00524450 /* AddPeopleController.swift */; };
 		B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */; };
@@ -30,6 +29,7 @@
 		B32B13941FD07870005EC45E /* Sally.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B32B13931FD07870005EC45E /* Sally.jpg */; };
 		B32B13961FD07DC7005EC45E /* ActiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B13951FD07DC7005EC45E /* ActiveViewController.swift */; };
 		B32B13981FD07EEA005EC45E /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B13971FD07EEA005EC45E /* PersonCell.swift */; };
+		B3D4B4621FD1D80C009CE92E /* ActiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B30AD7D81FD0E6F900524450 /* SegmentControlX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlX.swift; sourceTree = "<group>"; };
 		B30AD7DA1FD0FEC100524450 /* PeopleInGroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleInGroupController.swift; sourceTree = "<group>"; };
 		B30AD7DC1FD0FEDA00524450 /* AddPeopleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleController.swift; sourceTree = "<group>"; };
 		B311CF391FCFFB3500730CDA /* Wanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +78,7 @@
 		B32B13931FD07870005EC45E /* Sally.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sally.jpg; sourceTree = "<group>"; };
 		B32B13951FD07DC7005EC45E /* ActiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveViewController.swift; sourceTree = "<group>"; };
 		B32B13971FD07EEA005EC45E /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,6 @@
 			children = (
 				B30AD7DC1FD0FEDA00524450 /* AddPeopleController.swift */,
 				B30AD7DA1FD0FEC100524450 /* PeopleInGroupController.swift */,
-				B30AD7D81FD0E6F900524450 /* SegmentControlX.swift */,
 				B311CF3B1FCFFB3500730CDA /* Wanto */,
 				B311CF521FCFFB3500730CDA /* WantoTests */,
 				B311CF5D1FCFFB3600730CDA /* WantoUITests */,
@@ -134,10 +133,8 @@
 			children = (
 				B32B13921FD065CE005EC45E /* Designables */,
 				B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */,
-				B32B13951FD07DC7005EC45E /* ActiveViewController.swift */,
-				B32B137C1FD05638005EC45E /* HomeViewController.swift */,
-				B32B137E1FD05656005EC45E /* InactiveCell.swift */,
-				B32B13971FD07EEA005EC45E /* PersonCell.swift */,
+				B3D4B45F1FD1D7B7009CE92E /* Controllers */,
+				B3D4B4601FD1D7E2009CE92E /* Models */,
 				B32B137A1FD05503005EC45E /* Helper.swift */,
 				B311CF421FCFFB3500730CDA /* Main.storyboard */,
 				B311CF451FCFFB3500730CDA /* Assets.xcassets */,
@@ -187,6 +184,25 @@
 				B32B13891FD064E4005EC45E /* UIViewX.swift */,
 			);
 			path = Designables;
+			sourceTree = "<group>";
+		};
+		B3D4B45F1FD1D7B7009CE92E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B32B137C1FD05638005EC45E /* HomeViewController.swift */,
+				B32B13951FD07DC7005EC45E /* ActiveViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B3D4B4601FD1D7E2009CE92E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B32B137E1FD05656005EC45E /* InactiveCell.swift */,
+				B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */,
+				B32B13971FD07EEA005EC45E /* PersonCell.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,7 +348,6 @@
 				B30AD7DD1FD0FEDA00524450 /* AddPeopleController.swift in Sources */,
 				B32B137F1FD05656005EC45E /* InactiveCell.swift in Sources */,
 				B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */,
-				B30AD7D91FD0E6F900524450 /* SegmentControlX.swift in Sources */,
 				B32B137B1FD05503005EC45E /* Helper.swift in Sources */,
 				B32B13901FD06560005EC45E /* UILabelX.swift in Sources */,
 				B32B13961FD07DC7005EC45E /* ActiveViewController.swift in Sources */,
@@ -340,6 +355,7 @@
 				B32B137D1FD05638005EC45E /* HomeViewController.swift in Sources */,
 				B30AD7DB1FD0FEC100524450 /* PeopleInGroupController.swift in Sources */,
 				B32B138C1FD064F1005EC45E /* UIImageViewX.swift in Sources */,
+				B3D4B4621FD1D80C009CE92E /* ActiveCell.swift in Sources */,
 				B32B138A1FD064E4005EC45E /* UIViewX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
