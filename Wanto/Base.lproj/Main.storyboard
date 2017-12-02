@@ -1991,7 +1991,7 @@
                                     <constraint firstAttribute="width" constant="128" id="guD-LA-rSO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
-                                <state key="normal" title="Done">
+                                <state key="normal" title="Go">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -2108,6 +2108,6 @@
         <image name="settings-gears.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EFM-08-Uy8"/>
+        <segue reference="9dv-8w-zBk"/>
     </inferredMetricsTieBreakers>
 </document>
