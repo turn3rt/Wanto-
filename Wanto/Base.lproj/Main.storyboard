@@ -553,7 +553,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.25"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rfp-OI-lN0" customClass="UIViewX" customModule="Wanto" customModuleProvider="target">
-                                <rect key="frame" x="8" y="350" width="359" height="299"/>
+                                <rect key="frame" x="8" y="300" width="359" height="349"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -574,7 +574,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ONf-6m-1Rw">
-                                <rect key="frame" x="8" y="350" width="359" height="299"/>
+                                <rect key="frame" x="8" y="300" width="359" height="349"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="h3G-Sd-ap3"/>
                                 </constraints>
@@ -585,7 +585,7 @@
                                 </userDefinedRuntimeAttributes>
                             </mapView>
                             <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FXq-wt-wO4">
-                                <rect key="frame" x="16" y="238" width="343" height="120"/>
+                                <rect key="frame" x="16" y="238" width="343" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="JhO-V2-OAy"/>
                                 </constraints>
@@ -664,13 +664,16 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today, 9:24pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6oA-rX-dFH">
-                                <rect key="frame" x="16" y="212" width="343" height="130"/>
+                                <rect key="frame" x="16" y="212" width="343" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="w6z-q3-A1T"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCQ-Fc-NlX" customClass="UIViewX" customModule="Wanto" customModuleProvider="target">
-                                <rect key="frame" x="16" y="358" width="343" height="42"/>
+                                <rect key="frame" x="16" y="308" width="343" height="42"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Standard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="OOd-ep-2rg">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
@@ -705,11 +708,83 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJg-7T-shq">
+                                <rect key="frame" x="302" y="101.66666666666667" width="53" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Qud-5Z-GVK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <size key="titleShadowOffset" width="0.0" height="-0.20000000000000001"/>
+                                <state key="normal" title="Friends">
+                                    <color key="titleColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jx-qe-VpY" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
+                                <rect key="frame" x="278" y="6" width="72" height="32"/>
+                                <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="G5V-w1-KKJ"/>
+                                    <constraint firstAttribute="width" constant="72" id="hg8-L7-4cF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
+                                <state key="normal" title="Directions">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEO-fn-JKO" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
+                                <rect key="frame" x="287" y="609" width="72" height="32"/>
+                                <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="1Fd-n0-s4q"/>
+                                    <constraint firstAttribute="width" constant="72" id="qRs-J1-ILN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
+                                <state key="normal" title="Directions">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6oA-rX-dFH" firstAttribute="leading" secondItem="tdT-4X-dKs" secondAttribute="leading" id="1X2-Cq-epv"/>
                             <constraint firstItem="hBd-RV-a5c" firstAttribute="top" secondItem="eyZ-5C-6Og" secondAttribute="top" constant="8" id="3Wy-uI-zFh"/>
+                            <constraint firstItem="fEO-fn-JKO" firstAttribute="bottom" secondItem="ONf-6m-1Rw" secondAttribute="bottom" constant="-8" id="3f1-b7-2RN"/>
+                            <constraint firstItem="PLe-Pv-AeV" firstAttribute="top" secondItem="PJg-7T-shq" secondAttribute="bottom" constant="4.3333333333333286" id="4pe-OG-eY0"/>
                             <constraint firstItem="6oA-rX-dFH" firstAttribute="trailing" secondItem="tdT-4X-dKs" secondAttribute="trailing" id="51S-IY-RIm"/>
                             <constraint firstItem="hzl-Z2-Wzg" firstAttribute="top" secondItem="PLe-Pv-AeV" secondAttribute="bottom" constant="2" id="64U-AE-aM9"/>
                             <constraint firstItem="eyZ-5C-6Og" firstAttribute="bottom" secondItem="ONf-6m-1Rw" secondAttribute="bottom" constant="80" id="9AM-Nr-SEa"/>
@@ -719,8 +794,10 @@
                             <constraint firstItem="hBd-RV-a5c" firstAttribute="leading" secondItem="eyZ-5C-6Og" secondAttribute="leading" constant="16" id="DW9-Z5-Upw"/>
                             <constraint firstItem="PLe-Pv-AeV" firstAttribute="leading" secondItem="AI6-VR-dBL" secondAttribute="trailing" constant="6" id="E9W-Ec-asA"/>
                             <constraint firstItem="eyZ-5C-6Og" firstAttribute="bottom" secondItem="EFk-oj-Irr" secondAttribute="bottom" constant="16" id="Gc7-j4-XkB"/>
+                            <constraint firstItem="PJg-7T-shq" firstAttribute="centerY" secondItem="hBd-RV-a5c" secondAttribute="centerY" id="HJW-kn-Pxd"/>
                             <constraint firstItem="FXq-wt-wO4" firstAttribute="centerX" secondItem="eyZ-5C-6Og" secondAttribute="centerX" id="HXn-9J-WeO"/>
                             <constraint firstItem="hzl-Z2-Wzg" firstAttribute="leading" secondItem="PLe-Pv-AeV" secondAttribute="leading" id="JkZ-i7-tEZ"/>
+                            <constraint firstItem="PJg-7T-shq" firstAttribute="trailing" secondItem="PLe-Pv-AeV" secondAttribute="trailing" constant="-4" id="LhE-id-ny7"/>
                             <constraint firstItem="Rfp-OI-lN0" firstAttribute="height" secondItem="ONf-6m-1Rw" secondAttribute="height" id="MGB-gy-e9l"/>
                             <constraint firstItem="tdT-4X-dKs" firstAttribute="top" secondItem="KCx-6P-ELH" secondAttribute="bottom" constant="4" id="Ngy-bK-KaX"/>
                             <constraint firstItem="tdT-4X-dKs" firstAttribute="leading" secondItem="eyZ-5C-6Og" secondAttribute="leading" constant="16" id="OrH-Cg-46t"/>
@@ -745,6 +822,7 @@
                             <constraint firstItem="PLe-Pv-AeV" firstAttribute="leading" secondItem="KCx-6P-ELH" secondAttribute="trailing" constant="8" id="nGW-4Q-RDk"/>
                             <constraint firstItem="ONf-6m-1Rw" firstAttribute="leading" secondItem="eyZ-5C-6Og" secondAttribute="leading" constant="8" id="o9e-4X-z1Z"/>
                             <constraint firstItem="PLe-Pv-AeV" firstAttribute="top" secondItem="KCx-6P-ELH" secondAttribute="top" constant="-0.66666666666668561" id="pUq-PT-Sk1"/>
+                            <constraint firstItem="fEO-fn-JKO" firstAttribute="trailing" secondItem="ONf-6m-1Rw" secondAttribute="trailing" constant="-8" id="qkF-Ex-fUh"/>
                             <constraint firstItem="FXq-wt-wO4" firstAttribute="leading" secondItem="eyZ-5C-6Og" secondAttribute="leading" constant="16" id="vZG-ux-1Zd"/>
                             <constraint firstItem="EFk-oj-Irr" firstAttribute="leading" secondItem="eyZ-5C-6Og" secondAttribute="leading" constant="16" id="wr0-b3-q6i"/>
                             <constraint firstItem="Rfp-OI-lN0" firstAttribute="centerY" secondItem="ONf-6m-1Rw" secondAttribute="centerY" id="zTn-2N-62e"/>
@@ -752,7 +830,7 @@
                         <viewLayoutGuide key="safeArea" id="eyZ-5C-6Og"/>
                     </view>
                     <navigationItem key="navigationItem" title="Name" id="Ve9-jg-Azf">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Z7k-lW-UcD"/>
+                        <barButtonItem key="rightBarButtonItem" title="Chat" id="Z7k-lW-UcD"/>
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="FXq-wt-wO4" id="OSH-Wl-VPI"/>
@@ -852,7 +930,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="eNd-m0-Td4">
-                                            <rect key="frame" x="96" y="55.333333333333343" width="91.666666666666686" height="40"/>
+                                            <rect key="frame" x="96" y="55.333333333333343" width="167" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="wc0-Hl-1C7"/>
                                             </constraints>
@@ -943,6 +1021,7 @@
                                         <constraint firstItem="fe3-1W-dhS" firstAttribute="leading" secondItem="t7a-Vs-o2b" secondAttribute="trailing" constant="16" id="F0g-JN-JNn"/>
                                         <constraint firstItem="9bs-d1-cdm" firstAttribute="centerY" secondItem="mh4-9M-atW" secondAttribute="centerY" id="JyX-aQ-rMd"/>
                                         <constraint firstItem="eNd-m0-Td4" firstAttribute="baseline" secondItem="9bs-d1-cdm" secondAttribute="baseline" constant="-12" id="KCZ-wq-jq3"/>
+                                        <constraint firstItem="fe3-1W-dhS" firstAttribute="leading" secondItem="eNd-m0-Td4" secondAttribute="trailing" constant="16" id="RA4-lb-3Vp"/>
                                         <constraint firstItem="t7a-Vs-o2b" firstAttribute="top" secondItem="mh4-9M-atW" secondAttribute="top" constant="16" id="WC3-VS-g4H"/>
                                         <constraint firstItem="fe3-1W-dhS" firstAttribute="centerY" secondItem="mh4-9M-atW" secondAttribute="centerY" id="cbn-Mv-3Qc"/>
                                         <constraint firstItem="eNd-m0-Td4" firstAttribute="leading" secondItem="9bs-d1-cdm" secondAttribute="trailing" constant="16" id="vD2-yg-mIK"/>
@@ -950,7 +1029,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
-                                    <outlet property="name" destination="zB9-2M-2UK" id="F0L-8M-yvO"/>
+                                    <outlet property="host" destination="zB9-2M-2UK" id="3CD-dC-Lfr"/>
+                                    <outlet property="location" destination="eNd-m0-Td4" id="K57-fl-Gec"/>
+                                    <outlet property="name" destination="t7a-Vs-o2b" id="al1-X6-IOt"/>
                                     <segue destination="clO-Ic-GDT" kind="show" id="5Pt-XP-34V"/>
                                 </connections>
                             </tableViewCell>
@@ -971,7 +1052,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="X6m-9S-uH5">
-                                            <rect key="frame" x="96" y="55.333333333333343" width="91.666666666666686" height="40"/>
+                                            <rect key="frame" x="96" y="55.333333333333343" width="167" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="b7U-zq-WWR"/>
                                             </constraints>
@@ -1069,6 +1150,7 @@
                                         <constraint firstItem="Cje-L2-d63" firstAttribute="leading" secondItem="phA-UC-gm7" secondAttribute="trailing" constant="16" id="SfS-lN-TQw"/>
                                         <constraint firstItem="X6m-9S-uH5" firstAttribute="baseline" secondItem="aNU-vo-YCQ" secondAttribute="baseline" constant="-12" id="Wfq-tB-ShB"/>
                                         <constraint firstItem="wiL-xe-l8V" firstAttribute="centerY" secondItem="Cje-L2-d63" secondAttribute="centerY" id="Ybd-3z-tsi"/>
+                                        <constraint firstItem="Cje-L2-d63" firstAttribute="leading" secondItem="X6m-9S-uH5" secondAttribute="trailing" constant="16" id="bDl-Fo-KQe"/>
                                         <constraint firstItem="wiL-xe-l8V" firstAttribute="top" secondItem="Cqv-od-dpf" secondAttribute="top" id="fyb-Lt-04u"/>
                                         <constraint firstAttribute="trailing" secondItem="wiL-xe-l8V" secondAttribute="trailing" id="hXs-42-xJW"/>
                                         <constraint firstAttribute="trailing" secondItem="Cje-L2-d63" secondAttribute="trailing" constant="16" id="lzr-xm-iog"/>
@@ -1077,7 +1159,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
-                                    <outlet property="name" destination="WAY-hI-PNk" id="kMu-33-5C5"/>
+                                    <outlet property="host" destination="WAY-hI-PNk" id="qhi-3w-e53"/>
+                                    <outlet property="location" destination="X6m-9S-uH5" id="pOs-IN-hUX"/>
+                                    <outlet property="name" destination="phA-UC-gm7" id="3uJ-gJ-DDo"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ConfirmedHeader" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConfirmedHeader" rowHeight="36" id="qzI-f7-tjR">
@@ -1088,7 +1172,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2Y-ya-Nq1">
-                                            <rect key="frame" x="16" y="8.0000000000000018" width="343" height="19.666666666666671"/>
+                                            <rect key="frame" x="16" y="7" width="343" height="22"/>
                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -1097,7 +1181,6 @@
                                     <constraints>
                                         <constraint firstItem="M2Y-ya-Nq1" firstAttribute="leading" secondItem="G0C-jS-pfa" secondAttribute="leading" constant="16" id="Tgd-HL-gxy"/>
                                         <constraint firstAttribute="trailing" secondItem="M2Y-ya-Nq1" secondAttribute="trailing" constant="16" id="Wie-Et-fNi"/>
-                                        <constraint firstAttribute="bottom" secondItem="M2Y-ya-Nq1" secondAttribute="bottom" constant="8" id="gDv-09-EWW"/>
                                         <constraint firstItem="M2Y-ya-Nq1" firstAttribute="centerY" secondItem="G0C-jS-pfa" secondAttribute="centerY" id="uah-35-QAC"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -1111,7 +1194,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unconfirmed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICk-AI-Irt">
-                                            <rect key="frame" x="16" y="8.0000000000000018" width="343" height="19.666666666666671"/>
+                                            <rect key="frame" x="16" y="7" width="343" height="22"/>
                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -1119,7 +1202,6 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ICk-AI-Irt" firstAttribute="leading" secondItem="8BQ-dp-aAl" secondAttribute="leading" constant="16" id="1tm-KY-0kk"/>
-                                        <constraint firstAttribute="bottom" secondItem="ICk-AI-Irt" secondAttribute="bottom" constant="8" id="6cQ-g8-Kx7"/>
                                         <constraint firstAttribute="trailing" secondItem="ICk-AI-Irt" secondAttribute="trailing" constant="16" id="WTM-cw-2k9"/>
                                         <constraint firstItem="ICk-AI-Irt" firstAttribute="centerY" secondItem="8BQ-dp-aAl" secondAttribute="centerY" id="aD5-ns-bcL"/>
                                     </constraints>
@@ -1359,13 +1441,13 @@
                                 <rect key="frame" x="8" y="335.66666666666674" width="359" height="321.33333333333326"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-Wr-bHS" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
-                                        <rect key="frame" x="287" y="249.33333333333331" width="64" height="64"/>
+                                        <rect key="frame" x="279" y="281.33333333333331" width="72" height="32"/>
                                         <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="B1U-Us-1zK"/>
-                                            <constraint firstAttribute="width" constant="64" id="SIe-h5-c6b"/>
+                                            <constraint firstAttribute="height" constant="32" id="B1U-Us-1zK"/>
+                                            <constraint firstAttribute="width" constant="72" id="SIe-h5-c6b"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
                                         <state key="normal" title="Directions">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1429,7 +1511,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gmS-WV-Ucj">
                                 <rect key="frame" x="16" y="96" width="80" height="114"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sally" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV8-O4-7Uo">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Natalie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV8-O4-7Uo">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="fDM-Mc-Vrg"/>
@@ -1614,7 +1696,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RjN-YJ-Vio" customClass="UIViewX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="8" y="285.66666666666669" width="359" height="42"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Standard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0H-I0-uFJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mana Convention Center" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0H-I0-uFJ">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="42"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -2088,7 +2170,7 @@
                         <viewLayoutGuide key="safeArea" id="R88-ZA-haG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Name" id="r6f-6f-cOT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="qb8-KS-EkB"/>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="qb8-KS-EkB"/>
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="C0o-0o-Rsm" id="nfC-Rs-NdI"/>

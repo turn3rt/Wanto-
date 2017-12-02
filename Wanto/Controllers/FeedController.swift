@@ -15,7 +15,11 @@ private let confirmedHeader = "ConfirmedHeader"
 
 
 class FeedController: UITableViewController {
-    var people = ["Sally", "Alvaro", "Quinn", "Natalie", "Fernanda", "Cole", "Nick", "Ian", "Reid"]
+    var people = ["Natalie", "Alvaro", "Quinn", "Natalie", "Fernanda", "Cole", "Nick"]
+
+    
+    var activities = ["Art Basel" , "Study", "Meeting", "Lunch" , "Party", "Study Aerodynamics", "Boof Seminar"]
+    var locations = ["Mana Convention Center", "Library West", "Little Hall" , "Chipotle", "The Standard", "Marston Science Library", "Uranus"]
 
 
     override func viewDidLoad() {
@@ -49,10 +53,14 @@ class FeedController: UITableViewController {
         let unconfirmedCell = tableView.dequeueReusableCell(withIdentifier: unconfirmedIdentifer, for: indexPath) as! FeedCell
         
         if indexPath.section == 0 {
-            confirmedCell.name.text = people[indexPath.row]
+            confirmedCell.host.text = people[indexPath.row]
+            confirmedCell.name.text = activities[indexPath.row]
+            confirmedCell.location.text = locations[indexPath.row]
             return confirmedCell
         } else {
-            unconfirmedCell.name.text = people[indexPath.row]
+            unconfirmedCell.host.text = people[indexPath.row]
+            unconfirmedCell.name.text = activities[indexPath.row]
+            unconfirmedCell.location.text = locations[indexPath.row]
             return unconfirmedCell
         }
     }
