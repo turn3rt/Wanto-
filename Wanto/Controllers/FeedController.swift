@@ -8,9 +8,10 @@
 
 import UIKit
 
-
-private let inactiveIdentifer = "Inactive"
-private let activeIdentifier = "Active"
+private let unconfirmedHeader = "UnconfirmedHeader"
+private let unconfirmedIdentifer = "UnconfirmedFeedCell"
+private let confirmedIdentifier = "ConfirmedFeedCell"
+private let confirmedHeader = "ConfirmedHeader"
 
 
 class FeedController: UITableViewController {
@@ -35,7 +36,7 @@ class FeedController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,9 +45,24 @@ class FeedController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: activeIdentifier, for: indexPath) as! FeedCell
-        cell.name.text = people[indexPath.row]
-        return cell
+        let confirmedCell = tableView.dequeueReusableCell(withIdentifier: confirmedIdentifier, for: indexPath) as! FeedCell
+        let unconfirmedCell = tableView.dequeueReusableCell(withIdentifier: unconfirmedIdentifer, for: indexPath) as! FeedCell
+        
+        if indexPath.section == 0 {
+            confirmedCell.name.text = people[indexPath.row]
+            return confirmedCell
+        } else {
+            unconfirmedCell.name.text = people[indexPath.row]
+            return unconfirmedCell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            return tableView.dequeueReusableCell(withIdentifier: confirmedHeader)
+        } else {
+            return tableView.dequeueReusableCell(withIdentifier: unconfirmedHeader)
+        }
     }
  
 //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -17,7 +17,7 @@ class ActiveViewController: UIViewController {
     @IBOutlet weak var timeDateSwitch: UISegmentedControl!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    var people = ["Sally", "Alvaro", "Quinn", "Natalie", "Fernanda", "Cole", "Nick", "Ian", "Reid"]
+    var people = [String]() //["Sally", "Alvaro", "Quinn", "Natalie", "Fernanda", "Cole", "Nick", "Ian", "Reid"]
     
     
     @IBAction func switchValue(_ sender: UISegmentedControl) {
