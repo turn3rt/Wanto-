@@ -112,6 +112,12 @@ class UIButtonX: UIButton {
         }
     }
     
+    @IBInspectable var rotationAngle: CGFloat = 0 {
+        didSet {
+            self.transform = CGAffineTransform(rotationAngle: rotationAngle * .pi / 180)
+        }
+    }
+    
     // MARK: - Shadow
     
     @IBInspectable public var shadowOpacity: CGFloat = 0

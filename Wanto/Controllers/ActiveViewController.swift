@@ -11,8 +11,8 @@ import MapKit
 
 class ActiveViewController: UIViewController {
     
-    let personIdentifier = "Person"
-    let noPersonIdentifier = "NoPerson"
+    private let personIdentifier = "Person"
+    private let noPersonIdentifier = "NoPerson"
     
     @IBOutlet weak var timeDateSwitch: UISegmentedControl!
     @IBOutlet weak var datePicker: UIDatePicker!

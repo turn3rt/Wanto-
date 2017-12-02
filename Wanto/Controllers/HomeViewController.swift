@@ -11,8 +11,8 @@ import MapKit
 
 class HomeViewController: UITableViewController {
     
-    let inactiveIdentifer = "InactiveCell"
-    let activeIdentifier = "ActiveCell"
+    private let inactiveIdentifer = "InactiveCell"
+    private let activeIdentifier = "ActiveCell"
     
     var activities = ["Gym" , "Study", "Meeting", "Lunch" , "Party", "Study Aerodynamics", "Boof Seminar"]
     var locations = ["Southwest Recreation Center", "Library West", "Little Hall" , "Chipotle", "The Standard", "Marston Science Library", "Uranus"]
