@@ -104,6 +104,9 @@
                                                             <real key="value" value="8"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="goButtonClick:" destination="kH5-vH-LT4" eventType="touchUpInside" id="oLz-wq-YsL"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dV-dt-mhW" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="43" width="64" height="33"/>
@@ -338,7 +341,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="Ok1-yz-lCc"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AXL-cf-Tgr">
                             <connections>
-                                <action selector="addActivity:" destination="kH5-vH-LT4" id="EiX-cn-tHy"/>
+                                <segue destination="Oed-Pc-U4y" kind="show" id="TrG-aZ-ToP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1928,7 +1931,7 @@
             </objects>
             <point key="canvasLocation" x="2629.5999999999999" y="643.5960591133005"/>
         </scene>
-        <!--Name-->
+        <!--Add name...-->
         <scene sceneID="uk7-tj-R7x">
             <objects>
                 <viewController id="Oed-Pc-U4y" customClass="ActiveViewController" customModule="Wanto" customModuleProvider="target" sceneMemberID="viewController">
@@ -2325,7 +2328,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R88-ZA-haG"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Name" id="r6f-6f-cOT">
+                    <navigationItem key="navigationItem" title="Add name..." id="r6f-6f-cOT">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="qb8-KS-EkB"/>
                     </navigationItem>
                     <connections>
@@ -2370,6 +2373,7 @@
         <image name="settings-gears.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EFM-08-Uy8"/>
+        <segue reference="4yF-WW-CYQ"/>
+        <segue reference="9dv-8w-zBk"/>
     </inferredMetricsTieBreakers>
 </document>

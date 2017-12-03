@@ -70,14 +70,12 @@ class HomeViewController: UITableViewController {
     
     
     
-    @IBAction func addActivity(_ sender: UITabBarItem) {
-        print("beef")
+    @IBAction func goButtonClick(_ sender: UIButtonX) {
+     print("go button ckiclked")
     }
     
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
+
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {

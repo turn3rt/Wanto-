@@ -33,6 +33,7 @@
 		B34E076E1FD20E5B0059E9DA /* FeedDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34E076D1FD20E5B0059E9DA /* FeedDetailController.swift */; };
 		B3693D411FD1DDED0086D4B9 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3693D401FD1DDED0086D4B9 /* FeedCell.swift */; };
 		B3693D451FD1DF8F0086D4B9 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3693D441FD1DF8F0086D4B9 /* FeedController.swift */; };
+		B3724CEB1FD3D6AD0034A49A /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3724CEA1FD3D6AD0034A49A /* Activity.swift */; };
 		B3A140531FD32C1600458929 /* settings-work-tool@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A140521FD32C1500458929 /* settings-work-tool@2x.png */; };
 		B3D4B4621FD1D80C009CE92E /* ActiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		B34E076D1FD20E5B0059E9DA /* FeedDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailController.swift; sourceTree = "<group>"; };
 		B3693D401FD1DDED0086D4B9 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		B3693D441FD1DF8F0086D4B9 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		B3724CEA1FD3D6AD0034A49A /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		B3A140521FD32C1500458929 /* settings-work-tool@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-work-tool@2x.png"; sourceTree = "<group>"; };
 		B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 		B311CF301FCFFB3500730CDA = {
 			isa = PBXGroup;
 			children = (
+				B3724CEA1FD3D6AD0034A49A /* Activity.swift */,
 				B30AD7DC1FD0FEDA00524450 /* AddPeopleController.swift */,
 				B30AD7DA1FD0FEC100524450 /* PeopleInGroupController.swift */,
 				B311CF3B1FCFFB3500730CDA /* Wanto */,
@@ -366,6 +369,7 @@
 				B30399BF1FD39B4100BB9185 /* SettingsController.swift in Sources */,
 				B32B137F1FD05656005EC45E /* InactiveCell.swift in Sources */,
 				B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */,
+				B3724CEB1FD3D6AD0034A49A /* Activity.swift in Sources */,
 				B32B137B1FD05503005EC45E /* Helper.swift in Sources */,
 				B32B13901FD06560005EC45E /* UILabelX.swift in Sources */,
 				B32B13961FD07DC7005EC45E /* ActiveViewController.swift in Sources */,
