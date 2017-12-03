@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30399BF1FD39B4100BB9185 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30399BE1FD39B4100BB9185 /* SettingsController.swift */; };
 		B30AD7DB1FD0FEC100524450 /* PeopleInGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AD7DA1FD0FEC100524450 /* PeopleInGroupController.swift */; };
 		B30AD7DD1FD0FEDA00524450 /* AddPeopleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AD7DC1FD0FEDA00524450 /* AddPeopleController.swift */; };
 		B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B30399BE1FD39B4100BB9185 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		B30AD7DA1FD0FEC100524450 /* PeopleInGroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleInGroupController.swift; sourceTree = "<group>"; };
 		B30AD7DC1FD0FEDA00524450 /* AddPeopleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleController.swift; sourceTree = "<group>"; };
 		B311CF391FCFFB3500730CDA /* Wanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +204,7 @@
 				B32B137C1FD05638005EC45E /* HomeViewController.swift */,
 				B32B13951FD07DC7005EC45E /* ActiveViewController.swift */,
 				B34E076D1FD20E5B0059E9DA /* FeedDetailController.swift */,
+				B30399BE1FD39B4100BB9185 /* SettingsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				B34E076E1FD20E5B0059E9DA /* FeedDetailController.swift in Sources */,
 				B32B138E1FD0652E005EC45E /* UIButtonX.swift in Sources */,
 				B30AD7DD1FD0FEDA00524450 /* AddPeopleController.swift in Sources */,
+				B30399BF1FD39B4100BB9185 /* SettingsController.swift in Sources */,
 				B32B137F1FD05656005EC45E /* InactiveCell.swift in Sources */,
 				B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */,
 				B32B137B1FD05503005EC45E /* Helper.swift in Sources */,

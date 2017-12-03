@@ -1224,7 +1224,7 @@
         <!--Settings-->
         <scene sceneID="Lf8-cg-F7k">
             <objects>
-                <tableViewController id="EJK-Pd-QeP" sceneMemberID="viewController">
+                <tableViewController id="EJK-Pd-QeP" customClass="SettingsController" customModule="Wanto" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jnJ-Gu-FDs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1249,12 +1249,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56d-in-AJu">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56d-in-AJu">
                                                     <rect key="frame" x="274" y="0.0" width="85" height="42"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                                     <state key="normal" title="Only Group">
                                                         <color key="titleColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="privacyButtonClick:" destination="EJK-Pd-QeP" eventType="touchUpInside" id="Kv0-h5-eI7"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1415,9 +1418,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 Km." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKd-rY-P93">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Km." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKd-rY-P93">
                                                     <rect key="frame" x="16" y="72" width="343" height="32"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1427,6 +1430,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="r4R-Vl-gfp"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="sliderDidChange:" destination="EJK-Pd-QeP" eventType="valueChanged" id="acG-Js-Ipx"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -1462,6 +1468,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="w9P-Bw-seu"/>
+                    <connections>
+                        <outlet property="privacyButton" destination="56d-in-AJu" id="rqN-VM-nD4"/>
+                        <outlet property="radius" destination="nKd-rY-P93" id="nkl-x4-iSy"/>
+                        <outlet property="slider" destination="jwb-aX-I5B" id="nt0-Se-nqF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="398-63-hjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
