@@ -11,7 +11,7 @@ import MapKit
 import ContactsUI
 import Contacts
 
-class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate {
+class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
     
     private let personIdentifier = "Person"
     private let noPersonIdentifier = "NoPerson"
@@ -121,7 +121,29 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
        //this is for phone number without dashes
        //print("the selected phone number is: \((contact.phoneNumbers[0].value ).value(forKey: "digits") as! String)")
     }
+    
+    
+    
+    
+    var resultSearchController:UISearchController? = nil
 
+    @IBAction func addLocationClick(_ sender: UIButton) {
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        //definesPresentationContext = true
+        locationSearchTable.mapView = self.mapView
+        present(resultSearchController!, animated: true, completion: nil)
+        
+//        let searchBar = resultSearchController!.searchBar
+//        searchBar.sizeToFit()
+//        searchBar.placeholder = "Search locations..."
+//        navigationItem.titleView = resultSearchController?.searchBar
+//        resultSearchController?.hidesNavigationBarDuringPresentation = false
+//        resultSearchController?.dimsBackgroundDuringPresentation = true
+//        definesPresentationContext = true
+    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
