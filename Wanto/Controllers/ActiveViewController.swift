@@ -11,10 +11,12 @@ import MapKit
 import ContactsUI
 import Contacts
 
-class ActiveViewController: UIViewController, CNContactPickerDelegate {
+class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate {
     
     private let personIdentifier = "Person"
     private let noPersonIdentifier = "NoPerson"
+    
+    let locationManager = CLLocationManager()
     
     
     
@@ -25,6 +27,8 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var privacyButton: UIButton!
     @IBOutlet weak var mapLocationButton: UIButton!
+    
+    @IBOutlet weak var mapView: MKMapView!
     
     var people = [String]() //["Sally", "Alvaro", "Quinn", "Natalie", "Fernanda", "Cole", "Nick", "Ian", "Reid"] - test data
     
@@ -119,8 +123,26 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate {
     }
 
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        
+        let span: MKCoordinateSpan = MKCoordinateSpanMake(0.02, 0.02)
+        let userLoc: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let region: MKCoordinateRegion = MKCoordinateRegionMake(userLoc, span)
+        
+        mapView.setRegion(region, animated: true)
+        locationManager.stopUpdatingLocation()
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
   
     }
     
