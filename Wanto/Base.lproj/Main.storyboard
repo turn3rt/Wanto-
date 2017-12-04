@@ -350,7 +350,7 @@
             </objects>
             <point key="canvasLocation" x="1893.5999999999999" y="-756.6502463054187"/>
         </scene>
-        <!--Name-->
+        <!--Active View Controller-->
         <scene sceneID="tj5-Mg-E0S">
             <objects>
                 <viewController id="qIO-No-f7g" customClass="ActiveViewController" customModule="Wanto" customModuleProvider="target" sceneMemberID="viewController">
@@ -510,6 +510,9 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addPeopleClick:" destination="qIO-No-f7g" eventType="touchUpInside" id="JKX-iO-ewI"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AI6-VR-dBL" customClass="UIViewX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="287" y="128" width="2" height="76"/>
@@ -573,7 +576,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ONf-6m-1Rw">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ONf-6m-1Rw">
                                 <rect key="frame" x="8" y="300" width="359" height="365"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="h3G-Sd-ap3"/>
@@ -681,12 +684,27 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwZ-HQ-b48">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addLocationClick:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="OQe-Fo-esW"/>
+                                            <action selector="addLocationClick:" destination="qIO-No-f7g" eventType="touchUpInside" id="cZ4-mG-rPg"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="DwZ-HQ-b48" firstAttribute="leading" secondItem="OOd-ep-2rg" secondAttribute="leading" id="3Or-8v-hGb"/>
+                                    <constraint firstItem="DwZ-HQ-b48" firstAttribute="trailing" secondItem="OOd-ep-2rg" secondAttribute="trailing" id="6AK-pM-6sV"/>
                                     <constraint firstAttribute="trailing" secondItem="OOd-ep-2rg" secondAttribute="trailing" id="7fI-ls-OGu"/>
                                     <constraint firstAttribute="bottom" secondItem="OOd-ep-2rg" secondAttribute="bottom" id="M0L-Qh-YuM"/>
                                     <constraint firstItem="OOd-ep-2rg" firstAttribute="top" secondItem="VCQ-Fc-NlX" secondAttribute="top" id="M68-Cd-Ljt"/>
+                                    <constraint firstItem="DwZ-HQ-b48" firstAttribute="top" secondItem="OOd-ep-2rg" secondAttribute="top" id="S4s-sh-dnN"/>
+                                    <constraint firstItem="DwZ-HQ-b48" firstAttribute="bottom" secondItem="OOd-ep-2rg" secondAttribute="bottom" id="Zra-Wp-KpN"/>
                                     <constraint firstAttribute="height" constant="42" id="ceX-1K-8wN"/>
                                     <constraint firstItem="OOd-ep-2rg" firstAttribute="leading" secondItem="VCQ-Fc-NlX" secondAttribute="leading" id="sPW-9o-GgR"/>
                                 </constraints>
@@ -831,9 +849,26 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eyZ-5C-6Og"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Name" id="Ve9-jg-Azf"/>
+                    <navigationItem key="navigationItem" id="Ve9-jg-Azf">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5ls-1I-mOP">
+                            <rect key="frame" x="128" y="2" width="119" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                            <state key="normal" title="Add Name..."/>
+                            <connections>
+                                <action selector="titleButtonTap:" destination="qIO-No-f7g" eventType="touchUpInside" id="0cM-r6-46Y"/>
+                                <action selector="titleButtonTap:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="lzg-5E-Owt"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="FXq-wt-wO4" id="OSH-Wl-VPI"/>
+                        <outlet property="locationLabel" destination="OOd-ep-2rg" id="rFF-Qs-4ny"/>
+                        <outlet property="mapLocationButton" destination="DwZ-HQ-b48" id="f5c-Jj-P9c"/>
+                        <outlet property="mapView" destination="ONf-6m-1Rw" id="AXd-qK-vYm"/>
+                        <outlet property="navigationTitle" destination="5ls-1I-mOP" id="swk-mq-84Q"/>
+                        <outlet property="peopleCollection" destination="KCx-6P-ELH" id="ou9-IO-dna"/>
                         <outlet property="privacyButton" destination="PJg-7T-shq" id="bvT-hr-Vyp"/>
                         <outlet property="timeDateSwitch" destination="tdT-4X-dKs" id="lcX-xK-Hsm"/>
                     </connections>

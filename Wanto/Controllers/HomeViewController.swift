@@ -54,14 +54,14 @@ class HomeViewController: UITableViewController {
         let activeCell = tableView.dequeueReusableCell(withIdentifier: activeIdentifier, for: indexPath) as! ActiveCell
         
         if indexPath.section == 0 {
-            activeCell.name.text = activities[indexPath.row]
-            activeCell.location.text = locations[indexPath.row]
+            activeCell.name.text = self.activities[indexPath.row]
+            activeCell.location.text = self.locations[indexPath.row]
             
             return activeCell
             
         } else {
-            inactiveCell.name.text = activities[indexPath.row]
-            inactiveCell.location.text = locations[indexPath.row]
+            inactiveCell.name.text = self.activities[indexPath.row]
+            inactiveCell.location.text = self.locations[indexPath.row]
             return inactiveCell
             
         }
