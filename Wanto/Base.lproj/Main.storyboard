@@ -92,8 +92,8 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="76k-LD-fcu">
                                             <rect key="frame" x="295" y="16" width="64" height="76"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb9-KN-BTc" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="33"/>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb9-KN-BTc" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="40"/>
                                                     <color key="backgroundColor" red="1" green="0.25098039215686274" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
                                                     <state key="normal" title="Go">
@@ -108,11 +108,11 @@
                                                         <action selector="goButtonClick:" destination="kH5-vH-LT4" eventType="touchUpInside" id="oLz-wq-YsL"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dV-dt-mhW" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="43" width="64" height="33"/>
-                                                    <color key="backgroundColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
-                                                    <state key="normal" title="Location">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dV-dt-mhW" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="50" width="64" height="26"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
+                                                    <state key="normal" title="Only Group">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -216,7 +216,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aam-2F-Lyg" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="33"/>
-                                                    <color key="backgroundColor" red="1" green="0.25098039220000001" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
                                                     <state key="normal" title="Cancel">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -231,7 +231,7 @@
                                                     <rect key="frame" x="0.0" y="43" width="64" height="33"/>
                                                     <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
-                                                    <state key="normal" title="Location">
+                                                    <state key="normal" title="Chat">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -553,7 +553,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.25"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rfp-OI-lN0" customClass="UIViewX" customModule="Wanto" customModuleProvider="target">
-                                <rect key="frame" x="8" y="300" width="359" height="349"/>
+                                <rect key="frame" x="8" y="300" width="359" height="365"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -574,7 +574,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ONf-6m-1Rw">
-                                <rect key="frame" x="8" y="300" width="359" height="349"/>
+                                <rect key="frame" x="8" y="300" width="359" height="365"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="h3G-Sd-ap3"/>
                                 </constraints>
@@ -612,14 +612,14 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFk-oj-Irr" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
-                                <rect key="frame" x="16" y="665" width="128" height="48"/>
+                                <rect key="frame" x="16" y="673" width="128" height="48"/>
                                 <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="Htu-JY-Nra"/>
                                     <constraint firstAttribute="height" constant="48" id="QAk-Ph-rCl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
-                                <state key="normal" title="Location">
+                                <state key="normal" title="Chat">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -638,7 +638,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vf0-ju-AS1" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
-                                <rect key="frame" x="231" y="665" width="128" height="48"/>
+                                <rect key="frame" x="231" y="673" width="128" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="E6P-bp-ZUG"/>
@@ -753,7 +753,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEO-fn-JKO" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
-                                <rect key="frame" x="283" y="609" width="72" height="32"/>
+                                <rect key="frame" x="283" y="625" width="72" height="32"/>
                                 <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="1Fd-n0-s4q"/>
@@ -789,15 +789,15 @@
                             <constraint firstItem="fEO-fn-JKO" firstAttribute="bottom" secondItem="ONf-6m-1Rw" secondAttribute="bottom" constant="-8" id="3f1-b7-2RN"/>
                             <constraint firstItem="6oA-rX-dFH" firstAttribute="trailing" secondItem="tdT-4X-dKs" secondAttribute="trailing" id="51S-IY-RIm"/>
                             <constraint firstItem="hzl-Z2-Wzg" firstAttribute="top" secondItem="PLe-Pv-AeV" secondAttribute="bottom" constant="2" id="64U-AE-aM9"/>
-                            <constraint firstItem="eyZ-5C-6Og" firstAttribute="bottom" secondItem="ONf-6m-1Rw" secondAttribute="bottom" constant="80" id="9AM-Nr-SEa"/>
                             <constraint firstItem="KCx-6P-ELH" firstAttribute="top" secondItem="hBd-RV-a5c" secondAttribute="bottom" id="9F6-cK-a1w"/>
                             <constraint firstItem="VCQ-Fc-NlX" firstAttribute="top" secondItem="FXq-wt-wO4" secondAttribute="bottom" id="9YW-Qw-coF"/>
                             <constraint firstItem="ONf-6m-1Rw" firstAttribute="top" secondItem="FXq-wt-wO4" secondAttribute="bottom" constant="-8" id="Ajd-om-9qT"/>
                             <constraint firstItem="hBd-RV-a5c" firstAttribute="leading" secondItem="eyZ-5C-6Og" secondAttribute="leading" constant="16" id="DW9-Z5-Upw"/>
                             <constraint firstItem="PLe-Pv-AeV" firstAttribute="leading" secondItem="AI6-VR-dBL" secondAttribute="trailing" constant="6" id="E9W-Ec-asA"/>
-                            <constraint firstItem="eyZ-5C-6Og" firstAttribute="bottom" secondItem="EFk-oj-Irr" secondAttribute="bottom" constant="16" id="Gc7-j4-XkB"/>
+                            <constraint firstItem="eyZ-5C-6Og" firstAttribute="bottom" secondItem="EFk-oj-Irr" secondAttribute="bottom" constant="8" id="Gc7-j4-XkB"/>
                             <constraint firstItem="FXq-wt-wO4" firstAttribute="centerX" secondItem="eyZ-5C-6Og" secondAttribute="centerX" id="HXn-9J-WeO"/>
                             <constraint firstItem="hzl-Z2-Wzg" firstAttribute="leading" secondItem="PLe-Pv-AeV" secondAttribute="leading" id="JkZ-i7-tEZ"/>
+                            <constraint firstItem="vf0-ju-AS1" firstAttribute="top" secondItem="ONf-6m-1Rw" secondAttribute="bottom" constant="8" id="Ldr-22-bbe"/>
                             <constraint firstItem="Rfp-OI-lN0" firstAttribute="height" secondItem="ONf-6m-1Rw" secondAttribute="height" id="MGB-gy-e9l"/>
                             <constraint firstItem="PJg-7T-shq" firstAttribute="trailing" secondItem="fEO-fn-JKO" secondAttribute="trailing" id="MWz-07-65z"/>
                             <constraint firstItem="tdT-4X-dKs" firstAttribute="top" secondItem="KCx-6P-ELH" secondAttribute="bottom" constant="4" id="Ngy-bK-KaX"/>
@@ -816,7 +816,7 @@
                             <constraint firstItem="hzl-Z2-Wzg" firstAttribute="trailing" secondItem="PLe-Pv-AeV" secondAttribute="trailing" id="eYb-Ip-xgx"/>
                             <constraint firstItem="FXq-wt-wO4" firstAttribute="top" secondItem="tdT-4X-dKs" secondAttribute="bottom" id="gKZ-f6-d3o"/>
                             <constraint firstItem="KCx-6P-ELH" firstAttribute="leading" secondItem="eyZ-5C-6Og" secondAttribute="leading" constant="16" id="h0W-Cu-HHM"/>
-                            <constraint firstItem="eyZ-5C-6Og" firstAttribute="bottom" secondItem="vf0-ju-AS1" secondAttribute="bottom" constant="16" id="kHv-nq-zMl"/>
+                            <constraint firstItem="eyZ-5C-6Og" firstAttribute="bottom" secondItem="vf0-ju-AS1" secondAttribute="bottom" constant="8" id="kHv-nq-zMl"/>
                             <constraint firstItem="Rfp-OI-lN0" firstAttribute="width" secondItem="ONf-6m-1Rw" secondAttribute="width" id="kL4-US-0kt"/>
                             <constraint firstItem="tdT-4X-dKs" firstAttribute="centerX" secondItem="eyZ-5C-6Og" secondAttribute="centerX" id="l4A-yY-cKA"/>
                             <constraint firstItem="eyZ-5C-6Og" firstAttribute="trailing" secondItem="PLe-Pv-AeV" secondAttribute="trailing" constant="16" id="lp9-Ah-uZY"/>
@@ -831,9 +831,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eyZ-5C-6Og"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Name" id="Ve9-jg-Azf">
-                        <barButtonItem key="rightBarButtonItem" title="Chat" id="Z7k-lW-UcD"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Name" id="Ve9-jg-Azf"/>
                     <connections>
                         <outlet property="datePicker" destination="FXq-wt-wO4" id="OSH-Wl-VPI"/>
                         <outlet property="privacyButton" destination="PJg-7T-shq" id="bvT-hr-Vyp"/>
@@ -1196,7 +1194,7 @@
         <scene sceneID="Lf8-cg-F7k">
             <objects>
                 <tableViewController id="EJK-Pd-QeP" customClass="SettingsController" customModule="Wanto" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jnJ-Gu-FDs">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jnJ-Gu-FDs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1210,7 +1208,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="41.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who can see activity: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="F6M-aI-LS6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default visibility: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="F6M-aI-LS6">
                                                     <rect key="frame" x="16" y="0.0" width="167" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="73H-WO-gnl"/>
@@ -1535,13 +1533,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WL0-f6-tbC" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
-                                <rect key="frame" x="16" y="665" width="343" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqH-AP-CXc" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
+                                <rect key="frame" x="16" y="665" width="128" height="48"/>
+                                <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="7mo-ok-JlY"/>
+                                    <constraint firstAttribute="height" constant="48" id="dn6-9A-NWu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
+                                <state key="normal" title="Chat">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9Z-F1-IDP" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
+                                <rect key="frame" x="231" y="665" width="128" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="go9-YO-yTt"/>
+                                    <constraint firstAttribute="height" constant="48" id="Ztn-rt-OfQ"/>
+                                    <constraint firstAttribute="width" constant="128" id="y2i-Rd-Zik"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1856,23 +1881,23 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="RjN-YJ-Vio" firstAttribute="leading" secondItem="I82-M0-tp3" secondAttribute="leading" constant="8" id="0Il-tP-mb8"/>
-                            <constraint firstItem="WL0-f6-tbC" firstAttribute="centerX" secondItem="I82-M0-tp3" secondAttribute="centerX" id="4Ok-e3-Kw4"/>
                             <constraint firstItem="I82-M0-tp3" firstAttribute="trailing" secondItem="MW1-mh-d37" secondAttribute="trailing" constant="8" id="606-x0-5dT"/>
                             <constraint firstItem="I82-M0-tp3" firstAttribute="trailing" secondItem="xtI-iH-J2f" secondAttribute="trailing" constant="16" id="68Y-e9-ZMy"/>
                             <constraint firstItem="RjN-YJ-Vio" firstAttribute="top" secondItem="xtI-iH-J2f" secondAttribute="bottom" id="81o-qf-7QH"/>
                             <constraint firstItem="I82-M0-tp3" firstAttribute="trailing" secondItem="RjN-YJ-Vio" secondAttribute="trailing" constant="8" id="9i3-OF-fdY"/>
-                            <constraint firstItem="WL0-f6-tbC" firstAttribute="leading" secondItem="I82-M0-tp3" secondAttribute="leading" constant="16" id="Aji-L6-iGw"/>
                             <constraint firstItem="RjN-YJ-Vio" firstAttribute="centerX" secondItem="I82-M0-tp3" secondAttribute="centerX" id="Anq-nj-r91"/>
+                            <constraint firstItem="I82-M0-tp3" firstAttribute="bottom" secondItem="EqH-AP-CXc" secondAttribute="bottom" constant="16" id="Bx4-B4-cJw"/>
+                            <constraint firstItem="EqH-AP-CXc" firstAttribute="leading" secondItem="I82-M0-tp3" secondAttribute="leading" constant="16" id="CLY-25-c14"/>
+                            <constraint firstItem="I82-M0-tp3" firstAttribute="bottom" secondItem="R9Z-F1-IDP" secondAttribute="bottom" constant="16" id="EDW-NK-VOH"/>
                             <constraint firstItem="hOz-97-2To" firstAttribute="top" secondItem="GCe-To-ZMb" secondAttribute="bottom" id="Gc8-29-Nv4"/>
                             <constraint firstItem="MW1-mh-d37" firstAttribute="leading" secondItem="I82-M0-tp3" secondAttribute="leading" constant="8" id="Ha0-3r-QVS"/>
+                            <constraint firstItem="I82-M0-tp3" firstAttribute="trailing" secondItem="R9Z-F1-IDP" secondAttribute="trailing" constant="16" id="KfW-ib-VUh"/>
                             <constraint firstItem="hOz-97-2To" firstAttribute="leading" secondItem="gmS-WV-Ucj" secondAttribute="trailing" constant="16" id="NJz-6A-gGt"/>
                             <constraint firstItem="I82-M0-tp3" firstAttribute="trailing" secondItem="hOz-97-2To" secondAttribute="trailing" constant="16" id="NcI-JD-84f"/>
-                            <constraint firstItem="MW1-mh-d37" firstAttribute="centerX" secondItem="WL0-f6-tbC" secondAttribute="centerX" id="OCx-QL-JnN"/>
                             <constraint firstItem="hOz-97-2To" firstAttribute="leading" secondItem="jBB-jh-sGj" secondAttribute="trailing" id="T2w-yf-9jX"/>
                             <constraint firstItem="I82-M0-tp3" firstAttribute="trailing" secondItem="62G-23-U0z" secondAttribute="trailing" constant="16" id="UTv-oP-tu5"/>
                             <constraint firstItem="hOz-97-2To" firstAttribute="baseline" secondItem="gmS-WV-Ucj" secondAttribute="baseline" constant="5" id="Utt-8u-9Pq"/>
                             <constraint firstItem="gmS-WV-Ucj" firstAttribute="leading" secondItem="I82-M0-tp3" secondAttribute="leading" constant="16" id="WiE-fc-tbJ"/>
-                            <constraint firstItem="WL0-f6-tbC" firstAttribute="top" secondItem="MW1-mh-d37" secondAttribute="bottom" constant="8" symbolic="YES" id="Xvz-nk-qlT"/>
                             <constraint firstItem="MW1-mh-d37" firstAttribute="top" secondItem="RjN-YJ-Vio" secondAttribute="bottom" constant="8" id="af7-u8-naP"/>
                             <constraint firstItem="xtI-iH-J2f" firstAttribute="leading" secondItem="I82-M0-tp3" secondAttribute="leading" constant="16" id="coW-gt-2Kh"/>
                             <constraint firstItem="xtI-iH-J2f" firstAttribute="centerX" secondItem="I82-M0-tp3" secondAttribute="centerX" id="dGA-01-Qsc"/>
@@ -1881,15 +1906,13 @@
                             <constraint firstItem="jBB-jh-sGj" firstAttribute="baseline" secondItem="hOz-97-2To" secondAttribute="baseline" constant="-4" id="l7c-Wc-lTi"/>
                             <constraint firstItem="GCe-To-ZMb" firstAttribute="leading" secondItem="gmS-WV-Ucj" secondAttribute="trailing" constant="18" id="nal-ig-fQi"/>
                             <constraint firstItem="gmS-WV-Ucj" firstAttribute="top" secondItem="I82-M0-tp3" secondAttribute="top" constant="8" id="qD6-1D-RCN"/>
+                            <constraint firstItem="R9Z-F1-IDP" firstAttribute="top" secondItem="6XL-4d-UtC" secondAttribute="bottom" constant="8" id="r6o-p1-xOn"/>
+                            <constraint firstItem="EqH-AP-CXc" firstAttribute="top" secondItem="6XL-4d-UtC" secondAttribute="bottom" constant="8" id="uEO-uR-BrG"/>
                             <constraint firstItem="hOz-97-2To" firstAttribute="top" secondItem="62G-23-U0z" secondAttribute="bottom" id="yih-QO-6yG"/>
-                            <constraint firstItem="I82-M0-tp3" firstAttribute="trailing" secondItem="WL0-f6-tbC" secondAttribute="trailing" constant="16" id="zTp-wq-Eq2"/>
-                            <constraint firstItem="I82-M0-tp3" firstAttribute="bottom" secondItem="WL0-f6-tbC" secondAttribute="bottom" constant="16" id="zU9-lJ-mJF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I82-M0-tp3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Feed Name" id="wgI-Q2-PlF">
-                        <barButtonItem key="rightBarButtonItem" title="Chat" id="bVS-RU-QOp"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Feed Name" id="wgI-Q2-PlF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pvd-OV-qb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2008,6 +2031,9 @@
                                                             <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="addPeopleClick:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="1vb-hu-mrq"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -2167,7 +2193,7 @@
                                     <constraint firstAttribute="width" constant="128" id="Nmq-ir-ZCZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
-                                <state key="normal" title="Location">
+                                <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -2214,20 +2240,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuU-Kh-HKL" customClass="UIViewX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="24" y="358" width="327" height="42"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Standard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8rz-oe-JDY">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnD-av-Nxp">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="42"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <state key="normal" title="Add Location...">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="8rz-oe-JDY" secondAttribute="trailing" id="9NT-8W-Hmc"/>
-                                    <constraint firstItem="8rz-oe-JDY" firstAttribute="top" secondItem="cuU-Kh-HKL" secondAttribute="top" id="Bbl-IT-hsq"/>
-                                    <constraint firstItem="8rz-oe-JDY" firstAttribute="leading" secondItem="cuU-Kh-HKL" secondAttribute="leading" id="Py0-dQ-k1U"/>
+                                    <constraint firstItem="dnD-av-Nxp" firstAttribute="leading" secondItem="cuU-Kh-HKL" secondAttribute="leading" id="VwP-Gd-7AK"/>
                                     <constraint firstAttribute="height" constant="42" id="agn-A3-mdQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="8rz-oe-JDY" secondAttribute="bottom" id="kXo-w3-sGL"/>
+                                    <constraint firstAttribute="bottom" secondItem="dnD-av-Nxp" secondAttribute="bottom" id="fju-Zm-MFQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="dnD-av-Nxp" secondAttribute="trailing" id="hNo-Ni-fuo"/>
+                                    <constraint firstItem="dnD-av-Nxp" firstAttribute="top" secondItem="cuU-Kh-HKL" secondAttribute="top" id="tML-Xu-xHd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2304,6 +2331,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="C0o-0o-Rsm" id="nfC-Rs-NdI"/>
+                        <outlet property="mapLocationButton" destination="dnD-av-Nxp" id="e2a-OH-DBS"/>
                         <outlet property="navigationTitle" destination="y5F-0m-U86" id="9rQ-cl-UP9"/>
                         <outlet property="peopleCollection" destination="3Se-lH-zp1" id="z14-oY-l23"/>
                         <outlet property="timeDateSwitch" destination="jVt-r9-PnM" id="3BW-Pb-oXT"/>
@@ -2311,7 +2339,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZxW-hD-iyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2630" y="-757"/>
+            <point key="canvasLocation" x="2629.5999999999999" y="-757.38916256157643"/>
         </scene>
         <!--Explore-->
         <scene sceneID="L3o-Va-A9C">

@@ -20,17 +20,13 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate {
     
     
     @IBOutlet weak var peopleCollection: UICollectionView!
-    
     @IBOutlet weak var navigationTitle: UIButton!
     @IBOutlet weak var timeDateSwitch: UISegmentedControl!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var privacyButton: UIButton!
+    @IBOutlet weak var mapLocationButton: UIButton!
     
-    var people = [String]() //["Sally", "Alvaro", "Quinn", "Natalie", "Fernanda", "Cole", "Nick", "Ian", "Reid"]
-    
-    var numeroADiscar: String = ""
-    var userImage: UIImage? = nil
-    var nameToSave = ""
+    var people = [String]() //["Sally", "Alvaro", "Quinn", "Natalie", "Fernanda", "Cole", "Nick", "Ian", "Reid"] - test data
     
     
     @IBAction func titleButtonTap(_ sender: UIButton) {
@@ -45,7 +41,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate {
         //change title to entered text
         let confirmAction = UIAlertAction(title: "Confirm", style: .default, handler: {
             alert -> Void in
-            let textField = alertController.textFields![0]
+            let textField = alertController.textFields![0] // this is the text that is grabbed from text field
             self.navigationTitle.setTitle(textField.text, for: UIControlState.normal)
         })
             
@@ -77,8 +73,6 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate {
     @IBAction func addPeopleClick(_ sender: UIButtonX){
         let entitiyType = CNEntityType.contacts
         let authStatus = CNContactStore.authorizationStatus(for: entitiyType)
-        
-        
         
         if authStatus == .notDetermined {
             let contactsStore = CNContactStore.init()

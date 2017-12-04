@@ -41,7 +41,7 @@ class HomeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Number of Activities: \(activities.count)")
         if section == 0 {
-            return 0//activities.count
+            return activities.count
         } else {
             return activities.count
         }
