@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B30399BF1FD39B4100BB9185 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30399BE1FD39B4100BB9185 /* SettingsController.swift */; };
-		B30AD7DB1FD0FEC100524450 /* PeopleInGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AD7DA1FD0FEC100524450 /* PeopleInGroupController.swift */; };
-		B30AD7DD1FD0FEDA00524450 /* AddPeopleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AD7DC1FD0FEDA00524450 /* AddPeopleController.swift */; };
 		B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */; };
 		B311CF441FCFFB3500730CDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B311CF421FCFFB3500730CDA /* Main.storyboard */; };
 		B311CF461FCFFB3500730CDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B311CF451FCFFB3500730CDA /* Assets.xcassets */; };
@@ -57,8 +55,6 @@
 
 /* Begin PBXFileReference section */
 		B30399BE1FD39B4100BB9185 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
-		B30AD7DA1FD0FEC100524450 /* PeopleInGroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleInGroupController.swift; sourceTree = "<group>"; };
-		B30AD7DC1FD0FEDA00524450 /* AddPeopleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleController.swift; sourceTree = "<group>"; };
 		B311CF391FCFFB3500730CDA /* Wanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B311CF431FCFFB3500730CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,8 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				B3724CEA1FD3D6AD0034A49A /* Activity.swift */,
-				B30AD7DC1FD0FEDA00524450 /* AddPeopleController.swift */,
-				B30AD7DA1FD0FEC100524450 /* PeopleInGroupController.swift */,
 				B311CF3B1FCFFB3500730CDA /* Wanto */,
 				B311CF521FCFFB3500730CDA /* WantoTests */,
 				B311CF5D1FCFFB3600730CDA /* WantoUITests */,
@@ -144,8 +138,8 @@
 		B311CF3B1FCFFB3500730CDA /* Wanto */ = {
 			isa = PBXGroup;
 			children = (
-				B32B13921FD065CE005EC45E /* Designables */,
 				B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */,
+				B32B13921FD065CE005EC45E /* Designables */,
 				B3D4B45F1FD1D7B7009CE92E /* Controllers */,
 				B3D4B4601FD1D7E2009CE92E /* Models */,
 				B32B137A1FD05503005EC45E /* Helper.swift */,
@@ -365,7 +359,6 @@
 			files = (
 				B34E076E1FD20E5B0059E9DA /* FeedDetailController.swift in Sources */,
 				B32B138E1FD0652E005EC45E /* UIButtonX.swift in Sources */,
-				B30AD7DD1FD0FEDA00524450 /* AddPeopleController.swift in Sources */,
 				B30399BF1FD39B4100BB9185 /* SettingsController.swift in Sources */,
 				B32B137F1FD05656005EC45E /* InactiveCell.swift in Sources */,
 				B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */,
@@ -377,7 +370,6 @@
 				B3693D411FD1DDED0086D4B9 /* FeedCell.swift in Sources */,
 				B32B13981FD07EEA005EC45E /* PersonCell.swift in Sources */,
 				B32B137D1FD05638005EC45E /* HomeViewController.swift in Sources */,
-				B30AD7DB1FD0FEC100524450 /* PeopleInGroupController.swift in Sources */,
 				B32B138C1FD064F1005EC45E /* UIImageViewX.swift in Sources */,
 				B3D4B4621FD1D80C009CE92E /* ActiveCell.swift in Sources */,
 				B32B138A1FD064E4005EC45E /* UIViewX.swift in Sources */,

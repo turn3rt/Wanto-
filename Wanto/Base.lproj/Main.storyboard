@@ -360,6 +360,9 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="hBd-RV-a5c">
                                 <rect key="frame" x="16" y="96" width="82" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="vPb-Jk-Wul"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -460,9 +463,6 @@
                                                             <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <segue destination="hKv-vW-vYW" kind="show" id="dvV-M9-qiK"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -510,9 +510,6 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="hKv-vW-vYW" kind="show" id="EFM-08-Uy8"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AI6-VR-dBL" customClass="UIViewX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="287" y="128" width="2" height="76"/>
@@ -711,17 +708,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJg-7T-shq">
-                                <rect key="frame" x="302" y="101.66666666666667" width="53" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJg-7T-shq">
+                                <rect key="frame" x="271" y="102" width="84" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Qud-5Z-GVK"/>
+                                    <constraint firstAttribute="height" constant="21" id="pQr-9n-lmt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <size key="titleShadowOffset" width="0.0" height="-0.20000000000000001"/>
-                                <state key="normal" title="Friends">
+                                <state key="normal" title="Only Group">
                                     <color key="titleColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="privacyButtonClick:" destination="qIO-No-f7g" eventType="touchUpInside" id="DZG-6y-jva"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jx-qe-VpY" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="278" y="6" width="72" height="32"/>
@@ -787,7 +787,6 @@
                             <constraint firstItem="6oA-rX-dFH" firstAttribute="leading" secondItem="tdT-4X-dKs" secondAttribute="leading" id="1X2-Cq-epv"/>
                             <constraint firstItem="hBd-RV-a5c" firstAttribute="top" secondItem="eyZ-5C-6Og" secondAttribute="top" constant="8" id="3Wy-uI-zFh"/>
                             <constraint firstItem="fEO-fn-JKO" firstAttribute="bottom" secondItem="ONf-6m-1Rw" secondAttribute="bottom" constant="-8" id="3f1-b7-2RN"/>
-                            <constraint firstItem="PLe-Pv-AeV" firstAttribute="top" secondItem="PJg-7T-shq" secondAttribute="bottom" constant="4.3333333333333286" id="4pe-OG-eY0"/>
                             <constraint firstItem="6oA-rX-dFH" firstAttribute="trailing" secondItem="tdT-4X-dKs" secondAttribute="trailing" id="51S-IY-RIm"/>
                             <constraint firstItem="hzl-Z2-Wzg" firstAttribute="top" secondItem="PLe-Pv-AeV" secondAttribute="bottom" constant="2" id="64U-AE-aM9"/>
                             <constraint firstItem="eyZ-5C-6Og" firstAttribute="bottom" secondItem="ONf-6m-1Rw" secondAttribute="bottom" constant="80" id="9AM-Nr-SEa"/>
@@ -797,11 +796,10 @@
                             <constraint firstItem="hBd-RV-a5c" firstAttribute="leading" secondItem="eyZ-5C-6Og" secondAttribute="leading" constant="16" id="DW9-Z5-Upw"/>
                             <constraint firstItem="PLe-Pv-AeV" firstAttribute="leading" secondItem="AI6-VR-dBL" secondAttribute="trailing" constant="6" id="E9W-Ec-asA"/>
                             <constraint firstItem="eyZ-5C-6Og" firstAttribute="bottom" secondItem="EFk-oj-Irr" secondAttribute="bottom" constant="16" id="Gc7-j4-XkB"/>
-                            <constraint firstItem="PJg-7T-shq" firstAttribute="centerY" secondItem="hBd-RV-a5c" secondAttribute="centerY" id="HJW-kn-Pxd"/>
                             <constraint firstItem="FXq-wt-wO4" firstAttribute="centerX" secondItem="eyZ-5C-6Og" secondAttribute="centerX" id="HXn-9J-WeO"/>
                             <constraint firstItem="hzl-Z2-Wzg" firstAttribute="leading" secondItem="PLe-Pv-AeV" secondAttribute="leading" id="JkZ-i7-tEZ"/>
-                            <constraint firstItem="PJg-7T-shq" firstAttribute="trailing" secondItem="PLe-Pv-AeV" secondAttribute="trailing" constant="-4" id="LhE-id-ny7"/>
                             <constraint firstItem="Rfp-OI-lN0" firstAttribute="height" secondItem="ONf-6m-1Rw" secondAttribute="height" id="MGB-gy-e9l"/>
+                            <constraint firstItem="PJg-7T-shq" firstAttribute="trailing" secondItem="fEO-fn-JKO" secondAttribute="trailing" id="MWz-07-65z"/>
                             <constraint firstItem="tdT-4X-dKs" firstAttribute="top" secondItem="KCx-6P-ELH" secondAttribute="bottom" constant="4" id="Ngy-bK-KaX"/>
                             <constraint firstItem="tdT-4X-dKs" firstAttribute="leading" secondItem="eyZ-5C-6Og" secondAttribute="leading" constant="16" id="OrH-Cg-46t"/>
                             <constraint firstItem="eyZ-5C-6Og" firstAttribute="trailing" secondItem="FXq-wt-wO4" secondAttribute="trailing" constant="16" id="Scv-Cr-tbI"/>
@@ -829,6 +827,7 @@
                             <constraint firstItem="FXq-wt-wO4" firstAttribute="leading" secondItem="eyZ-5C-6Og" secondAttribute="leading" constant="16" id="vZG-ux-1Zd"/>
                             <constraint firstItem="EFk-oj-Irr" firstAttribute="leading" secondItem="eyZ-5C-6Og" secondAttribute="leading" constant="16" id="wr0-b3-q6i"/>
                             <constraint firstItem="Rfp-OI-lN0" firstAttribute="centerY" secondItem="ONf-6m-1Rw" secondAttribute="centerY" id="zTn-2N-62e"/>
+                            <constraint firstItem="PJg-7T-shq" firstAttribute="centerY" secondItem="hBd-RV-a5c" secondAttribute="centerY" id="zcC-iX-9XY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eyZ-5C-6Og"/>
                     </view>
@@ -837,48 +836,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="FXq-wt-wO4" id="OSH-Wl-VPI"/>
+                        <outlet property="privacyButton" destination="PJg-7T-shq" id="bvT-hr-Vyp"/>
                         <outlet property="timeDateSwitch" destination="tdT-4X-dKs" id="lcX-xK-Hsm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssg-m6-pCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3424.8000000000002" y="-757.38916256157643"/>
-        </scene>
-        <!--People-->
-        <scene sceneID="DuD-Vf-Iy6">
-            <objects>
-                <tableViewController id="hKv-vW-vYW" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="elL-g4-3Hi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="knS-jw-3IC">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="knS-jw-3IC" id="GAh-yK-o28">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="hKv-vW-vYW" id="K8D-4J-t3x"/>
-                            <outlet property="delegate" destination="hKv-vW-vYW" id="0qE-AZ-dtG"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="" id="zUq-0e-tJU"/>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="63I-Vs-Vah"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="People" id="Ow8-V4-tdC">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="K7z-Ev-Bvf"/>
-                    </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cL7-L4-KYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3425" y="-1422"/>
         </scene>
         <!--Explore-->
         <scene sceneID="xwL-cY-w0O">
@@ -1931,7 +1895,7 @@
             </objects>
             <point key="canvasLocation" x="2629.5999999999999" y="643.5960591133005"/>
         </scene>
-        <!--Add name...-->
+        <!--Active View Controller-->
         <scene sceneID="uk7-tj-R7x">
             <objects>
                 <viewController id="Oed-Pc-U4y" customClass="ActiveViewController" customModule="Wanto" customModuleProvider="target" sceneMemberID="viewController">
@@ -2044,9 +2008,6 @@
                                                             <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <segue destination="hKv-vW-vYW" kind="show" id="9dv-8w-zBk"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -2095,7 +2056,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="hKv-vW-vYW" kind="show" id="6Bx-nS-YXj"/>
+                                    <action selector="addPeopleClick:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="0XU-bJ-TpG"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jW-Ot-1zq" customClass="UIViewX" customModule="Wanto" customModuleProvider="target">
@@ -2328,11 +2289,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R88-ZA-haG"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add name..." id="r6f-6f-cOT">
+                    <navigationItem key="navigationItem" id="r6f-6f-cOT">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y5F-0m-U86">
+                            <rect key="frame" x="128" y="2" width="119" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                            <state key="normal" title="Add Name..."/>
+                            <connections>
+                                <action selector="titleButtonTap:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="XVa-nf-arn"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="qb8-KS-EkB"/>
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="C0o-0o-Rsm" id="nfC-Rs-NdI"/>
+                        <outlet property="navigationTitle" destination="y5F-0m-U86" id="9rQ-cl-UP9"/>
                         <outlet property="timeDateSwitch" destination="jVt-r9-PnM" id="3BW-Pb-oXT"/>
                     </connections>
                 </viewController>
@@ -2373,7 +2345,6 @@
         <image name="settings-gears.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4yF-WW-CYQ"/>
-        <segue reference="9dv-8w-zBk"/>
+        <segue reference="TrG-aZ-ToP"/>
     </inferredMetricsTieBreakers>
 </document>

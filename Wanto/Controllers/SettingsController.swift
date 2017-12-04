@@ -17,6 +17,7 @@ class SettingsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         radius.text = "\(Int(slider.value)) miles"
+        
     
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
