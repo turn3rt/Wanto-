@@ -11,6 +11,11 @@ import MapKit
 import ContactsUI
 import Contacts
 
+
+protocol HandleMapSearch {
+    func dropPinZoomIn(placemark:MKPlacemark)
+}
+
 class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
     
     private let personIdentifier = "Person"
@@ -27,6 +32,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var privacyButton: UIButton!
     @IBOutlet weak var mapLocationButton: UIButton!
+    @IBOutlet weak var locationLabel: UILabel!
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -126,24 +132,17 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     
     
     var resultSearchController:UISearchController? = nil
-
+    var selectedPin:MKPlacemark? = nil
     @IBAction func addLocationClick(_ sender: UIButton) {
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable
         resultSearchController?.hidesNavigationBarDuringPresentation = false
-        //definesPresentationContext = true
         locationSearchTable.mapView = self.mapView
+        locationSearchTable.handleMapSearchDelegate = self
         present(resultSearchController!, animated: true, completion: nil)
-        
-//        let searchBar = resultSearchController!.searchBar
-//        searchBar.sizeToFit()
-//        searchBar.placeholder = "Search locations..."
-//        navigationItem.titleView = resultSearchController?.searchBar
-//        resultSearchController?.hidesNavigationBarDuringPresentation = false
-//        resultSearchController?.dimsBackgroundDuringPresentation = true
-//        definesPresentationContext = true
     }
+
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
@@ -228,10 +227,6 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
 }
 
 
-
-
-
-
 extension ActiveViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("Number of People: \(people.count)")
@@ -251,5 +246,26 @@ extension ActiveViewController: UICollectionViewDataSource{
             cell.name.text = people[indexPath.row]
             return cell
         }
+    }
+}
+
+extension ActiveViewController: HandleMapSearch{
+    func dropPinZoomIn(placemark:MKPlacemark){
+        // cache the pin
+        selectedPin = placemark
+        // clear existing pins
+        mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.name
+//        if let city = placemark.locality,
+//            let state = placemark.administrativeArea {
+//            annotation.subtitle = "\(city), \(state)"
+//        }
+        locationLabel.text = placemark.name
+        mapView.addAnnotation(annotation)
+        let span = MKCoordinateSpanMake(0.02, 0.02)
+        let region = MKCoordinateRegionMake(placemark.coordinate, span)
+        mapView.setRegion(region, animated: true)
     }
 }

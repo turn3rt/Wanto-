@@ -2287,20 +2287,30 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnD-av-Nxp">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="42"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
-                                        <state key="normal" title="Add Location...">
+                                        <state key="normal">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="addLocationClick:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="6p5-mW-Dsc"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add location..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L26-Er-kxL">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="42"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="L26-Er-kxL" firstAttribute="leading" secondItem="dnD-av-Nxp" secondAttribute="leading" id="P5p-Hd-HjK"/>
                                     <constraint firstItem="dnD-av-Nxp" firstAttribute="leading" secondItem="cuU-Kh-HKL" secondAttribute="leading" id="VwP-Gd-7AK"/>
                                     <constraint firstAttribute="height" constant="42" id="agn-A3-mdQ"/>
                                     <constraint firstAttribute="bottom" secondItem="dnD-av-Nxp" secondAttribute="bottom" id="fju-Zm-MFQ"/>
                                     <constraint firstAttribute="trailing" secondItem="dnD-av-Nxp" secondAttribute="trailing" id="hNo-Ni-fuo"/>
+                                    <constraint firstItem="L26-Er-kxL" firstAttribute="bottom" secondItem="dnD-av-Nxp" secondAttribute="bottom" id="iKD-ks-8ck"/>
+                                    <constraint firstItem="L26-Er-kxL" firstAttribute="trailing" secondItem="dnD-av-Nxp" secondAttribute="trailing" id="iNh-kA-1q7"/>
+                                    <constraint firstItem="L26-Er-kxL" firstAttribute="top" secondItem="dnD-av-Nxp" secondAttribute="top" id="muY-4J-vAb"/>
                                     <constraint firstItem="dnD-av-Nxp" firstAttribute="top" secondItem="cuU-Kh-HKL" secondAttribute="top" id="tML-Xu-xHd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -2378,6 +2388,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="C0o-0o-Rsm" id="nfC-Rs-NdI"/>
+                        <outlet property="locationLabel" destination="L26-Er-kxL" id="Rwo-Jj-7kc"/>
                         <outlet property="mapLocationButton" destination="dnD-av-Nxp" id="e2a-OH-DBS"/>
                         <outlet property="mapView" destination="tav-Y0-EKE" id="GJH-5z-wx6"/>
                         <outlet property="navigationTitle" destination="y5F-0m-U86" id="9rQ-cl-UP9"/>
