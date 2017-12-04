@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import ContactsUI
 import Contacts
+import CoreLocation
 
 
 protocol HandleMapSearch {
@@ -153,6 +154,49 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         
         mapView.setRegion(region, animated: true)
         locationManager.stopUpdatingLocation()
+    }
+    
+    @IBAction func zoomToLocClick(_ sender: Any) {
+        let geoocoder = CLGeocoder()
+        locationManager.startUpdatingLocation()
+        let location = locationManager.location!
+        
+        let span: MKCoordinateSpan = MKCoordinateSpanMake(0.02, 0.02)
+        let userLoc: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let region: MKCoordinateRegion = MKCoordinateRegionMake(userLoc, span)
+        
+        geoocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            // Process Response
+            self.processResponse(withPlacemarks: placemarks, error: error)
+        }
+        
+        
+    
+        
+        
+        
+        mapView.setRegion(region, animated: true)
+        locationManager.stopUpdatingLocation()
+        
+    }
+    
+    func processResponse(withPlacemarks placemarks: [CLPlacemark]?, error: Error?) {
+        // Update View
+        if let error = error {
+            print("Unable to Reverse Geocode Location (\(error))")
+            locationLabel.text = "Unable to Find Address for Location"
+            
+        } else {
+            if let placemarks = placemarks, let placemark = placemarks.first {
+                if #available(iOS 11.0, *) {
+                    locationLabel.text = placemark.postalAddress?.street
+                } else {
+                    // Fallback on earlier versions
+                }
+            } else {
+                locationLabel.text = "No Matching Addresses Found"
+            }
+        }
     }
     
     

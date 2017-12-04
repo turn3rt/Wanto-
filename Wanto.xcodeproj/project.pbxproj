@@ -15,6 +15,7 @@
 		B311CF541FCFFB3500730CDA /* WantoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF531FCFFB3500730CDA /* WantoTests.swift */; };
 		B311CF5F1FCFFB3600730CDA /* WantoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF5E1FCFFB3600730CDA /* WantoUITests.swift */; };
 		B3288B0E1FD5E2A200049AE9 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3288B0D1FD5E2A200049AE9 /* LocationSearchTable.swift */; };
+		B3288B121FD60A4100049AE9 /* target@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3288B111FD60A4100049AE9 /* target@2x.png */; };
 		B32B137B1FD05503005EC45E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B137A1FD05503005EC45E /* Helper.swift */; };
 		B32B137D1FD05638005EC45E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B137C1FD05638005EC45E /* HomeViewController.swift */; };
 		B32B137F1FD05656005EC45E /* InactiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B137E1FD05656005EC45E /* InactiveCell.swift */; };
@@ -69,6 +70,7 @@
 		B311CF5E1FCFFB3600730CDA /* WantoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantoUITests.swift; sourceTree = "<group>"; };
 		B311CF601FCFFB3600730CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3288B0D1FD5E2A200049AE9 /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
+		B3288B111FD60A4100049AE9 /* target@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "target@2x.png"; sourceTree = "<group>"; };
 		B32B137A1FD05503005EC45E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		B32B137C1FD05638005EC45E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B32B137E1FD05656005EC45E /* InactiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveCell.swift; sourceTree = "<group>"; };
@@ -119,7 +121,6 @@
 		B311CF301FCFFB3500730CDA = {
 			isa = PBXGroup;
 			children = (
-				B3288B0D1FD5E2A200049AE9 /* LocationSearchTable.swift */,
 				B3724CEA1FD3D6AD0034A49A /* Activity.swift */,
 				B311CF3B1FCFFB3500730CDA /* Wanto */,
 				B311CF521FCFFB3500730CDA /* WantoTests */,
@@ -176,6 +177,7 @@
 		B32B13881FD056F7005EC45E /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				B3288B111FD60A4100049AE9 /* target@2x.png */,
 				B32B13831FD056ED005EC45E /* explore@2x.png */,
 				B32B13801FD056EC005EC45E /* home@2x.png */,
 				B32B13821FD056EC005EC45E /* multiple-users-silhouette@2x.png */,
@@ -200,6 +202,7 @@
 		B3D4B45F1FD1D7B7009CE92E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B3288B0D1FD5E2A200049AE9 /* LocationSearchTable.swift */,
 				B3693D441FD1DF8F0086D4B9 /* FeedController.swift */,
 				B32B137C1FD05638005EC45E /* HomeViewController.swift */,
 				B32B13951FD07DC7005EC45E /* ActiveViewController.swift */,
@@ -331,6 +334,7 @@
 				B311CF491FCFFB3500730CDA /* LaunchScreen.storyboard in Resources */,
 				B32B13861FD056ED005EC45E /* multiple-users-silhouette@2x.png in Resources */,
 				B32B13851FD056ED005EC45E /* settings-gears@2x.png in Resources */,
+				B3288B121FD60A4100049AE9 /* target@2x.png in Resources */,
 				B311CF461FCFFB3500730CDA /* Assets.xcassets in Resources */,
 				B3A140531FD32C1600458929 /* settings-work-tool@2x.png in Resources */,
 				B32B13941FD07870005EC45E /* Sally.jpg in Resources */,
