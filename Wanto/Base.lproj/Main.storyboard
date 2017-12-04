@@ -2367,7 +2367,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNS-IC-oJV" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
-                                <rect key="frame" x="24" y="585" width="48" height="48"/>
+                                <rect key="frame" x="303" y="585" width="48" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="R6g-ml-tOT"/>
@@ -2399,8 +2399,8 @@
                         <constraints>
                             <constraint firstItem="cuU-Kh-HKL" firstAttribute="top" secondItem="C0o-0o-Rsm" secondAttribute="bottom" id="0hJ-uG-s9a"/>
                             <constraint firstItem="R88-ZA-haG" firstAttribute="trailing" secondItem="n4q-PI-YhF" secondAttribute="trailing" constant="8" id="3gU-cg-ODS"/>
-                            <constraint firstItem="aNS-IC-oJV" firstAttribute="leading" secondItem="tav-Y0-EKE" secondAttribute="leading" constant="16" id="4V4-cI-LRD"/>
                             <constraint firstItem="aNS-IC-oJV" firstAttribute="bottom" secondItem="tav-Y0-EKE" secondAttribute="bottom" constant="-16" id="5Pa-7N-uWH"/>
+                            <constraint firstItem="aNS-IC-oJV" firstAttribute="trailing" secondItem="tav-Y0-EKE" secondAttribute="trailing" constant="-16" id="7ol-ji-GDb"/>
                             <constraint firstItem="JLc-wS-mR6" firstAttribute="leading" secondItem="3Se-lH-zp1" secondAttribute="trailing" constant="8" id="8G7-Fy-Nzc"/>
                             <constraint firstItem="R88-ZA-haG" firstAttribute="bottom" secondItem="kVL-eo-HYX" secondAttribute="bottom" constant="16" id="ADb-Hr-j2f"/>
                             <constraint firstItem="n4q-PI-YhF" firstAttribute="width" secondItem="tav-Y0-EKE" secondAttribute="width" id="ATM-sD-d3m"/>
