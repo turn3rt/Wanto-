@@ -2305,6 +2305,7 @@
                     <connections>
                         <outlet property="datePicker" destination="C0o-0o-Rsm" id="nfC-Rs-NdI"/>
                         <outlet property="navigationTitle" destination="y5F-0m-U86" id="9rQ-cl-UP9"/>
+                        <outlet property="peopleCollection" destination="3Se-lH-zp1" id="z14-oY-l23"/>
                         <outlet property="timeDateSwitch" destination="jVt-r9-PnM" id="3BW-Pb-oXT"/>
                     </connections>
                 </viewController>
