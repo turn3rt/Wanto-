@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -166,6 +166,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="location" destination="RhV-pR-tD0" id="o58-Bs-cKr"/>
+                                    <outlet property="mapView" destination="b6g-rG-Shm" id="88c-wT-f7e"/>
                                     <outlet property="name" destination="HPA-c0-GvP" id="AUg-l5-sel"/>
                                     <segue destination="Oed-Pc-U4y" kind="show" id="4yF-WW-CYQ"/>
                                 </connections>
@@ -341,7 +342,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="Ok1-yz-lCc"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AXL-cf-Tgr">
                             <connections>
-                                <segue destination="Oed-Pc-U4y" kind="show" id="TrG-aZ-ToP"/>
+                                <segue destination="Oed-Pc-U4y" kind="show" identifier="addActivity" id="TrG-aZ-ToP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2289,6 +2290,9 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveClick:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="uJC-X0-aBH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxw-CP-p2N" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="231" y="665" width="128" height="48"/>

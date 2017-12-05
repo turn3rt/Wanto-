@@ -11,6 +11,7 @@ import Contacts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
     var contactStore = CNContactStore()
 
     var window: UIWindow?
@@ -41,26 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-    
-
-    func showMessage(message: String) {
-        let alertController = UIAlertController(title: "Birthdays", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        
-        let dismissAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action) -> Void in
-        }
-        
-        alertController.addAction(dismissAction)
-        
-        let pushedViewControllers = (self.window?.rootViewController as! UINavigationController).viewControllers
-        let presentedViewController = pushedViewControllers[pushedViewControllers.count - 1]
-        
-        presentedViewController.present(alertController, animated: true, completion: nil)
-    }
-
-
-    class func getAppDelegate() -> AppDelegate {
-        return UIApplication.shared.delegate as! AppDelegate
     }
 
 }

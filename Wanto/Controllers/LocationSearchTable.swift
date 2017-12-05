@@ -13,9 +13,9 @@ import MapKit
 
 
 class LocationSearchTable : UITableViewController {
-    var matchingItems:[MKMapItem] = []
-    var mapView: MKMapView? = nil
-    var handleMapSearchDelegate:HandleMapSearch? = nil
+    lazy var matchingItems:[MKMapItem] = []
+    lazy var mapView: MKMapView? = nil
+    lazy var handleMapSearchDelegate:HandleMapSearch? = nil
     
     
     func parseAddress(selectedItem:MKPlacemark) -> String {

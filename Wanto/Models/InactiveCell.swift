@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import MapKit
 
 class InactiveCell: UITableViewCell {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var location: UILabel!
-
+ 
     
+    @IBOutlet weak var mapView: MKMapView!
     
 }
+
+

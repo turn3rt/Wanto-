@@ -17,15 +17,19 @@ protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark)
 }
 
+protocol sendToHomeDelegate {
+    func saveAndStoreNewActivity(data: Activity)
+}
+
 class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
     
     private let personIdentifier = "Person"
     private let noPersonIdentifier = "NoPerson"
     
+    //this is the activity that gets stored and passsed back thorugh the delegate func
+    var newActivity = Activity(name: String(), people: [String](), locationString: String())
+    
     let locationManager = CLLocationManager()
-    
-    
-    
     
     @IBOutlet weak var peopleCollection: UICollectionView!
     @IBOutlet weak var navigationTitle: UIButton!
@@ -34,11 +38,15 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     @IBOutlet weak var privacyButton: UIButton!
     @IBOutlet weak var mapLocationButton: UIButton!
     @IBOutlet weak var locationLabel: UILabel!
-    
     @IBOutlet weak var mapView: MKMapView!
+    
+    
+    
+    
     
     var people = [String]() //["Sally", "Alvaro", "Quinn", "Natalie", "Fernanda", "Cole", "Nick", "Ian", "Reid"] - test data
     
+    var delegate: sendToHomeDelegate? = nil
     
     @IBAction func titleButtonTap(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Add activity name:", message: "", preferredStyle: .alert)
@@ -53,20 +61,25 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         let confirmAction = UIAlertAction(title: "Confirm", style: .default, handler: {
             alert -> Void in
             let textField = alertController.textFields![0] // this is the text that is grabbed from text field
+            
+            //stores new name for new activity
+            self.newActivity.name = textField.text!
+            
+            print("New activity name: \(String(describing: self.newActivity.name))")
             self.navigationTitle.setTitle(textField.text, for: UIControlState.normal)
         })
-            
+        
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
             (action : UIAlertAction!) -> Void in
             
         })
         
-       
+        
         //add actions to alert sheet
         alertController.addAction(cancelAction)
         alertController.addAction(confirmAction)
-
+        
         
         self.present(alertController, animated: true, completion: nil)
         
@@ -111,22 +124,32 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     //MARK: Delegate Functions for CNContactPickerVC
     
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
-    // do something with contact
+        // do something with contact
         
         // this is for the full name
         let fullname = "\(contact.givenName) \(contact.familyName)"
         print("The selected name is: \(fullname)")
+        
+        //adds data to new activity model for prep to send back to home vc
+        newActivity.people.append(fullname)
+        print("the people in the new activity array are: \(newActivity.people)")
+        
         people.append(contact.givenName)
-        print("Collection view data array: \(people)")
+        //print("Collection view data array: \(people)")
         peopleCollection.reloadData()
         
         
         //this one is for getting first number with dashshes in it
-        let phoneNumber =  ((((contact.phoneNumbers[0] as AnyObject).value(forKey: "labelValuePair") as AnyObject).value(forKey: "value") as AnyObject).value(forKey: "stringValue")) ?? "No Number Listed" // returns string value of phone number without all the bullshit
+        //let phoneNumber =  ((((contact.phoneNumbers[0] as AnyObject).value(forKey: "labelValuePair") as AnyObject).value(forKey: "value") as AnyObject).value(forKey: "stringValue")) ?? "No Number Listed" // returns string value of phone number without all the bullshit
+        
+        //@TODO: error handle if phone number does not exist
+        let phoneNumber = contact.phoneNumbers[0].value.stringValue
         print("The selected phone num is: \(phoneNumber)")
-
-       //this is for phone number without dashes
-       //print("the selected phone number is: \((contact.phoneNumbers[0].value ).value(forKey: "digits") as! String)")
+        
+        
+        
+        //this is for phone number without dashes
+        //print("the selected phone number is: \((contact.phoneNumbers[0].value ).value(forKey: "digits") as! String)")
     }
     
     
@@ -143,7 +166,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         locationSearchTable.handleMapSearchDelegate = self
         present(resultSearchController!, animated: true, completion: nil)
     }
-
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
@@ -177,9 +200,6 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
             // Process Response
             self.processResponse(withPlacemarks: placemarks, error: error)
         }
-     
-        
-        
         
         //display
         mapView.setRegion(region, animated: true)
@@ -196,7 +216,12 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         } else {
             if let placemarks = placemarks, let placemark = placemarks.first {
                 if #available(iOS 11.0, *) {
-                    locationLabel.text = placemark.postalAddress?.street
+                    let addressString = placemark.postalAddress?.street
+                    locationLabel.text = addressString!
+                    
+                    //assign new loc string to new ativity var
+                    newActivity.locationString = addressString!
+                    print("\(newActivity.locationString)")
                 } else {
                     //fallback on earlier
                 }
@@ -215,7 +240,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-  
+        
     }
     
     
@@ -225,15 +250,16 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     }
     
     
-    /*
+    
+    
+    
      // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "addActivity" {
+//            let activeVC: ActiveViewController = segue.destination as! ActiveViewController
+//            activeVC.delegate = self as! sendToHomeDelegate
+//        }
+//    }
     
     @IBAction func privacyButtonClick(_ sender: Any) {
         let optionMenu = UIAlertController(title: nil, message: "People who can see your activity", preferredStyle: .actionSheet)
@@ -279,8 +305,19 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     
     
     
+    @IBAction func saveClick(_ sender: UIButtonX) {
+        print("New acitivity is: \(String(describing: newActivity.name))")
+        
+        //check if delegate exists
+        if delegate != nil {
+            //the delegate need to take a type of new acdtivity data, of type activity class to do the func in protocol
+            delegate?.saveAndStoreNewActivity(data: newActivity)
+        }
+        
+        self.navigationController?.popViewController(animated: true)
+    }
     
-
+    
     
     
     
@@ -316,21 +353,25 @@ extension ActiveViewController: UICollectionViewDataSource{
 
 extension ActiveViewController: HandleMapSearch{
     func dropPinZoomIn(placemark:MKPlacemark){
+        
         // cache the pin
         selectedPin = placemark
+        
         // clear existing pins
         mapView.removeAnnotations(mapView.annotations)
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         annotation.title = placemark.name
-//        if let city = placemark.locality,
-//            let state = placemark.administrativeArea {
-//            annotation.subtitle = "\(city), \(state)"
-//        }
+        
+        //add location to delegate new activity
+        newActivity.locationString = placemark.name!
+        print("new activity location: \(String(describing: placemark.name))")
         locationLabel.text = placemark.name
         mapView.addAnnotation(annotation)
+        
         let span = MKCoordinateSpanMake(0.02, 0.02)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
+        
         mapView.setRegion(region, animated: true)
     }
 }

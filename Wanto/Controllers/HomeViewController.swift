@@ -9,13 +9,13 @@
 import UIKit
 import MapKit
 
-class HomeViewController: UITableViewController {
+class HomeViewController: UITableViewController, sendToHomeDelegate {
     
     private let inactiveIdentifer = "InactiveCell"
     private let activeIdentifier = "ActiveCell"
     
-    var activities = ["Gym" , "Study", "Meeting", "Lunch" , "Party", "Study Aerodynamics", "Boof Seminar"]
-    var locations = ["Southwest Recreation Center", "Library West", "Little Hall" , "Chipotle", "The Standard", "Marston Science Library", "Uranus"]
+    var activities = [String]() //["Gym" , "Study", "Meeting", "Lunch" , "Party", "Study Aerodynamics", "Boof Seminar"]
+    var locations = [String]() //["Southwest Recreation Center", "Library West", "Little Hall" , "Chipotle", "The Standard", "Marston Science Library", "Uranus"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,14 @@ class HomeViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
+    
+    func saveAndStoreNewActivity(data: Activity) {
+        let newName = data.name
+        let newLocString = data.locationString
+        activities.append(newName)
+        locations.append(newLocString)
+        self.tableView.reloadData()
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -61,20 +69,15 @@ class HomeViewController: UITableViewController {
             
         } else {
             inactiveCell.name.text = self.activities[indexPath.row]
-            inactiveCell.location.text = self.locations[indexPath.row]
+            inactiveCell.location.text = "self.locations[indexPath.row]"
             return inactiveCell
             
         }
     }
     
-    
-    
-    
-    @IBAction func goButtonClick(_ sender: UIButtonX) {
-     print("go button ckiclked")
+    override func viewDidDisappear(_ animated: Bool) {
+        
     }
-    
-    
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
@@ -83,6 +86,14 @@ class HomeViewController: UITableViewController {
         } else {
             return tableView.dequeueReusableCell(withIdentifier: "InactiveHeader")
         }
+    }
+    
+    
+    
+    
+    
+    @IBAction func goButtonClick(_ sender: UIButtonX) {
+        print("go button ckiclked")
     }
     
     
@@ -124,13 +135,12 @@ class HomeViewController: UITableViewController {
     
     
     // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        let vc = segue.destination as! ActiveViewController
-    //        vc.selectedActivity = "boof"
-    //    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addActivity" {
+            let activeVC: ActiveViewController = segue.destination as! ActiveViewController
+            activeVC.delegate = self 
+        }
+    }
     
     
 }
