@@ -159,8 +159,16 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     @IBAction func zoomToLocClick(_ sender: Any) {
         let geoocoder = CLGeocoder()
         locationManager.startUpdatingLocation()
-        let location = locationManager.location!
         
+        let location = locationManager.location! //current user loc
+        
+        //add annotation to user loc
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location.coordinate
+        mapView.removeAnnotations(mapView.annotations) //removes any remaining annotations
+        mapView.addAnnotation(annotation)
+        
+        //zoom to the loc
         let span: MKCoordinateSpan = MKCoordinateSpanMake(0.02, 0.02)
         let userLoc: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         let region: MKCoordinateRegion = MKCoordinateRegionMake(userLoc, span)
@@ -169,12 +177,11 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
             // Process Response
             self.processResponse(withPlacemarks: placemarks, error: error)
         }
-        
-        
-    
+     
         
         
         
+        //display
         mapView.setRegion(region, animated: true)
         locationManager.stopUpdatingLocation()
         
@@ -191,7 +198,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
                 if #available(iOS 11.0, *) {
                     locationLabel.text = placemark.postalAddress?.street
                 } else {
-                    // Fallback on earlier versions
+                    //fallback on earlier
                 }
             } else {
                 locationLabel.text = "No Matching Addresses Found"
@@ -268,6 +275,16 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         // 5
         self.present(optionMenu, animated: true, completion: nil)
     }
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
 }
 
 
@@ -291,6 +308,10 @@ extension ActiveViewController: UICollectionViewDataSource{
             return cell
         }
     }
+    
+    
+    
+    
 }
 
 extension ActiveViewController: HandleMapSearch{
@@ -313,3 +334,18 @@ extension ActiveViewController: HandleMapSearch{
         mapView.setRegion(region, animated: true)
     }
 }
+
+//extension ActiveViewController: MKMapViewDelegate {
+//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
+//        if annotation is MKUserLocation {
+//            //return nil so map view draws "blue dot" for standard user location
+//            return nil
+//        }
+//        let reuseId = "pin"
+//        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+//        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+//        pinView?.canShowCallout = false
+//        return pinView
+//    }
+//} 
+
