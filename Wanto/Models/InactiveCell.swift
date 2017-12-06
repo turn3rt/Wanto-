@@ -23,6 +23,7 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
         let annotation = MKPointAnnotation()
         annotation.coordinate = activity.locationCoords
         //annotation.title = ""
+        mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotation(annotation)
         let span = MKCoordinateSpanMake(0.025, 0.05)
         let region = MKCoordinateRegionMake(annotation.coordinate, span)

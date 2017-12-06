@@ -17,10 +17,13 @@ protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark)
 }
 
-protocol saveDelegate {
+protocol saveNewDelegate {
     func saveNewActivity(data: Activity)
 }
 
+protocol saveDelegate{
+    func saveActivity(data: Activity)
+}
 class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
     
     private let personIdentifier = "Person"
@@ -45,7 +48,9 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
-    var delegate: saveDelegate? = nil
+    var newSaveDelegate: saveNewDelegate? = nil
+    var editSaveDelegate: saveDelegate? = nil
+    
     
     @IBAction func titleButtonTap(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Add activity name:", message: "", preferredStyle: .alert)
@@ -323,9 +328,13 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         print("New acitivity is: \(String(describing: newActivity.name))")
         
         //check if delegate exists
-        if delegate != nil {
+        if newSaveDelegate != nil {
             //the delegate need to take a type of new acdtivity data, of type activity class to do the func in protocol
-            delegate?.saveNewActivity(data: newActivity)
+            newSaveDelegate?.saveNewActivity(data: newActivity)
+        }
+        
+        if editSaveDelegate != nil {
+            editSaveDelegate?.saveActivity(data: newActivity)
         }
         
         self.navigationController?.popViewController(animated: true)

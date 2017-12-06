@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class HomeViewController: UITableViewController, saveDelegate {
+class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     
     private let inactiveIdentifer = "InactiveCell"
     private let activeIdentifier = "ActiveCell"
@@ -38,6 +38,11 @@ class HomeViewController: UITableViewController, saveDelegate {
     
     func saveNewActivity(data: Activity) {
         inactiveActivities.append(data)
+        self.tableView.reloadData()
+    }
+    func saveActivity(data: Activity) {
+        inactiveActivities[(self.tableView.indexPathForSelectedRow!.row)] = data
+        print("edited shit:" , data)
         self.tableView.reloadData()
     }
     
@@ -139,13 +144,14 @@ class HomeViewController: UITableViewController, saveDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addActivity" {
             let activeVC = segue.destination as! ActiveViewController
-            activeVC.delegate = self 
+            activeVC.newSaveDelegate = self
         }
         
         if segue.identifier == "selectedInactiveCell"{
             let selectedCellIndex = self.tableView.indexPathForSelectedRow!.row
             
             let inactiveVC = segue.destination as! ActiveViewController
+            inactiveVC.editSaveDelegate = self
             inactiveVC.newActivity = inactiveActivities[selectedCellIndex]
             
         }
