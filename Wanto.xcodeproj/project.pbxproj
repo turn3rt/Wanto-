@@ -14,6 +14,8 @@
 		B311CF491FCFFB3500730CDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B311CF471FCFFB3500730CDA /* LaunchScreen.storyboard */; };
 		B311CF541FCFFB3500730CDA /* WantoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF531FCFFB3500730CDA /* WantoTests.swift */; };
 		B311CF5F1FCFFB3600730CDA /* WantoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF5E1FCFFB3600730CDA /* WantoUITests.swift */; };
+		B322810C1FD89CAC005251FC /* activitySettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B322810B1FD89CAC005251FC /* activitySettingsController.swift */; };
+		B322810E1FD8AC56005251FC /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B322810D1FD8AC56005251FC /* PeopleCell.swift */; };
 		B3288B0E1FD5E2A200049AE9 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3288B0D1FD5E2A200049AE9 /* LocationSearchTable.swift */; };
 		B3288B121FD60A4100049AE9 /* target@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3288B111FD60A4100049AE9 /* target@2x.png */; };
 		B32B137B1FD05503005EC45E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B137A1FD05503005EC45E /* Helper.swift */; };
@@ -70,6 +72,8 @@
 		B311CF5A1FCFFB3600730CDA /* WantoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WantoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B311CF5E1FCFFB3600730CDA /* WantoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantoUITests.swift; sourceTree = "<group>"; };
 		B311CF601FCFFB3600730CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B322810B1FD89CAC005251FC /* activitySettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activitySettingsController.swift; sourceTree = "<group>"; };
+		B322810D1FD8AC56005251FC /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
 		B3288B0D1FD5E2A200049AE9 /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		B3288B111FD60A4100049AE9 /* target@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "target@2x.png"; sourceTree = "<group>"; };
 		B32B137A1FD05503005EC45E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -123,8 +127,7 @@
 		B311CF301FCFFB3500730CDA = {
 			isa = PBXGroup;
 			children = (
-				B34249B31FD8581600B7451B /* Person.swift */,
-				B3724CEA1FD3D6AD0034A49A /* Activity.swift */,
+				B322810B1FD89CAC005251FC /* activitySettingsController.swift */,
 				B311CF3B1FCFFB3500730CDA /* Wanto */,
 				B311CF521FCFFB3500730CDA /* WantoTests */,
 				B311CF5D1FCFFB3600730CDA /* WantoUITests */,
@@ -218,10 +221,13 @@
 		B3D4B4601FD1D7E2009CE92E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B34249B31FD8581600B7451B /* Person.swift */,
+				B3724CEA1FD3D6AD0034A49A /* Activity.swift */,
 				B32B137E1FD05656005EC45E /* InactiveCell.swift */,
 				B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */,
 				B3693D401FD1DDED0086D4B9 /* FeedCell.swift */,
 				B32B13971FD07EEA005EC45E /* PersonCell.swift */,
+				B322810D1FD8AC56005251FC /* PeopleCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -379,7 +385,9 @@
 				B32B13961FD07DC7005EC45E /* ActiveViewController.swift in Sources */,
 				B3693D451FD1DF8F0086D4B9 /* FeedController.swift in Sources */,
 				B3693D411FD1DDED0086D4B9 /* FeedCell.swift in Sources */,
+				B322810E1FD8AC56005251FC /* PeopleCell.swift in Sources */,
 				B32B13981FD07EEA005EC45E /* PersonCell.swift in Sources */,
+				B322810C1FD89CAC005251FC /* activitySettingsController.swift in Sources */,
 				B32B137D1FD05638005EC45E /* HomeViewController.swift in Sources */,
 				B32B138C1FD064F1005EC45E /* UIImageViewX.swift in Sources */,
 				B3288B0E1FD5E2A200049AE9 /* LocationSearchTable.swift in Sources */,

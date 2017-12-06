@@ -273,6 +273,12 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "activitySettings" {
+            let settingsVC = segue.destination as! activitySettingsController
+            settingsVC.activity = self.newActivity
+            
+        }    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
