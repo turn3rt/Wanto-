@@ -15,6 +15,8 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     private let activeIdentifier = "ActiveCell"
     
     var inactiveActivities = [Activity]() //["Gym" , "Study", "Meeting", "Lunch" , "Party", "Study Aerodynamics", "Boof Seminar"]
+    var activeActivies = [Activity]()
+    
     var locations = [String]() //["Southwest Recreation Center", "Library West", "Little Hall" , "Chipotle", "The Standard", "Marston Science Library", "Uranus"]
     
     
@@ -87,11 +89,23 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
-        if section == 0 {
+        if inactiveActivities.count == 0{
+            return nil
+        }
+        
+        if section == 0 && activeActivies.count != 0 {
             return tableView.dequeueReusableCell(withIdentifier: "ActiveHeader")
-        } else {
+        }
+        if section == 1 {
             return tableView.dequeueReusableCell(withIdentifier: "InactiveHeader")
         }
+        return nil
+        
+//        if section == 0 {
+//            return tableView.dequeueReusableCell(withIdentifier: "ActiveHeader")
+//        } else {
+//            return tableView.dequeueReusableCell(withIdentifier: "InactiveHeader")
+//        }
     }
     
     
