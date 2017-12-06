@@ -69,6 +69,8 @@ class HomeViewController: UITableViewController, saveDelegate {
         } else {
             inactiveCell.name.text = self.inactiveActivities[indexPath.row].name
             inactiveCell.location.text = self.inactiveActivities[indexPath.row].locationString
+            inactiveCell.activity = self.inactiveActivities[indexPath.row]
+            inactiveCell.showLocInMiniMap(coordinates: inactiveActivities[indexPath.row].locationCoords)
             return inactiveCell
             
         }

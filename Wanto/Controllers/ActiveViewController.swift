@@ -170,7 +170,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
         
-        let span: MKCoordinateSpan = MKCoordinateSpanMake(0.02, 0.02)
+        let span: MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
         let userLoc: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         let region: MKCoordinateRegion = MKCoordinateRegionMake(userLoc, span)
         
@@ -252,7 +252,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
             annotation.coordinate = newActivity.locationCoords
             annotation.title = newActivity.locationString
             mapView.addAnnotation(annotation)
-            let span = MKCoordinateSpanMake(0.02, 0.02)
+            let span = MKCoordinateSpanMake(0.01, 0.01)
             let region = MKCoordinateRegionMake(annotation.coordinate, span)
             
             mapView.setRegion(region, animated: true)
