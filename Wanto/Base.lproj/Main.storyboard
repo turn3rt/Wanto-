@@ -2448,7 +2448,7 @@
                             <rect key="frame" x="128" y="2" width="119" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                            <state key="normal" title="Add Name..."/>
+                            <state key="normal" title="Add name..."/>
                             <connections>
                                 <action selector="titleButtonTap:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="XVa-nf-arn"/>
                             </connections>

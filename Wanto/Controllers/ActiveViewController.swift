@@ -30,8 +30,8 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     var newActivity = Activity(name: "Add name...",
                                privacySetting: String(),
                                people: [Person](),
-                               locationString: "Add location..."
-                               //locPlacemark: MKPlacemark()
+                               locationString: "Add location...",
+                               locationCoords: CLLocationCoordinate2D()
                                 )
     
     let locationManager = CLLocationManager()
@@ -202,7 +202,10 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         
         //display
         mapView.setRegion(region, animated: true)
+        
+        
         locationManager.stopUpdatingLocation()
+        newActivity.locationCoords = location.coordinate
         
     }
     
@@ -213,13 +216,16 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
             locationLabel.text = "Unable to Find Address for Location"
             
         } else {
-            if let placemarks = placemarks, let placemark = placemarks.first {
+            if let placemarks = placemarks,
+                let placemark = placemarks.first {
                 if #available(iOS 11.0, *) {
                     let addressString = placemark.postalAddress?.street
                     locationLabel.text = addressString!
                     
                     //assign new loc string to new activity var
                     newActivity.locationString = addressString!
+                    
+                    
                     print("\(newActivity.locationString)")
                 } else {
                     //fallback on earlier
@@ -241,12 +247,24 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         
         if newActivity.locationString != "Add location..." {
             locationLabel.text = newActivity.locationString
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = newActivity.locationCoords
+            annotation.title = newActivity.locationString
+            mapView.addAnnotation(annotation)
+            let span = MKCoordinateSpanMake(0.02, 0.02)
+            let region = MKCoordinateRegionMake(annotation.coordinate, span)
+            
+            mapView.setRegion(region, animated: true)
+
+        } else {
+            locationManager.startUpdatingLocation()
         }
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        //locationManager.startUpdatingLocation()
         
     }
     
@@ -361,6 +379,8 @@ extension ActiveViewController: HandleMapSearch{
         
         //add location to delegate new activity
         newActivity.locationString = placemark.name!
+        newActivity.locationCoords = placemark.coordinate
+        
         print("new activity location: \(String(describing: placemark.name))")
         locationLabel.text = placemark.name
         mapView.addAnnotation(annotation)
