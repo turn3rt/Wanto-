@@ -17,8 +17,8 @@ protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark)
 }
 
-protocol sendToHomeDelegate {
-    func saveAndStoreNewActivity(data: Activity)
+protocol saveDelegate {
+    func saveNewActivity(data: Activity)
 }
 
 class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
@@ -30,6 +30,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     var newActivity = Activity(name: String(), people: [String](), locationString: String())
     
     let locationManager = CLLocationManager()
+    var locString = "Add location..."
     
     @IBOutlet weak var peopleCollection: UICollectionView!
     @IBOutlet weak var navigationTitle: UIButton!
@@ -43,10 +44,9 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     
     
     
-    
     var people = [String]() //["Sally", "Alvaro", "Quinn", "Natalie", "Fernanda", "Cole", "Nick", "Ian", "Reid"] - test data
     
-    var delegate: sendToHomeDelegate? = nil
+    var delegate: saveDelegate? = nil
     
     @IBAction func titleButtonTap(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Add activity name:", message: "", preferredStyle: .alert)
@@ -236,6 +236,10 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if locString != "Add location..." {
+            locationLabel.text = locString
+        }
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -249,17 +253,6 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-    
-    
-     // MARK: - Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "addActivity" {
-//            let activeVC: ActiveViewController = segue.destination as! ActiveViewController
-//            activeVC.delegate = self as! sendToHomeDelegate
-//        }
-//    }
     
     @IBAction func privacyButtonClick(_ sender: Any) {
         let optionMenu = UIAlertController(title: nil, message: "People who can see your activity", preferredStyle: .actionSheet)
@@ -311,7 +304,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         //check if delegate exists
         if delegate != nil {
             //the delegate need to take a type of new acdtivity data, of type activity class to do the func in protocol
-            delegate?.saveAndStoreNewActivity(data: newActivity)
+            delegate?.saveNewActivity(data: newActivity)
         }
         
         self.navigationController?.popViewController(animated: true)

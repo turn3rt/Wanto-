@@ -168,7 +168,7 @@
                                     <outlet property="location" destination="RhV-pR-tD0" id="o58-Bs-cKr"/>
                                     <outlet property="mapView" destination="b6g-rG-Shm" id="88c-wT-f7e"/>
                                     <outlet property="name" destination="HPA-c0-GvP" id="AUg-l5-sel"/>
-                                    <segue destination="Oed-Pc-U4y" kind="show" id="4yF-WW-CYQ"/>
+                                    <segue destination="Oed-Pc-U4y" kind="show" identifier="selectedInactiveCell" id="4yF-WW-CYQ"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ActiveCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActiveCell" rowHeight="110" id="Gwy-Kj-ons" customClass="ActiveCell" customModule="Wanto" customModuleProvider="target">
@@ -2503,6 +2503,6 @@
         <image name="target.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TrG-aZ-ToP"/>
+        <segue reference="4yF-WW-CYQ"/>
     </inferredMetricsTieBreakers>
 </document>

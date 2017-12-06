@@ -9,12 +9,12 @@
 import UIKit
 import MapKit
 
-class HomeViewController: UITableViewController, sendToHomeDelegate {
+class HomeViewController: UITableViewController, saveDelegate {
     
     private let inactiveIdentifer = "InactiveCell"
     private let activeIdentifier = "ActiveCell"
     
-    var activities = [String]() //["Gym" , "Study", "Meeting", "Lunch" , "Party", "Study Aerodynamics", "Boof Seminar"]
+    var inactiveActivities = [String]() //["Gym" , "Study", "Meeting", "Lunch" , "Party", "Study Aerodynamics", "Boof Seminar"]
     var locations = [String]() //["Southwest Recreation Center", "Library West", "Little Hall" , "Chipotle", "The Standard", "Marston Science Library", "Uranus"]
     
     override func viewDidLoad() {
@@ -34,10 +34,10 @@ class HomeViewController: UITableViewController, sendToHomeDelegate {
     
     // MARK: - Table view data source
     
-    func saveAndStoreNewActivity(data: Activity) {
+    func saveNewActivity(data: Activity) {
         let newName = data.name
         let newLocString = data.locationString
-        activities.append(newName)
+        inactiveActivities.append(newName)
         locations.append(newLocString)
         self.tableView.reloadData()
     }
@@ -47,11 +47,11 @@ class HomeViewController: UITableViewController, sendToHomeDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Number of Activities: \(activities.count)")
+        print("Number of Activities: \(inactiveActivities.count)")
         if section == 0 {
-            return activities.count
+            return 0
         } else {
-            return activities.count
+            return inactiveActivities.count
         }
     }
     
@@ -62,14 +62,14 @@ class HomeViewController: UITableViewController, sendToHomeDelegate {
         let activeCell = tableView.dequeueReusableCell(withIdentifier: activeIdentifier, for: indexPath) as! ActiveCell
         
         if indexPath.section == 0 {
-            activeCell.name.text = self.activities[indexPath.row]
-            activeCell.location.text = self.locations[indexPath.row]
+            activeCell.name.text = "self.inactiveActivities[indexPath.row]"
+            activeCell.location.text = "self.locations[indexPath.row]"
             
             return activeCell
             
         } else {
-            inactiveCell.name.text = self.activities[indexPath.row]
-            inactiveCell.location.text = "self.locations[indexPath.row]"
+            inactiveCell.name.text = self.inactiveActivities[indexPath.row]
+            inactiveCell.location.text = self.locations[indexPath.row]
             return inactiveCell
             
         }
@@ -137,8 +137,17 @@ class HomeViewController: UITableViewController, sendToHomeDelegate {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addActivity" {
-            let activeVC: ActiveViewController = segue.destination as! ActiveViewController
+            let activeVC = segue.destination as! ActiveViewController
             activeVC.delegate = self 
+        }
+        
+        if segue.identifier == "selectedInactiveCell"{
+            let selectedCellIndex = tableView.indexPathForSelectedRow!.row
+            let selectedCellName = inactiveActivities[selectedCellIndex]
+            
+            let inactiveVC = segue.destination as! ActiveViewController
+            inactiveVC.navigationTitle.setTitle(selectedCellName, for: .normal) //USE SET TITLE TO FUCKING SET A BUTTON NAME
+            inactiveVC.locString = locations[tableView.indexPathForSelectedRow!.row]
         }
     }
     
