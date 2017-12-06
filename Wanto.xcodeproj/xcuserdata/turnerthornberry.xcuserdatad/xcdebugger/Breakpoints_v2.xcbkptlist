@@ -9,106 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Wanto/Controllers/ActiveViewController.swift"
-            timestampString = "534228285.428589"
+            filePath = "Wanto/Controllers/HomeViewController.swift"
+            timestampString = "534273859.198572"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "saveDelegate"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Wanto.ActiveViewController.__deallocating_deinit"
-                  moduleName = "Wanto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/turnerthornberry/Documents/Wanto/Wanto/Controllers/ActiveViewController.swift"
-                  timestampString = "534227263.10436"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Wanto.ActiveViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Wanto.ActiveViewController"
-                  moduleName = "Wanto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/turnerthornberry/Documents/Wanto/Wanto/Controllers/ActiveViewController.swift"
-                  timestampString = "534227263.107544"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Wanto.ActiveViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Wanto.ActiveViewController"
-                  moduleName = "Wanto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/turnerthornberry/Documents/Wanto/Wanto/Controllers/ActiveViewController.swift"
-                  timestampString = "534227263.110741"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "67">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Wanto.ActiveViewController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Wanto.ActiveViewController&gt;"
-                  moduleName = "Wanto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/turnerthornberry/Documents/Wanto/Wanto/Controllers/ActiveViewController.swift"
-                  timestampString = "534227263.114162"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Wanto.ActiveViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Wanto.ActiveViewController&gt;"
-                  moduleName = "Wanto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/turnerthornberry/Documents/Wanto/Wanto/Controllers/ActiveViewController.swift"
-                  timestampString = "534227263.117163"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wanto/Controllers/ActiveViewController.swift"
-            timestampString = "534228285.428942"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "processResponse(withPlacemarks:error:)"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -118,76 +25,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Wanto/Controllers/ActiveViewController.swift"
-            timestampString = "534228285.429204"
+            filePath = "Wanto/Controllers/HomeViewController.swift"
+            timestampString = "534273859.199009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "ActiveViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Wanto.ActiveViewController.delegate.getter : Swift.Optional&lt;Wanto.sendToHomeDelegate&gt;"
-                  moduleName = "Wanto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/turnerthornberry/Documents/Wanto/Wanto/Controllers/ActiveViewController.swift"
-                  timestampString = "534227263.15559"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "193">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Wanto.ActiveViewController.delegate.setter : Swift.Optional&lt;Wanto.sendToHomeDelegate&gt;"
-                  moduleName = "Wanto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/turnerthornberry/Documents/Wanto/Wanto/Controllers/ActiveViewController.swift"
-                  timestampString = "534227263.158794"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "505">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Wanto.ActiveViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Wanto.ActiveViewController"
-                  moduleName = "Wanto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/turnerthornberry/Documents/Wanto/Wanto/Controllers/ActiveViewController.swift"
-                  timestampString = "534227263.162254"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "1837">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Wanto.ActiveViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Wanto.ActiveViewController&gt;"
-                  moduleName = "Wanto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/turnerthornberry/Documents/Wanto/Wanto/Controllers/ActiveViewController.swift"
-                  timestampString = "534227263.165711"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "1816">
-               </Location>
-            </Locations>
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -197,25 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wanto/Controllers/HomeViewController.swift"
-            timestampString = "534228285.429456"
+            timestampString = "534273859.199298"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wanto/Controllers/HomeViewController.swift"
-            timestampString = "534228285.429685"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156">
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -27,10 +27,14 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     private let noPersonIdentifier = "NoPerson"
     
     //this is the activity that gets stored and passsed back thorugh the delegate func
-    var newActivity = Activity(name: String(), people: [String](), locationString: String())
+    var newActivity = Activity(name: "Add name...",
+                               privacySetting: String(),
+                               people: [Person](),
+                               locationString: "Add location..."
+                               //locPlacemark: MKPlacemark()
+                                )
     
     let locationManager = CLLocationManager()
-    var locString = "Add location..."
     
     @IBOutlet weak var peopleCollection: UICollectionView!
     @IBOutlet weak var navigationTitle: UIButton!
@@ -40,11 +44,6 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     @IBOutlet weak var mapLocationButton: UIButton!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
-    
-    
-    
-    
-    var people = [String]() //["Sally", "Alvaro", "Quinn", "Natalie", "Fernanda", "Cole", "Nick", "Ian", "Reid"] - test data
     
     var delegate: saveDelegate? = nil
     
@@ -125,17 +124,17 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         // do something with contact
+        let newPerson = Person(firstName: contact.givenName,
+                               lastName: contact.familyName)
         
         // this is for the full name
         let fullname = "\(contact.givenName) \(contact.familyName)"
         print("The selected name is: \(fullname)")
         
-        //adds data to new activity model for prep to send back to home vc
-        newActivity.people.append(fullname)
+        //appends data to new activity model for prep to send back to home vc
+        newActivity.people.append(newPerson)
         print("the people in the new activity array are: \(newActivity.people)")
         
-        people.append(contact.givenName)
-        //print("Collection view data array: \(people)")
         peopleCollection.reloadData()
         
         
@@ -219,7 +218,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
                     let addressString = placemark.postalAddress?.street
                     locationLabel.text = addressString!
                     
-                    //assign new loc string to new ativity var
+                    //assign new loc string to new activity var
                     newActivity.locationString = addressString!
                     print("\(newActivity.locationString)")
                 } else {
@@ -236,8 +235,12 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if locString != "Add location..." {
-            locationLabel.text = locString
+        if newActivity.name != "Add name..."{
+            navigationTitle.setTitle(newActivity.name, for: .normal)
+        }
+        
+        if newActivity.locationString != "Add location..." {
+            locationLabel.text = newActivity.locationString
         }
         
         locationManager.delegate = self
@@ -320,21 +323,21 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
 
 extension ActiveViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("Number of People: \(people.count)")
-        if people.count == 0{
+        print("Number of People in \(newActivity.name): \(newActivity.people.count)")
+        if newActivity.people.count == 0{
             return 1
         } else {
-            return people.count
+            return newActivity.people.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if people.count == 0 {
+        if newActivity.people.count == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: noPersonIdentifier, for: indexPath)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: personIdentifier, for: indexPath) as! PersonCell
-            cell.name.text = people[indexPath.row]
+            cell.name.text = newActivity.people[indexPath.row].firstName
             return cell
         }
     }

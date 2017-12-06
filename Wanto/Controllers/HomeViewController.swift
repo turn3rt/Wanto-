@@ -14,8 +14,10 @@ class HomeViewController: UITableViewController, saveDelegate {
     private let inactiveIdentifer = "InactiveCell"
     private let activeIdentifier = "ActiveCell"
     
-    var inactiveActivities = [String]() //["Gym" , "Study", "Meeting", "Lunch" , "Party", "Study Aerodynamics", "Boof Seminar"]
+    var inactiveActivities = [Activity]() //["Gym" , "Study", "Meeting", "Lunch" , "Party", "Study Aerodynamics", "Boof Seminar"]
     var locations = [String]() //["Southwest Recreation Center", "Library West", "Little Hall" , "Chipotle", "The Standard", "Marston Science Library", "Uranus"]
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +37,7 @@ class HomeViewController: UITableViewController, saveDelegate {
     // MARK: - Table view data source
     
     func saveNewActivity(data: Activity) {
-        let newName = data.name
-        let newLocString = data.locationString
-        inactiveActivities.append(newName)
-        locations.append(newLocString)
+        inactiveActivities.append(data)
         self.tableView.reloadData()
     }
     
@@ -68,8 +67,8 @@ class HomeViewController: UITableViewController, saveDelegate {
             return activeCell
             
         } else {
-            inactiveCell.name.text = self.inactiveActivities[indexPath.row]
-            inactiveCell.location.text = self.locations[indexPath.row]
+            inactiveCell.name.text = self.inactiveActivities[indexPath.row].name
+            inactiveCell.location.text = self.inactiveActivities[indexPath.row].locationString
             return inactiveCell
             
         }
@@ -142,12 +141,11 @@ class HomeViewController: UITableViewController, saveDelegate {
         }
         
         if segue.identifier == "selectedInactiveCell"{
-            let selectedCellIndex = tableView.indexPathForSelectedRow!.row
-            let selectedCellName = inactiveActivities[selectedCellIndex]
+            let selectedCellIndex = self.tableView.indexPathForSelectedRow!.row
             
             let inactiveVC = segue.destination as! ActiveViewController
-            inactiveVC.navigationTitle.setTitle(selectedCellName, for: .normal) //USE SET TITLE TO FUCKING SET A BUTTON NAME
-            inactiveVC.locString = locations[tableView.indexPathForSelectedRow!.row]
+            inactiveVC.newActivity = inactiveActivities[selectedCellIndex]
+            
         }
     }
     
