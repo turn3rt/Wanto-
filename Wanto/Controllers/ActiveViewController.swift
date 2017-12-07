@@ -139,38 +139,42 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         
-        //check for repeats in people array
-        //@TODO: 
-        // do something with contact
-        let newPerson = Person(firstName: contact.givenName,
-                               lastName: contact.familyName,
-                               profileImage: #imageLiteral(resourceName: "capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png") )
-        
-        if contact.imageDataAvailable == true{
-            newPerson.profileImage = UIImage(data: contact.imageData!)!
+        if contact.phoneNumbers.first?.value.stringValue != nil{
+            //@TODO: check for repeats in people array
+            
+            // do something with contact
+            let newPerson = Person(firstName: contact.givenName,
+                                   lastName: contact.familyName,
+                                   profileImage: #imageLiteral(resourceName: "capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png") )
+            
+            if contact.imageDataAvailable == true{
+                newPerson.profileImage = UIImage(data: contact.imageData!)!
+            }
+            
+            // this is for the full name
+            let fullname = "\(contact.givenName) \(contact.familyName)"
+            print("The selected name is: \(fullname)")
+            let phoneNum = contact.phoneNumbers.first?.value.stringValue
+            print("The selected phone num is: \(phoneNum!)")
+            
+            //appends data to new activity model for prep to send back to home vc
+            newActivity.people.append(newPerson)
+            print("the people in the new activity array are: \(newActivity.people)")
+            
+            peopleCollection.reloadData()
+            
+        } else {
+            print("error has no number")
+            let alertController = UIAlertController(title: "Error: Person has no number!", message: "", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: {
+                alert -> Void in
+            })
+            //add actions to alert sheet
+            //alertController.addAction(confirmAction)
+            picker.present(alertController, animated: true, completion: nil)
+            //contactpicker.present(alertController, animated: true, completion: nil)
+            //the code executes here correctly, but it does not present the alertController
         }
-        
-        // this is for the full name
-        let fullname = "\(contact.givenName) \(contact.familyName)"
-        print("The selected name is: \(fullname)")
-        
-        
-        //appends data to new activity model for prep to send back to home vc
-        newActivity.people.append(newPerson)
-        print("the people in the new activity array are: \(newActivity.people)")
-        
-        peopleCollection.reloadData()
-        
-        
-        //this one is for getting first number with dashshes in it
-        //let phoneNumber =  ((((contact.phoneNumbers[0] as AnyObject).value(forKey: "labelValuePair") as AnyObject).value(forKey: "value") as AnyObject).value(forKey: "stringValue")) ?? "No Number Listed" // returns string value of phone number without all the bullshit
-        
-        //@TODO: error handle if phone number does not exist
-        let phoneNumber = contact.phoneNumbers[0].value.stringValue
-        print("The selected phone num is: \(phoneNumber)")
-        
-        
-        
         //this is for phone number without dashes
         //print("the selected phone number is: \((contact.phoneNumbers[0].value ).value(forKey: "digits") as! String)")
     }
