@@ -61,13 +61,21 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        
+        
+        if activeActivies.count != 0 {
+            return 2
+        }
+        if inactiveActivities.count != 0 {
+            return 1
+        }
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Number of Activities: \(inactiveActivities.count)")
         if section == 0 {
-            return 0
+            return activeActivies.count
         } else {
             return inactiveActivities.count
         }
