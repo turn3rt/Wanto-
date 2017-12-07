@@ -143,11 +143,17 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         //@TODO: 
         // do something with contact
         let newPerson = Person(firstName: contact.givenName,
-                               lastName: contact.familyName)
+                               lastName: contact.familyName,
+                               profileImage: #imageLiteral(resourceName: "capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png") )
+        
+        if contact.imageDataAvailable == true{
+            newPerson.profileImage = UIImage(data: contact.imageData!)!
+        }
         
         // this is for the full name
         let fullname = "\(contact.givenName) \(contact.familyName)"
         print("The selected name is: \(fullname)")
+        
         
         //appends data to new activity model for prep to send back to home vc
         newActivity.people.append(newPerson)
@@ -475,6 +481,7 @@ extension ActiveViewController: UICollectionViewDataSource{
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: personIdentifier, for: indexPath) as! PersonCell
             cell.name.text = newActivity.people[indexPath.row].firstName
+            cell.profileImage.image = newActivity.people[indexPath.row].profileImage
             return cell
         }
     }

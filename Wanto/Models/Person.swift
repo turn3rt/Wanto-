@@ -7,17 +7,19 @@
 //
 
 import Foundation
+import UIKit
 
 class Person{
     var firstName: String
     var lastName: String
-   // var profileImage:
+    var profileImage: UIImage
    // var phoneNum: [String]
  
     
-    init(firstName: String,  lastName: String) {
+    init(firstName: String,  lastName: String, profileImage: UIImage) {
         self.firstName = firstName
         self.lastName = lastName
+        self.profileImage = profileImage
     }
 
 }

@@ -2265,7 +2265,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sally.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1At-hj-51R" customClass="UIImageViewX" customModule="Wanto" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png" translatesAutoresizingMaskIntoConstraints="NO" id="1At-hj-51R" customClass="UIImageViewX" customModule="Wanto" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="64" id="Opo-ze-t84"/>
@@ -2299,6 +2299,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="name" destination="8Zw-gI-zt6" id="yLc-QZ-nwx"/>
+                                            <outlet property="profileImage" destination="1At-hj-51R" id="5Pn-9T-J2a"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="NoPerson" reuseIdentifier="NoPerson" id="obi-Ze-7KM">
@@ -2724,6 +2725,7 @@
     </scenes>
     <resources>
         <image name="Sally.jpg" width="3024" height="4032"/>
+        <image name="capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png" width="4256" height="2832"/>
         <image name="explore.png" width="32" height="32"/>
         <image name="home.png" width="32" height="32"/>
         <image name="multiple-users-silhouette.png" width="32" height="32"/>
