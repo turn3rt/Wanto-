@@ -24,7 +24,17 @@ protocol saveNewDelegate {
 protocol saveDelegate{
     func saveActivity(data: Activity)
 }
-class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
+class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate, personDeleteDelegate {
+    
+    
+    
+    //MARK: Protocol Stubs
+    func deletePerson(atIndexPath: Int) {
+        print("activity index to remove: " , atIndexPath)
+        newActivity.people.remove(at: atIndexPath)
+        self.peopleCollection.reloadData()
+    }
+    
     
     private let personIdentifier = "Person"
     private let noPersonIdentifier = "NoPerson"
@@ -277,6 +287,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         if segue.identifier == "activitySettings" {
             let settingsVC = segue.destination as! activitySettingsController
             settingsVC.activity = self.newActivity
+            settingsVC.deleteDelegate = self
             
         }    }
     

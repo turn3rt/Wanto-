@@ -9,8 +9,14 @@
 import UIKit
 import MapKit
 
+protocol personDeleteDelegate {
+    func deletePerson(atIndexPath: Int)
+}
+
 class activitySettingsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    var deleteDelegate: personDeleteDelegate? = nil
     
     
     var activity = Activity(name: String(), privacySetting: String(), people: [Person](), locationString: String(), locationCoords: CLLocationCoordinate2D())
@@ -86,5 +92,18 @@ class activitySettingsController: UIViewController, UITableViewDelegate, UITable
         cell.nameLabel.text = first + " " + last
         return cell
         
+    }
+    
+     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            //activity.people.remove(at: indexPath.row)
+            deleteDelegate?.deletePerson(atIndexPath: indexPath.row)
+            self.tableView.reloadData()
+            
+        }
     }
 }

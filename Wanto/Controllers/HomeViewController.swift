@@ -11,6 +11,20 @@ import MapKit
 
 class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     
+    //MARK: Protocol stubs
+    func saveNewActivity(data: Activity) {
+        inactiveActivities.append(data)
+        self.tableView.reloadData()
+    }
+    func saveActivity(data: Activity) {
+        inactiveActivities[(self.tableView.indexPathForSelectedRow!.row)] = data
+        print("edited shit:" , data)
+        self.tableView.reloadData()
+    }
+    
+    
+    
+    
     private let inactiveIdentifer = "InactiveCell"
     private let activeIdentifier = "ActiveCell"
     private let tutorialHeader = "TutorialHeader"
@@ -49,17 +63,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
-    
-    func saveNewActivity(data: Activity) {
-        inactiveActivities.append(data)
-        self.tableView.reloadData()
-    }
-    func saveActivity(data: Activity) {
-        inactiveActivities[(self.tableView.indexPathForSelectedRow!.row)] = data
-        print("edited shit:" , data)
-        self.tableView.reloadData()
-    }
+
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
