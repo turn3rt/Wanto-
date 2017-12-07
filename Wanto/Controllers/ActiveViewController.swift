@@ -332,18 +332,106 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     
     @IBAction func saveClick(_ sender: UIButtonX) {
         print("New acitivity is: \(String(describing: newActivity.name))")
-        
-        //check if delegate exists
-        if newSaveDelegate != nil {
-            //the delegate need to take a type of new acdtivity data, of type activity class to do the func in protocol
-            newSaveDelegate?.saveNewActivity(data: newActivity)
+        if newActivity.name == "Add name..."{
+            let alertController = UIAlertController(title: "Add activity name!", message: "", preferredStyle: .alert)
+            
+            //add text field
+            alertController.addTextField { (textField : UITextField!) -> Void in
+                textField.placeholder = "Enter name..."
+            }
+            
+            
+            //change title to entered text
+            let confirmAction = UIAlertAction(title: "Confirm", style: .default, handler: {
+                alert -> Void in
+                let textField = alertController.textFields![0] // this is the text that is grabbed from text field
+                
+                //stores new name for new activity
+                self.newActivity.name = textField.text!
+                
+                print("New activity name: \(String(describing: self.newActivity.name))")
+                self.navigationTitle.setTitle(textField.text, for: UIControlState.normal)
+            })
+            
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+                (action : UIAlertAction!) -> Void in
+                
+            })
+            
+            
+            //add actions to alert sheet
+            alertController.addAction(cancelAction)
+            alertController.addAction(confirmAction)
+            
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+    
+        if newActivity.locationString == "Add location..."{
+            let alertController = UIAlertController(title: "Add location!", message: "", preferredStyle: .alert)
+            
+            //add text field
+           
+            
+            //change title to entered text
+            let confirmAction = UIAlertAction(title: "Confirm", style: .default, handler: {
+                alert -> Void in
+            })
+            
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+                (action : UIAlertAction!) -> Void in
+                
+            })
+            
+            
+            //add actions to alert sheet
+            alertController.addAction(cancelAction)
+            alertController.addAction(confirmAction)
+            
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+        if newActivity.people.count == 0 {
+            let alertController = UIAlertController(title: "Add at least one person!", message: "", preferredStyle: .alert)
+      
+            let confirmAction = UIAlertAction(title: "Confirm", style: .default, handler: {
+                alert -> Void in
+            })
+            
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+                (action : UIAlertAction!) -> Void in
+                
+            })
+            
+            
+            //add actions to alert sheet
+            alertController.addAction(cancelAction)
+            alertController.addAction(confirmAction)
+            
+            
+            self.present(alertController, animated: true, completion: nil)
         }
         
-        if editSaveDelegate != nil {
-            editSaveDelegate?.saveActivity(data: newActivity)
-        }
         
-        self.navigationController?.popViewController(animated: true)
+        
+        if newActivity.name != "Add name..." && newActivity.locationString != "Add location..." && newActivity.people.count != 0 {
+            //check if delegate exists
+            if newSaveDelegate != nil {
+                //the delegate need to take a type of new acdtivity data, of type activity class to do the func in protocol
+                newSaveDelegate?.saveNewActivity(data: newActivity)
+            }
+            
+            if editSaveDelegate != nil {
+                editSaveDelegate?.saveActivity(data: newActivity)
+            }
+            
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     
