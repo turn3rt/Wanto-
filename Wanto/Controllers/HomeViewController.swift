@@ -13,6 +13,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     
     private let inactiveIdentifer = "InactiveCell"
     private let activeIdentifier = "ActiveCell"
+    private let tutorialHeader = "TutorialHeader"
     
     var inactiveActivities = [Activity]() //["Gym" , "Study", "Meeting", "Lunch" , "Party", "Study Aerodynamics", "Boof Seminar"]
     var activeActivies = [Activity]()
@@ -69,15 +70,15 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
         if inactiveActivities.count != 0 {
             return 1
         }
-        return 0
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Number of Activities: \(inactiveActivities.count)")
-        if section == 0 {
-            return activeActivies.count
-        } else {
+        if section == 0 && inactiveActivities.count != 0 {
             return inactiveActivities.count
+        } else {
+            return 0
         }
     }
     
@@ -85,22 +86,25 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
         
         
         let inactiveCell = tableView.dequeueReusableCell(withIdentifier: inactiveIdentifer , for: indexPath) as! InactiveCell
-        let activeCell = tableView.dequeueReusableCell(withIdentifier: activeIdentifier, for: indexPath) as! ActiveCell
+        //let activeCell = tableView.dequeueReusableCell(withIdentifier: activeIdentifier, for: indexPath) as! ActiveCell
+       // let tutorialCell = tableView.dequeueReusableCell(withIdentifier: tutorialIdentifer, for: indexPath)
         
-        if indexPath.section == 0 {
-            activeCell.name.text = "self.inactiveActivities[indexPath.row]"
-            activeCell.location.text = "self.locations[indexPath.row]"
-            
-            return activeCell
-            
-        } else {
+        if indexPath.section == 0 && inactiveActivities.count != 0 {
             inactiveCell.name.text = self.inactiveActivities[indexPath.row].name
             inactiveCell.location.text = self.inactiveActivities[indexPath.row].locationString
             inactiveCell.activity = self.inactiveActivities[indexPath.row]
             inactiveCell.showLocInMiniMap(coordinates: inactiveActivities[indexPath.row].locationCoords)
             return inactiveCell
             
+         //else {
+//            inactiveCell.name.text = self.inactiveActivities[indexPath.row].name
+//            inactiveCell.location.text = self.inactiveActivities[indexPath.row].locationString
+//            inactiveCell.activity = self.inactiveActivities[indexPath.row]
+//            inactiveCell.showLocInMiniMap(coordinates: inactiveActivities[indexPath.row].locationCoords)
+//            return inactiveCell
+            
         }
+        return UITableViewCell()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -110,13 +114,13 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
         if inactiveActivities.count == 0{
-            return nil
+            return tableView.dequeueReusableCell(withIdentifier: tutorialHeader)
         }
         
         if section == 0 && activeActivies.count != 0 {
             return tableView.dequeueReusableCell(withIdentifier: "ActiveHeader")
         }
-        if section == 1 {
+        if section == 0 && inactiveActivities.count != 0 {
             return tableView.dequeueReusableCell(withIdentifier: "InactiveHeader")
         }
         return nil

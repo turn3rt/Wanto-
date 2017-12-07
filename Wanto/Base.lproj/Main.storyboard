@@ -334,6 +334,29 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TutorialHeader" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TutorialHeader" rowHeight="36" id="RKn-7E-Qfp">
+                                <rect key="frame" x="0.0" y="320" width="375" height="36"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RKn-7E-Qfp" id="w9Z-Io-Agg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="35.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the plus (+) button to get started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="let-JE-kTo">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="36"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="let-JE-kTo" firstAttribute="leading" secondItem="w9Z-Io-Agg" secondAttribute="leading" constant="16" id="SoC-0t-tAH"/>
+                                        <constraint firstAttribute="bottom" secondItem="let-JE-kTo" secondAttribute="bottom" constant="-0.3333333333333357" id="did-vV-rSu"/>
+                                        <constraint firstAttribute="trailing" secondItem="let-JE-kTo" secondAttribute="trailing" constant="16" id="hbG-A5-dyF"/>
+                                        <constraint firstItem="let-JE-kTo" firstAttribute="centerY" secondItem="w9Z-Io-Agg" secondAttribute="centerY" id="kqT-sh-SQv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="kH5-vH-LT4" id="PUd-qa-peA"/>
