@@ -31,7 +31,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     
     //this is the activity that gets stored and passsed back thorugh the delegate func
     var newActivity = Activity(name: "Add name...",
-                               privacySetting: String(),
+                               privacySetting: "Friends",
                                people: [Person](),
                                locationString: "Add location...",
                                locationCoords: CLLocationCoordinate2D()
