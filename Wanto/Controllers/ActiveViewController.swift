@@ -362,7 +362,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
             
             
             //change title to entered text
-            let confirmAction = UIAlertAction(title: "Confirm", style: .default, handler: {
+            let confirmAction = UIAlertAction(title: "Ok!", style: .default, handler: {
                 alert -> Void in
                 let textField = alertController.textFields![0] // this is the text that is grabbed from text field
                 
@@ -396,7 +396,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
            
             
             //change title to entered text
-            let confirmAction = UIAlertAction(title: "Confirm", style: .default, handler: {
+            let confirmAction = UIAlertAction(title: "OK!", style: .default, handler: {
                 alert -> Void in
             })
             
