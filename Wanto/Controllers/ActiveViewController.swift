@@ -138,6 +138,9 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     //MARK: Delegate Functions for CNContactPickerVC
     
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        
+        //check for repeats in people array
+        //@TODO: 
         // do something with contact
         let newPerson = Person(firstName: contact.givenName,
                                lastName: contact.familyName)
@@ -440,6 +443,8 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
             if editSaveDelegate != nil {
                 editSaveDelegate?.saveActivity(data: newActivity)
             }
+            
+            
             
             self.navigationController?.popViewController(animated: true)
         }

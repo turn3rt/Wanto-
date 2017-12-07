@@ -122,6 +122,9 @@
                                                             <real key="value" value="8"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="privacyButtonClick:" destination="SdI-Zm-yE6" eventType="touchUpInside" id="OWY-8y-1Vd"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -170,6 +173,7 @@
                                     <outlet property="location" destination="RhV-pR-tD0" id="o58-Bs-cKr"/>
                                     <outlet property="mapView" destination="b6g-rG-Shm" id="88c-wT-f7e"/>
                                     <outlet property="name" destination="HPA-c0-GvP" id="AUg-l5-sel"/>
+                                    <outlet property="privacySetting" destination="5dV-dt-mhW" id="qkQ-FF-aG3"/>
                                     <segue destination="Oed-Pc-U4y" kind="show" identifier="selectedInactiveCell" id="4yF-WW-CYQ"/>
                                 </connections>
                             </tableViewCell>
@@ -341,7 +345,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="35.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the plus (+) button to get started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="let-JE-kTo">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap (+) to get started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="let-JE-kTo">
                                             <rect key="frame" x="16" y="0.0" width="343" height="36"/>
                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                             <nil key="textColor"/>

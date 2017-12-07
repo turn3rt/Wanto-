@@ -22,22 +22,21 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
         self.tableView.reloadData()
     }
     
-    
-    
-    
     private let inactiveIdentifer = "InactiveCell"
     private let activeIdentifier = "ActiveCell"
     private let tutorialHeader = "TutorialHeader"
     
-    var inactiveActivities = [Activity]() //["Gym" , "Study", "Meeting", "Lunch" , "Party", "Study Aerodynamics", "Boof Seminar"]
-    var activeActivies = [Activity]()
+    var inactiveActivities = [Activity]()
     
-    var locations = [String]() //["Southwest Recreation Center", "Library West", "Little Hall" , "Chipotle", "The Standard", "Marston Science Library", "Uranus"]
+   var activeActivies = [Activity]()
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -93,11 +92,12 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
         //let activeCell = tableView.dequeueReusableCell(withIdentifier: activeIdentifier, for: indexPath) as! ActiveCell
        // let tutorialCell = tableView.dequeueReusableCell(withIdentifier: tutorialIdentifer, for: indexPath)
         
-        if indexPath.section == 0 && inactiveActivities.count != 0 {
+        if indexPath.section == 0 && self.inactiveActivities.count != 0 {
             inactiveCell.name.text = self.inactiveActivities[indexPath.row].name
             inactiveCell.location.text = self.inactiveActivities[indexPath.row].locationString
             inactiveCell.activity = self.inactiveActivities[indexPath.row]
-            inactiveCell.showLocInMiniMap(coordinates: inactiveActivities[indexPath.row].locationCoords)
+            inactiveCell.showLocInMiniMap(coordinates: self.inactiveActivities[indexPath.row].locationCoords)
+            inactiveCell.privacySetting.setTitle(inactiveActivities[indexPath.row].privacySetting, for: .normal)
             return inactiveCell
             
          //else {

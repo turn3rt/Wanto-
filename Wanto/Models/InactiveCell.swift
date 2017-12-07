@@ -13,6 +13,9 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var privacySetting: UIButtonX!
+    
+    
  
     
     @IBOutlet weak var mapView: MKMapView!
@@ -29,6 +32,10 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
         let region = MKCoordinateRegionMake(annotation.coordinate, span)
         
         mapView.setRegion(region, animated: true)
+    }
+    
+    @IBAction func privacyButtonClick(_ sender: UIButtonX) {
+        print("button clicked")
     }
 }
 

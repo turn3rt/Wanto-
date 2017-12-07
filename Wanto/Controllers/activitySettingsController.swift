@@ -13,6 +13,8 @@ protocol personDeleteDelegate {
     func deletePerson(atIndexPath: Int)
 }
 
+
+
 class activitySettingsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
@@ -25,6 +27,7 @@ class activitySettingsController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var privacyButton: UIButton!
     
     @IBAction func privacyButtonClick(_ sender: UIButton) {
+        
         let optionMenu = UIAlertController(title: nil, message: "People who can see your activity", preferredStyle: .actionSheet)
         
         // 2
@@ -68,9 +71,7 @@ class activitySettingsController: UIViewController, UITableViewDelegate, UITable
         self.present(optionMenu, animated: true, completion: nil)
         
     }
-    @IBAction func trashClick(_ sender: UIBarButtonItem) {
-        
-    }
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         

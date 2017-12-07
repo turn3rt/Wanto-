@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class Activity{
+class Activity {
     var name: String
     var privacySetting: String
     var people: [Person]
