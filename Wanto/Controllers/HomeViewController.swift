@@ -197,6 +197,18 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
             inactiveVC.newActivity = inactiveActivities[selectedCellIndex]
             
         }
+        
+//        if segue.identifier == "homeToActivitySettings"{
+//            let selectedCellIndex = self.tableView.indexPathForSelectedRow!.row
+//
+//            let activitySettingsVC = segue.destination as! activitySettingsController
+//            activitySettingsVC.activity = inactiveActivities[selectedCellIndex]
+//            
+//            
+//            print("\(String(describing: self.tableView.indexPathForSelectedRow?.row))", "is the index of the table veiw that was sent")
+//        }
+        
+        
     }
     
     

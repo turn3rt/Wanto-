@@ -459,12 +459,6 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
             self.navigationController?.popViewController(animated: true)
         }
     }
-    
-    
-    
-    
-    
-    
 }
 
 

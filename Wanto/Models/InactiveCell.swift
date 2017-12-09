@@ -36,7 +36,60 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
     
     @IBAction func privacyButtonClick(_ sender: UIButtonX) {
         print("button clicked")
+        
+        let optionMenu = UIAlertController(title: nil, message: "People who can see your activity", preferredStyle: .actionSheet)
+        
+        // 2
+        let everyone = UIAlertAction(title: "Everyone", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Tapped Everyone")
+            self.activity.privacySetting = "Everyone"
+            self.privacySetting.setTitle(self.activity.privacySetting, for: .normal)
+        })
+        let friends = UIAlertAction(title: "Friends", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("tapped friends")
+            self.activity.privacySetting = "Friends"
+            self.privacySetting.setTitle(self.activity.privacySetting, for: .normal)
+            
+            
+        })
+        let onlyGroup = UIAlertAction(title: "Only Group", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("tapped only group")
+            self.activity.privacySetting = "Only Group"
+            self.privacySetting.setTitle(self.activity.privacySetting, for: .normal)
+            
+            
+        })
+        //
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("tapped cancel")
+            
+        })
+        
+        
+        // 4
+        optionMenu.addAction(everyone)
+        optionMenu.addAction(friends)
+        optionMenu.addAction(onlyGroup)
+        optionMenu.addAction(cancelAction)
+        
+        // 5
+        UIApplication.shared.delegate?.window??.rootViewController?.present(optionMenu, animated: true, completion: nil)
+
+        
+        
+        
+        
+        
+        
     }
+    
+    
+    
+    
 }
 
 

@@ -1653,8 +1653,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MW1-mh-d37" customClass="UIViewX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="8" y="335.66666666666674" width="359" height="321.33333333333326"/>
                                 <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6XL-4d-UtC">
+                                        <rect key="frame" x="0.0" y="-0.66666666666668561" width="359" height="321.33333333333331"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="321" id="sZ7-Je-Hxq"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </mapView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-Wr-bHS" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
-                                        <rect key="frame" x="275" y="281.33333333333331" width="72" height="32"/>
+                                        <rect key="frame" x="275" y="277.33333333333331" width="72" height="32"/>
                                         <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="B1U-Us-1zK"/>
@@ -1682,21 +1693,10 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6XL-4d-UtC">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="321.33333333333331"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="321" id="sZ7-Je-Hxq"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="16"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </mapView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Plb-Wr-bHS" firstAttribute="bottom" secondItem="MW1-mh-d37" secondAttribute="bottomMargin" id="CiH-ci-Wla"/>
+                                    <constraint firstItem="Plb-Wr-bHS" firstAttribute="bottom" secondItem="MW1-mh-d37" secondAttribute="bottomMargin" constant="-4" id="CiH-ci-Wla"/>
                                     <constraint firstAttribute="trailing" secondItem="6XL-4d-UtC" secondAttribute="trailing" id="LO6-ll-M1N"/>
                                     <constraint firstItem="Plb-Wr-bHS" firstAttribute="trailing" secondItem="MW1-mh-d37" secondAttribute="trailingMargin" constant="-4" id="YGZ-r7-sFw"/>
                                     <constraint firstItem="6XL-4d-UtC" firstAttribute="top" secondItem="MW1-mh-d37" secondAttribute="top" id="hHr-BS-3KN"/>
