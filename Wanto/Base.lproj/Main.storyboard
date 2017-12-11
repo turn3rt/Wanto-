@@ -2302,7 +2302,7 @@
                                             <outlet property="profileImage" destination="1At-hj-51R" id="5Pn-9T-J2a"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="NoPerson" reuseIdentifier="NoPerson" id="obi-Ze-7KM">
+                                    <collectionViewCell hidden="YES" opaque="NO" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="NoPerson" reuseIdentifier="NoPerson" id="obi-Ze-7KM">
                                         <rect key="frame" x="68" y="0.0" width="64" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -2546,10 +2546,10 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuU-Kh-HKL" customClass="UIViewX" customModule="Wanto" customModuleProvider="target">
-                                <rect key="frame" x="24" y="358" width="327" height="42"/>
+                                <rect key="frame" x="16" y="358" width="343" height="42"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnD-av-Nxp">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                         <state key="normal">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2559,7 +2559,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add location..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L26-Er-kxL">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2634,7 +2634,7 @@
                             <constraint firstItem="R88-ZA-haG" firstAttribute="bottom" secondItem="kVL-eo-HYX" secondAttribute="bottom" constant="16" id="ADb-Hr-j2f"/>
                             <constraint firstItem="n4q-PI-YhF" firstAttribute="width" secondItem="tav-Y0-EKE" secondAttribute="width" id="ATM-sD-d3m"/>
                             <constraint firstItem="3Se-lH-zp1" firstAttribute="top" secondItem="nez-RU-642" secondAttribute="bottom" id="CvM-FB-cLG"/>
-                            <constraint firstItem="cuU-Kh-HKL" firstAttribute="leading" secondItem="C0o-0o-Rsm" secondAttribute="leading" constant="8" id="D2r-VV-2j7"/>
+                            <constraint firstItem="cuU-Kh-HKL" firstAttribute="leading" secondItem="C0o-0o-Rsm" secondAttribute="leading" id="D2r-VV-2j7"/>
                             <constraint firstItem="jVt-r9-PnM" firstAttribute="leading" secondItem="R88-ZA-haG" secondAttribute="leading" constant="16" id="DF4-cq-Kod"/>
                             <constraint firstItem="jVt-r9-PnM" firstAttribute="top" secondItem="3Se-lH-zp1" secondAttribute="bottom" constant="4" id="IpE-uH-sWr"/>
                             <constraint firstItem="tav-Y0-EKE" firstAttribute="top" secondItem="C0o-0o-Rsm" secondAttribute="bottom" constant="-8" id="Lye-uz-cmW"/>
@@ -2654,7 +2654,7 @@
                             <constraint firstItem="R88-ZA-haG" firstAttribute="trailing" secondItem="Jxw-CP-p2N" secondAttribute="trailing" constant="16" id="fZZ-ZE-NRt"/>
                             <constraint firstItem="3Se-lH-zp1" firstAttribute="leading" secondItem="R88-ZA-haG" secondAttribute="leading" constant="16" id="gr7-oj-skM"/>
                             <constraint firstItem="R88-ZA-haG" firstAttribute="trailing" secondItem="tav-Y0-EKE" secondAttribute="trailing" constant="8" id="guk-YE-YXv"/>
-                            <constraint firstItem="cuU-Kh-HKL" firstAttribute="trailing" secondItem="C0o-0o-Rsm" secondAttribute="trailing" constant="-8" id="heH-Hv-Apd"/>
+                            <constraint firstItem="cuU-Kh-HKL" firstAttribute="trailing" secondItem="C0o-0o-Rsm" secondAttribute="trailing" id="heH-Hv-Apd"/>
                             <constraint firstItem="R88-ZA-haG" firstAttribute="trailing" secondItem="jVt-r9-PnM" secondAttribute="trailing" constant="16" id="ikA-7l-jGg"/>
                             <constraint firstItem="kVL-eo-HYX" firstAttribute="leading" secondItem="R88-ZA-haG" secondAttribute="leading" constant="16" id="loP-uq-C4o"/>
                             <constraint firstItem="JLc-wS-mR6" firstAttribute="top" secondItem="3Se-lH-zp1" secondAttribute="top" constant="-0.66666666666668561" id="n12-dp-pYL"/>
