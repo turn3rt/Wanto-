@@ -74,6 +74,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         //add text field
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter name..."
+            textField.autocapitalizationType = UITextAutocapitalizationType.words
         }
         
         
