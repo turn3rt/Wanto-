@@ -68,6 +68,10 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     var editSaveDelegate: saveDelegate? = nil
     
     
+    
+    
+   
+    
     @IBAction func titleButtonTap(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Add activity name:", message: "", preferredStyle: .alert)
         
