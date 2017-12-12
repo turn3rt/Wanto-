@@ -24,7 +24,8 @@ protocol saveNewDelegate {
 protocol saveDelegate{
     func saveActivity(data: Activity)
 }
-class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate, personDeleteDelegate {
+class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate, personDeleteDelegate, reorderDelegate {
+   
     
     
     
@@ -34,6 +35,11 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         newActivity.people.remove(at: atIndexPath)
         self.peopleCollection.reloadData()
     }
+    func reorder(activity: Activity) {
+        newActivity.people = activity.people
+        self.peopleCollection.reloadData()
+    }
+    
     
     
     private let personIdentifier = "Person"
@@ -353,8 +359,10 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
             let settingsVC = segue.destination as! activitySettingsController
             settingsVC.activity = self.newActivity
             settingsVC.deleteDelegate = self
-            
-        }    }
+            settingsVC.reorderDelegate = self
+        }
+
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -13,18 +13,35 @@ protocol personDeleteDelegate {
     func deletePerson(atIndexPath: Int)
 }
 
+protocol reorderDelegate {
+    func reorder(activity: Activity)
+}
+
 
 
 class activitySettingsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
     var deleteDelegate: personDeleteDelegate? = nil
+    var reorderDelegate: reorderDelegate? = nil
     
     
     var activity = Activity(name: String(), privacySetting: String(), people: [Person](), locationString: String(), locationCoords: CLLocationCoordinate2D())
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var privacyButton: UIButton!
+    @IBOutlet weak var editDoneButton: UIBarButtonItem!
+    
+    @IBAction func editDoneButtonClick(_ sender: UIBarButtonItem) {
+        self.tableView.isEditing = !self.tableView.isEditing
+        switch tableView.isEditing {
+        case true:
+            editDoneButton.title = "Done"
+        case false:
+            editDoneButton.title = "Edit"
+            reorderDelegate?.reorder(activity: self.activity)
+        }
+    }
     
     @IBAction func privacyButtonClick(_ sender: UIButton) {
         
@@ -83,24 +100,17 @@ class activitySettingsController: UIViewController, UITableViewDelegate, UITable
     }
     
     
-//    @TODO: Reorder TableViewCells
-//    @IBAction func nameCellLongPress(_ sender: UILongPressGestureRecognizer) {
-//        if sender.state == .began {
-//            self.tableView.isEditing = true
-//        }
-//        if sender.state == .ended {
-//            self.tableView.isEditing = false
-//        }
-//    }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedName = self.activity.people[sourceIndexPath.row]
+        activity.people.remove(at: sourceIndexPath.row)
+        activity.people.insert(movedName, at: destinationIndexPath.row)
+        NSLog("%@", "\(sourceIndexPath.row) => \(destinationIndexPath.row) \(activity.people)")
+        self.tableView.reloadData()
+    }
     
-//    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//        let movedName = self.activity.people[sourceIndexPath.row]
-//        activity.people.remove(at: sourceIndexPath.row)
-//        activity.people.insert(movedName, at: destinationIndexPath.row)
-//        NSLog("%@", "\(sourceIndexPath.row) => \(destinationIndexPath.row) \(activity.people)")
-//        self.tableView.reloadData()
-//    }
-    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return activity.people.count
