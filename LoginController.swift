@@ -17,6 +17,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     var kbHeight: CGFloat!
@@ -30,6 +31,12 @@ class LoginController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        userNameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        return true
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
