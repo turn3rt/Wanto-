@@ -2179,8 +2179,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="nameLabel" destination="wRu-7T-xDe" id="lkn-oV-GNA"/>
+                                            <outletCollection property="gestureRecognizers" destination="emv-HK-6E1" appends="YES" id="i9c-Fu-mrC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2219,6 +2221,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qe4-2b-BO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="emv-HK-6E1">
+                    <connections>
+                        <action selector="nameCellLongPress:" destination="G8R-Td-jKc" id="Wed-dl-eMx"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2629.5999999999999" y="-1417.2413793103449"/>
         </scene>
@@ -2678,7 +2685,7 @@
                                 <action selector="titleButtonTap:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="XVa-nf-arn"/>
                             </connections>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="qb8-KS-EkB">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="qb8-KS-EkB">
                             <connections>
                                 <segue destination="G8R-Td-jKc" kind="show" identifier="activitySettings" id="FSa-3M-aXj"/>
                             </connections>

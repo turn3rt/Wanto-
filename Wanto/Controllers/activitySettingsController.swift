@@ -76,10 +76,30 @@ class activitySettingsController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         
         self.privacyButton.setTitle(activity.privacySetting, for: .normal)
+        self.tableView.isEditing = true
         
         print("activity: \(activity)")
+        
     }
     
+    
+//    @TODO: Reorder TableViewCells
+//    @IBAction func nameCellLongPress(_ sender: UILongPressGestureRecognizer) {
+//        if sender.state == .began {
+//            self.tableView.isEditing = true
+//        }
+//        if sender.state == .ended {
+//            self.tableView.isEditing = false
+//        }
+//    }
+    
+//    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//        let movedName = self.activity.people[sourceIndexPath.row]
+//        activity.people.remove(at: sourceIndexPath.row)
+//        activity.people.insert(movedName, at: destinationIndexPath.row)
+//        NSLog("%@", "\(sourceIndexPath.row) => \(destinationIndexPath.row) \(activity.people)")
+//        self.tableView.reloadData()
+//    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
