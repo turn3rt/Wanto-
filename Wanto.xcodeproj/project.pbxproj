@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56F13C11C0BFC1B52E6235B0 /* Pods_WantoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98229FB67E30EADC0BA5B2A /* Pods_WantoUITests.framework */; };
+		A5ACE50C70876EE353927D78 /* Pods_WantoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162B88A914CC02052743250C /* Pods_WantoTests.framework */; };
 		B30399BF1FD39B4100BB9185 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30399BE1FD39B4100BB9185 /* SettingsController.swift */; };
 		B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */; };
 		B311CF441FCFFB3500730CDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B311CF421FCFFB3500730CDA /* Main.storyboard */; };
@@ -36,17 +38,22 @@
 		B34E076E1FD20E5B0059E9DA /* FeedDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34E076D1FD20E5B0059E9DA /* FeedDetailController.swift */; };
 		B3693D411FD1DDED0086D4B9 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3693D401FD1DDED0086D4B9 /* FeedCell.swift */; };
 		B3693D451FD1DF8F0086D4B9 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3693D441FD1DF8F0086D4B9 /* FeedController.swift */; };
+		B36A90EA1FE0CCA7003DBB69 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A90E91FE0CCA7003DBB69 /* DataService.swift */; };
 		B3724CEB1FD3D6AD0034A49A /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3724CEA1FD3D6AD0034A49A /* Activity.swift */; };
 		B38B14BD1FDF57AA00CAAA60 /* Screen Shot 2017-12-11 at 7.17.02 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = B38B14BC1FDF57AA00CAAA60 /* Screen Shot 2017-12-11 at 7.17.02 PM.png */; };
 		B38B14BF1FE0360C00CAAA60 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B38B14BE1FE0360A00CAAA60 /* girl.jpg */; };
 		B38B14C11FE0385D00CAAA60 /* LogoTransparent.png in Resources */ = {isa = PBXBuildFile; fileRef = B38B14C01FE0385B00CAAA60 /* LogoTransparent.png */; };
 		B38B14C31FE0762E00CAAA60 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B14C21FE0762E00CAAA60 /* LoginController.swift */; };
+		B38B14C51FE09D6100CAAA60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B38B14C41FE09D6100CAAA60 /* GoogleService-Info.plist */; };
 		B39E2FF21FD9224B00F669CC /* Default-avatar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B39E2FF11FD9224B00F669CC /* Default-avatar@2x.jpg */; };
 		B39E2FF41FD9238100F669CC /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B39E2FF31FD9238100F669CC /* images.jpeg */; };
 		B39E2FF61FD9247200F669CC /* profile-default-male@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B39E2FF51FD9247100F669CC /* profile-default-male@2x.png */; };
 		B39E2FF81FD9254500F669CC /* capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png in Resources */ = {isa = PBXBuildFile; fileRef = B39E2FF71FD9254400F669CC /* capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png */; };
 		B3A140531FD32C1600458929 /* settings-work-tool@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A140521FD32C1500458929 /* settings-work-tool@2x.png */; };
+		B3C6B1F31FE0B1680038BF60 /* otherGirl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3C6B1F21FE0B1670038BF60 /* otherGirl.jpg */; };
+		B3C6B1F71FE0BD0B0038BF60 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C6B1F61FE0BD0B0038BF60 /* CreateAccountController.swift */; };
 		B3D4B4621FD1D80C009CE92E /* ActiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */; };
+		CF2F13191F3A351451056E5E /* Pods_Wanto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D95D7E3150DA113D056A688 /* Pods_Wanto.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +74,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		162B88A914CC02052743250C /* Pods_WantoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19CDA7FC7F773E111CD74AC1 /* Pods-Wanto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wanto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wanto/Pods-Wanto.debug.xcconfig"; sourceTree = "<group>"; };
+		5D95D7E3150DA113D056A688 /* Pods_Wanto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wanto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75EF6127BF841820635EBFD4 /* Pods-WantoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WantoUITests/Pods-WantoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7AF371804C077B040A3AC536 /* Pods-Wanto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wanto.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wanto/Pods-Wanto.release.xcconfig"; sourceTree = "<group>"; };
+		94BD9B43FFA699E6CC55B30A /* Pods-WantoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WantoTests/Pods-WantoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B30399BE1FD39B4100BB9185 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		B311CF391FCFFB3500730CDA /* Wanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B311CF3C1FCFFB3500730CDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,17 +115,24 @@
 		B34E076D1FD20E5B0059E9DA /* FeedDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailController.swift; sourceTree = "<group>"; };
 		B3693D401FD1DDED0086D4B9 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		B3693D441FD1DF8F0086D4B9 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		B36A90E91FE0CCA7003DBB69 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		B3724CEA1FD3D6AD0034A49A /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		B38B14BC1FDF57AA00CAAA60 /* Screen Shot 2017-12-11 at 7.17.02 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-12-11 at 7.17.02 PM.png"; sourceTree = "<group>"; };
 		B38B14BE1FE0360A00CAAA60 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
 		B38B14C01FE0385B00CAAA60 /* LogoTransparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoTransparent.png; sourceTree = "<group>"; };
 		B38B14C21FE0762E00CAAA60 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		B38B14C41FE09D6100CAAA60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B39E2FF11FD9224B00F669CC /* Default-avatar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Default-avatar@2x.jpg"; sourceTree = "<group>"; };
 		B39E2FF31FD9238100F669CC /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
 		B39E2FF51FD9247100F669CC /* profile-default-male@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-default-male@2x.png"; sourceTree = "<group>"; };
 		B39E2FF71FD9254400F669CC /* capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png; sourceTree = "<group>"; };
 		B3A140521FD32C1500458929 /* settings-work-tool@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-work-tool@2x.png"; sourceTree = "<group>"; };
+		B3C6B1F21FE0B1670038BF60 /* otherGirl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = otherGirl.jpg; sourceTree = "<group>"; };
+		B3C6B1F61FE0BD0B0038BF60 /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCell.swift; sourceTree = "<group>"; };
+		B98229FB67E30EADC0BA5B2A /* Pods_WantoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6DB341D6646B1204FF8FC0D /* Pods-WantoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WantoUITests/Pods-WantoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DE77B75DE5D97228A7240649 /* Pods-WantoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WantoTests/Pods-WantoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF2F13191F3A351451056E5E /* Pods_Wanto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5ACE50C70876EE353927D78 /* Pods_WantoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,20 +156,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F13C11C0BFC1B52E6235B0 /* Pods_WantoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F03463AE9E8D4E43CD78668 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D95D7E3150DA113D056A688 /* Pods_Wanto.framework */,
+				162B88A914CC02052743250C /* Pods_WantoTests.framework */,
+				B98229FB67E30EADC0BA5B2A /* Pods_WantoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9EF4D13BD1E1E21FEC439E8F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19CDA7FC7F773E111CD74AC1 /* Pods-Wanto.debug.xcconfig */,
+				7AF371804C077B040A3AC536 /* Pods-Wanto.release.xcconfig */,
+				94BD9B43FFA699E6CC55B30A /* Pods-WantoTests.debug.xcconfig */,
+				DE77B75DE5D97228A7240649 /* Pods-WantoTests.release.xcconfig */,
+				D6DB341D6646B1204FF8FC0D /* Pods-WantoUITests.debug.xcconfig */,
+				75EF6127BF841820635EBFD4 /* Pods-WantoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B311CF301FCFFB3500730CDA = {
 			isa = PBXGroup;
 			children = (
 				B38B14C21FE0762E00CAAA60 /* LoginController.swift */,
+				B3C6B1F61FE0BD0B0038BF60 /* CreateAccountController.swift */,
+				B36A90E91FE0CCA7003DBB69 /* DataService.swift */,
 				B311CF3B1FCFFB3500730CDA /* Wanto */,
 				B311CF521FCFFB3500730CDA /* WantoTests */,
 				B311CF5D1FCFFB3600730CDA /* WantoUITests */,
 				B311CF3A1FCFFB3500730CDA /* Products */,
+				9EF4D13BD1E1E21FEC439E8F /* Pods */,
+				6F03463AE9E8D4E43CD78668 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +224,7 @@
 				B32B13881FD056F7005EC45E /* Icons */,
 				B311CF471FCFFB3500730CDA /* LaunchScreen.storyboard */,
 				B311CF4A1FCFFB3500730CDA /* Info.plist */,
+				B38B14C41FE09D6100CAAA60 /* GoogleService-Info.plist */,
 			);
 			path = Wanto;
 			sourceTree = "<group>";
@@ -199,6 +250,7 @@
 		B32B13881FD056F7005EC45E /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				B3C6B1F21FE0B1670038BF60 /* otherGirl.jpg */,
 				B38B14C01FE0385B00CAAA60 /* LogoTransparent.png */,
 				B38B14BE1FE0360A00CAAA60 /* girl.jpg */,
 				B38B14BC1FDF57AA00CAAA60 /* Screen Shot 2017-12-11 at 7.17.02 PM.png */,
@@ -263,9 +315,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B311CF631FCFFB3600730CDA /* Build configuration list for PBXNativeTarget "Wanto" */;
 			buildPhases = (
+				2EAB9675BAE7CD19D2640E80 /* [CP] Check Pods Manifest.lock */,
 				B311CF351FCFFB3500730CDA /* Sources */,
 				B311CF361FCFFB3500730CDA /* Frameworks */,
 				B311CF371FCFFB3500730CDA /* Resources */,
+				3A27CD4BF8E7058E7C50439A /* [CP] Embed Pods Frameworks */,
+				A6A84D25030E08A6E022BBFD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,9 +335,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B311CF661FCFFB3600730CDA /* Build configuration list for PBXNativeTarget "WantoTests" */;
 			buildPhases = (
+				2E92EDE896B1B4301EA43EA8 /* [CP] Check Pods Manifest.lock */,
 				B311CF4B1FCFFB3500730CDA /* Sources */,
 				B311CF4C1FCFFB3500730CDA /* Frameworks */,
 				B311CF4D1FCFFB3500730CDA /* Resources */,
+				BD57976B694F8943D34F85A5 /* [CP] Embed Pods Frameworks */,
+				DB83BC904C9592F517316CF1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,9 +356,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B311CF691FCFFB3600730CDA /* Build configuration list for PBXNativeTarget "WantoUITests" */;
 			buildPhases = (
+				A8D9B34CE74FB6E804D02A7C /* [CP] Check Pods Manifest.lock */,
 				B311CF561FCFFB3600730CDA /* Sources */,
 				B311CF571FCFFB3600730CDA /* Frameworks */,
 				B311CF581FCFFB3600730CDA /* Resources */,
+				42ADEE6AC35B472129AD0402 /* [CP] Embed Pods Frameworks */,
+				C78980E37551A485749D940C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -364,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B39E2FF61FD9247200F669CC /* profile-default-male@2x.png in Resources */,
+				B3C6B1F31FE0B1680038BF60 /* otherGirl.jpg in Resources */,
 				B32B13841FD056ED005EC45E /* home@2x.png in Resources */,
 				B311CF491FCFFB3500730CDA /* LaunchScreen.storyboard in Resources */,
 				B38B14C11FE0385D00CAAA60 /* LogoTransparent.png in Resources */,
@@ -374,6 +436,7 @@
 				B38B14BD1FDF57AA00CAAA60 /* Screen Shot 2017-12-11 at 7.17.02 PM.png in Resources */,
 				B39E2FF41FD9238100F669CC /* images.jpeg in Resources */,
 				B39E2FF81FD9254500F669CC /* capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png in Resources */,
+				B38B14C51FE09D6100CAAA60 /* GoogleService-Info.plist in Resources */,
 				B311CF461FCFFB3500730CDA /* Assets.xcassets in Resources */,
 				B3A140531FD32C1600458929 /* settings-work-tool@2x.png in Resources */,
 				B32B13941FD07870005EC45E /* Sally.jpg in Resources */,
@@ -399,6 +462,162 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E92EDE896B1B4301EA43EA8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WantoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EAB9675BAE7CD19D2640E80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wanto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A27CD4BF8E7058E7C50439A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Wanto/Pods-Wanto-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wanto/Pods-Wanto-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42ADEE6AC35B472129AD0402 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WantoUITests/Pods-WantoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6A84D25030E08A6E022BBFD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wanto/Pods-Wanto-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8D9B34CE74FB6E804D02A7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WantoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD57976B694F8943D34F85A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WantoTests/Pods-WantoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C78980E37551A485749D940C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WantoUITests/Pods-WantoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB83BC904C9592F517316CF1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WantoTests/Pods-WantoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B311CF351FCFFB3500730CDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -409,12 +628,14 @@
 				B30399BF1FD39B4100BB9185 /* SettingsController.swift in Sources */,
 				B32B137F1FD05656005EC45E /* InactiveCell.swift in Sources */,
 				B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */,
+				B36A90EA1FE0CCA7003DBB69 /* DataService.swift in Sources */,
 				B3724CEB1FD3D6AD0034A49A /* Activity.swift in Sources */,
 				B34249B41FD8581600B7451B /* Person.swift in Sources */,
 				B32B137B1FD05503005EC45E /* Helper.swift in Sources */,
 				B32B13901FD06560005EC45E /* UILabelX.swift in Sources */,
 				B32B13961FD07DC7005EC45E /* ActiveViewController.swift in Sources */,
 				B3693D451FD1DF8F0086D4B9 /* FeedController.swift in Sources */,
+				B3C6B1F71FE0BD0B0038BF60 /* CreateAccountController.swift in Sources */,
 				B3693D411FD1DDED0086D4B9 /* FeedCell.swift in Sources */,
 				B322810E1FD8AC56005251FC /* PeopleCell.swift in Sources */,
 				B38B14C31FE0762E00CAAA60 /* LoginController.swift in Sources */,
@@ -588,6 +809,7 @@
 		};
 		B311CF641FCFFB3600730CDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19CDA7FC7F773E111CD74AC1 /* Pods-Wanto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -604,6 +826,7 @@
 		};
 		B311CF651FCFFB3600730CDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AF371804C077B040A3AC536 /* Pods-Wanto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -620,6 +843,7 @@
 		};
 		B311CF671FCFFB3600730CDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94BD9B43FFA699E6CC55B30A /* Pods-WantoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -636,6 +860,7 @@
 		};
 		B311CF681FCFFB3600730CDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE77B75DE5D97228A7240649 /* Pods-WantoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -652,6 +877,7 @@
 		};
 		B311CF6A1FCFFB3600730CDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6DB341D6646B1204FF8FC0D /* Pods-WantoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -667,6 +893,7 @@
 		};
 		B311CF6B1FCFFB3600730CDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75EF6127BF841820635EBFD4 /* Pods-WantoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
