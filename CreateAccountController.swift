@@ -67,6 +67,8 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
         
         if (name != "") && (email != "") && (password != "") {
             Auth.auth().createUser(withEmail: email!, password: password!, completion: {(user: User? , error) in
+                
+                //unsuccessful creation attempt, spits out error
                 if error != nil{
                     self.signupErrorAlert(title: "Error!", message: String(describing: error!))
                     print(error!)
@@ -81,13 +83,12 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
                     //self.signupErrorAlert(title: "Success!", message: "Verification email sent to: \(email!)")
                     let alert = UIAlertController(title: "Success!", message: "Email verification sent to \(email!). Confirm by clicking the link provided in the email body.", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: { (action) -> Void in
-                       self.dismiss(animated: true, completion: nil)
+                        self.dismiss(animated: true, completion: nil)
                     })
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)
                     print("email sent to : \(email!), creating uid of: \(userID)")
                 })
-                //self.dismiss(animated: true, completion: nil)
             })
         } else {
             signupErrorAlert(title: "Authentication Error", message: "Please complete all fields before continuing")

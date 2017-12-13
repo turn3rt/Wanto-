@@ -10,15 +10,7 @@ import UIKit
 import Firebase
 
 class LoginController: UIViewController, UITextFieldDelegate {
-    
 
-    
-
-    
-  
-    
-    
-    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
@@ -35,6 +27,10 @@ class LoginController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         emailField.delegate = self
         passwordField.delegate = self
+        
+        if let email = UserDefaults.standard.value(forKey: "email") as? String {
+            emailField.text = email
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -67,14 +63,19 @@ class LoginController: UIViewController, UITextFieldDelegate {
         let email = emailField.text
         let pass = passwordField.text
         
+        //stores email locally for faster login, don't put password saved in defaults like a dumbass
+        UserDefaults.standard.set(email, forKey: "email")
+        
         Auth.auth().signIn(withEmail: email!, password: pass!, completion: {(user, error) in
+            //unsuccessful login
             if error != nil {
                 self.signupErrorAlert(title: "Error!", message: String(describing: error!))
             } else {
-                if Auth.auth().currentUser?.isEmailVerified == true {
+                //successful login
+                if Auth.auth().currentUser?.isEmailVerified == true { // asks if user has verified email
                     self.performSegue(withIdentifier: "login", sender: nil)
-                }
-               let alert = UIAlertController(title: "Email Verification Needed", message: "Please verify \(email!) by clicking the verification link provided in the email body.", preferredStyle: .alert)
+                } //if it returns false, this code is executed
+                let alert = UIAlertController(title: "Email Verification Needed", message: "Please verify \(email!) by clicking the verification link provided in the email body.", preferredStyle: .alert)
                 let resendAction = UIAlertAction(title: "Resend", style: .destructive, handler: { (action) -> Void in
                     Auth.auth().currentUser?.sendEmailVerification(completion: nil)
                     self.signupErrorAlert(title: "Success!", message: "Verification email sent to: \(email!)")
@@ -85,13 +86,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
                 alert.addAction(resendAction)
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: nil)
-                
-                //                let alert = UIAlertController(title: "Email verification needed", message: "Please verify \(email!) by clicking on the verification link provided in the email body", preferredStyle: UIAlertControllerStyle.alert)
-//                let resend = UIAlertAction(title: "Resend Email", style: .default, handler: {()})
-//                let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
-
             }
-    
+            
         })
     }
     
@@ -105,7 +101,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func forgotPassClick(_ sender: UIButtonX) {
-        
+        signupErrorAlert(title: "lol", message: "dumbass")
     }
     
     
