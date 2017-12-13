@@ -523,7 +523,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TutorialHeader" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TutorialHeader" rowHeight="36" id="RKn-7E-Qfp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TutorialHeader" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TutorialHeader" rowHeight="36" id="RKn-7E-Qfp" customClass="TutorialCell" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="320" width="375" height="36"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RKn-7E-Qfp" id="w9Z-Io-Agg">
@@ -545,6 +545,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="tutHeaderLabel" destination="let-JE-kTo" id="8Cr-hg-win"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

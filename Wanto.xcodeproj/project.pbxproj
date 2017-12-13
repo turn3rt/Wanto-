@@ -16,6 +16,7 @@
 		B311CF491FCFFB3500730CDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B311CF471FCFFB3500730CDA /* LaunchScreen.storyboard */; };
 		B311CF541FCFFB3500730CDA /* WantoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF531FCFFB3500730CDA /* WantoTests.swift */; };
 		B311CF5F1FCFFB3600730CDA /* WantoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311CF5E1FCFFB3600730CDA /* WantoUITests.swift */; };
+		B31FFFD71FE1D31A000E52EF /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31FFFD61FE1D31A000E52EF /* TutorialCell.swift */; };
 		B322810C1FD89CAC005251FC /* activitySettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B322810B1FD89CAC005251FC /* activitySettingsController.swift */; };
 		B322810E1FD8AC56005251FC /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B322810D1FD8AC56005251FC /* PeopleCell.swift */; };
 		B3288B0E1FD5E2A200049AE9 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3288B0D1FD5E2A200049AE9 /* LocationSearchTable.swift */; };
@@ -93,6 +94,7 @@
 		B311CF5A1FCFFB3600730CDA /* WantoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WantoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B311CF5E1FCFFB3600730CDA /* WantoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantoUITests.swift; sourceTree = "<group>"; };
 		B311CF601FCFFB3600730CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B31FFFD61FE1D31A000E52EF /* TutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
 		B322810B1FD89CAC005251FC /* activitySettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activitySettingsController.swift; sourceTree = "<group>"; };
 		B322810D1FD8AC56005251FC /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
 		B3288B0D1FD5E2A200049AE9 /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				B32B137E1FD05656005EC45E /* InactiveCell.swift */,
 				B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */,
 				B3693D401FD1DDED0086D4B9 /* FeedCell.swift */,
+				B31FFFD61FE1D31A000E52EF /* TutorialCell.swift */,
 				B32B13971FD07EEA005EC45E /* PersonCell.swift */,
 				B322810D1FD8AC56005251FC /* PeopleCell.swift */,
 			);
@@ -624,6 +627,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B34E076E1FD20E5B0059E9DA /* FeedDetailController.swift in Sources */,
+				B31FFFD71FE1D31A000E52EF /* TutorialCell.swift in Sources */,
 				B32B138E1FD0652E005EC45E /* UIButtonX.swift in Sources */,
 				B30399BF1FD39B4100BB9185 /* SettingsController.swift in Sources */,
 				B32B137F1FD05656005EC45E /* InactiveCell.swift in Sources */,

@@ -8,8 +8,13 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
+    //MARK: Database ref
+    var ref: DatabaseReference!
+    var refHandle: UInt!
+    let userID: String = (Auth.auth().currentUser?.uid)!
     
     //MARK: Protocol stubs
     func saveNewActivity(data: Activity) {
@@ -28,13 +33,20 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     
     var inactiveActivities = [Activity]()
     
-   var activeActivies = [Activity]()
+    var activeActivies = [Activity]()
     
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
+        refHandle = ref.observe(DataEventType.value, with: { (snapshot) in
+            let dataDict = snapshot.value as! [String: AnyObject]
+            print(dataDict)
+        })
+        
         
         
         
@@ -62,7 +74,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -90,7 +102,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
         
         let inactiveCell = tableView.dequeueReusableCell(withIdentifier: inactiveIdentifer , for: indexPath) as! InactiveCell
         //let activeCell = tableView.dequeueReusableCell(withIdentifier: activeIdentifier, for: indexPath) as! ActiveCell
-       // let tutorialCell = tableView.dequeueReusableCell(withIdentifier: tutorialIdentifer, for: indexPath)
+        // let tutorialCell = tableView.dequeueReusableCell(withIdentifier: tutorialIdentifer, for: indexPath)
         
         if indexPath.section == 0 && self.inactiveActivities.count != 0 {
             inactiveCell.name.text = self.inactiveActivities[indexPath.row].name
@@ -100,12 +112,12 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
             inactiveCell.privacySetting.setTitle(inactiveActivities[indexPath.row].privacySetting, for: .normal)
             return inactiveCell
             
-         //else {
-//            inactiveCell.name.text = self.inactiveActivities[indexPath.row].name
-//            inactiveCell.location.text = self.inactiveActivities[indexPath.row].locationString
-//            inactiveCell.activity = self.inactiveActivities[indexPath.row]
-//            inactiveCell.showLocInMiniMap(coordinates: inactiveActivities[indexPath.row].locationCoords)
-//            return inactiveCell
+            //else {
+            //            inactiveCell.name.text = self.inactiveActivities[indexPath.row].name
+            //            inactiveCell.location.text = self.inactiveActivities[indexPath.row].locationString
+            //            inactiveCell.activity = self.inactiveActivities[indexPath.row]
+            //            inactiveCell.showLocInMiniMap(coordinates: inactiveActivities[indexPath.row].locationCoords)
+            //            return inactiveCell
             
         }
         return UITableViewCell()
@@ -118,7 +130,16 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
         if inactiveActivities.count == 0{
-            return tableView.dequeueReusableCell(withIdentifier: tutorialHeader)
+            let tutorialCell = tableView.dequeueReusableCell(withIdentifier: tutorialHeader) as! TutorialCell
+            ref.child("Users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let name = value?["Name"] as! String
+                tutorialCell.tutHeaderLabel.text = "Welcome, \(name). Tap (+) to get started"
+
+            })
+            
+            return tutorialCell
+//            return tableView.dequeueReusableCell(withIdentifier: tutorialHeader)
         }
         
         if section == 0 && activeActivies.count != 0 {
@@ -129,11 +150,11 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
         }
         return nil
         
-//        if section == 0 {
-//            return tableView.dequeueReusableCell(withIdentifier: "ActiveHeader")
-//        } else {
-//            return tableView.dequeueReusableCell(withIdentifier: "InactiveHeader")
-//        }
+        //        if section == 0 {
+        //            return tableView.dequeueReusableCell(withIdentifier: "ActiveHeader")
+        //        } else {
+        //            return tableView.dequeueReusableCell(withIdentifier: "InactiveHeader")
+        //        }
     }
     
     
@@ -143,43 +164,6 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     @IBAction func goButtonClick(_ sender: UIButtonX) {
         print("go button ckiclked")
     }
-    
-    
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
     
     
     // MARK: - Navigation
@@ -197,17 +181,6 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
             inactiveVC.newActivity = inactiveActivities[selectedCellIndex]
             
         }
-        
-//        if segue.identifier == "homeToActivitySettings"{
-//            let selectedCellIndex = self.tableView.indexPathForSelectedRow!.row
-//
-//            let activitySettingsVC = segue.destination as! activitySettingsController
-//            activitySettingsVC.activity = inactiveActivities[selectedCellIndex]
-//            
-//            
-//            print("\(String(describing: self.tableView.indexPathForSelectedRow?.row))", "is the index of the table veiw that was sent")
-//        }
-        
         
     }
     
