@@ -69,7 +69,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         
         Auth.auth().signIn(withEmail: email!, password: pass!, completion: {(user, error) in
             if error != nil {
-                self.signupErrorAlert(title: "Error!", message: String(describing: error))
+                self.signupErrorAlert(title: "Error!", message: String(describing: error!))
             } else {
                 if Auth.auth().currentUser?.isEmailVerified == true {
                     self.performSegue(withIdentifier: "login", sender: nil)

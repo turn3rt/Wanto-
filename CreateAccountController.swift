@@ -66,7 +66,7 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
         if (name != "") && (email != "") && (password != "") {
             Auth.auth().createUser(withEmail: email!, password: password!, completion: {(user: User? , error) in
                 if error != nil{
-                    self.signupErrorAlert(title: "Error!", message: String(describing: error))
+                    self.signupErrorAlert(title: "Error!", message: String(describing: error!))
                     print(error!)
                 }
                 Auth.auth().currentUser?.sendEmailVerification(completion: {(error) in

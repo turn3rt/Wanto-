@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CreateAccountController.swift"
-            timestampString = "534882691.768023"
+            timestampString = "534883629.492084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -26,12 +26,12 @@
                   moduleName = "Wanto"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/turnerthornberry/Documents/Wanto/CreateAccountController.swift"
-                  timestampString = "534882691.93109"
+                  timestampString = "534883629.623328"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "72"
                   endingLineNumber = "72"
-                  offsetFromSymbolStart = "868">
+                  offsetFromSymbolStart = "764">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "Wanto"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/turnerthornberry/Documents/Wanto/CreateAccountController.swift"
-                  timestampString = "534882691.934486"
+                  timestampString = "534883629.625198"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "73"
                   endingLineNumber = "73"
-                  offsetFromSymbolStart = "81">
+                  offsetFromSymbolStart = "52">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CreateAccountController.swift"
-            timestampString = "534882691.768427"
+            timestampString = "534883629.492628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
