@@ -137,9 +137,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
                 tutorialCell.tutHeaderLabel.text = "Welcome, \(name). Tap (+) to get started"
 
             })
-            
             return tutorialCell
-//            return tableView.dequeueReusableCell(withIdentifier: tutorialHeader)
         }
         
         if section == 0 && activeActivies.count != 0 {
