@@ -19,6 +19,10 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
 
+    
+    @IBAction func tapOffKeyboard(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
