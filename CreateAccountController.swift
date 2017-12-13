@@ -70,6 +70,7 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
                     print(error!)
                 }
                 Auth.auth().currentUser?.sendEmailVerification(completion: {(error) in
+                    self.signupErrorAlert(title: "Success!", message: "Verification email sent to: \(email!)")
                     print("email sent to : \(email!)")
                 })
                 self.dismiss(animated: true, completion: nil)

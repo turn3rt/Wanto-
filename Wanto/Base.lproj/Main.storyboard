@@ -73,7 +73,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="21"/>
@@ -193,6 +193,7 @@
                     <connections>
                         <outlet property="emailField" destination="bH6-IP-9ea" id="I2r-hb-cMt"/>
                         <outlet property="passwordField" destination="dYX-VI-JTw" id="Uhk-1d-plD"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="login" id="e79-PN-3qe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8Z-rm-tkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2913,7 +2914,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="21"/>

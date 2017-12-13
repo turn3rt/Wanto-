@@ -70,9 +70,39 @@ class LoginController: UIViewController, UITextFieldDelegate {
         Auth.auth().signIn(withEmail: email!, password: pass!, completion: {(user, error) in
             if error != nil {
                 self.signupErrorAlert(title: "Error!", message: String(describing: error))
+            } else {
+                if Auth.auth().currentUser?.isEmailVerified == true {
+                    self.performSegue(withIdentifier: "login", sender: nil)
+                }
+               let alert = UIAlertController(title: "Email Verification Needed", message: "Please verify \(email!) by clicking the verification link provided in the email body.", preferredStyle: .alert)
+                let resendAction = UIAlertAction(title: "Resend", style: .destructive, handler: { (action) -> Void in
+                    Auth.auth().currentUser?.sendEmailVerification(completion: nil)
+                    self.signupErrorAlert(title: "Success!", message: "Verification email sent to: \(email!)")
+                })
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
+                })
+                
+                alert.addAction(resendAction)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+                
+                //                let alert = UIAlertController(title: "Email verification needed", message: "Please verify \(email!) by clicking on the verification link provided in the email body", preferredStyle: UIAlertControllerStyle.alert)
+//                let resend = UIAlertAction(title: "Resend Email", style: .default, handler: {()})
+//                let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+
             }
+    
         })
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "login" {
+            let homeVC = segue.destination as! UITabBarController
+            //@TODO: configure userdata here
+        }
+        
+    }
+    
     
     @IBAction func forgotPassClick(_ sender: UIButtonX) {
         
