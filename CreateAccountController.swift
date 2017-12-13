@@ -14,6 +14,7 @@ import Firebase
 
 class CreateAccountController: UIViewController, UITextFieldDelegate {
 
+    var ref: DatabaseReference!
     
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -25,6 +26,7 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         
         name.delegate = self
         email.delegate = self
@@ -69,11 +71,23 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
                     self.signupErrorAlert(title: "Error!", message: String(describing: error!))
                     print(error!)
                 }
+                //successful account creation
+                let userID: String = user!.uid //gets UNIQUE user id
+                
+                self.ref.child("Users").child(userID).setValue(["Name": name!,
+                                                                "Email":email! ])
+                
                 Auth.auth().currentUser?.sendEmailVerification(completion: {(error) in
-                    self.signupErrorAlert(title: "Success!", message: "Verification email sent to: \(email!)")
-                    print("email sent to : \(email!)")
+                    //self.signupErrorAlert(title: "Success!", message: "Verification email sent to: \(email!)")
+                    let alert = UIAlertController(title: "Success!", message: "Email verification sent to \(email!). Confirm by clicking the link provided in the email body.", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: { (action) -> Void in
+                       self.dismiss(animated: true, completion: nil)
+                    })
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true, completion: nil)
+                    print("email sent to : \(email!), creating uid of: \(userID)")
                 })
-                self.dismiss(animated: true, completion: nil)
+                //self.dismiss(animated: true, completion: nil)
             })
         } else {
             signupErrorAlert(title: "Authentication Error", message: "Please complete all fields before continuing")
