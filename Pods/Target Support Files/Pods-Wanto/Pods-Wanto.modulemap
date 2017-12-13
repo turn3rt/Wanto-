@@ -1,0 +1,6 @@
+framework module Pods_Wanto {
+  umbrella header "Pods-Wanto-umbrella.h"
+
+  export *
+  module * { export * }
+}
