@@ -15,9 +15,6 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var privacySetting: UIButtonX!
     
-    
- 
-    
     @IBOutlet weak var mapView: MKMapView!
     
     var activity = Activity(name: String(), privacySetting: String(), people: [Person](), locationString: String(), locationCoords: CLLocationCoordinate2D())
@@ -77,9 +74,10 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
         optionMenu.addAction(cancelAction)
         
         // 5
-        UIApplication.shared.delegate?.window??.rootViewController?.present(optionMenu, animated: true, completion: nil)
-
-        
+//        used to persent shit over initial vc
+//        UIApplication.shared.delegate?.window??.rootViewController?.present(optionMenu, animated: true, completion: nil)
+    
+        UIApplication.topViewController()?.present(optionMenu, animated: true, completion: nil)
         
         
         
@@ -89,7 +87,8 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
     
     
     
-    
 }
+
+
 
 
