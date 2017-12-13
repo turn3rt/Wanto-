@@ -43,19 +43,19 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height
-            }
+        //if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if self.view.frame.origin.y == 0{
+            self.view.frame.origin.y -= 216 //keyboardSize.height
         }
+        // }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height
-            }
+        //if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if self.view.frame.origin.y != 0{
+            self.view.frame.origin.y += 216 //keyboardSize.height
         }
+        // }
     }
     
     @IBAction func createAccount(_ sender: UIButtonX) {
@@ -70,7 +70,7 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
                     print(error!)
                 }
                 Auth.auth().currentUser?.sendEmailVerification(completion: {(error) in
-                    print("email sent to : \(email)")
+                    print("email sent to : \(email!)")
                 })
                 self.dismiss(animated: true, completion: nil)
             })
