@@ -13,6 +13,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var logoView: UIStackView!
     
     
     var kbHeight: CGFloat!
@@ -47,7 +48,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @objc func keyboardWillShow(notification: NSNotification) {
         //if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= 216 //keyboardSize.height
+                self.view.frame.origin.y -= 216
+                logoView.isHidden = true //keyboardSize.height
             }
        // }
     }
@@ -55,7 +57,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @objc func keyboardWillHide(notification: NSNotification) {
         //if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += 216 //keyboardSize.height
+                self.view.frame.origin.y += 216
+                logoView.isHidden = false //keyboardSize.height
             }
        // }
     }
