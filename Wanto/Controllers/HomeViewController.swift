@@ -50,6 +50,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
                                           locLong: Double())
                 
                 
+                let dbID = dict["id"] as? String ?? "id not found"
                 let dbName = dict["name"] as? String ?? "name not found"
                 let dblocString = dict["locString"] as? String ?? "location not found"
                 let dblocLat = dict["locLat"] as? Double ?? 0
@@ -61,6 +62,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
 //                let dblocLong = value["locLong"] as? Double ?? 0
                 
                 //setting the data to new activity
+                dbActivity.id = dbID
                 dbActivity.name = dbName
                 dbActivity.locationString = dblocString
                 dbActivity.locLat = dblocLat
@@ -81,11 +83,11 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
         ref = Database.database().reference()
         fetchActivities()
         
-        ref.child("Users").child(userID).child("Activities").observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            let dbActivities = value?["Activities"]
-            print(dbActivities)
-        })
+//        ref.child("Users").child(userID).child("Activities").observeSingleEvent(of: .value, with: { (snapshot) in
+//            let value = snapshot.value as? NSDictionary
+//            //let dbActivities = value?["Activities"]
+//            //print(dbActivities)
+//        })
         
             
             
@@ -109,12 +111,23 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
+            
+            print(";LKAJS;DLJASFJSLJ", indexPath.row)
+            print("ACTIVITY ID: ", inactiveActivities[indexPath.row].name)
+            print("WTF: ", inactiveActivities[indexPath.row].id)
+            
+            //db deletion
+            let activityID = self.inactiveActivities[indexPath.row].id
+            
+            ref.child("Users").child(userID).child("Activities").child(activityID).removeValue()
+            
+            
             inactiveActivities.remove(at: indexPath.row)
             self.tableView.reloadData()
             
+            
         }
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

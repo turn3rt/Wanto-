@@ -32,6 +32,9 @@ class LoginController: UIViewController, UITextFieldDelegate {
         if let email = UserDefaults.standard.value(forKey: "email") as? String {
             emailField.text = email
         }
+        if let password = UserDefaults.standard.value(forKey: "password") as? String {
+            passwordField.text = password
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -68,6 +71,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
         
         //stores email locally for faster login, don't put password saved in defaults like a dumbass
         UserDefaults.standard.set(email, forKey: "email")
+        UserDefaults.standard.set(pass, forKey: "password")
+
         
         Auth.auth().signIn(withEmail: email!, password: pass!, completion: {(user, error) in
             //unsuccessful login

@@ -471,7 +471,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
                 newSaveDelegate?.saveNewActivity(data: newActivity)
                 let key = activitiesRef.childByAutoId().key
                 newActivity.id = key
-                let activityToAdd = ["id": key,
+                let activityToAdd = ["id": newActivity.id,
                                      "name": newActivity.name,
                                      "locString": newActivity.locationString,
                                      "locLat": newActivity.locLat,
@@ -479,6 +479,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
                     
                     ] as [String : Any]
                 activitiesRef.child(key).setValue(activityToAdd)
+                print("Activity saved to database & local: ", activityToAdd)
             }
             
             if editSaveDelegate != nil {
