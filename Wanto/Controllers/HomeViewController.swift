@@ -18,7 +18,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     
     //MARK: Protocol stubs
     func saveNewActivity(data: Activity) {
-        inactiveActivities.append(data)
+        //inactiveActivities.append(data)
         self.tableView.reloadData()
     }
     func saveActivity(data: Activity) {
@@ -36,30 +36,71 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     var activeActivies = [Activity]()
     
     
-    
+    func fetchActivities() {
+        ref.child("Users").child(userID).child("Activities").observe(.childAdded, with: { (snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject] {
+                //gets data from db
+                let dbActivity = Activity(id: String(),
+                                          name: "Add name...",
+                                          privacySetting: "Friends",
+                                          people: [Person](),
+                                          locationString: "Add location...",
+                                          locationCoords: CLLocationCoordinate2D(),
+                                          locLat: Double(),
+                                          locLong: Double())
+                
+                
+                let dbName = dict["name"] as? String ?? "name not found"
+                let dblocString = dict["locString"] as? String ?? "location not found"
+                let dblocLat = dict["locLat"] as? Double ?? 0
+                let dblocLong = dict["locLong"] as? Double ?? 0
+                
+//                let dbName = self.value(forKey: "name") as? String ?? "name not found"
+//                let dblocString = value["locString"] as? String ?? "locString not found"
+//                let dblocLat = value["locLat"] as? Double ?? 0
+//                let dblocLong = value["locLong"] as? Double ?? 0
+                
+                //setting the data to new activity
+                dbActivity.name = dbName
+                dbActivity.locationString = dblocString
+                dbActivity.locLat = dblocLat
+                dbActivity.locLong = dblocLong
+                let dbLocCoords = CLLocationCoordinate2DMake(dblocLat, dblocLong)
+                dbActivity.locationCoords = dbLocCoords
+                
+                self.inactiveActivities.append(dbActivity)
+                DispatchQueue.main.async { self.tableView.reloadData() }
+            }
+        })
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference()
-        refHandle = ref.observe(DataEventType.value, with: { (snapshot) in
-            let dataDict = snapshot.value as! [String: AnyObject]
-            print(dataDict)
-        })
+        fetchActivities()
         
-        ref.child("Users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("Users").child(userID).child("Activities").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
-            let name = value?["Name"] as! String
+            let dbActivities = value?["Activities"]
+            print(dbActivities)
         })
         
+            
+            
+            
         
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+//        refHandle = ref.observe(DataEventType.value, with: { (snapshot) in
+//            let dataDict = snapshot.value as! [String: AnyObject]
+//            //print(dataDict)
+//        })
+//
+//        ref.child("Users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+//            let value = snapshot.value as? NSDictionary
+//            let name = value?["Name"] as! String
+//        })
+
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -190,6 +231,8 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
         }
         
     }
+    
+    
     
     
 }

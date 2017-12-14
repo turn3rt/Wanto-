@@ -22,7 +22,9 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
                             privacySetting: String(),
                             people: [Person](),
                             locationString: String(),
-                            locationCoords: CLLocationCoordinate2D())
+                            locationCoords: CLLocationCoordinate2D(),
+                            locLat: Double(),
+                            locLong: Double())
     
     func showLocInMiniMap(coordinates: CLLocationCoordinate2D){
         let annotation = MKPointAnnotation()

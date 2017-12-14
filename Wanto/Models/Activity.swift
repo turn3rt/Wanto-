@@ -16,15 +16,19 @@ class Activity {
     var people: [Person]
     var locationString: String
     var locationCoords: CLLocationCoordinate2D
+    var locLat: Double
+    var locLong: Double
 
     
-    init(id: String, name: String, privacySetting: String, people: [Person], locationString: String, locationCoords: CLLocationCoordinate2D) {
+    init(id: String, name: String, privacySetting: String, people: [Person], locationString: String, locationCoords: CLLocationCoordinate2D, locLat: Double, locLong: Double) {
         self.id = id
         self.name = name
         self.privacySetting = privacySetting
         self.people = people
         self.locationString = locationString
         self.locationCoords = locationCoords
+        self.locLat = locLat
+        self.locLong = locLong
     }
 //    var location: String?
 //    var people: [String]?

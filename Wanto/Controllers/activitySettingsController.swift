@@ -31,7 +31,9 @@ class activitySettingsController: UIViewController, UITableViewDelegate, UITable
                             privacySetting: String(),
                             people: [Person](),
                             locationString: String(),
-                            locationCoords: CLLocationCoordinate2D())
+                            locationCoords: CLLocationCoordinate2D(),
+                            locLat: Double(),
+                            locLong: Double())
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var privacyButton: UIButton!

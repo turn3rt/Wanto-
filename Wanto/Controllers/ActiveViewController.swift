@@ -54,7 +54,9 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
                                privacySetting: "Friends",
                                people: [Person](),
                                locationString: "Add location...",
-                               locationCoords: CLLocationCoordinate2D()
+                               locationCoords: CLLocationCoordinate2D(),
+                               locLat: Double(),
+                               locLong: Double()
                                 )
 
     
@@ -243,6 +245,8 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         
         locationManager.stopUpdatingLocation()
         newActivity.locationCoords = location.coordinate
+        newActivity.locLat = location.coordinate.latitude
+        newActivity.locLong = location.coordinate.longitude
         
     }
     
@@ -470,8 +474,8 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
                 let activityToAdd = ["id": key,
                                      "name": newActivity.name,
                                      "locString": newActivity.locationString,
-                                     "locLat": newActivity.locationCoords.latitude,
-                                     "locLong": newActivity.locationCoords.longitude,
+                                     "locLat": newActivity.locLat,
+                                     "locLong": newActivity.locLong,
                     
                     ] as [String : Any]
                 activitiesRef.child(key).setValue(activityToAdd)
@@ -484,8 +488,8 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
                 activitiesRef.child(newActivity.id).setValue([ "id": newActivity.id,
                                                                "name": newActivity.name,
                                                                "locString": newActivity.locationString,
-                                                               "locLat": newActivity.locationCoords.latitude,
-                                                               "locLong": newActivity.locationCoords.longitude])
+                                                               "locLat": newActivity.locLat,
+                                                               "locLong": newActivity.locLong])
             }
             
             
@@ -538,6 +542,8 @@ extension ActiveViewController: HandleMapSearch{
         //add location to delegate new activity
         newActivity.locationString = placemark.name!
         newActivity.locationCoords = placemark.coordinate
+        newActivity.locLat = placemark.coordinate.latitude
+        newActivity.locLong = placemark.coordinate.longitude
         
         print("new activity location: \(String(describing: placemark.name))")
         locationLabel.text = placemark.name
