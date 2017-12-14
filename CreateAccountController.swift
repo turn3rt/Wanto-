@@ -68,7 +68,7 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
         let email = self.email.text
         let password = self.password.text
         
-        if (name != "") && (email != "") && (password != "") {
+        if (name != "") && (email != "") && (password != "") && (username != "") {
             Auth.auth().createUser(withEmail: email!, password: password!, completion: {(user: User? , error) in
                 
                 //unsuccessful creation attempt, spits out error

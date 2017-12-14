@@ -47,6 +47,11 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
             print(dataDict)
         })
         
+        ref.child("Users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let name = value?["Name"] as! String
+        })
+        
         
         
         
@@ -105,6 +110,10 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
         // let tutorialCell = tableView.dequeueReusableCell(withIdentifier: tutorialIdentifer, for: indexPath)
         
         if indexPath.section == 0 && self.inactiveActivities.count != 0 {
+            
+         
+            
+            
             inactiveCell.name.text = self.inactiveActivities[indexPath.row].name
             inactiveCell.location.text = self.inactiveActivities[indexPath.row].locationString
             inactiveCell.activity = self.inactiveActivities[indexPath.row]

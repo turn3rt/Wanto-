@@ -16,6 +16,7 @@ class Activity {
     var people: [Person]
     var locationString: String
     var locationCoords: CLLocationCoordinate2D
+
     
     init(id: String, name: String, privacySetting: String, people: [Person], locationString: String, locationCoords: CLLocationCoordinate2D) {
         self.id = id

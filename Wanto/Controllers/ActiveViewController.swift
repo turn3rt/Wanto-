@@ -471,7 +471,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
                                      "name": newActivity.name,
                                      "locString": newActivity.locationString,
                                      "locLat": newActivity.locationCoords.latitude,
-                                     "locLong": newActivity.locationCoords.longitude
+                                     "locLong": newActivity.locationCoords.longitude,
                     
                     ] as [String : Any]
                 activitiesRef.child(key).setValue(activityToAdd)
@@ -481,7 +481,8 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
                 editSaveDelegate?.saveActivity(data: newActivity)
                 let activityKey = activitiesRef.key
                 print("Activity key is: ", activityKey)
-                activitiesRef.child(newActivity.id).setValue([ "name": newActivity.name,
+                activitiesRef.child(newActivity.id).setValue([ "id": newActivity.id,
+                                                               "name": newActivity.name,
                                                                "locString": newActivity.locationString,
                                                                "locLat": newActivity.locationCoords.latitude,
                                                                "locLong": newActivity.locationCoords.longitude])
