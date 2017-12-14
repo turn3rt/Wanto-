@@ -153,6 +153,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
             return inactiveActivities.count
         } else {
             return 0
+            
         }
     }
     
