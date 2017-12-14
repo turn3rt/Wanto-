@@ -26,7 +26,12 @@ class activitySettingsController: UIViewController, UITableViewDelegate, UITable
     var reorderDelegate: reorderDelegate? = nil
     
     
-    var activity = Activity(name: String(), privacySetting: String(), people: [Person](), locationString: String(), locationCoords: CLLocationCoordinate2D())
+    var activity = Activity(id: String(),
+                            name: String(),
+                            privacySetting: String(),
+                            people: [Person](),
+                            locationString: String(),
+                            locationCoords: CLLocationCoordinate2D())
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var privacyButton: UIButton!

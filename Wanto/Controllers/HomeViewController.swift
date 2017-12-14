@@ -134,7 +134,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
             ref.child("Users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
                 let name = value?["Name"] as! String
-                tutorialCell.tutHeaderLabel.text = "Welcome, \(name). Tap (+) to get started"
+                tutorialCell.tutHeaderLabel.text = "Welcome, \(name). Tap (+) to get started..."
 
             })
             return tutorialCell

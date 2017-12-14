@@ -16,6 +16,7 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
 
     var ref: DatabaseReference!
     
+    @IBOutlet weak var username: UITextField!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -61,6 +62,8 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func createAccount(_ sender: UIButtonX) {
+        
+        let username = self.username.text
         let name = self.name.text
         let email = self.email.text
         let password = self.password.text
@@ -76,7 +79,8 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
                 //successful account creation
                 let userID: String = user!.uid //gets UNIQUE user id
                 
-                self.ref.child("Users").child(userID).setValue(["Name": name!,
+                self.ref.child("Users").child(userID).setValue(["Username": username!,
+                                                                "Name": name!,
                                                                 "Email":email! ])
                 
                 Auth.auth().currentUser?.sendEmailVerification(completion: {(error) in

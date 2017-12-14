@@ -3060,6 +3060,7 @@
                         <outlet property="email" destination="GoL-e5-3zk" id="Hcd-d1-OcI"/>
                         <outlet property="name" destination="sw2-Cr-hJw" id="yoA-Yl-g92"/>
                         <outlet property="password" destination="Nhd-5D-OqH" id="Tpc-QL-PG0"/>
+                        <outlet property="username" destination="JS1-dB-oyA" id="sYB-7F-3G6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUf-UL-w45" userLabel="First Responder" sceneMemberID="firstResponder"/>

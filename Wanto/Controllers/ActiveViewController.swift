@@ -11,6 +11,7 @@ import MapKit
 import ContactsUI
 import Contacts
 import CoreLocation
+import Firebase
 
 
 protocol HandleMapSearch {
@@ -25,10 +26,12 @@ protocol saveDelegate{
     func saveActivity(data: Activity)
 }
 class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate, personDeleteDelegate, reorderDelegate {
-   
-    
-    
-    
+    //MARK: Database ref
+    var ref: DatabaseReference!
+    var activitiesRef: DatabaseReference!
+    var refHandle: UInt!
+    let userID: String = (Auth.auth().currentUser?.uid)!
+
     //MARK: Protocol Stubs
     func deletePerson(atIndexPath: Int) {
         print("activity index to remove: " , atIndexPath)
@@ -46,12 +49,14 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     private let noPersonIdentifier = "NoPerson"
     
     //this is the activity that gets stored and passsed back thorugh the delegate func
-    var newActivity = Activity(name: "Add name...",
+    var newActivity = Activity(id: String(),
+                               name: "Add name...",
                                privacySetting: "Friends",
                                people: [Person](),
                                locationString: "Add location...",
                                locationCoords: CLLocationCoordinate2D()
                                 )
+
     
     let locationManager = CLLocationManager()
     
@@ -87,10 +92,8 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
             alert -> Void in
             let textField = alertController.textFields![0] // this is the text that is grabbed from text field
             
-            //stores new name for new activity
-            self.newActivity.name = textField.text!
-            
             print("New activity name: \(String(describing: self.newActivity.name))")
+            self.newActivity.name = textField.text!
             self.navigationTitle.setTitle(textField.text, for: UIControlState.normal)
         })
         
@@ -185,63 +188,6 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         }
         
     }
-        
-        
-       
-    
-    
-//    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
-//        let newPerson = Person(firstName: contact.givenName,
-//                               lastName: contact.familyName,
-//                               profileImage: #imageLiteral(resourceName: "capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png") )
-//
-//
-//        //checks if person already exists
-//        if newActivity.people.contains(where: { $0.firstName == newPerson.firstName && $0.lastName == newPerson.lastName}) {
-//            print("Person Already added error")
-//            let alertController = UIAlertController(title: "Error: Person already added!", message: "", preferredStyle: .alert)
-//            picker.present(alertController, animated: true, completion: nil)
-//        }
-//        //checks if they have a phone number
-//        if contact.phoneNumbers.first?.value.stringValue != nil {
-//
-//
-//            if contact.imageDataAvailable == true {
-//                newPerson.profileImage = UIImage(data: contact.imageData!)!
-//            }
-//
-//            // this is for the full name
-//            let fullname = "\(contact.givenName) \(contact.familyName)"
-//            print("The selected name is: \(fullname)")
-//            let phoneNum = contact.phoneNumbers.first?.value.stringValue
-//            print("The selected phone num is: \(phoneNum!)")
-//
-//            //appends data to new activity model for prep to send back to home vc
-//
-//            newActivity.people.append(newPerson)
-//            print("the people in the new activity array are: \(newActivity.people)")
-//
-//            peopleCollection.reloadData()
-//
-//
-//
-//
-//        //adds them to array
-//        } else {
-//
-//            print("error has no number")
-//            let alertController = UIAlertController(title: "Error: Person has no number!", message: "", preferredStyle: .alert)
-//            let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: {
-//                alert -> Void in
-//            })
-//
-//            //alertController.addAction(confirmAction)
-//            picker.present(alertController, animated: true, completion: nil)
-//
-//        }
-//
-//    }
-//
     
     
     
@@ -331,6 +277,11 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //sets database refs
+        ref = Database.database().reference()
+        activitiesRef = Database.database().reference().child("Users/\(userID)/Activities")
+
         
         if newActivity.name != "Add name..."{
             navigationTitle.setTitle(newActivity.name, for: .normal)
@@ -514,10 +465,19 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
             if newSaveDelegate != nil {
                 //the delegate need to take a type of new acdtivity data, of type activity class to do the func in protocol
                 newSaveDelegate?.saveNewActivity(data: newActivity)
+                let key = activitiesRef.childByAutoId().key
+                newActivity.id = key
+                let activityToAdd = ["id": key,
+                                     "name": newActivity.name,
+                                     ]
+                activitiesRef.child(key).setValue(activityToAdd)
             }
             
             if editSaveDelegate != nil {
                 editSaveDelegate?.saveActivity(data: newActivity)
+                let activityKey = activitiesRef.key
+                print("Activity key is: ", activityKey)
+                activitiesRef.child(newActivity.id).setValue(["name": newActivity.name])
             }
             
             
@@ -582,17 +542,4 @@ extension ActiveViewController: HandleMapSearch{
     }
 }
 
-//extension ActiveViewController: MKMapViewDelegate {
-//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
-//        if annotation is MKUserLocation {
-//            //return nil so map view draws "blue dot" for standard user location
-//            return nil
-//        }
-//        let reuseId = "pin"
-//        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
-//        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-//        pinView?.canShowCallout = false
-//        return pinView
-//    }
-//} 
 

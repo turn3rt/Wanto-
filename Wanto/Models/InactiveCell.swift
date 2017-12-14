@@ -17,7 +17,12 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var activity = Activity(name: String(), privacySetting: String(), people: [Person](), locationString: String(), locationCoords: CLLocationCoordinate2D())
+    var activity = Activity(id: String(),
+                            name: String(),
+                            privacySetting: String(),
+                            people: [Person](),
+                            locationString: String(),
+                            locationCoords: CLLocationCoordinate2D())
     
     func showLocInMiniMap(coordinates: CLLocationCoordinate2D){
         let annotation = MKPointAnnotation()
