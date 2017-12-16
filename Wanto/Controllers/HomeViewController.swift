@@ -55,6 +55,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
                 let dblocString = dict["locString"] as? String ?? "location not found"
                 let dblocLat = dict["locLat"] as? Double ?? 0
                 let dblocLong = dict["locLong"] as? Double ?? 0
+                let dbPrivacy = dict["privacySetting"] as? String ?? "Error"
                 
 //                let dbName = self.value(forKey: "name") as? String ?? "name not found"
 //                let dblocString = value["locString"] as? String ?? "locString not found"
@@ -67,6 +68,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
                 dbActivity.locationString = dblocString
                 dbActivity.locLat = dblocLat
                 dbActivity.locLong = dblocLong
+                dbActivity.privacySetting = dbPrivacy
                 let dbLocCoords = CLLocationCoordinate2DMake(dblocLat, dblocLong)
                 dbActivity.locationCoords = dbLocCoords
                 

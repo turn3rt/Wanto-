@@ -371,6 +371,19 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         self.present(optionMenu, animated: true, completion: nil)
     }
     
+    @IBAction func goClick(_ sender: UIButtonX) {
+        let requestedComponent: NSCalendar.Unit = [
+            NSCalendar.Unit.day,
+            NSCalendar.Unit.hour,
+            NSCalendar.Unit.minute,
+            NSCalendar.Unit.second
+        ]
+        var timer = Timer()
+        let startTime = Int(datePicker.countDownDuration)
+        
+        let desiredDate = datePicker.date
+        print("Start time is: ", startTime)
+    }
     
     
     
@@ -469,6 +482,8 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
             if newSaveDelegate != nil {
                 //the delegate need to take a type of new acdtivity data, of type activity class to do the func in protocol
                 newSaveDelegate?.saveNewActivity(data: newActivity)
+                
+                //DB references, generates unique key to be assigned to each activity unique to each user
                 let key = activitiesRef.childByAutoId().key
                 newActivity.id = key
                 let activityToAdd = ["id": newActivity.id,
@@ -476,8 +491,8 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
                                      "locString": newActivity.locationString,
                                      "locLat": newActivity.locLat,
                                      "locLong": newActivity.locLong,
-                    
-                    ] as [String : Any]
+                                     "privacySetting": newActivity.privacySetting] as [String : Any]
+                
                 activitiesRef.child(key).setValue(activityToAdd)
                 print("Activity saved to database & local: ", activityToAdd)
             }
@@ -490,7 +505,8 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
                                                                "name": newActivity.name,
                                                                "locString": newActivity.locationString,
                                                                "locLat": newActivity.locLat,
-                                                               "locLong": newActivity.locLong])
+                                                               "locLong": newActivity.locLong,
+                                                               "privacySetting": newActivity.privacySetting])
             }
             
             

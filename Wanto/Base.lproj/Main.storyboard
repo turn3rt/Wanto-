@@ -2669,6 +2669,9 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goClick:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="KSj-tf-ztx"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuU-Kh-HKL" customClass="UIViewX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="16" y="358" width="343" height="42"/>
@@ -2981,7 +2984,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="I0I-yq-8r0">
                                 <rect key="frame" x="98" y="108" width="178" height="192"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoTransparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="fIr-kc-xTN">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoTransparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="fIr-kc-xTN">
                                         <rect key="frame" x="0.0" y="0.0" width="178" height="159"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="178" id="gDo-rU-Ltm"/>

@@ -23,7 +23,9 @@ class LoginController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        logoView.isHidden = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         emailField.delegate = self
