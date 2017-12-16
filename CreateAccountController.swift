@@ -20,7 +20,8 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-
+    @IBOutlet weak var logoView: UIStackView!
+    
     
     @IBAction func tapOffKeyboard(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
@@ -48,7 +49,8 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
     @objc func keyboardWillShow(notification: NSNotification) {
         //if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
         if self.view.frame.origin.y == 0{
-            self.view.frame.origin.y -= 216 //keyboardSize.height
+            self.view.frame.origin.y -= 180 //keyboardSize.height
+            logoView.isHidden = true
         }
         // }
     }
@@ -56,7 +58,8 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
     @objc func keyboardWillHide(notification: NSNotification) {
         //if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
         if self.view.frame.origin.y != 0{
-            self.view.frame.origin.y += 216 //keyboardSize.height
+            self.view.frame.origin.y += 180 //keyboardSize.height
+            logoView.isHidden = false
         }
         // }
     }

@@ -389,6 +389,11 @@
 					B311CF381FCFFB3500730CDA = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					B311CF4E1FCFFB3500730CDA = {
 						CreatedOnToolsVersion = 9.2;

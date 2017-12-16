@@ -3063,6 +3063,7 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="GoL-e5-3zk" id="Hcd-d1-OcI"/>
+                        <outlet property="logoView" destination="I0I-yq-8r0" id="6ll-GD-nOn"/>
                         <outlet property="name" destination="sw2-Cr-hJw" id="yoA-Yl-g92"/>
                         <outlet property="password" destination="Nhd-5D-OqH" id="Tpc-QL-PG0"/>
                         <outlet property="username" destination="JS1-dB-oyA" id="sYB-7F-3G6"/>
