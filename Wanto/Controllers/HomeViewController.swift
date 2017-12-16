@@ -39,7 +39,6 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     func fetchActivities() {
         ref.child("Users").child(userID).child("Activities").observe(.childAdded, with: { (snapshot) in
             if let dict = snapshot.value as? [String: AnyObject] {
-                //gets data from db
                 let dbActivity = Activity(id: String(),
                                           name: "Add name...",
                                           privacySetting: "Friends",
@@ -49,7 +48,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
                                           locLat: Double(),
                                           locLong: Double())
                 
-                
+                //gets data from db
                 let dbID = dict["id"] as? String ?? "id not found"
                 let dbName = dict["name"] as? String ?? "name not found"
                 let dblocString = dict["locString"] as? String ?? "location not found"
@@ -57,10 +56,6 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
                 let dblocLong = dict["locLong"] as? Double ?? 0
                 let dbPrivacy = dict["privacySetting"] as? String ?? "Error"
                 
-//                let dbName = self.value(forKey: "name") as? String ?? "name not found"
-//                let dblocString = value["locString"] as? String ?? "locString not found"
-//                let dblocLat = value["locLat"] as? Double ?? 0
-//                let dblocLong = value["locLong"] as? Double ?? 0
                 
                 //setting the data to new activity
                 dbActivity.id = dbID
@@ -84,26 +79,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
         
         ref = Database.database().reference()
         fetchActivities()
-        
-//        ref.child("Users").child(userID).child("Activities").observeSingleEvent(of: .value, with: { (snapshot) in
-//            let value = snapshot.value as? NSDictionary
-//            //let dbActivities = value?["Activities"]
-//            //print(dbActivities)
-//        })
-        
-            
-            
-            
-        
-//        refHandle = ref.observe(DataEventType.value, with: { (snapshot) in
-//            let dataDict = snapshot.value as! [String: AnyObject]
-//            //print(dataDict)
-//        })
-//
-//        ref.child("Users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-//            let value = snapshot.value as? NSDictionary
-//            let name = value?["Name"] as! String
-//        })
+
 
     }
     

@@ -18,6 +18,7 @@ class Activity {
     var locationCoords: CLLocationCoordinate2D
     var locLat: Double
     var locLong: Double
+    //var isActive: Bool
 
     
     init(id: String, name: String, privacySetting: String, people: [Person], locationString: String, locationCoords: CLLocationCoordinate2D, locLat: Double, locLong: Double) {

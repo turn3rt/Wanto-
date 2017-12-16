@@ -381,6 +381,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
         var timer = Timer()
         let startTime = Int(datePicker.countDownDuration)
         
+        
         let desiredDate = datePicker.date
         print("Start time is: ", startTime)
     }
