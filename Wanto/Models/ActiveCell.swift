@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import MapKit
 
 class ActiveCell: UITableViewCell {
 
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var countdownTimer: UILabel!
+    
+    var activity = Activity(id: String(),
+                            name: String(),
+                            privacySetting: String(),
+                            people: [Person](),
+                            locationString: String(),
+                            locationCoords: CLLocationCoordinate2D(),
+                            locLat: Double(),
+                            locLong: Double())
     
     
     

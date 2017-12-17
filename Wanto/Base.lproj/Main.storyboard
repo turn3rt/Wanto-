@@ -474,6 +474,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
+                                    <outlet property="countdownTimer" destination="9Ra-BS-1jb" id="5ew-Bx-7uY"/>
                                     <outlet property="location" destination="nnk-xj-VLD" id="Ag8-Xh-WwH"/>
                                     <outlet property="name" destination="shC-mt-PcI" id="giC-PR-rWL"/>
                                     <segue destination="qIO-No-f7g" kind="show" id="qNG-KQ-clc"/>

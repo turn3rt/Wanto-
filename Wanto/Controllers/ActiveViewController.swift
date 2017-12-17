@@ -269,7 +269,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
                     
                     print("\(newActivity.locationString)")
                 } else {
-                    //fallback on earlier
+                    //@TODO: fallback on earlier
                 }
             } else {
                 locationLabel.text = "No Matching Addresses Found"
@@ -372,13 +372,13 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     }
     
     @IBAction func goClick(_ sender: UIButtonX) {
-        let requestedComponent: NSCalendar.Unit = [
-            NSCalendar.Unit.day,
-            NSCalendar.Unit.hour,
-            NSCalendar.Unit.minute,
-            NSCalendar.Unit.second
-        ]
-        var timer = Timer()
+//        let requestedComponent: NSCalendar.Unit = [
+//            NSCalendar.Unit.day,
+//            NSCalendar.Unit.hour,
+//            NSCalendar.Unit.minute,
+//            NSCalendar.Unit.second
+//        ]
+        
         let startTime = Int(datePicker.countDownDuration)
         
         
