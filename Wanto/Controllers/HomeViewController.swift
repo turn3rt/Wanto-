@@ -10,7 +10,9 @@ import UIKit
 import MapKit
 import Firebase
 
-class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
+class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, goDelegate {
+  
+    
     //MARK: Database ref
     var ref: DatabaseReference!
     var refHandle: UInt!
@@ -24,6 +26,13 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     func saveActivity(data: Activity) {
         inactiveActivities[(self.tableView.indexPathForSelectedRow!.row)] = data
         print("edited shit:" , data)
+        self.tableView.reloadData()
+    }
+    
+    
+    func passTimerData(data: Activity, initialCount: Int) {
+        print("PASS TIMER DATA FUNC CALLED")
+        activeActivies.append(data)
         self.tableView.reloadData()
     }
     
@@ -130,7 +139,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
         if section == 0 && inactiveActivities.count != 0 {
             return inactiveActivities.count
         } else {
-            return 0
+            return activeActivies.count
             
         }
     }
@@ -209,16 +218,17 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addActivity" {
-            let activeVC = segue.destination as! ActiveViewController
+            let activeVC = segue.destination as! InactiveViewController
             activeVC.newSaveDelegate = self
         }
         
         if segue.identifier == "selectedInactiveCell"{
             let selectedCellIndex = self.tableView.indexPathForSelectedRow!.row
             
-            let inactiveVC = segue.destination as! ActiveViewController
+            let inactiveVC = segue.destination as! InactiveViewController
             inactiveVC.editSaveDelegate = self
             inactiveVC.newActivity = inactiveActivities[selectedCellIndex]
+            inactiveVC.goDelegate = self
             
         }
         

@@ -45,7 +45,7 @@ class LocationSearchTable : UITableViewController {
     
     
     override func viewDidLoad() {
-        print("the map view is : ", mapView)
+        //print("the map view is : ", mapView)
     }
     
 }

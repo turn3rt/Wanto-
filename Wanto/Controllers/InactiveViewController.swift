@@ -25,7 +25,12 @@ protocol saveNewDelegate {
 protocol saveDelegate{
     func saveActivity(data: Activity)
 }
-class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate, personDeleteDelegate, reorderDelegate {
+
+protocol goDelegate {
+    func passTimerData(data: Activity, initialCount: Int)
+}
+
+class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate, personDeleteDelegate, reorderDelegate {
     //MARK: Database ref
     var ref: DatabaseReference!
     var activitiesRef: DatabaseReference!
@@ -73,6 +78,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     
     var newSaveDelegate: saveNewDelegate? = nil
     var editSaveDelegate: saveDelegate? = nil
+    var goDelegate: goDelegate? = nil
     
     
     
@@ -372,6 +378,14 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
     }
     
     @IBAction func goClick(_ sender: UIButtonX) {
+        let startTime = datePicker.countDownDuration
+        //let desiredDate = datePicker.date
+        
+
+        goDelegate?.passTimerData(data: newActivity, initialCount: 60)
+        print("aww yissss")
+        self.navigationController?.popViewController(animated: true)
+        
 //        let requestedComponent: NSCalendar.Unit = [
 //            NSCalendar.Unit.day,
 //            NSCalendar.Unit.hour,
@@ -379,10 +393,9 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
 //            NSCalendar.Unit.second
 //        ]
         
-        let startTime = Int(datePicker.countDownDuration)
         
         
-        let desiredDate = datePicker.date
+        
         print("Start time is: ", startTime)
     }
     
@@ -518,7 +531,7 @@ class ActiveViewController: UIViewController, CNContactPickerDelegate, CLLocatio
 }
 
 
-extension ActiveViewController: UICollectionViewDataSource{
+extension InactiveViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("Number of People in \(newActivity.name): \(newActivity.people.count)")
         if newActivity.people.count == 0{
@@ -545,7 +558,7 @@ extension ActiveViewController: UICollectionViewDataSource{
     
 }
 
-extension ActiveViewController: HandleMapSearch{
+extension InactiveViewController: HandleMapSearch{
     func dropPinZoomIn(placemark:MKPlacemark){
         
         // cache the pin
