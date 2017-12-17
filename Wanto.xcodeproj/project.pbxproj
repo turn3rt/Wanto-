@@ -37,6 +37,7 @@
 		B32B13981FD07EEA005EC45E /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B13971FD07EEA005EC45E /* PersonCell.swift */; };
 		B34249B41FD8581600B7451B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34249B31FD8581600B7451B /* Person.swift */; };
 		B34E076E1FD20E5B0059E9DA /* FeedDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34E076D1FD20E5B0059E9DA /* FeedDetailController.swift */; };
+		B364ABBB1FE71EDD00E72E1D /* ActiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B364ABBA1FE71EDD00E72E1D /* ActiveViewController.swift */; };
 		B3693D411FD1DDED0086D4B9 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3693D401FD1DDED0086D4B9 /* FeedCell.swift */; };
 		B3693D451FD1DF8F0086D4B9 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3693D441FD1DF8F0086D4B9 /* FeedController.swift */; };
 		B36A90EA1FE0CCA7003DBB69 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A90E91FE0CCA7003DBB69 /* DataService.swift */; };
@@ -115,6 +116,7 @@
 		B32B13971FD07EEA005EC45E /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		B34249B31FD8581600B7451B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		B34E076D1FD20E5B0059E9DA /* FeedDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailController.swift; sourceTree = "<group>"; };
+		B364ABBA1FE71EDD00E72E1D /* ActiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveViewController.swift; sourceTree = "<group>"; };
 		B3693D401FD1DDED0086D4B9 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		B3693D441FD1DF8F0086D4B9 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		B36A90E91FE0CCA7003DBB69 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				B3693D441FD1DF8F0086D4B9 /* FeedController.swift */,
 				B32B137C1FD05638005EC45E /* HomeViewController.swift */,
 				B32B13951FD07DC7005EC45E /* InactiveViewController.swift */,
+				B364ABBA1FE71EDD00E72E1D /* ActiveViewController.swift */,
 				B322810B1FD89CAC005251FC /* activitySettingsController.swift */,
 				B34E076D1FD20E5B0059E9DA /* FeedDetailController.swift */,
 				B30399BE1FD39B4100BB9185 /* SettingsController.swift */,
@@ -637,6 +640,7 @@
 				B30399BF1FD39B4100BB9185 /* SettingsController.swift in Sources */,
 				B32B137F1FD05656005EC45E /* InactiveCell.swift in Sources */,
 				B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */,
+				B364ABBB1FE71EDD00E72E1D /* ActiveViewController.swift in Sources */,
 				B36A90EA1FE0CCA7003DBB69 /* DataService.swift in Sources */,
 				B3724CEB1FD3D6AD0034A49A /* Activity.swift in Sources */,
 				B34249B41FD8581600B7451B /* Person.swift in Sources */,

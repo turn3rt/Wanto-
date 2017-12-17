@@ -294,7 +294,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="goButtonClick:" destination="kH5-vH-LT4" eventType="touchUpInside" id="oLz-wq-YsL"/>
-                                                        <segue destination="qIO-No-f7g" kind="show" id="EQ8-0d-SsZ"/>
+                                                        <segue destination="qIO-No-f7g" kind="show" identifier="goClick" id="EQ8-0d-SsZ"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dV-dt-mhW" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
@@ -477,7 +477,7 @@
                                     <outlet property="countdownTimer" destination="9Ra-BS-1jb" id="5ew-Bx-7uY"/>
                                     <outlet property="location" destination="nnk-xj-VLD" id="Ag8-Xh-WwH"/>
                                     <outlet property="name" destination="shC-mt-PcI" id="giC-PR-rWL"/>
-                                    <segue destination="qIO-No-f7g" kind="show" id="qNG-KQ-clc"/>
+                                    <segue destination="qIO-No-f7g" kind="show" identifier="selectedActiveCell" id="qNG-KQ-clc"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ActiveHeader" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActiveHeader" rowHeight="36" id="k7R-TG-MHn">
@@ -698,10 +698,6 @@
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="qIO-No-f7g" id="z2l-I3-68f"/>
-                                    <outlet property="delegate" destination="qIO-No-f7g" id="Pu5-jZ-6kM"/>
-                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLe-Pv-AeV" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="295" y="127" width="64" height="64"/>
@@ -731,9 +727,6 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="addPeopleClick:" destination="qIO-No-f7g" eventType="touchUpInside" id="JKX-iO-ewI"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AI6-VR-dBL" customClass="UIViewX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="287" y="128" width="2" height="76"/>
@@ -831,9 +824,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="switchValue:" destination="qIO-No-f7g" eventType="valueChanged" id="a5d-JG-ned"/>
-                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFk-oj-Irr" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="16" y="673" width="128" height="48"/>
@@ -913,7 +903,6 @@
                                         </state>
                                         <connections>
                                             <action selector="addLocationClick:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="OQe-Fo-esW"/>
-                                            <action selector="addLocationClick:" destination="qIO-No-f7g" eventType="touchUpInside" id="cZ4-mG-rPg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -958,9 +947,6 @@
                                     <color key="titleColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="privacyButtonClick:" destination="qIO-No-f7g" eventType="touchUpInside" id="DZG-6y-jva"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jx-qe-VpY" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="278" y="6" width="72" height="32"/>
@@ -1078,21 +1064,10 @@
                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                             <state key="normal" title="Add Name..."/>
                             <connections>
-                                <action selector="titleButtonTap:" destination="qIO-No-f7g" eventType="touchUpInside" id="0cM-r6-46Y"/>
                                 <action selector="titleButtonTap:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="lzg-5E-Owt"/>
                             </connections>
                         </button>
                     </navigationItem>
-                    <connections>
-                        <outlet property="datePicker" destination="FXq-wt-wO4" id="OSH-Wl-VPI"/>
-                        <outlet property="locationLabel" destination="OOd-ep-2rg" id="rFF-Qs-4ny"/>
-                        <outlet property="mapLocationButton" destination="DwZ-HQ-b48" id="f5c-Jj-P9c"/>
-                        <outlet property="mapView" destination="ONf-6m-1Rw" id="AXd-qK-vYm"/>
-                        <outlet property="navigationTitle" destination="5ls-1I-mOP" id="swk-mq-84Q"/>
-                        <outlet property="peopleCollection" destination="KCx-6P-ELH" id="ou9-IO-dna"/>
-                        <outlet property="privacyButton" destination="PJg-7T-shq" id="bvT-hr-Vyp"/>
-                        <outlet property="timeDateSwitch" destination="tdT-4X-dKs" id="lcX-xK-Hsm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssg-m6-pCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

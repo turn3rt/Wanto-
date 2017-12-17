@@ -19,6 +19,7 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
     
     var activity = Activity(id: String(),
                             name: String(),
+                            isActive: false,
                             privacySetting: String(),
                             people: [Person](),
                             locationString: String(),

@@ -56,6 +56,7 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
     //this is the activity that gets stored and passsed back thorugh the delegate func
     var newActivity = Activity(id: String(),
                                name: "Add name...",
+                               isActive: false,
                                privacySetting: "Friends",
                                people: [Person](),
                                locationString: "Add location...",
@@ -380,11 +381,22 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
     @IBAction func goClick(_ sender: UIButtonX) {
         let startTime = datePicker.countDownDuration
         //let desiredDate = datePicker.date
-        
-
+        newActivity.isActive = true
         goDelegate?.passTimerData(data: newActivity, initialCount: 60)
         print("aww yissss")
+        
+        
+        activitiesRef.child(newActivity.id).setValue([ "id": newActivity.id,
+                                                       "name": newActivity.name,
+                                                       "isActive": newActivity.isActive,
+                                                       "locString": newActivity.locationString,
+                                                       "locLat": newActivity.locLat,
+                                                       "locLong": newActivity.locLong,
+                                                       "privacySetting": newActivity.privacySetting])
+    
         self.navigationController?.popViewController(animated: true)
+        
+        
         
 //        let requestedComponent: NSCalendar.Unit = [
 //            NSCalendar.Unit.day,
@@ -502,6 +514,7 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
                 newActivity.id = key
                 let activityToAdd = ["id": newActivity.id,
                                      "name": newActivity.name,
+                                     "isActive": newActivity.isActive,
                                      "locString": newActivity.locationString,
                                      "locLat": newActivity.locLat,
                                      "locLong": newActivity.locLong,
@@ -517,6 +530,7 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
                 print("Activity key is: ", activityKey)
                 activitiesRef.child(newActivity.id).setValue([ "id": newActivity.id,
                                                                "name": newActivity.name,
+                                                               "isActive": newActivity.isActive,
                                                                "locString": newActivity.locationString,
                                                                "locLat": newActivity.locLat,
                                                                "locLong": newActivity.locLong,

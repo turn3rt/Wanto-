@@ -18,6 +18,7 @@ class ActiveCell: UITableViewCell {
     
     var activity = Activity(id: String(),
                             name: String(),
+                            isActive: Bool(),
                             privacySetting: String(),
                             people: [Person](),
                             locationString: String(),

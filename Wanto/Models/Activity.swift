@@ -12,6 +12,7 @@ import MapKit
 class Activity {
     var id: String
     var name: String
+    var isActive: Bool
     var privacySetting: String
     var people: [Person]
     var locationString: String
@@ -21,9 +22,10 @@ class Activity {
     //var isActive: Bool
 
     
-    init(id: String, name: String, privacySetting: String, people: [Person], locationString: String, locationCoords: CLLocationCoordinate2D, locLat: Double, locLong: Double) {
+    init(id: String, name: String, isActive: Bool, privacySetting: String, people: [Person], locationString: String, locationCoords: CLLocationCoordinate2D, locLat: Double, locLong: Double) {
         self.id = id
         self.name = name
+        self.isActive = isActive
         self.privacySetting = privacySetting
         self.people = people
         self.locationString = locationString

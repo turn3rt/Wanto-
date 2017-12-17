@@ -28,6 +28,7 @@ class activitySettingsController: UIViewController, UITableViewDelegate, UITable
     
     var activity = Activity(id: String(),
                             name: String(),
+                            isActive: false,
                             privacySetting: String(),
                             people: [Person](),
                             locationString: String(),

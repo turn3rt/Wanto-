@@ -32,7 +32,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     
     func passTimerData(data: Activity, initialCount: Int) {
         print("PASS TIMER DATA FUNC CALLED")
-        activeActivies.append(data)
+        activeActivities.append(data)
         self.tableView.reloadData()
     }
     
@@ -42,17 +42,18 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     
     var inactiveActivities = [Activity]()
     
-    var activeActivies = [Activity]()
+    var activeActivities = [Activity]()
     
     
     func fetchActivities() {
         ref.child("Users").child(userID).child("Activities").observe(.childAdded, with: { (snapshot) in
             if let dict = snapshot.value as? [String: AnyObject] {
                 let dbActivity = Activity(id: String(),
-                                          name: "Add name...",
-                                          privacySetting: "Friends",
+                                          name: String(),
+                                          isActive: Bool(),
+                                          privacySetting: String(),
                                           people: [Person](),
-                                          locationString: "Add location...",
+                                          locationString: String(),
                                           locationCoords: CLLocationCoordinate2D(),
                                           locLat: Double(),
                                           locLong: Double())
@@ -60,6 +61,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 //gets data from db
                 let dbID = dict["id"] as? String ?? "id not found"
                 let dbName = dict["name"] as? String ?? "name not found"
+                let dbIsActive = dict["isActive"] as? Bool ?? false
                 let dblocString = dict["locString"] as? String ?? "location not found"
                 let dblocLat = dict["locLat"] as? Double ?? 0
                 let dblocLong = dict["locLong"] as? Double ?? 0
@@ -69,6 +71,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 //setting the data to new activity
                 dbActivity.id = dbID
                 dbActivity.name = dbName
+                dbActivity.isActive = dbIsActive
                 dbActivity.locationString = dblocString
                 dbActivity.locLat = dblocLat
                 dbActivity.locLong = dblocLong
@@ -76,7 +79,11 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 let dbLocCoords = CLLocationCoordinate2DMake(dblocLat, dblocLong)
                 dbActivity.locationCoords = dbLocCoords
                 
-                self.inactiveActivities.append(dbActivity)
+                if dbActivity.isActive == true {
+                    self.activeActivities.append(dbActivity)
+                } else {
+                    self.inactiveActivities.append(dbActivity)
+                }
                 DispatchQueue.main.async { self.tableView.reloadData() }
             }
         })
@@ -125,7 +132,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     override func numberOfSections(in tableView: UITableView) -> Int {
         
         
-        if activeActivies.count != 0 {
+        if activeActivities.count != 0 {
             return 2
         }
         if inactiveActivities.count != 0 {
@@ -136,10 +143,10 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Number of Activities: \(inactiveActivities.count)")
-        if section == 0 && inactiveActivities.count != 0 {
-            return inactiveActivities.count
+        if section == 0 && activeActivities.count != 0 {
+            return activeActivities.count
         } else {
-            return activeActivies.count
+            return inactiveActivities.count
             
         }
     }
@@ -148,30 +155,27 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         
         
         let inactiveCell = tableView.dequeueReusableCell(withIdentifier: inactiveIdentifer , for: indexPath) as! InactiveCell
-        //let activeCell = tableView.dequeueReusableCell(withIdentifier: activeIdentifier, for: indexPath) as! ActiveCell
-        // let tutorialCell = tableView.dequeueReusableCell(withIdentifier: tutorialIdentifer, for: indexPath)
+        let activeCell = tableView.dequeueReusableCell(withIdentifier: activeIdentifier, for: indexPath) as! ActiveCell
         
-        if indexPath.section == 0 && self.inactiveActivities.count != 0 {
+        if indexPath.section == 0 && self.activeActivities.count != 0  {
+            activeCell.name.text = self.activeActivities[indexPath.row].name
+            activeCell.location.text = self.activeActivities[indexPath.row].locationString
+            activeCell.activity = self.activeActivities[indexPath.row]
+            //activeCell.countdownTimer.text = self.activeActivities[indexPath.row].
             
-         
             
-            
+            return activeCell
+           
+        } else if inactiveActivities.count != 0 && inactiveActivities[indexPath.row].isActive == false {
             inactiveCell.name.text = self.inactiveActivities[indexPath.row].name
             inactiveCell.location.text = self.inactiveActivities[indexPath.row].locationString
             inactiveCell.activity = self.inactiveActivities[indexPath.row]
             inactiveCell.showLocInMiniMap(coordinates: self.inactiveActivities[indexPath.row].locationCoords)
             inactiveCell.privacySetting.setTitle(inactiveActivities[indexPath.row].privacySetting, for: .normal)
             return inactiveCell
-            
-            //else {
-            //            inactiveCell.name.text = self.inactiveActivities[indexPath.row].name
-            //            inactiveCell.location.text = self.inactiveActivities[indexPath.row].locationString
-            //            inactiveCell.activity = self.inactiveActivities[indexPath.row]
-            //            inactiveCell.showLocInMiniMap(coordinates: inactiveActivities[indexPath.row].locationCoords)
-            //            return inactiveCell
-            
         }
         return UITableViewCell()
+    
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -191,13 +195,11 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
             return tutorialCell
         }
         
-        if section == 0 && activeActivies.count != 0 {
+        if section == 0 && activeActivities.count != 0 {
             return tableView.dequeueReusableCell(withIdentifier: "ActiveHeader")
-        }
-        if section == 0 && inactiveActivities.count != 0 {
+        } else {
             return tableView.dequeueReusableCell(withIdentifier: "InactiveHeader")
         }
-        return nil
         
         //        if section == 0 {
         //            return tableView.dequeueReusableCell(withIdentifier: "ActiveHeader")
@@ -218,8 +220,8 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addActivity" {
-            let activeVC = segue.destination as! InactiveViewController
-            activeVC.newSaveDelegate = self
+            let inactiveVC = segue.destination as! InactiveViewController
+            inactiveVC.newSaveDelegate = self
         }
         
         if segue.identifier == "selectedInactiveCell"{
@@ -231,6 +233,13 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
             inactiveVC.goDelegate = self
             
         }
+        
+        if segue.identifier == "goClick"{
+            //let selectedCellIndex = self.tableView.indexPathForSelectedRow!.row
+            let activeVC = segue.destination as! ActiveViewController
+        }
+        
+       // if segue.iden
         
     }
     
