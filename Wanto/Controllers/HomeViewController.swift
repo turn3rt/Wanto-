@@ -40,7 +40,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     }
     func cancel(data: Activity, selectedCellIndex: Int) {
         activeActivities.remove(at: selectedCellIndex)
-        inactiveActivities.append(data)
+        inactiveActivities.insert(data, at: 0)
         self.tableView.reloadData()
     }
     
