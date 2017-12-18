@@ -57,19 +57,38 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     var activeActivities = [Activity]()
     
     @IBAction func cancelClick(_ sender: UIButtonX) {
-        ref = Database.database().reference().child("Users/\(userID)/Activities")
-        let indexPath = tableView.indexPathForView(view: sender)!
-        self.activeActivities[indexPath.row].isActive = false
-        self.ref.child(self.activeActivities[indexPath.row].id).setValue(["id": self.activeActivities[indexPath.row].id,
-                                                                          "name": self.activeActivities[indexPath.row].name,
-                                                                          "isActive": self.activeActivities[indexPath.row].isActive,
-                                                                          "locString": self.activeActivities[indexPath.row].locationString,
-                                                                          "locLat": self.activeActivities[indexPath.row].locLat,
-                                                                          "locLong": self.activeActivities[indexPath.row].locLong,
-                                                                          "privacySetting": self.activeActivities[indexPath.row].privacySetting])
-        inactiveActivities.insert(activeActivities[indexPath.row], at: 0)
-        activeActivities.remove(at: indexPath.row)
-        self.tableView.reloadData()
+        let alertController = UIAlertController(title: "Are you sure you want to cancel the event?", message: "", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Yes", style: .destructive, handler: {
+            alert -> Void in
+            self.ref = Database.database().reference().child("Users/\(self.userID)/Activities")
+            let indexPath = self.tableView.indexPathForView(view: sender)!
+            self.activeActivities[indexPath.row].isActive = false
+            self.ref.child(self.activeActivities[indexPath.row].id).setValue(["id": self.activeActivities[indexPath.row].id,
+                                                                              "name": self.activeActivities[indexPath.row].name,
+                                                                              "isActive": self.activeActivities[indexPath.row].isActive,
+                                                                              "locString": self.activeActivities[indexPath.row].locationString,
+                                                                              "locLat": self.activeActivities[indexPath.row].locLat,
+                                                                              "locLong": self.activeActivities[indexPath.row].locLong,
+                                                                              "privacySetting": self.activeActivities[indexPath.row].privacySetting])
+            self.inactiveActivities.insert(self.activeActivities[indexPath.row], at: 0)
+            self.activeActivities.remove(at: indexPath.row)
+            self.tableView.reloadData()
+        })
+        
+        
+        let cancelAction = UIAlertAction(title: "No", style: .default, handler: {
+            (action : UIAlertAction!) -> Void in
+            
+        })
+        
+        
+        //add actions to alert sheet
+        alertController.addAction(cancelAction)
+        alertController.addAction(confirmAction)
+        
+        
+        self.present(alertController, animated: true, completion: nil)
         
     }
     

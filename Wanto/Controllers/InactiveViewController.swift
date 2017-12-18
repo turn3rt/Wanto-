@@ -482,7 +482,7 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
         if newActivity.people.count == 0 {
             let alertController = UIAlertController(title: "Add at least one person!", message: "", preferredStyle: .alert)
       
-            let confirmAction = UIAlertAction(title: "Confirm", style: .default, handler: {
+            let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: {
                 alert -> Void in
             })
             
@@ -494,7 +494,7 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
             
             
             //add actions to alert sheet
-            alertController.addAction(cancelAction)
+            //alertController.addAction(cancelAction)
             alertController.addAction(confirmAction)
             
             
