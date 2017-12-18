@@ -171,9 +171,9 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
         if newActivity.people.contains(where: { $0.firstName == newPerson.firstName && $0.lastName == newPerson.lastName}) {
             print("Person Already added error")
             let alertController = UIAlertController(title: "Error: Person already added!", message: "", preferredStyle: .alert)
-            let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: {
-                alert -> Void in
-            })
+//            let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: {
+//                alert -> Void in
+//            })
             
             //alertController.addAction(confirmAction)
             picker.present(alertController, animated: true, completion: nil)
@@ -465,14 +465,14 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
             })
             
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
-                (action : UIAlertAction!) -> Void in
-                
-            })
-            
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+//                (action : UIAlertAction!) -> Void in
+//
+//            })
+//
             
             //add actions to alert sheet
-            alertController.addAction(cancelAction)
+//            alertController.addAction(cancelAction)
             alertController.addAction(confirmAction)
             
             
@@ -487,10 +487,10 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
             })
             
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
-                (action : UIAlertAction!) -> Void in
-                
-            })
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+//                (action : UIAlertAction!) -> Void in
+//
+//            })
             
             
             //add actions to alert sheet
