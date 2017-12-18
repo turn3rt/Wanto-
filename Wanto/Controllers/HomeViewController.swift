@@ -10,7 +10,11 @@ import UIKit
 import MapKit
 import Firebase
 
-class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, goDelegate {
+class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, goDelegate, cancelDelegate {
+   
+    
+ 
+    
 
     
     //MARK: Database ref
@@ -34,6 +38,13 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         inactiveActivities.remove(at: selectedCellIndex)
         self.tableView.reloadData()
     }
+    func cancel(data: Activity, selectedCellIndex: Int) {
+        activeActivities.remove(at: selectedCellIndex)
+        inactiveActivities.append(data)
+        self.tableView.reloadData()
+    }
+    
+  
     
   
     
@@ -63,7 +74,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 //gets data from db
                 let dbID = dict["id"] as? String ?? "id not found"
                 let dbName = dict["name"] as? String ?? "name not found"
-                let dbIsActive = dict["isActive"] as? Bool //?? false
+                let dbIsActive = dict["isActive"] as? Bool ?? false
                 let dblocString = dict["locString"] as? String ?? "location not found"
                 let dblocLat = dict["locLat"] as? Double ?? 0
                 let dblocLong = dict["locLong"] as? Double ?? 0
@@ -73,7 +84,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 //setting the data to new activity
                 dbActivity.id = dbID
                 dbActivity.name = dbName
-                dbActivity.isActive = dbIsActive!
+                dbActivity.isActive = dbIsActive
                 dbActivity.locationString = dblocString
                 dbActivity.locLat = dblocLat
                 dbActivity.locLong = dblocLong
@@ -240,10 +251,17 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         
         if segue.identifier == "goClick"{
             //let selectedCellIndex = self.tableView.indexPathForSelectedRow!.row
-            let activeVC = segue.destination as! ActiveViewController
+            //let activeVC = segue.destination as! ActiveViewController
         }
         
-       // if segue.iden
+        if segue.identifier == "selectedActiveCell"{
+            let selectedCellIndex = self.tableView.indexPathForSelectedRow!.row
+
+            let activeVC = segue.destination as! ActiveViewController
+            activeVC.activity = activeActivities[selectedCellIndex]
+            activeVC.selectedCellIndex = selectedCellIndex
+            activeVC.cancelDelegate = self
+        }
         
     }
     

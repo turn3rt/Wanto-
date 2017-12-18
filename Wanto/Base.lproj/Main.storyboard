@@ -294,7 +294,6 @@
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="goButtonClick:" destination="kH5-vH-LT4" eventType="touchUpInside" id="oLz-wq-YsL"/>
-                                                        <segue destination="qIO-No-f7g" kind="show" identifier="goClick" id="EQ8-0d-SsZ"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dV-dt-mhW" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
@@ -876,6 +875,9 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelClick:" destination="qIO-No-f7g" eventType="touchUpInside" id="ZUy-HL-hGy"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today, 9:24pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6oA-rX-dFH">
                                 <rect key="frame" x="16" y="212" width="343" height="80"/>
@@ -3069,6 +3071,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TrG-aZ-ToP"/>
-        <segue reference="EQ8-0d-SsZ"/>
     </inferredMetricsTieBreakers>
 </document>
