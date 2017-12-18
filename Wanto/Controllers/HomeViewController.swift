@@ -56,7 +56,22 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     var inactiveActivities = [Activity]()
     var activeActivities = [Activity]()
     
-    
+    @IBAction func cancelClick(_ sender: UIButtonX) {
+        ref = Database.database().reference().child("Users/\(userID)/Activities")
+        let indexPath = tableView.indexPathForView(view: sender)!
+        self.activeActivities[indexPath.row].isActive = false
+        self.ref.child(self.activeActivities[indexPath.row].id).setValue(["id": self.activeActivities[indexPath.row].id,
+                                                                          "name": self.activeActivities[indexPath.row].name,
+                                                                          "isActive": self.activeActivities[indexPath.row].isActive,
+                                                                          "locString": self.activeActivities[indexPath.row].locationString,
+                                                                          "locLat": self.activeActivities[indexPath.row].locLat,
+                                                                          "locLong": self.activeActivities[indexPath.row].locLong,
+                                                                          "privacySetting": self.activeActivities[indexPath.row].privacySetting])
+        inactiveActivities.insert(activeActivities[indexPath.row], at: 0)
+        activeActivities.remove(at: indexPath.row)
+        self.tableView.reloadData()
+        
+    }
     
     func fetchActivities() {
         ref.child("Users").child(userID).child("Activities").observe(.childAdded, with: { (snapshot) in

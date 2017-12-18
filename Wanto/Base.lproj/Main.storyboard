@@ -419,6 +419,9 @@
                                                             <real key="value" value="8"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="cancelClick:" destination="kH5-vH-LT4" eventType="touchUpInside" id="eFz-LT-Kp7"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWK-gz-qWy" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="43" width="64" height="33"/>

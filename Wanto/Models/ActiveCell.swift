@@ -35,17 +35,18 @@ class ActiveCell: UITableViewCell {
                             locLat: Double(),
                             locLong: Double())
     
-//    @IBAction func cancelClick(_ sender: UIButtonX) {
-//        ref = Database.database().reference().child("Users/\(userID)/Activities")
-//        self.activity.isActive = false
-//        self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
-//                                                    "name": self.activity.name,
-//                                                    "isActive": self.activity.isActive,
-//                                                    "locString": self.activity.locationString,
-//                                                    "locLat": self.activity.locLat,
-//                                                    "locLong": self.activity.locLong,
-//                                                    "privacySetting": self.activity.privacySetting])
-//    }
+    @IBAction func cancelClick(_ sender: UIButtonX) {
+        ref = Database.database().reference().child("Users/\(userID)/Activities")
+        self.activity.isActive = false
+        self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
+                                                    "name": self.activity.name,
+                                                    "isActive": self.activity.isActive,
+                                                    "locString": self.activity.locationString,
+                                                    "locLat": self.activity.locLat,
+                                                    "locLong": self.activity.locLong,
+                                                    "privacySetting": self.activity.privacySetting])
+        
+    }
     
    
 }

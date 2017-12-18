@@ -32,5 +32,12 @@ extension UIApplication {
     }
 }
 
+extension UITableView {
+    func indexPathForView(view: AnyObject) -> NSIndexPath? {
+        let originInTableView = self.convert(CGPoint(), from: (view as! UIView))
+        return self.indexPathForRow(at: originInTableView) as NSIndexPath?
+    }
+}
+
 
 
