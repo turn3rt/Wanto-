@@ -978,7 +978,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEO-fn-JKO" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
-                                <rect key="frame" x="283" y="625" width="72" height="32"/>
+                                <rect key="frame" x="283" y="621" width="72" height="32"/>
                                 <color key="backgroundColor" red="1" green="0.88235294119999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="1Fd-n0-s4q"/>
@@ -1011,7 +1011,7 @@
                         <constraints>
                             <constraint firstItem="6oA-rX-dFH" firstAttribute="leading" secondItem="tdT-4X-dKs" secondAttribute="leading" id="1X2-Cq-epv"/>
                             <constraint firstItem="hBd-RV-a5c" firstAttribute="top" secondItem="eyZ-5C-6Og" secondAttribute="top" constant="8" id="3Wy-uI-zFh"/>
-                            <constraint firstItem="fEO-fn-JKO" firstAttribute="bottom" secondItem="ONf-6m-1Rw" secondAttribute="bottom" constant="-8" id="3f1-b7-2RN"/>
+                            <constraint firstItem="fEO-fn-JKO" firstAttribute="bottom" secondItem="ONf-6m-1Rw" secondAttribute="bottom" constant="-12" id="3f1-b7-2RN"/>
                             <constraint firstItem="6oA-rX-dFH" firstAttribute="trailing" secondItem="tdT-4X-dKs" secondAttribute="trailing" id="51S-IY-RIm"/>
                             <constraint firstItem="hzl-Z2-Wzg" firstAttribute="top" secondItem="PLe-Pv-AeV" secondAttribute="bottom" constant="2" id="64U-AE-aM9"/>
                             <constraint firstItem="KCx-6P-ELH" firstAttribute="top" secondItem="hBd-RV-a5c" secondAttribute="bottom" id="9F6-cK-a1w"/>

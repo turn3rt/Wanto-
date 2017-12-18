@@ -8,8 +8,15 @@
 
 import UIKit
 import MapKit
+import Firebase
+
+
 
 class InactiveCell: UITableViewCell, MKMapViewDelegate {
+    //MARK: Database ref
+    var ref: DatabaseReference!
+    var refHandle: UInt!
+    let userID: String = (Auth.auth().currentUser?.uid)!
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var location: UILabel!
@@ -40,7 +47,9 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
     }
     
     @IBAction func privacyButtonClick(_ sender: UIButtonX) {
-        print("button clicked")
+        ref = Database.database().reference().child("Users/\(userID)/Activities")
+
+
         
         let optionMenu = UIAlertController(title: nil, message: "People who can see your activity", preferredStyle: .actionSheet)
         
@@ -50,13 +59,27 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
             print("Tapped Everyone")
             self.activity.privacySetting = "Everyone"
             self.privacySetting.setTitle(self.activity.privacySetting, for: .normal)
+            self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
+                                                        "name": self.activity.name,
+                                                        "isActive": self.activity.isActive,
+                                                        "locString": self.activity.locationString,
+                                                        "locLat": self.activity.locLat,
+                                                        "locLong": self.activity.locLong,
+                                                        "privacySetting": self.activity.privacySetting])
         })
         let friends = UIAlertAction(title: "Friends", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             print("tapped friends")
             self.activity.privacySetting = "Friends"
             self.privacySetting.setTitle(self.activity.privacySetting, for: .normal)
-            
+            self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
+                                                        "name": self.activity.name,
+                                                        "isActive": self.activity.isActive,
+                                                        "locString": self.activity.locationString,
+                                                        "locLat": self.activity.locLat,
+                                                        "locLong": self.activity.locLong,
+                                                        "privacySetting": self.activity.privacySetting])
+
             
         })
         let onlyGroup = UIAlertAction(title: "Only Group", style: .default, handler: {
@@ -64,7 +87,14 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
             print("tapped only group")
             self.activity.privacySetting = "Only Group"
             self.privacySetting.setTitle(self.activity.privacySetting, for: .normal)
-            
+            self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
+                                                        "name": self.activity.name,
+                                                        "isActive": self.activity.isActive,
+                                                        "locString": self.activity.locationString,
+                                                        "locLat": self.activity.locLat,
+                                                        "locLong": self.activity.locLong,
+                                                        "privacySetting": self.activity.privacySetting])
+
             
         })
         //

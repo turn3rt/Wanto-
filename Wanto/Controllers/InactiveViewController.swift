@@ -27,7 +27,7 @@ protocol saveDelegate{
 }
 
 protocol goDelegate {
-    func passTimerData(data: Activity, initialCount: Int)
+    func passTimerData(data: Activity, initialCount: Int, selectedCellIndex: Int)
 }
 
 class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate, personDeleteDelegate, reorderDelegate {
@@ -62,8 +62,7 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
                                locationString: "Add location...",
                                locationCoords: CLLocationCoordinate2D(),
                                locLat: Double(),
-                               locLong: Double()
-                                )
+                               locLong: Double())
 
     
     let locationManager = CLLocationManager()
@@ -80,7 +79,8 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
     var newSaveDelegate: saveNewDelegate? = nil
     var editSaveDelegate: saveDelegate? = nil
     var goDelegate: goDelegate? = nil
-    
+    var selectedCellIndex = Int()
+
     
     
     
@@ -382,7 +382,7 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
         let startTime = datePicker.countDownDuration
         //let desiredDate = datePicker.date
         newActivity.isActive = true
-        goDelegate?.passTimerData(data: newActivity, initialCount: 60)
+        goDelegate?.passTimerData(data: newActivity, initialCount: 60, selectedCellIndex: self.selectedCellIndex)
         print("aww yissss")
         
         

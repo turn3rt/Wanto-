@@ -8,13 +8,22 @@
 
 import UIKit
 import MapKit
+import Firebase
+
 
 class ActiveCell: UITableViewCell {
+    //MARK: Database ref
+    var ref: DatabaseReference!
+    var refHandle: UInt!
+    let userID: String = (Auth.auth().currentUser?.uid)!
+    
 
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var countdownTimer: UILabel!
+    
+
     
     var activity = Activity(id: String(),
                             name: String(),
@@ -26,7 +35,17 @@ class ActiveCell: UITableViewCell {
                             locLat: Double(),
                             locLong: Double())
     
-    
+//    @IBAction func cancelClick(_ sender: UIButtonX) {
+//        ref = Database.database().reference().child("Users/\(userID)/Activities")
+//        self.activity.isActive = false
+//        self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
+//                                                    "name": self.activity.name,
+//                                                    "isActive": self.activity.isActive,
+//                                                    "locString": self.activity.locationString,
+//                                                    "locLat": self.activity.locLat,
+//                                                    "locLong": self.activity.locLong,
+//                                                    "privacySetting": self.activity.privacySetting])
+//    }
     
    
 }

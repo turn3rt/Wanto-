@@ -11,7 +11,7 @@ import MapKit
 import Firebase
 
 class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, goDelegate {
-  
+
     
     //MARK: Database ref
     var ref: DatabaseReference!
@@ -29,20 +29,22 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         self.tableView.reloadData()
     }
     
-    
-    func passTimerData(data: Activity, initialCount: Int) {
-        print("PASS TIMER DATA FUNC CALLED")
+    func passTimerData(data: Activity, initialCount: Int, selectedCellIndex: Int) {
         activeActivities.append(data)
+        inactiveActivities.remove(at: selectedCellIndex)
         self.tableView.reloadData()
     }
+    
+  
+    
     
     private let inactiveIdentifer = "InactiveCell"
     private let activeIdentifier = "ActiveCell"
     private let tutorialHeader = "TutorialHeader"
     
     var inactiveActivities = [Activity]()
-    
     var activeActivities = [Activity]()
+    
     
     
     func fetchActivities() {
@@ -61,7 +63,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 //gets data from db
                 let dbID = dict["id"] as? String ?? "id not found"
                 let dbName = dict["name"] as? String ?? "name not found"
-                let dbIsActive = dict["isActive"] as? Bool ?? false
+                let dbIsActive = dict["isActive"] as? Bool //?? false
                 let dblocString = dict["locString"] as? String ?? "location not found"
                 let dblocLat = dict["locLat"] as? Double ?? 0
                 let dblocLong = dict["locLong"] as? Double ?? 0
@@ -71,7 +73,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 //setting the data to new activity
                 dbActivity.id = dbID
                 dbActivity.name = dbName
-                dbActivity.isActive = dbIsActive
+                dbActivity.isActive = dbIsActive!
                 dbActivity.locationString = dblocString
                 dbActivity.locLat = dblocLat
                 dbActivity.locLong = dblocLong
@@ -92,9 +94,10 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         ref = Database.database().reference()
+        
         fetchActivities()
+     
 
 
     }
@@ -231,6 +234,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
             inactiveVC.editSaveDelegate = self
             inactiveVC.newActivity = inactiveActivities[selectedCellIndex]
             inactiveVC.goDelegate = self
+            inactiveVC.selectedCellIndex = selectedCellIndex
             
         }
         
