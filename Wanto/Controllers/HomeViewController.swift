@@ -57,7 +57,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     var activeActivities = [Activity]()
     
     @IBAction func cancelClick(_ sender: UIButtonX) {
-        let alertController = UIAlertController(title: "Are you sure you want to cancel the event?", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Are you sure?", message: "", preferredStyle: .alert)
         
         let confirmAction = UIAlertAction(title: "Yes", style: .destructive, handler: {
             alert -> Void in
@@ -140,7 +140,6 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        
         fetchActivities()
      
 
@@ -153,11 +152,6 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            
-            print(";LKAJS;DLJASFJSLJ", indexPath.row)
-            print("ACTIVITY ID: ", inactiveActivities[indexPath.row].name)
-            print("WTF: ", inactiveActivities[indexPath.row].id)
-            
             //db deletion
             let activityID = self.inactiveActivities[indexPath.row].id
             

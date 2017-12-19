@@ -19,8 +19,7 @@ class Activity {
     var locationCoords: CLLocationCoordinate2D
     var locLat: Double
     var locLong: Double
-    //var isActive: Bool
-
+    //var targetTime: idk
     
     init(id: String, name: String, isActive: Bool, privacySetting: String, people: [Person], locationString: String, locationCoords: CLLocationCoordinate2D, locLat: Double, locLong: Double) {
         self.id = id
