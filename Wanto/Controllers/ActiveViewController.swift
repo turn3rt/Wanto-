@@ -26,9 +26,8 @@ class ActiveViewController: UIViewController {
     let userID: String = (Auth.auth().currentUser?.uid)!
     
     
-    
-    var cancelDelegate: cancelDelegate? = nil
-    var selectedCellIndex = Int()
+    @IBOutlet weak var standardTimeLabel: UILabel!
+   
     
     var activity = Activity(id: String(),
                             name: String(),
@@ -40,6 +39,8 @@ class ActiveViewController: UIViewController {
                             locLat: Double(),
                             locLong: Double())
     
+    var cancelDelegate: cancelDelegate? = nil
+    var selectedCellIndex = Int()
     
     @IBAction func cancelClick(_ sender: UIButtonX) {
         let alertController = UIAlertController(title: "Are you sure?", message: "", preferredStyle: .alert)
@@ -72,6 +73,46 @@ class ActiveViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
         
         
+    }
+    
+    func getTime(){
+        let timeRef = Database.database().reference().child("Users").child(userID).child("Activities").child(activity.id).observe(.value, with: {(snapshot) in
+            let dict = snapshot.value as? [String: Any] ?? [:]
+            let targetTime = dict["targetTime"] as? Double ?? 0000
+    
+            print(self.convertTimestamp(serverTimestamp: targetTime))
+            self.standardTimeLabel.text = self.convertTimestamp(serverTimestamp: targetTime)
+        })
+        print("\(timeRef)")
+//        ref.child("Users").child(userID).child("Activities").child("targetTime").observe(.childAdded, with: {(snapshot) in
+//            if let dict = snapshot.value as? [String: AnyObject] {
+//                let dbTime  = dict["targetTime"] as? String ?? "zero"
+//                self.standardTimeLabel.text = String(describing: dbTime)
+//            }
+//            DispatchQueue.main.async {
+//
+//            }
+//        })
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getTime()
+    }
+    
+    
+    
+    
+    func convertTimestamp(serverTimestamp: Double) -> String {
+        let x = serverTimestamp / 1000
+        let date = NSDate(timeIntervalSince1970: x)
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.setLocalizedDateFormatFromTemplate("MMMMd")
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        
+        return formatter.string(from: date as Date)
     }
 }
 

@@ -1073,6 +1073,9 @@
                             </connections>
                         </button>
                     </navigationItem>
+                    <connections>
+                        <outlet property="standardTimeLabel" destination="6oA-rX-dFH" id="zlR-NU-wb1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssg-m6-pCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

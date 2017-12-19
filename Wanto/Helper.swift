@@ -13,6 +13,19 @@ import UIKit
 class Helper {
   let BASE_URL = "https://wanto-2024t.firebaseio.com/"
     
+    func convertTimestamp(serverTimestamp: Double) -> String {
+        let x = serverTimestamp / 1000
+        let date = NSDate(timeIntervalSince1970: x)
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .medium
+        
+        return formatter.string(from: date as Date)
+    }
+    
+    
+    
+    
     
 }
 

@@ -13,6 +13,8 @@ import Firebase
 class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, goDelegate, cancelDelegate {
    
     
+   
+    
  
     
 
@@ -32,12 +34,12 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         print("edited shit:" , data)
         self.tableView.reloadData()
     }
-    
-    func passTimerData(data: Activity, initialCount: Int, selectedCellIndex: Int) {
+    func passTimerData(data: Activity, countdownValue: Double, selectedCellIndex: Int) {
         activeActivities.append(data)
         inactiveActivities.remove(at: selectedCellIndex)
         self.tableView.reloadData()
     }
+    
     func cancel(data: Activity, selectedCellIndex: Int) {
         activeActivities.remove(at: selectedCellIndex)
         inactiveActivities.insert(data, at: 0)

@@ -27,7 +27,7 @@ protocol saveDelegate{
 }
 
 protocol goDelegate {
-    func passTimerData(data: Activity, initialCount: Int, selectedCellIndex: Int)
+    func passTimerData(data: Activity, countdownValue: Double, selectedCellIndex: Int)
 }
 
 class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate, personDeleteDelegate, reorderDelegate {
@@ -288,7 +288,7 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.datePicker.countDownDuration = 1800
         //sets database refs
         ref = Database.database().reference()
         activitiesRef = Database.database().reference().child("Users/\(userID)/Activities")
@@ -382,9 +382,9 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
         let startTime = datePicker.countDownDuration
         //let desiredDate = datePicker.date
         newActivity.isActive = true
-        goDelegate?.passTimerData(data: newActivity, initialCount: 60, selectedCellIndex: self.selectedCellIndex)
-        print("aww yissss")
         
+        var countdownValue = datePicker.countDownDuration
+        var dateValue = datePicker.date
         
         activitiesRef.child(newActivity.id).setValue([ "id": newActivity.id,
                                                        "name": newActivity.name,
@@ -392,8 +392,10 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
                                                        "locString": newActivity.locationString,
                                                        "locLat": newActivity.locLat,
                                                        "locLong": newActivity.locLong,
-                                                       "privacySetting": newActivity.privacySetting])
-    
+                                                       "privacySetting": newActivity.privacySetting,
+                                                       "targetTime": ServerValue.timestamp()]) // + some added value of time
+        //"targetTime": [".sv": "timestamp"]])
+        goDelegate?.passTimerData(data: newActivity, countdownValue: 60, selectedCellIndex: self.selectedCellIndex)
         self.navigationController?.popViewController(animated: true)
         
         
