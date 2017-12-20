@@ -34,7 +34,8 @@ class activitySettingsController: UIViewController, UITableViewDelegate, UITable
                             locationString: String(),
                             locationCoords: CLLocationCoordinate2D(),
                             locLat: Double(),
-                            locLong: Double())
+                            locLong: Double(),
+                            countdownValue: Double())
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var privacyButton: UIButton!

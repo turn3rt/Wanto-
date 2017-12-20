@@ -31,7 +31,6 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     }
     func saveActivity(data: Activity) {
         inactiveActivities[(self.tableView.indexPathForSelectedRow!.row)] = data
-        print("edited shit:" , data)
         self.tableView.reloadData()
     }
     func passTimerData(data: Activity, countdownValue: Double, selectedCellIndex: Int) {
@@ -105,7 +104,8 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                                           locationString: String(),
                                           locationCoords: CLLocationCoordinate2D(),
                                           locLat: Double(),
-                                          locLong: Double())
+                                          locLong: Double(),
+                                          countdownValue: Double())
                 
                 //gets data from db
                 let dbID = dict["id"] as? String ?? "id not found"
@@ -115,6 +115,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 let dblocLat = dict["locLat"] as? Double ?? 0
                 let dblocLong = dict["locLong"] as? Double ?? 0
                 let dbPrivacy = dict["privacySetting"] as? String ?? "Error"
+                let dbCountdown = dict["countdownValue"] as? Double ?? 00
                 
                 
                 //setting the data to new activity
@@ -127,6 +128,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 dbActivity.privacySetting = dbPrivacy
                 let dbLocCoords = CLLocationCoordinate2DMake(dblocLat, dblocLong)
                 dbActivity.locationCoords = dbLocCoords
+                dbActivity.countdownValue = dbCountdown
                 
                 if dbActivity.isActive == true {
                     self.activeActivities.append(dbActivity)
@@ -205,6 +207,10 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
             activeCell.name.text = self.activeActivities[indexPath.row].name
             activeCell.location.text = self.activeActivities[indexPath.row].locationString
             activeCell.activity = self.activeActivities[indexPath.row]
+            if activeCell.timerIsRunning == false {
+            activeCell.handleCountdown()
+            } 
+            //activeCell.countdownTimer.text = String(self.activeActivities[indexPath.row].countdownValue)
             //activeCell.countdownTimer.text = self.activeActivities[indexPath.row].
             
             

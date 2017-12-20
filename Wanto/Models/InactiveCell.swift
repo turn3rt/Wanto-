@@ -32,7 +32,8 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
                             locationString: String(),
                             locationCoords: CLLocationCoordinate2D(),
                             locLat: Double(),
-                            locLong: Double())
+                            locLong: Double(),
+                            countdownValue: Double())
     
     func showLocInMiniMap(coordinates: CLLocationCoordinate2D){
         let annotation = MKPointAnnotation()

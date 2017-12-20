@@ -62,7 +62,8 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
                                locationString: "Add location...",
                                locationCoords: CLLocationCoordinate2D(),
                                locLat: Double(),
-                               locLong: Double())
+                               locLong: Double(),
+                               countdownValue: Double())
 
     
     let locationManager = CLLocationManager()
@@ -379,12 +380,10 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
     }
     
     @IBAction func goClick(_ sender: UIButtonX) {
-        let startTime = datePicker.countDownDuration
-        //let desiredDate = datePicker.date
         newActivity.isActive = true
-        
-        var countdownValue = datePicker.countDownDuration
-        var dateValue = datePicker.date
+        let countdownValue = datePicker.countDownDuration
+        newActivity.countdownValue = countdownValue
+        //var dateValue = datePicker.date
         
         activitiesRef.child(newActivity.id).setValue([ "id": newActivity.id,
                                                        "name": newActivity.name,
@@ -393,24 +392,15 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
                                                        "locLat": newActivity.locLat,
                                                        "locLong": newActivity.locLong,
                                                        "privacySetting": newActivity.privacySetting,
-                                                       "targetTime": ServerValue.timestamp()]) // + some added value of time
+                                                       "targetTime": ServerValue.timestamp(),
+                                                       "countdownValue": newActivity.countdownValue]) // + some added value of time
         //"targetTime": [".sv": "timestamp"]])
-        goDelegate?.passTimerData(data: newActivity, countdownValue: 60, selectedCellIndex: self.selectedCellIndex)
+        goDelegate?.passTimerData(data: newActivity, countdownValue: countdownValue, selectedCellIndex: self.selectedCellIndex)
         self.navigationController?.popViewController(animated: true)
         
-        
-        
-//        let requestedComponent: NSCalendar.Unit = [
-//            NSCalendar.Unit.day,
-//            NSCalendar.Unit.hour,
-//            NSCalendar.Unit.minute,
-//            NSCalendar.Unit.second
-//        ]
-        
-        
-        
-        
-        print("Start time is: ", startTime)
+
+
+
     }
     
     

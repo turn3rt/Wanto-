@@ -37,7 +37,8 @@ class ActiveViewController: UIViewController {
                             locationString: String(),
                             locationCoords: CLLocationCoordinate2D(),
                             locLat: Double(),
-                            locLong: Double())
+                            locLong: Double(),
+                            countdownValue: Double())
     
     var cancelDelegate: cancelDelegate? = nil
     var selectedCellIndex = Int()

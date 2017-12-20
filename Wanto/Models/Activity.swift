@@ -19,9 +19,9 @@ class Activity {
     var locationCoords: CLLocationCoordinate2D
     var locLat: Double
     var locLong: Double
-    //var targetTime: idk
+    var countdownValue: Double
     
-    init(id: String, name: String, isActive: Bool, privacySetting: String, people: [Person], locationString: String, locationCoords: CLLocationCoordinate2D, locLat: Double, locLong: Double) {
+    init(id: String, name: String, isActive: Bool, privacySetting: String, people: [Person], locationString: String, locationCoords: CLLocationCoordinate2D, locLat: Double, locLong: Double, countdownValue: Double) {
         self.id = id
         self.name = name
         self.isActive = isActive
@@ -31,6 +31,7 @@ class Activity {
         self.locationCoords = locationCoords
         self.locLat = locLat
         self.locLong = locLong
+        self.countdownValue = countdownValue
     }
 //    var location: String?
 //    var people: [String]?
