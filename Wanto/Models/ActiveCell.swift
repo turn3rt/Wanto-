@@ -10,6 +10,10 @@ import UIKit
 import MapKit
 import Firebase
 
+protocol returnToInactiveDelegate {
+    func activeToInactive(data: Activity)
+}
+
 
 class ActiveCell: UITableViewCell {
     //MARK: Database ref
@@ -26,6 +30,7 @@ class ActiveCell: UITableViewCell {
     var timer = Timer()
     var startTime = Double()
     var timerIsRunning = false
+    var returnToInactiveDelegate: returnToInactiveDelegate? = nil
     
     var activity = Activity(id: String(),
                             name: String(),
@@ -40,18 +45,18 @@ class ActiveCell: UITableViewCell {
     
 
     
-    @IBAction func cancelClick(_ sender: UIButtonX) {
-        ref = Database.database().reference().child("Users/\(userID)/Activities")
-        self.activity.isActive = false
-        self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
-                                                    "name": self.activity.name,
-                                                    "isActive": self.activity.isActive,
-                                                    "locString": self.activity.locationString,
-                                                    "locLat": self.activity.locLat,
-                                                    "locLong": self.activity.locLong,
-                                                    "privacySetting": self.activity.privacySetting])
-        
-    }
+//    @IBAction func cancelClick(_ sender: UIButtonX) {
+//        ref = Database.database().reference().child("Users/\(userID)/Activities")
+//        self.activity.isActive = false
+//        self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
+//                                                    "name": self.activity.name,
+//                                                    "isActive": self.activity.isActive,
+//                                                    "locString": self.activity.locationString,
+//                                                    "locLat": self.activity.locLat,
+//                                                    "locLong": self.activity.locLong,
+//                                                    "privacySetting": self.activity.privacySetting])
+//
+//    }
     
     func handleCountdown(){
         timerIsRunning = true
@@ -72,22 +77,30 @@ class ActiveCell: UITableViewCell {
             switch startTime {
             case 0..<60: //display seconds
                 countdownTimer.text = String(Int(startTime)) + "s"
-            case 61..<3600: //display minutes
+            case 60..<3600: //display minutes
                 countdownTimer.text = String(Int(minutes)) + "m"
-            case 3601..<86400: // display hours and minutes
+            case 3600..<86400: // display hours and minutes
                 countdownTimer.text = String(Int(hours)) + "h \(minutes)m"
             default:
                 timer.invalidate()
             }
         }
+        
+        
+        
+        if startTime == 0 {
+            activity.isActive = false
+            timer.invalidate()
+            returnToInactiveDelegate?.activeToInactive(data: activity)
+        }
     }
     
-    func timeString(time: Double) -> (hours: String, minutes: String, seconds: String){
-        let hours = Int(time) / 3600
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        
-        return (hours: String(format:"%02i", hours), minutes: String(format:"%02i", minutes), seconds: String(format:"%02i", seconds))
-    }
+//    func timeString(time: Double) -> (hours: String, minutes: String, seconds: String){
+//        let hours = Int(time) / 3600
+//        let minutes = Int(time) / 60 % 60
+//        let seconds = Int(time) % 60
+//
+//        return (hours: String(format:"%02i", hours), minutes: String(format:"%02i", minutes), seconds: String(format:"%02i", seconds))
+//    }
    
 }

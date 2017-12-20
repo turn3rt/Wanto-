@@ -1074,7 +1074,11 @@
                         </button>
                     </navigationItem>
                     <connections>
+                        <outlet property="locationTitle" destination="OOd-ep-2rg" id="eIF-co-DgN"/>
+                        <outlet property="mapView" destination="ONf-6m-1Rw" id="KDg-cy-Ji6"/>
+                        <outlet property="privacyButton" destination="PJg-7T-shq" id="QN1-BH-dTG"/>
                         <outlet property="standardTimeLabel" destination="6oA-rX-dFH" id="zlR-NU-wb1"/>
+                        <outlet property="titleLabel" destination="5ls-1I-mOP" id="BfD-Ow-and"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssg-m6-pCL" userLabel="First Responder" sceneMemberID="firstResponder"/>

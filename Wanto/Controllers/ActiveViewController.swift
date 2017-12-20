@@ -18,7 +18,7 @@ protocol cancelDelegate{
     func cancel(data: Activity, selectedCellIndex: Int)
 }
 
-class ActiveViewController: UIViewController {
+class ActiveViewController: UIViewController, MKMapViewDelegate {
     //MARK: Database ref
     var ref: DatabaseReference!
     var activitiesRef: DatabaseReference!
@@ -27,6 +27,11 @@ class ActiveViewController: UIViewController {
     
     
     @IBOutlet weak var standardTimeLabel: UILabel!
+    @IBOutlet weak var locationTitle: UILabel!
+    @IBOutlet weak var privacyButton: UIButton!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var titleLabel: UIButton!
+    
    
     
     var activity = Activity(id: String(),
@@ -101,7 +106,19 @@ class ActiveViewController: UIViewController {
         getTime()
     }
     
-    
+    override func viewDidLoad() {
+        titleLabel.setTitle(activity.name, for: .normal)
+        locationTitle.text = activity.locationString
+        self.privacyButton.setTitle(activity.privacySetting, for: .normal)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = activity.locationCoords
+        annotation.title = activity.locationString
+        mapView.addAnnotation(annotation)
+        let span = MKCoordinateSpanMake(0.01, 0.01)
+        let region = MKCoordinateRegionMake(annotation.coordinate, span)
+        
+        mapView.setRegion(region, animated: true)
+    }
     
     
     func convertTimestamp(serverTimestamp: Double) -> String {

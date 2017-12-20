@@ -10,14 +10,9 @@ import UIKit
 import MapKit
 import Firebase
 
-class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, goDelegate, cancelDelegate {
-   
-    
-   
-    
- 
-    
-
+class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, goDelegate, cancelDelegate, returnToInactiveDelegate {
+  
+  
     
     //MARK: Database ref
     var ref: DatabaseReference!
@@ -43,6 +38,23 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         activeActivities.remove(at: selectedCellIndex)
         inactiveActivities.insert(data, at: 0)
         self.tableView.reloadData()
+    }
+    func activeToInactive(data: Activity) {
+        inactiveActivities.insert(data, at: 0)
+//        activeActivities.remove(at: index(ofAccessibilityElement: data.isActive = false))
+        if let i = activeActivities.index(where: { $0.isActive == false }) {
+            print("array index to remove: should be where it is NOT active = \(i)")
+            activeActivities.remove(at: i)
+            
+        }
+        
+        self.tableView.reloadData()
+        
+//        let students = ["Kofi", "Abena", "Peter", "Kweku", "Akosua"]
+//        if let i = students.index(where: { $0.hasPrefix("A") }) {
+//            print("\(students[i]) starts with 'A'!")
+//        }
+        
     }
     
   
@@ -207,6 +219,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
             activeCell.name.text = self.activeActivities[indexPath.row].name
             activeCell.location.text = self.activeActivities[indexPath.row].locationString
             activeCell.activity = self.activeActivities[indexPath.row]
+            activeCell.returnToInactiveDelegate = self
             if activeCell.timerIsRunning == false {
             activeCell.handleCountdown()
             } 
