@@ -40,6 +40,8 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         self.tableView.reloadData()
     }
     func activeToInactive(data: Activity) {
+        data.isActive = false
+        
         inactiveActivities.insert(data, at: 0)
 //        activeActivities.remove(at: index(ofAccessibilityElement: data.isActive = false))
         if let i = activeActivities.index(where: { $0.isActive == false }) {
@@ -247,7 +249,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
-        if inactiveActivities.count == 0{
+        if inactiveActivities.count == 0 && activeActivities.count == 0 {
             let tutorialCell = tableView.dequeueReusableCell(withIdentifier: tutorialHeader) as! TutorialCell
             ref.child("Users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
