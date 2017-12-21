@@ -73,7 +73,7 @@ class ActiveCell: UITableViewCell {
 //        let seconds = Int(startTime) % 60
         
         if startTime > 0 {
-            startTime -= 1
+            startTime -= 100
             switch startTime {
             case 0..<60: //display seconds
                 countdownTimer.text = String(Int(startTime)) + "s"
