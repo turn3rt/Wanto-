@@ -6,97 +6,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Wanto/Models/ActiveCell.swift"
-            timestampString = "535558104.671242"
+            filePath = "Wanto/Controllers/HomeViewController.swift"
+            timestampString = "535753625.175842"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "updateTimer()"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "fetchActivities()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wanto/Controllers/HomeViewController.swift"
-            timestampString = "535558104.671615"
+            timestampString = "535753625.176178"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "activeToInactive(data:)"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "tableView(_:commit:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Wanto/Controllers/HomeViewController.swift"
-            timestampString = "535558104.67191"
+            filePath = "Wanto/Controllers/InactiveViewController.swift"
+            timestampString = "535753657.297179"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "activeToInactive(data:)"
+            startingLineNumber = "402"
+            endingLineNumber = "402"
+            landmarkName = "goClick(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wanto/Controllers/HomeViewController.swift"
-            timestampString = "535558104.672172"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "activeToInactive(data:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Wanto.HomeViewController.activeToInactive(data: Wanto.Activity) -&gt; ()"
-                  moduleName = "Wanto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/turnerthornberry/Documents/Wanto/Wanto/Controllers/HomeViewController.swift"
-                  timestampString = "535497663.634201"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "256">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Wanto.Activity) -&gt; Swift.Bool in Wanto.HomeViewController.activeToInactive(data: Wanto.Activity) -&gt; ()"
-                  moduleName = "Wanto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/turnerthornberry/Documents/Wanto/Wanto/Controllers/HomeViewController.swift"
-                  timestampString = "535497663.636514"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

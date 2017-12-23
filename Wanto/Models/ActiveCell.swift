@@ -18,6 +18,7 @@ protocol returnToInactiveDelegate {
 class ActiveCell: UITableViewCell {
     //MARK: Database ref
     var ref: DatabaseReference!
+    var activitiesRef: DatabaseReference!
     var refHandle: UInt!
     let userID: String = (Auth.auth().currentUser?.uid)!
     
@@ -45,19 +46,6 @@ class ActiveCell: UITableViewCell {
     
 
     
-//    @IBAction func cancelClick(_ sender: UIButtonX) {
-//        ref = Database.database().reference().child("Users/\(userID)/Activities")
-//        self.activity.isActive = false
-//        self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
-//                                                    "name": self.activity.name,
-//                                                    "isActive": self.activity.isActive,
-//                                                    "locString": self.activity.locationString,
-//                                                    "locLat": self.activity.locLat,
-//                                                    "locLong": self.activity.locLong,
-//                                                    "privacySetting": self.activity.privacySetting])
-//
-//    }
-    
     func handleCountdown(){
         timerIsRunning = true
         startTime = activity.countdownValue
@@ -65,7 +53,7 @@ class ActiveCell: UITableViewCell {
     }
     
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self,   selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
     }
     @objc func updateTimer(){
         let hours = Int(startTime) / 3600
@@ -73,7 +61,7 @@ class ActiveCell: UITableViewCell {
 //        let seconds = Int(startTime) % 60
         
         if startTime > 0 {
-            startTime -= 100
+            startTime -= 1
             switch startTime {
             case 0..<60: //display seconds
                 countdownTimer.text = String(Int(startTime)) + "s"
@@ -91,6 +79,14 @@ class ActiveCell: UITableViewCell {
         if startTime == 0 {
             activity.isActive = false
             timer.invalidate()
+            activitiesRef = Database.database().reference().child("Users/\(userID)/Activities")
+            activitiesRef.child(self.activity.id).setValue([ "id": self.activity.id,
+                                                           "name": self.activity.name,
+                                                           "isActive": self.activity.isActive,
+                                                           "locString": self.activity.locationString,
+                                                           "locLat": self.activity.locLat,
+                                                           "locLong": self.activity.locLong,
+                                                           "privacySetting": self.activity.privacySetting])
             returnToInactiveDelegate?.activeToInactive(data: activity)
         }
     }

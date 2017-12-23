@@ -19,6 +19,8 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     var refHandle: UInt!
     let userID: String = (Auth.auth().currentUser?.uid)!
     
+    var countdownValue: Double?
+    
     //MARK: Protocol stubs
     func saveNewActivity(data: Activity) {
         //inactiveActivities.append(data)
@@ -29,9 +31,13 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         self.tableView.reloadData()
     }
     func passTimerData(data: Activity, countdownValue: Double, selectedCellIndex: Int) {
-        activeActivities.append(data)
-        inactiveActivities.remove(at: selectedCellIndex)
-        self.tableView.reloadData()
+        self.countdownValue = countdownValue
+        if selectedCellIndex != -1 {
+            activeActivities.append(data)
+            inactiveActivities.remove(at: selectedCellIndex)
+            self.tableView.reloadData()
+        }
+ 
     }
     
     func cancel(data: Activity, selectedCellIndex: Int) {
@@ -47,7 +53,6 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         if let i = activeActivities.index(where: { $0.isActive == false }) {
             print("array index to remove: should be where it is NOT active = \(i)")
             activeActivities.remove(at: i)
-            
         }
         
         self.tableView.reloadData()
@@ -149,7 +154,8 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 } else {
                     self.inactiveActivities.append(dbActivity)
                 }
-                DispatchQueue.main.async { self.tableView.reloadData() }
+                self.tableView.reloadData()
+                //DispatchQueue.main.async { self.tableView.reloadData() }
             }
         })
     }
@@ -202,7 +208,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Number of Activities: \(inactiveActivities.count)")
+        print("Number of Activities: \(activeActivities.count)")
         if section == 0 && activeActivities.count != 0 {
             return activeActivities.count
         } else {
@@ -223,6 +229,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
             activeCell.activity = self.activeActivities[indexPath.row]
             activeCell.returnToInactiveDelegate = self
             if activeCell.timerIsRunning == false {
+            activeCell.activity.countdownValue = countdownValue!
             activeCell.handleCountdown()
             } 
             //activeCell.countdownTimer.text = String(self.activeActivities[indexPath.row].countdownValue)
@@ -287,6 +294,8 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         if segue.identifier == "addActivity" {
             let inactiveVC = segue.destination as! InactiveViewController
             inactiveVC.newSaveDelegate = self
+            inactiveVC.goDelegate = self
+            inactiveVC.selectedCellIndex = -1
         }
         
         if segue.identifier == "selectedInactiveCell"{

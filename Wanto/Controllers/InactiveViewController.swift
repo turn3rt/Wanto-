@@ -383,19 +383,35 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
         newActivity.isActive = true
         let countdownValue = datePicker.countDownDuration
         newActivity.countdownValue = countdownValue
-        //var dateValue = datePicker.date
+        if selectedCellIndex == -1 {
+            let key = activitiesRef.childByAutoId().key
+            newActivity.id = key
+            
+            let activityToAdd = ["id": newActivity.id,
+                                 "name": newActivity.name,
+                                 "isActive": newActivity.isActive,
+                                 "locString": newActivity.locationString,
+                                 "locLat": newActivity.locLat,
+                                 "locLong": newActivity.locLong,
+                                 "privacySetting": newActivity.privacySetting,
+                                 "timeStamp": ServerValue.timestamp()] as [String : Any]
+            
+            activitiesRef.child(key).setValue(activityToAdd)
+            print("Activity saved to database & local: ", activityToAdd)
+        } else {
+            let activityToAdd = ["id": newActivity.id,
+                                 "name": newActivity.name,
+                                 "isActive": newActivity.isActive,
+                                 "locString": newActivity.locationString,
+                                 "locLat": newActivity.locLat,
+                                 "locLong": newActivity.locLong,
+                                 "privacySetting": newActivity.privacySetting,
+                                 "timeStamp": ServerValue.timestamp()] as [String : Any]
+            
+            activitiesRef.child(newActivity.id).setValue(activityToAdd)
+        }
         
-        activitiesRef.child(newActivity.id).setValue([ "id": newActivity.id,
-                                                       "name": newActivity.name,
-                                                       "isActive": newActivity.isActive,
-                                                       "locString": newActivity.locationString,
-                                                       "locLat": newActivity.locLat,
-                                                       "locLong": newActivity.locLong,
-                                                       "privacySetting": newActivity.privacySetting,
-                                                       "targetTime": ServerValue.timestamp(),
-                                                       "countdownValue": newActivity.countdownValue]) // + some added value of time
-        //"targetTime": [".sv": "timestamp"]])
-        goDelegate?.passTimerData(data: newActivity, countdownValue: countdownValue, selectedCellIndex: self.selectedCellIndex)
+        goDelegate?.passTimerData(data: newActivity, countdownValue: newActivity.countdownValue, selectedCellIndex: self.selectedCellIndex)
         self.navigationController?.popViewController(animated: true)
         
 
