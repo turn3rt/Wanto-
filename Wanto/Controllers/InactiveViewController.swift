@@ -63,7 +63,8 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
                                locationCoords: CLLocationCoordinate2D(),
                                locLat: Double(),
                                locLong: Double(),
-                               countdownValue: Double())
+                               countdownValue: Double(),
+                               timerIsRunning: false)
 
     
     let locationManager = CLLocationManager()
@@ -394,7 +395,9 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
                                  "locLat": newActivity.locLat,
                                  "locLong": newActivity.locLong,
                                  "privacySetting": newActivity.privacySetting,
-                                 "timeStamp": ServerValue.timestamp()] as [String : Any]
+                                 "timeStamp": ServerValue.timestamp(),
+                                 "timerIsRunning": newActivity.timerIsRunning,
+                                 "countdownValue": newActivity.countdownValue] as [String : Any]
             
             activitiesRef.child(key).setValue(activityToAdd)
             print("Activity saved to database & local: ", activityToAdd)
@@ -406,8 +409,9 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
                                  "locLat": newActivity.locLat,
                                  "locLong": newActivity.locLong,
                                  "privacySetting": newActivity.privacySetting,
-                                 "timeStamp": ServerValue.timestamp()] as [String : Any]
-            
+                                 "timeStamp": ServerValue.timestamp(),
+                                 "timerIsRunning": newActivity.timerIsRunning,
+                                 "countdownValue": newActivity.countdownValue] as [String : Any]
             activitiesRef.child(newActivity.id).setValue(activityToAdd)
         }
         

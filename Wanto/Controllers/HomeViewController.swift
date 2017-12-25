@@ -31,13 +31,15 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         self.tableView.reloadData()
     }
     func passTimerData(data: Activity, countdownValue: Double, selectedCellIndex: Int) {
-        self.countdownValue = countdownValue
+        
+
         if selectedCellIndex != -1 {
-            activeActivities.append(data)
+            //activeActivities[(self.tableView.indexPathForSelectedRow!.row)].countdownValue = data.countdownValue
+            activeActivities.append(data) // appends item to acitive array
             inactiveActivities.remove(at: selectedCellIndex)
             self.tableView.reloadData()
         }
- 
+//
     }
     
     func cancel(data: Activity, selectedCellIndex: Int) {
@@ -46,16 +48,20 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         self.tableView.reloadData()
     }
     func activeToInactive(data: Activity) {
-        data.isActive = false
-        
-        inactiveActivities.insert(data, at: 0)
-//        activeActivities.remove(at: index(ofAccessibilityElement: data.isActive = false))
+        //data.isActive = false
         if let i = activeActivities.index(where: { $0.isActive == false }) {
             print("array index to remove: should be where it is NOT active = \(i)")
             activeActivities.remove(at: i)
         }
+        inactiveActivities.insert(data, at: 0)
         
+        
+       // activeActivities.remove(at: 0)
+//        activeActivities.remove(at: index(ofAccessibilityElement: data.isActive = false))
+       
+        //self.tableView.reloadSections([0], with: UITableViewRowAnimation.automatic)
         self.tableView.reloadData()
+        //self.tableView.reloadSections([0], with: UITableViewRowAnimation.automatic)
         
 //        let students = ["Kofi", "Abena", "Peter", "Kweku", "Akosua"]
 //        if let i = students.index(where: { $0.hasPrefix("A") }) {
@@ -65,9 +71,6 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     }
     
   
-    
-  
-    
     
     private let inactiveIdentifer = "InactiveCell"
     private let activeIdentifier = "ActiveCell"
@@ -84,7 +87,8 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
             self.ref = Database.database().reference().child("Users/\(self.userID)/Activities")
             let indexPath = self.tableView.indexPathForView(view: sender)!
             self.activeActivities[indexPath.row].isActive = false
-            self.ref.child(self.activeActivities[indexPath.row].id).setValue(["id": self.activeActivities[indexPath.row].id,
+            self.activeActivities[indexPath.row].countdownValue = 0
+                self.ref.child(self.activeActivities[indexPath.row].id).setValue(["id": self.activeActivities[indexPath.row].id,
                                                                               "name": self.activeActivities[indexPath.row].name,
                                                                               "isActive": self.activeActivities[indexPath.row].isActive,
                                                                               "locString": self.activeActivities[indexPath.row].locationString,
@@ -124,7 +128,8 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                                           locationCoords: CLLocationCoordinate2D(),
                                           locLat: Double(),
                                           locLong: Double(),
-                                          countdownValue: Double())
+                                          countdownValue: Double(),
+                                          timerIsRunning: Bool())
                 
                 //gets data from db
                 let dbID = dict["id"] as? String ?? "id not found"
@@ -135,6 +140,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 let dblocLong = dict["locLong"] as? Double ?? 0
                 let dbPrivacy = dict["privacySetting"] as? String ?? "Error"
                 let dbCountdown = dict["countdownValue"] as? Double ?? 00
+                let dbtimerIsRunning = dict["timerIsRunning"] as? Bool ?? false
                 
                 
                 //setting the data to new activity
@@ -148,14 +154,15 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 let dbLocCoords = CLLocationCoordinate2DMake(dblocLat, dblocLong)
                 dbActivity.locationCoords = dbLocCoords
                 dbActivity.countdownValue = dbCountdown
+                dbActivity.timerIsRunning = dbtimerIsRunning
                 
                 if dbActivity.isActive == true {
                     self.activeActivities.append(dbActivity)
                 } else {
                     self.inactiveActivities.append(dbActivity)
                 }
-                self.tableView.reloadData()
-                //DispatchQueue.main.async { self.tableView.reloadData() }
+                //self.tableView.reloadData()
+                DispatchQueue.main.async { self.tableView.reloadData() }
             }
         })
     }
@@ -165,9 +172,6 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         super.viewDidLoad()
         ref = Database.database().reference()
         fetchActivities()
-     
-
-
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -228,9 +232,10 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
             activeCell.location.text = self.activeActivities[indexPath.row].locationString
             activeCell.activity = self.activeActivities[indexPath.row]
             activeCell.returnToInactiveDelegate = self
-            if activeCell.timerIsRunning == false {
-            activeCell.activity.countdownValue = countdownValue!
-            activeCell.handleCountdown()
+            if activeCell.activity.isActive == true && activeCell.timerIsRunning == false {
+                activeCell.activity.countdownValue = self.activeActivities[indexPath.row].countdownValue
+                print(String(self.activeActivities[indexPath.row].countdownValue))
+                activeCell.handleCountdown()
             } 
             //activeCell.countdownTimer.text = String(self.activeActivities[indexPath.row].countdownValue)
             //activeCell.countdownTimer.text = self.activeActivities[indexPath.row].
@@ -249,10 +254,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         return UITableViewCell()
     
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        
-    }
+
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {

@@ -42,18 +42,21 @@ class ActiveCell: UITableViewCell {
                             locationCoords: CLLocationCoordinate2D(),
                             locLat: Double(),
                             locLong: Double(),
-                            countdownValue: Double())
+                            countdownValue: Double(),
+                            timerIsRunning: Bool())
     
-
+    
     
     func handleCountdown(){
-        timerIsRunning = true
-        startTime = activity.countdownValue
-        runTimer()
+        if timerIsRunning == false { //check if timer is NOT running, otherwise update timer 
+            timerIsRunning = true
+            startTime = activity.countdownValue
+            runTimer()
+        }
     }
     
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self,   selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
     }
     @objc func updateTimer(){
         let hours = Int(startTime) / 3600
@@ -62,33 +65,61 @@ class ActiveCell: UITableViewCell {
         
         if startTime > 0 {
             startTime -= 1
+            print("The start time for " + String(activity.name) + "is " + String(startTime))
             switch startTime {
-            case 0..<60: //display seconds
-                countdownTimer.text = String(Int(startTime)) + "s"
+            case 0:
+                activity.isActive = false
+                activity.timerIsRunning = false
+                activity.countdownValue = 0
+                timer.invalidate()
+                activitiesRef = Database.database().reference().child("Users/\(userID)/Activities")
+                activitiesRef.child(self.activity.id).setValue([ "id": self.activity.id,
+                                                                 "name": self.activity.name,
+                                                                 "isActive": self.activity.isActive,
+                                                                 "locString": self.activity.locationString,
+                                                                 "locLat": self.activity.locLat,
+                                                                 "locLong": self.activity.locLong,
+                                                                 "privacySetting": self.activity.privacySetting,
+                                                                 "timerIsRunning": self.activity.timerIsRunning,
+                                                                 "countdownValue": self.activity.countdownValue])
+                //sleep(1)
+                returnToInactiveDelegate?.activeToInactive(data: activity)
+            case 1..<60: //display seconds
+                let count = String(Int(startTime))
+                countdownTimer.text = count
+                print("The start time for " + String(activity.name) + "is " + String(startTime))
+
+                //countdownTimer.text = String(Int(startTime)) + "s"
             case 60..<3600: //display minutes
+                print("The start time for " + String(activity.name) + "is " + String(startTime))
+
                 countdownTimer.text = String(Int(minutes)) + "m"
             case 3600..<86400: // display hours and minutes
+                print("The start time for " + String(activity.name) + "is " + String(startTime))
+
                 countdownTimer.text = String(Int(hours)) + "h \(minutes)m"
             default:
                 timer.invalidate()
+                activity.countdownValue = 0
             }
         }
         
         
         
-        if startTime == 0 {
-            activity.isActive = false
-            timer.invalidate()
-            activitiesRef = Database.database().reference().child("Users/\(userID)/Activities")
-            activitiesRef.child(self.activity.id).setValue([ "id": self.activity.id,
-                                                           "name": self.activity.name,
-                                                           "isActive": self.activity.isActive,
-                                                           "locString": self.activity.locationString,
-                                                           "locLat": self.activity.locLat,
-                                                           "locLong": self.activity.locLong,
-                                                           "privacySetting": self.activity.privacySetting])
-            returnToInactiveDelegate?.activeToInactive(data: activity)
-        }
+//        if startTime == 0 {
+//            activity.isActive = false
+//            self.timerIsRunning = false
+//            timer.invalidate()
+//            activitiesRef = Database.database().reference().child("Users/\(userID)/Activities")
+//            activitiesRef.child(self.activity.id).setValue([ "id": self.activity.id,
+//                                                           "name": self.activity.name,
+//                                                           "isActive": self.activity.isActive,
+//                                                           "locString": self.activity.locationString,
+//                                                           "locLat": self.activity.locLat,
+//                                                           "locLong": self.activity.locLong,
+//                                                           "privacySetting": self.activity.privacySetting])
+//            returnToInactiveDelegate?.activeToInactive(data: activity)
+//        }
     }
     
 //    func timeString(time: Double) -> (hours: String, minutes: String, seconds: String){

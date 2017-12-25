@@ -43,7 +43,8 @@ class ActiveViewController: UIViewController, MKMapViewDelegate {
                             locationCoords: CLLocationCoordinate2D(),
                             locLat: Double(),
                             locLong: Double(),
-                            countdownValue: Double())
+                            countdownValue: Double(),
+                            timerIsRunning: true)
     
     var cancelDelegate: cancelDelegate? = nil
     var selectedCellIndex = Int()
