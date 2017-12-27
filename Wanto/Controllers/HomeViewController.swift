@@ -48,27 +48,27 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
         self.tableView.reloadData()
     }
     func activeToInactive(data: Activity) {
-        //data.isActive = false
         if let i = activeActivities.index(where: { $0.isActive == false }) {
             print("array index to remove: should be where it is NOT active = \(i)")
             activeActivities.remove(at: i)
         }
         inactiveActivities.insert(data, at: 0)
-        
-        
+//        let indexPath = IndexPath(row: 1, section: 0)
+        //self.tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        self.tableView.reloadData()
+    }
        // activeActivities.remove(at: 0)
 //        activeActivities.remove(at: index(ofAccessibilityElement: data.isActive = false))
        
         //self.tableView.reloadSections([0], with: UITableViewRowAnimation.automatic)
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
         //self.tableView.reloadSections([0], with: UITableViewRowAnimation.automatic)
         
 //        let students = ["Kofi", "Abena", "Peter", "Kweku", "Akosua"]
 //        if let i = students.index(where: { $0.hasPrefix("A") }) {
 //            print("\(students[i]) starts with 'A'!")
 //        }
-        
-    }
+    
     
   
     
@@ -78,6 +78,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     
     var inactiveActivities = [Activity]()
     var activeActivities = [Activity]()
+    var timer = Timer()
     
     @IBAction func cancelClick(_ sender: UIButtonX) {
         let alertController = UIAlertController(title: "Are you sure?", message: "", preferredStyle: .alert)
@@ -236,7 +237,16 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 activeCell.activity.countdownValue = self.activeActivities[indexPath.row].countdownValue
                 print(String(self.activeActivities[indexPath.row].countdownValue))
                 activeCell.handleCountdown()
-            } 
+            } else if activeCell.timerIsRunning == true {
+                activeCell.timer.invalidate()
+                activeCell.timerIsRunning = false
+                let cellStartTime = activeCell.startTime
+                activeCell.activity.countdownValue = cellStartTime
+                print("continuing from start time: " + String(cellStartTime))
+                activeCell.startTime = cellStartTime
+                activeCell.handleCountdown()
+                
+            }
             //activeCell.countdownTimer.text = String(self.activeActivities[indexPath.row].countdownValue)
             //activeCell.countdownTimer.text = self.activeActivities[indexPath.row].
             
