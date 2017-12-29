@@ -334,6 +334,10 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
             activeVC.selectedCellIndex = selectedCellIndex
             activeVC.cancelDelegate = self
         }
+        if segue.identifier == "chat" {
+            let vc = segue.destination as! ChatViewcController
+            vc.hidesBottomBarWhenPushed = true
+        }
         
     }
     

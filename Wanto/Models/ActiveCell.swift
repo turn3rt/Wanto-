@@ -56,7 +56,7 @@ class ActiveCell: UITableViewCell {
     }
     
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
     }
     @objc func updateTimer(){
         let hours = Int(startTime) / 3600

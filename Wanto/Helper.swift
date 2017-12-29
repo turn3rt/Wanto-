@@ -8,6 +8,18 @@
 
 import Foundation
 import UIKit
+import Firebase
+import JSQMessagesViewController
+
+
+struct Constants{
+    struct refs{
+        static let databaseRoot = Database.database().reference()
+        static let databaseChats = databaseRoot.child("Chats")
+    }
+}
+
+
 
 
 
@@ -15,6 +27,12 @@ import UIKit
 
 class Helper {
   let BASE_URL = "https://wanto-2024t.firebaseio.com/"
+    
+    
+    
+    
+    
+    
     
     func convertTimestamp(serverTimestamp: Double) -> String {
         let x = serverTimestamp / 1000
@@ -53,6 +71,17 @@ extension UITableView {
     func indexPathForView(view: AnyObject) -> NSIndexPath? {
         let originInTableView = self.convert(CGPoint(), from: (view as! UIView))
         return self.indexPathForRow(at: originInTableView) as NSIndexPath?
+    }
+}
+
+extension JSQMessagesInputToolbar {
+    override open func didMoveToWindow() {
+        super.didMoveToWindow()
+        if #available(iOS 11.0, *) {
+            if self.window?.safeAreaLayoutGuide != nil {
+                self.bottomAnchor.constraintLessThanOrEqualToSystemSpacingBelow((self.window?.safeAreaLayoutGuide.bottomAnchor)!, multiplier: 1.0).isActive = true
+            }
+        }
     }
 }
 

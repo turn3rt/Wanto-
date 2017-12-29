@@ -102,6 +102,12 @@ class ActiveViewController: UIViewController, MKMapViewDelegate {
 //        })
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chat" {
+            let vc = segue.destination as! ChatViewcController
+            vc.hidesBottomBarWhenPushed = true 
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         getTime()

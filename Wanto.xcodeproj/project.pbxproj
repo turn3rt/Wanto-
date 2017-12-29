@@ -55,6 +55,7 @@
 		B3C6B1F31FE0B1680038BF60 /* otherGirl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3C6B1F21FE0B1670038BF60 /* otherGirl.jpg */; };
 		B3C6B1F71FE0BD0B0038BF60 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C6B1F61FE0BD0B0038BF60 /* CreateAccountController.swift */; };
 		B3D4B4621FD1D80C009CE92E /* ActiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */; };
+		B3D97D3D1FF3E9110029AC3A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D97D3C1FF3E9110029AC3A /* ChatViewController.swift */; };
 		CF2F13191F3A351451056E5E /* Pods_Wanto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D95D7E3150DA113D056A688 /* Pods_Wanto.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +135,8 @@
 		B3C6B1F21FE0B1670038BF60 /* otherGirl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = otherGirl.jpg; sourceTree = "<group>"; };
 		B3C6B1F61FE0BD0B0038BF60 /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCell.swift; sourceTree = "<group>"; };
+		B3D97D3B1FF3E57C0029AC3A /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		B3D97D3C1FF3E9110029AC3A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B98229FB67E30EADC0BA5B2A /* Pods_WantoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DB341D6646B1204FF8FC0D /* Pods-WantoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WantoUITests/Pods-WantoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE77B75DE5D97228A7240649 /* Pods-WantoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WantoTests/Pods-WantoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,8 +196,10 @@
 		B311CF301FCFFB3500730CDA = {
 			isa = PBXGroup;
 			children = (
-				B38B14C21FE0762E00CAAA60 /* LoginController.swift */,
 				B3C6B1F61FE0BD0B0038BF60 /* CreateAccountController.swift */,
+				B3D97D3B1FF3E57C0029AC3A /* Bridging-Header.h */,
+				B38B14C21FE0762E00CAAA60 /* LoginController.swift */,
+				B3D97D3C1FF3E9110029AC3A /* ChatViewController.swift */,
 				B36A90E91FE0CCA7003DBB69 /* DataService.swift */,
 				B311CF3B1FCFFB3500730CDA /* Wanto */,
 				B311CF521FCFFB3500730CDA /* WantoTests */,
@@ -519,6 +524,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wanto/Pods-Wanto-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -526,6 +533,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -656,6 +665,7 @@
 				B322810C1FD89CAC005251FC /* activitySettingsController.swift in Sources */,
 				B32B137D1FD05638005EC45E /* HomeViewController.swift in Sources */,
 				B32B138C1FD064F1005EC45E /* UIImageViewX.swift in Sources */,
+				B3D97D3D1FF3E9110029AC3A /* ChatViewController.swift in Sources */,
 				B3288B0E1FD5E2A200049AE9 /* LocationSearchTable.swift in Sources */,
 				B3D4B4621FD1D80C009CE92E /* ActiveCell.swift in Sources */,
 				B32B138A1FD064E4005EC45E /* UIViewX.swift in Sources */,
@@ -832,6 +842,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.Wanto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -849,6 +860,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.Wanto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -435,6 +435,9 @@
                                                             <real key="value" value="8"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <segue destination="9zK-nW-odw" kind="show" identifier="chat" id="Pnl-b5-R4I"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -852,6 +855,9 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="9zK-nW-odw" kind="show" identifier="chat" id="lz4-RT-v1u"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vf0-ju-AS1" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="231" y="673" width="128" height="48"/>
@@ -1084,6 +1090,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssg-m6-pCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3424.8000000000002" y="-757.38916256157643"/>
+        </scene>
+        <!--Chat Viewc Controller-->
+        <scene sceneID="R1Y-9g-viH">
+            <objects>
+                <viewController id="9zK-nW-odw" customClass="ChatViewcController" customModule="Wanto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PGN-ZT-KfD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hed-X8-XRM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ex-fF-W5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="-1417"/>
         </scene>
         <!--Explore-->
         <scene sceneID="xwL-cY-w0O">
@@ -1442,7 +1463,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
-                            <tableViewSection headerTitle="Discoverablility" id="rWF-vO-v7k">
+                            <tableViewSection headerTitle="Profile" id="rWF-vO-v7k">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="42" id="mGO-VV-tte">
                                         <rect key="frame" x="0.0" y="28" width="375" height="42"/>
@@ -2335,6 +2356,86 @@
             </objects>
             <point key="canvasLocation" x="2629.5999999999999" y="-1417.2413793103449"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="fLb-hq-5ii">
+            <objects>
+                <tableViewController id="wzI-HV-yza" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Lu-DM-5Ls">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4Cr-0F-cH2">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Cr-0F-cH2" id="VVR-sL-iPq">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PeopleCell" id="4IY-np-uKA" customClass="PeopleCell" customModule="Wanto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4IY-np-uKA" id="GHI-IK-PDd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstName lastName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="NlI-Cx-QYY">
+                                            <rect key="frame" x="15" y="1" width="167" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="1iH-Yg-ZIx"/>
+                                                <constraint firstAttribute="width" constant="167" id="IgG-uy-rhT"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="NlI-Cx-QYY" firstAttribute="centerY" secondItem="GHI-IK-PDd" secondAttribute="centerY" id="1ig-fS-aRn"/>
+                                        <constraint firstItem="NlI-Cx-QYY" firstAttribute="leading" secondItem="GHI-IK-PDd" secondAttribute="leadingMargin" constant="-1" id="N2h-Of-IRd"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <gestureRecognizers/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notFound" id="n1j-Dc-lLl" customClass="PeopleCell" customModule="Wanto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n1j-Dc-lLl" id="Bdd-9m-Nj1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstName lastName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Eig-PL-vhP">
+                                            <rect key="frame" x="15" y="1" width="167" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="7tg-V8-445"/>
+                                                <constraint firstAttribute="width" constant="167" id="RJE-wU-hb2"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Eig-PL-vhP" firstAttribute="leading" secondItem="Bdd-9m-Nj1" secondAttribute="leadingMargin" constant="-1" id="ARu-SQ-QYd"/>
+                                        <constraint firstItem="Eig-PL-vhP" firstAttribute="centerY" secondItem="Bdd-9m-Nj1" secondAttribute="centerY" id="IDz-qZ-obU"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <gestureRecognizers/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wzI-HV-yza" id="wWv-E6-Qbn"/>
+                            <outlet property="delegate" destination="wzI-HV-yza" id="JNW-Hz-cNr"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Isy-Tl-9zI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3425" y="-1417"/>
+        </scene>
         <!--Inactive View Controller-->
         <scene sceneID="uk7-tj-R7x">
             <objects>
@@ -3081,5 +3182,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TrG-aZ-ToP"/>
+        <segue reference="Pnl-b5-R4I"/>
     </inferredMetricsTieBreakers>
 </document>
