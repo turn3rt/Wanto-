@@ -32,6 +32,25 @@ class ChatViewcController: JSQMessagesViewController {
         inputToolbar.contentView.leftBarButtonItem = nil
         collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+        
+        let query = Constants.refs.databaseChats.queryLimited(toLast: 10)
+        
+        _ = query.observe(.childAdded, with: { [weak self] snapshot in
+            
+            if  let data        = snapshot.value as? [String: String],
+                let id          = data["sender_id"],
+                let name        = data["name"],
+                let text        = data["text"],
+                !text.isEmpty
+            {
+                if let message = JSQMessage(senderId: id, displayName: name, text: text)
+                {
+                    self?.messages.append(message)
+                    
+                    self?.finishReceivingMessage()
+                }
+            }
+        })
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {

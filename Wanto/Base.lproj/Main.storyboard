@@ -2356,61 +2356,120 @@
             </objects>
             <point key="canvasLocation" x="2629.5999999999999" y="-1417.2413793103449"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add PeopleTB Controller-->
         <scene sceneID="fLb-hq-5ii">
             <objects>
-                <tableViewController id="wzI-HV-yza" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Lu-DM-5Ls">
+                <tableViewController id="wzI-HV-yza" customClass="AddPeopleTBController" customModule="Wanto" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" estimatedRowHeight="-1" sectionHeaderHeight="42" sectionFooterHeight="28" id="7Lu-DM-5Ls">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="I14-6y-kX9">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4Cr-0F-cH2">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ActiveHeader" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SocialGroupHeader" rowHeight="42" id="sV5-hn-gcw">
+                                <rect key="frame" x="0.0" y="86" width="375" height="42"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Cr-0F-cH2" id="VVR-sL-iPq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PeopleCell" id="4IY-np-uKA" customClass="PeopleCell" customModule="Wanto" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4IY-np-uKA" id="GHI-IK-PDd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sV5-hn-gcw" id="nDl-ac-V36">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="41.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstName lastName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="NlI-Cx-QYY">
-                                            <rect key="frame" x="15" y="1" width="167" height="40"/>
+                                        <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="P7h-am-vEr">
+                                            <rect key="frame" x="16" y="6" width="343" height="29"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <segments>
+                                                <segment title="Friends"/>
+                                                <segment title="Everyone"/>
+                                            </segments>
+                                            <color key="tintColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </segmentedControl>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="P7h-am-vEr" firstAttribute="leading" secondItem="nDl-ac-V36" secondAttribute="leading" constant="16" id="1V9-IF-9F5"/>
+                                        <constraint firstItem="P7h-am-vEr" firstAttribute="centerX" secondItem="nDl-ac-V36" secondAttribute="centerX" id="9QM-Cm-YSi"/>
+                                        <constraint firstAttribute="trailing" secondItem="P7h-am-vEr" secondAttribute="trailing" constant="16" id="NHS-59-SKO"/>
+                                        <constraint firstItem="P7h-am-vEr" firstAttribute="centerY" secondItem="nDl-ac-V36" secondAttribute="centerY" id="ivI-He-lC5"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddPeopleCell" id="4IY-np-uKA" customClass="AddPeopleCell" customModule="Wanto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="128" width="375" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4IY-np-uKA" id="GHI-IK-PDd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="62.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sally.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zmd-1H-H4S" customClass="UIImageViewX" customModule="Wanto" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="4" width="54" height="54"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="1iH-Yg-ZIx"/>
-                                                <constraint firstAttribute="width" constant="167" id="IgG-uy-rhT"/>
+                                                <constraint firstAttribute="width" constant="54" id="QxF-dc-mJ1"/>
+                                                <constraint firstAttribute="height" constant="54" id="WD8-eP-Psu"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="1" green="0.25098039220000001" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="27"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Nae-Ws-30Y">
+                                            <rect key="frame" x="78" y="36" width="295" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="ozp-xy-bNc"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstName lastName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="NlI-Cx-QYY">
+                                            <rect key="frame" x="78" y="9" width="295" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="26" id="fya-Qv-A4J"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="NlI-Cx-QYY" firstAttribute="centerY" secondItem="GHI-IK-PDd" secondAttribute="centerY" id="1ig-fS-aRn"/>
-                                        <constraint firstItem="NlI-Cx-QYY" firstAttribute="leading" secondItem="GHI-IK-PDd" secondAttribute="leadingMargin" constant="-1" id="N2h-Of-IRd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Nae-Ws-30Y" secondAttribute="trailing" constant="-14" id="0Eh-Le-Pcp"/>
+                                        <constraint firstItem="Nae-Ws-30Y" firstAttribute="top" secondItem="NlI-Cx-QYY" secondAttribute="bottom" constant="1" id="Lrz-lG-BfH"/>
+                                        <constraint firstAttribute="trailing" secondItem="NlI-Cx-QYY" secondAttribute="trailing" constant="2" id="M0x-k4-W8x"/>
+                                        <constraint firstItem="zmd-1H-H4S" firstAttribute="centerY" secondItem="GHI-IK-PDd" secondAttribute="centerY" id="a3i-az-L9k"/>
+                                        <constraint firstItem="NlI-Cx-QYY" firstAttribute="top" secondItem="GHI-IK-PDd" secondAttribute="topMargin" constant="-2" id="dzD-6Z-PYE"/>
+                                        <constraint firstItem="Nae-Ws-30Y" firstAttribute="leading" secondItem="zmd-1H-H4S" secondAttribute="trailing" constant="8" symbolic="YES" id="pqh-U8-qF1"/>
+                                        <constraint firstItem="NlI-Cx-QYY" firstAttribute="leading" secondItem="zmd-1H-H4S" secondAttribute="trailing" constant="8" id="xH0-EP-dus"/>
+                                        <constraint firstItem="zmd-1H-H4S" firstAttribute="leading" secondItem="GHI-IK-PDd" secondAttribute="leadingMargin" id="xOa-Ki-Al7"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="nameLabel" destination="NlI-Cx-QYY" id="eGs-q3-ny9"/>
+                                    <outlet property="profileImage" destination="zmd-1H-H4S" id="A3C-0c-1Nh"/>
+                                    <outlet property="userNameLabel" destination="Nae-Ws-30Y" id="Tfr-FZ-Fn2"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notFound" id="n1j-Dc-lLl" customClass="PeopleCell" customModule="Wanto" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="191" width="375" height="63"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n1j-Dc-lLl" id="Bdd-9m-Nj1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="62.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstName lastName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Eig-PL-vhP">
-                                            <rect key="frame" x="15" y="1" width="167" height="40"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can't find who you're looking for? Invite with a phone number..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Eig-PL-vhP">
+                                            <rect key="frame" x="15" y="1" width="344" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="7tg-V8-445"/>
-                                                <constraint firstAttribute="width" constant="167" id="RJE-wU-hb2"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                             <nil key="textColor"/>
@@ -2419,6 +2478,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Eig-PL-vhP" firstAttribute="leading" secondItem="Bdd-9m-Nj1" secondAttribute="leadingMargin" constant="-1" id="ARu-SQ-QYd"/>
+                                        <constraint firstAttribute="trailing" secondItem="Eig-PL-vhP" secondAttribute="trailing" constant="16" id="C2P-2J-z5f"/>
                                         <constraint firstItem="Eig-PL-vhP" firstAttribute="centerY" secondItem="Bdd-9m-Nj1" secondAttribute="centerY" id="IDz-qZ-obU"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -2434,7 +2494,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Isy-Tl-9zI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3425" y="-1417"/>
+            <point key="canvasLocation" x="3424.8000000000002" y="-1417.2413793103449"/>
         </scene>
         <!--Inactive View Controller-->
         <scene sceneID="uk7-tj-R7x">
@@ -2550,9 +2610,6 @@
                                                             <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="addPeopleClick:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="1vb-hu-mrq"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -2601,7 +2658,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="addPeopleClick:" destination="Oed-Pc-U4y" eventType="touchUpInside" id="0XU-bJ-TpG"/>
+                                    <segue destination="wzI-HV-yza" kind="show" id="jYb-1W-NH3"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jW-Ot-1zq" customClass="UIViewX" customModule="Wanto" customModuleProvider="target">

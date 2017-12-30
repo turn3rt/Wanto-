@@ -52,10 +52,12 @@
 		B39E2FF61FD9247200F669CC /* profile-default-male@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B39E2FF51FD9247100F669CC /* profile-default-male@2x.png */; };
 		B39E2FF81FD9254500F669CC /* capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png in Resources */ = {isa = PBXBuildFile; fileRef = B39E2FF71FD9254400F669CC /* capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png */; };
 		B3A140531FD32C1600458929 /* settings-work-tool@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A140521FD32C1500458929 /* settings-work-tool@2x.png */; };
+		B3C390811FF7945A00D34568 /* AddPeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C390801FF7945A00D34568 /* AddPeopleCell.swift */; };
 		B3C6B1F31FE0B1680038BF60 /* otherGirl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3C6B1F21FE0B1670038BF60 /* otherGirl.jpg */; };
 		B3C6B1F71FE0BD0B0038BF60 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C6B1F61FE0BD0B0038BF60 /* CreateAccountController.swift */; };
 		B3D4B4621FD1D80C009CE92E /* ActiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */; };
 		B3D97D3D1FF3E9110029AC3A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D97D3C1FF3E9110029AC3A /* ChatViewController.swift */; };
+		B3D97D3F1FF7874B0029AC3A /* AddPeopleTBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D97D3E1FF7874B0029AC3A /* AddPeopleTBController.swift */; };
 		CF2F13191F3A351451056E5E /* Pods_Wanto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D95D7E3150DA113D056A688 /* Pods_Wanto.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,11 +134,13 @@
 		B39E2FF51FD9247100F669CC /* profile-default-male@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-default-male@2x.png"; sourceTree = "<group>"; };
 		B39E2FF71FD9254400F669CC /* capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png; sourceTree = "<group>"; };
 		B3A140521FD32C1500458929 /* settings-work-tool@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-work-tool@2x.png"; sourceTree = "<group>"; };
+		B3C390801FF7945A00D34568 /* AddPeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleCell.swift; sourceTree = "<group>"; };
 		B3C6B1F21FE0B1670038BF60 /* otherGirl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = otherGirl.jpg; sourceTree = "<group>"; };
 		B3C6B1F61FE0BD0B0038BF60 /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCell.swift; sourceTree = "<group>"; };
 		B3D97D3B1FF3E57C0029AC3A /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		B3D97D3C1FF3E9110029AC3A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		B3D97D3E1FF7874B0029AC3A /* AddPeopleTBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleTBController.swift; sourceTree = "<group>"; };
 		B98229FB67E30EADC0BA5B2A /* Pods_WantoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DB341D6646B1204FF8FC0D /* Pods-WantoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WantoUITests/Pods-WantoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE77B75DE5D97228A7240649 /* Pods-WantoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WantoTests/Pods-WantoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				B3C6B1F61FE0BD0B0038BF60 /* CreateAccountController.swift */,
+				B3D97D3E1FF7874B0029AC3A /* AddPeopleTBController.swift */,
 				B3D97D3B1FF3E57C0029AC3A /* Bridging-Header.h */,
 				B38B14C21FE0762E00CAAA60 /* LoginController.swift */,
 				B3D97D3C1FF3E9110029AC3A /* ChatViewController.swift */,
@@ -311,6 +316,7 @@
 				B3724CEA1FD3D6AD0034A49A /* Activity.swift */,
 				B32B137E1FD05656005EC45E /* InactiveCell.swift */,
 				B3D4B4611FD1D80C009CE92E /* ActiveCell.swift */,
+				B3C390801FF7945A00D34568 /* AddPeopleCell.swift */,
 				B3693D401FD1DDED0086D4B9 /* FeedCell.swift */,
 				B31FFFD61FE1D31A000E52EF /* TutorialCell.swift */,
 				B32B13971FD07EEA005EC45E /* PersonCell.swift */,
@@ -651,6 +657,7 @@
 				B311CF3D1FCFFB3500730CDA /* AppDelegate.swift in Sources */,
 				B364ABBB1FE71EDD00E72E1D /* ActiveViewController.swift in Sources */,
 				B36A90EA1FE0CCA7003DBB69 /* DataService.swift in Sources */,
+				B3C390811FF7945A00D34568 /* AddPeopleCell.swift in Sources */,
 				B3724CEB1FD3D6AD0034A49A /* Activity.swift in Sources */,
 				B34249B41FD8581600B7451B /* Person.swift in Sources */,
 				B32B137B1FD05503005EC45E /* Helper.swift in Sources */,
@@ -662,6 +669,7 @@
 				B322810E1FD8AC56005251FC /* PeopleCell.swift in Sources */,
 				B38B14C31FE0762E00CAAA60 /* LoginController.swift in Sources */,
 				B32B13981FD07EEA005EC45E /* PersonCell.swift in Sources */,
+				B3D97D3F1FF7874B0029AC3A /* AddPeopleTBController.swift in Sources */,
 				B322810C1FD89CAC005251FC /* activitySettingsController.swift in Sources */,
 				B32B137D1FD05638005EC45E /* HomeViewController.swift in Sources */,
 				B32B138C1FD064F1005EC45E /* UIImageViewX.swift in Sources */,
