@@ -51,7 +51,7 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
         
         
         
-        //getEveryUser()
+        getEveryUser()
 
     }
     @IBAction func indexDidChange(_ sender: Any) {
