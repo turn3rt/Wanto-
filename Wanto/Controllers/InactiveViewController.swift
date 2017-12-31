@@ -30,7 +30,9 @@ protocol goDelegate {
     func passTimerData(data: Activity, countdownValue: Double, selectedCellIndex: Int)
 }
 
-class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate, personDeleteDelegate, reorderDelegate {
+class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocationManagerDelegate, UISearchBarDelegate, personDeleteDelegate, reorderDelegate, addPeopleDelegate {
+ 
+    
     //MARK: Database ref
     var ref: DatabaseReference!
     var activitiesRef: DatabaseReference!
@@ -47,7 +49,10 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
         newActivity.people = activity.people
         self.peopleCollection.reloadData()
     }
-    
+    func addPerson(data: Person) {
+        newActivity.people.append(data)
+        self.peopleCollection.reloadData()
+    }
     
     
     private let personIdentifier = "Person"
@@ -78,6 +83,7 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
+    //delegate vars: make sure these are not nil when execution of protocol func
     var newSaveDelegate: saveNewDelegate? = nil
     var editSaveDelegate: saveDelegate? = nil
     var goDelegate: goDelegate? = nil
@@ -330,7 +336,12 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
             settingsVC.deleteDelegate = self
             settingsVC.reorderDelegate = self
         }
-
+        if segue.identifier == "addPeople" {
+            let vc = segue.destination as! AddPeopleTBController
+            vc.addPersonDelegate = self
+            vc.addPersonArray = self.newActivity.people
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
