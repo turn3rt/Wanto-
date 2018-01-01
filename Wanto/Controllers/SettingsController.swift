@@ -14,6 +14,8 @@ class SettingsController: UITableViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var profileImaage: UIImageViewX!
+    
     
    let userID: String = (Auth.auth().currentUser?.uid)!
     

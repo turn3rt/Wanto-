@@ -1700,10 +1700,10 @@
             </objects>
             <point key="canvasLocation" x="1893.5999999999999" y="1327.8325123152711"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Profile View Controller-->
         <scene sceneID="rdh-it-hKu">
             <objects>
-                <viewController id="IzB-Wo-yIM" sceneMemberID="viewController">
+                <viewController id="IzB-Wo-yIM" customClass="EditProfileViewController" customModule="Wanto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="een-OP-iZ5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1751,6 +1751,9 @@
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addPicClick:" destination="IzB-Wo-yIM" eventType="touchUpInside" id="w0V-u9-5IE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-MU-kKZ" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="118" y="561" width="138" height="41"/>
@@ -1774,6 +1777,9 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doneClick:" destination="IzB-Wo-yIM" eventType="touchUpInside" id="6ao-wg-G4z"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstName lastName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="spj-31-JGT">
                                 <rect key="frame" x="0.0" y="392" width="375" height="76"/>
@@ -1785,36 +1791,56 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edit Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFm-OV-sxp">
-                                <rect key="frame" x="80" y="476" width="214" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edit Name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dxm-0V-9xl">
+                                <rect key="frame" x="56" y="476" width="262" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Vin-YM-buD"/>
-                                    <constraint firstAttribute="width" constant="214" id="mh1-nb-EVl"/>
+                                    <constraint firstAttribute="width" constant="262" id="LAe-F5-Q7c"/>
+                                    <constraint firstAttribute="height" constant="42" id="ueR-32-UJq"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="21"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ns1-Ji-NDS" firstAttribute="centerX" secondItem="64S-ew-dUS" secondAttribute="centerX" id="0f4-vK-JFw"/>
                             <constraint firstItem="fcB-MU-kKZ" firstAttribute="centerX" secondItem="64S-ew-dUS" secondAttribute="centerX" id="42V-zg-W0m"/>
                             <constraint firstItem="64S-ew-dUS" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fcB-MU-kKZ" secondAttribute="bottom" constant="24" id="Aek-as-Tay"/>
-                            <constraint firstItem="fcB-MU-kKZ" firstAttribute="top" secondItem="KFm-OV-sxp" secondAttribute="bottom" constant="55" id="GKY-la-36y"/>
-                            <constraint firstItem="KFm-OV-sxp" firstAttribute="centerX" secondItem="fcB-MU-kKZ" secondAttribute="centerX" id="Mfm-1F-VGe"/>
+                            <constraint firstItem="Dxm-0V-9xl" firstAttribute="centerX" secondItem="fcB-MU-kKZ" secondAttribute="centerX" id="Bad-YM-rko"/>
+                            <constraint firstItem="Dxm-0V-9xl" firstAttribute="centerX" secondItem="spj-31-JGT" secondAttribute="centerX" id="C0P-cc-yrT"/>
+                            <constraint firstItem="fcB-MU-kKZ" firstAttribute="top" secondItem="Dxm-0V-9xl" secondAttribute="bottom" constant="43" id="Jh3-UF-EDZ"/>
                             <constraint firstItem="64S-ew-dUS" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="fcB-MU-kKZ" secondAttribute="bottom" constant="127" id="SSS-4R-UHd"/>
-                            <constraint firstItem="KFm-OV-sxp" firstAttribute="centerX" secondItem="spj-31-JGT" secondAttribute="centerX" id="TP7-FR-Qvv"/>
-                            <constraint firstItem="KFm-OV-sxp" firstAttribute="top" secondItem="spj-31-JGT" secondAttribute="bottom" constant="8" id="TzP-pC-khn"/>
                             <constraint firstItem="ns1-Ji-NDS" firstAttribute="top" relation="lessThanOrEqual" secondItem="64S-ew-dUS" secondAttribute="top" constant="107" id="VIm-Bs-VGa"/>
                             <constraint firstItem="jPg-MW-Wzm" firstAttribute="trailing" secondItem="ns1-Ji-NDS" secondAttribute="trailing" id="fld-FU-3Hp"/>
                             <constraint firstItem="spj-31-JGT" firstAttribute="top" secondItem="ns1-Ji-NDS" secondAttribute="bottom" constant="-3" id="qQo-jA-UfY"/>
+                            <constraint firstItem="Dxm-0V-9xl" firstAttribute="top" secondItem="spj-31-JGT" secondAttribute="bottom" constant="8" id="qSF-VO-qF6"/>
                             <constraint firstItem="jPg-MW-Wzm" firstAttribute="bottom" secondItem="ns1-Ji-NDS" secondAttribute="bottom" id="uOG-tY-qcr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="64S-ew-dUS"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aR5-tB-E4M" appends="YES" id="Reh-bv-f58"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="spj-31-JGT" id="28A-Dy-neS"/>
+                        <outlet property="profileImage" destination="ns1-Ji-NDS" id="ebB-LN-6MD"/>
+                        <outlet property="textField" destination="Dxm-0V-9xl" id="snX-KS-vrr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p27-io-y4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aR5-tB-E4M">
+                    <connections>
+                        <action selector="tapOffKeyboard:" destination="IzB-Wo-yIM" id="3Oc-f0-4Ef"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2629.5999999999999" y="1327.8325123152711"/>
         </scene>
