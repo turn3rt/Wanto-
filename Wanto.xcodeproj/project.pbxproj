@@ -19,6 +19,9 @@
 		B31FFFD71FE1D31A000E52EF /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31FFFD61FE1D31A000E52EF /* TutorialCell.swift */; };
 		B322810C1FD89CAC005251FC /* activitySettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B322810B1FD89CAC005251FC /* activitySettingsController.swift */; };
 		B322810E1FD8AC56005251FC /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B322810D1FD8AC56005251FC /* PeopleCell.swift */; };
+		B3245ED01FFA2CC200427A69 /* down-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B3245ECF1FFA2CC000427A69 /* down-arrow.png */; };
+		B3245ED21FFA2D1300427A69 /* Baby.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3245ED11FFA2D1100427A69 /* Baby.jpg */; };
+		B3245ED41FFA2E9B00427A69 /* bb.png in Resources */ = {isa = PBXBuildFile; fileRef = B3245ED31FFA2E9900427A69 /* bb.png */; };
 		B3288B0E1FD5E2A200049AE9 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3288B0D1FD5E2A200049AE9 /* LocationSearchTable.swift */; };
 		B3288B121FD60A4100049AE9 /* target@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3288B111FD60A4100049AE9 /* target@2x.png */; };
 		B32B137B1FD05503005EC45E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B137A1FD05503005EC45E /* Helper.swift */; };
@@ -101,6 +104,9 @@
 		B31FFFD61FE1D31A000E52EF /* TutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
 		B322810B1FD89CAC005251FC /* activitySettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activitySettingsController.swift; sourceTree = "<group>"; };
 		B322810D1FD8AC56005251FC /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
+		B3245ECF1FFA2CC000427A69 /* down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-arrow.png"; sourceTree = "<group>"; };
+		B3245ED11FFA2D1100427A69 /* Baby.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Baby.jpg; sourceTree = "<group>"; };
+		B3245ED31FFA2E9900427A69 /* bb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bb.png; sourceTree = "<group>"; };
 		B3288B0D1FD5E2A200049AE9 /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		B3288B111FD60A4100049AE9 /* target@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "target@2x.png"; sourceTree = "<group>"; };
 		B32B137A1FD05503005EC45E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -264,7 +270,10 @@
 		B32B13881FD056F7005EC45E /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				B3245ECF1FFA2CC000427A69 /* down-arrow.png */,
 				B3C6B1F21FE0B1670038BF60 /* otherGirl.jpg */,
+				B3245ED31FFA2E9900427A69 /* bb.png */,
+				B3245ED11FFA2D1100427A69 /* Baby.jpg */,
 				B38B14C01FE0385B00CAAA60 /* LogoTransparent.png */,
 				B38B14BE1FE0360A00CAAA60 /* girl.jpg */,
 				B38B14BC1FDF57AA00CAAA60 /* Screen Shot 2017-12-11 at 7.17.02 PM.png */,
@@ -448,15 +457,18 @@
 			files = (
 				B39E2FF61FD9247200F669CC /* profile-default-male@2x.png in Resources */,
 				B3C6B1F31FE0B1680038BF60 /* otherGirl.jpg in Resources */,
+				B3245ED21FFA2D1300427A69 /* Baby.jpg in Resources */,
 				B32B13841FD056ED005EC45E /* home@2x.png in Resources */,
 				B311CF491FCFFB3500730CDA /* LaunchScreen.storyboard in Resources */,
 				B38B14C11FE0385D00CAAA60 /* LogoTransparent.png in Resources */,
+				B3245ED01FFA2CC200427A69 /* down-arrow.png in Resources */,
 				B32B13861FD056ED005EC45E /* multiple-users-silhouette@2x.png in Resources */,
 				B32B13851FD056ED005EC45E /* settings-gears@2x.png in Resources */,
 				B38B14BF1FE0360C00CAAA60 /* girl.jpg in Resources */,
 				B3288B121FD60A4100049AE9 /* target@2x.png in Resources */,
 				B38B14BD1FDF57AA00CAAA60 /* Screen Shot 2017-12-11 at 7.17.02 PM.png in Resources */,
 				B39E2FF41FD9238100F669CC /* images.jpeg in Resources */,
+				B3245ED41FFA2E9B00427A69 /* bb.png in Resources */,
 				B39E2FF81FD9254500F669CC /* capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png in Resources */,
 				B38B14C51FE09D6100CAAA60 /* GoogleService-Info.plist in Resources */,
 				B311CF461FCFFB3500730CDA /* Assets.xcassets in Resources */,
