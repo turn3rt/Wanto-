@@ -26,6 +26,8 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
     //@IBOutlet weak var SocialGroupSegmentControl: UISegmentedControl!
     
     var addPersonArray = [Person]()
+    var allUsersArray = [Person]()
+
     
     var newActivity = Activity(id: String(),
                                name: "Add name...",
@@ -71,7 +73,7 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
         if socialGroupControl.selectedSegmentIndex == 0 {
             return 1
         } else {
-            return addPersonArray.count
+            return allUsersArray.count
 
         }
     }
@@ -83,8 +85,8 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
         if socialGroupControl.selectedSegmentIndex == 0 {
             return noPerson
         } else {
-            personCell.nameLabel.text = addPersonArray[indexPath.row].firstName
-            personCell.userNameLabel.text = addPersonArray[indexPath.row].lastName
+            personCell.nameLabel.text = allUsersArray[indexPath.row].firstName
+            personCell.userNameLabel.text = allUsersArray[indexPath.row].lastName
             return personCell
             
         }
@@ -137,7 +139,9 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
         let newPerson = Person(firstName: contactProperty.contact.givenName,
                                lastName: contactProperty.contact.familyName,
-                               profileImage: #imageLiteral(resourceName: "capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png") )
+                               username: String(),
+                               profileImage: #imageLiteral(resourceName: "capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png"),
+                               phoneNum: String())
         
         //checks if person is already in activity array to prevent duplicates being added b/c users are dumbshits
         if addPersonArray.contains(where: { $0.firstName == newPerson.firstName && $0.lastName == newPerson.lastName}) {
@@ -159,7 +163,7 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
         theContactName = contactProperty.contact.givenName + " " + contactProperty.contact.familyName
         thePhoneNumber = (contactProperty.value as! CNPhoneNumber).stringValue
         
-        addPersonArray.append(newPerson)
+        allUsersArray.append(newPerson)
         print("added " + theContactName! + " with phone num: " + thePhoneNumber!)
         addPersonDelegate?.addPerson(data: newPerson)
 
@@ -182,7 +186,9 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
             if let dict = snapshot.value as? [String: AnyObject]{
                 let dbPerson = Person(firstName: String(),
                                       lastName: String(),
-                                      profileImage: UIImage())
+                                      username: String (),
+                                      profileImage: UIImage(),
+                                      phoneNum: String())
                 
                 let dbFullName = dict["Name"] as? String ?? "Name not found"
                 let dbUserName = dict["Username"] as? String ?? "Username not found"
@@ -190,7 +196,7 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
                 dbPerson.firstName = dbFullName //first name is full name
                 dbPerson.lastName = dbUserName //last name is username b/c i'm a lazy fuck and don't want to change person model
                 
-                self.addPersonArray.append(dbPerson)
+                self.allUsersArray.append(dbPerson)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
