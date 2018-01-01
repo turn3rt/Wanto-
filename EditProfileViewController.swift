@@ -27,7 +27,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     
     override func viewWillAppear(_ animated: Bool) {
-        getProfilePicture()
+        //getProfilePicture()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,7 +36,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = self
-        
+        //getProfilePicture()
         //MARK: keyboard notifications
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)

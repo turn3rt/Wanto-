@@ -10,19 +10,22 @@ import UIKit
 import Firebase
 
 class SettingsController: UITableViewController {
-    
+    let userID: String = (Auth.auth().currentUser?.uid)!
+    let storageRef = Storage.storage().reference()
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var username: UILabel!
-    @IBOutlet weak var profileImaage: UIImageViewX!
+    @IBOutlet weak var profileImage: UIImageViewX!
     
     
-   let userID: String = (Auth.auth().currentUser?.uid)!
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
         getUserSettings()
+        getProfilePicture()
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -39,6 +42,35 @@ class SettingsController: UITableViewController {
             }
         }
     }
+    
+    func getProfilePicture(){
+        Constants.refs.databaseUsers.child(userID).observe(DataEventType.value, with: { (snapshot) in
+            // check if user has photo
+            if snapshot.hasChild("profilePic"){
+                // set image locatin
+                let filePath = "Users/\(self.userID)/\("profilePic")"
+                // Assuming a < 10MB file, though mutable
+                self.storageRef.child(filePath).getData(maxSize: 10*1024*1024, completion: { (data, error) in
+                    
+                    let userPhoto = UIImage(data: data!)
+                    self.profileImage.image = userPhoto
+                })
+            }
+        })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editProfile"{
+            
+            //check why this isn't working wtf
+            let editProfileVC = segue.destination as! EditProfileViewController
+            if self.profileImage != nil {
+                editProfileVC.profileImage = self.profileImage
+                
+            }
+        }
+    }
+
 //    func getEveryUser(){
 //        Constants.refs.databaseUsers.observe(.childAdded) { (snapshot) in
 //            if let dict = snapshot.value as? [String: AnyObject]{

@@ -1545,7 +1545,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <segue destination="IzB-Wo-yIM" kind="show" id="SQH-QY-5wS"/>
+                                                                <segue destination="IzB-Wo-yIM" kind="show" identifier="editProfile" id="SQH-QY-5wS"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRn-8C-OcO" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
@@ -1693,6 +1693,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="w9P-Bw-seu"/>
                     <connections>
                         <outlet property="nameLabel" destination="ZhI-yk-96v" id="ULM-AJ-sJh"/>
+                        <outlet property="profileImage" destination="ns9-dL-m05" id="xdJ-Ub-JPX"/>
                         <outlet property="username" destination="ybr-t8-GpD" id="rB1-SD-nHr"/>
                     </connections>
                 </tableViewController>
