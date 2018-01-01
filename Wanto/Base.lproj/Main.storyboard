@@ -1457,7 +1457,7 @@
         <!--Settings-->
         <scene sceneID="Lf8-cg-F7k">
             <objects>
-                <tableViewController id="EJK-Pd-QeP" sceneMemberID="viewController">
+                <tableViewController id="EJK-Pd-QeP" customClass="SettingsController" customModule="Wanto" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jnJ-Gu-FDs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1486,7 +1486,7 @@
                                                     <blurEffect style="light"/>
                                                 </visualEffectView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png" translatesAutoresizingMaskIntoConstraints="NO" id="ns9-dL-m05" customClass="UIImageViewX" customModule="Wanto" customModuleProvider="target">
-                                                    <rect key="frame" x="113" y="19.333333333333329" width="150" height="150"/>
+                                                    <rect key="frame" x="113" y="37.333333333333343" width="150" height="150"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="0jI-4p-gt1"/>
                                                         <constraint firstAttribute="height" constant="150" id="81U-00-6ll"/>
@@ -1504,7 +1504,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstName lastName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZhI-yk-96v">
-                                                    <rect key="frame" x="0.0" y="162.33333333333334" width="375" height="76.333333333333343"/>
+                                                    <rect key="frame" x="0.0" y="180.33333333333334" width="375" height="76.333333333333343"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="76.333333333333343" id="3d6-FP-DYm"/>
                                                         <constraint firstAttribute="width" constant="375" id="dNw-IP-KQr"/>
@@ -1514,7 +1514,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88 Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yzh-XG-32C">
-                                                    <rect key="frame" x="113" y="201.66666666666666" width="149" height="76.333333333333343"/>
+                                                    <rect key="frame" x="113" y="219.66666666666666" width="149" height="76.333333333333343"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="76.333333333333343" id="ned-XY-bzX"/>
                                                         <constraint firstAttribute="width" constant="149" id="utI-jL-Skv"/>
@@ -1524,11 +1524,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Xli-Wn-Ea3">
-                                                    <rect key="frame" x="24" y="289" width="327" height="41"/>
+                                                    <rect key="frame" x="24" y="307" width="327" height="41"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRT-Ip-Wuy" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="138.66666666666666" height="41"/>
-                                                            <color key="backgroundColor" red="1" green="0.25098039220000001" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                                             <state key="normal" title="Edit Profile">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1544,10 +1544,13 @@
                                                                     <real key="value" value="0.0"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <segue destination="IzB-Wo-yIM" kind="show" id="SQH-QY-5wS"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRn-8C-OcO" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
                                                             <rect key="frame" x="188.66666666666663" y="0.0" width="138.33333333333337" height="41"/>
-                                                            <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="backgroundColor" red="1" green="0.25098039220000001" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                                             <state key="normal" title="Add Friends">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1566,10 +1569,10 @@
                                                         </button>
                                                     </subviews>
                                                 </stackView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tj9-7j-n40">
-                                                    <rect key="frame" x="135" y="366" width="105" height="43"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down-sign-to-navigate.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tj9-7j-n40">
+                                                    <rect key="frame" x="135" y="375" width="105" height="99"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="43" id="F2x-ck-VJ0"/>
+                                                        <constraint firstAttribute="height" constant="99" id="F2x-ck-VJ0"/>
                                                         <constraint firstAttribute="width" constant="105" id="ZYr-fG-n91"/>
                                                     </constraints>
                                                 </imageView>
@@ -1581,8 +1584,8 @@
                                                 <constraint firstItem="ZhI-yk-96v" firstAttribute="top" secondItem="ns9-dL-m05" secondAttribute="bottom" constant="-7" id="A4K-CQ-hxh"/>
                                                 <constraint firstAttribute="trailing" secondItem="1gw-Te-Gdw" secondAttribute="trailing" id="A75-dY-oaQ"/>
                                                 <constraint firstItem="yzh-XG-32C" firstAttribute="centerX" secondItem="9lx-MI-AQy" secondAttribute="centerX" id="HkE-IC-k1P"/>
-                                                <constraint firstItem="Tj9-7j-n40" firstAttribute="top" secondItem="9lx-MI-AQy" secondAttribute="bottom" constant="-107" id="Huv-p4-QGJ"/>
-                                                <constraint firstItem="Tj9-7j-n40" firstAttribute="top" secondItem="yzh-XG-32C" secondAttribute="bottom" constant="88.000000000000114" id="KNt-nC-Am7"/>
+                                                <constraint firstItem="Tj9-7j-n40" firstAttribute="top" secondItem="9lx-MI-AQy" secondAttribute="bottom" constant="-98" id="Huv-p4-QGJ"/>
+                                                <constraint firstItem="Tj9-7j-n40" firstAttribute="top" secondItem="yzh-XG-32C" secondAttribute="bottom" constant="79" id="KNt-nC-Am7"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZhI-yk-96v" secondAttribute="trailing" id="L6n-0p-qgQ"/>
                                                 <constraint firstItem="p54-7s-Wfe" firstAttribute="top" secondItem="cVR-46-MlM" secondAttribute="top" id="O1B-jd-gPh"/>
                                                 <constraint firstItem="Xli-Wn-Ea3" firstAttribute="leading" secondItem="cVR-46-MlM" secondAttribute="leadingMargin" constant="8" id="Oa2-Q5-rwX"/>
@@ -1595,7 +1598,7 @@
                                                 <constraint firstItem="1gw-Te-Gdw" firstAttribute="top" secondItem="cVR-46-MlM" secondAttribute="top" id="tqT-Dt-vUH"/>
                                                 <constraint firstItem="Xli-Wn-Ea3" firstAttribute="top" secondItem="yzh-XG-32C" secondAttribute="bottom" constant="11" id="vMh-Zx-WFy"/>
                                                 <constraint firstItem="ZhI-yk-96v" firstAttribute="leading" secondItem="cVR-46-MlM" secondAttribute="leading" id="vPZ-1B-tTo"/>
-                                                <constraint firstItem="Tj9-7j-n40" firstAttribute="top" secondItem="Xli-Wn-Ea3" secondAttribute="bottom" constant="36" id="xaP-6K-wq0"/>
+                                                <constraint firstItem="Tj9-7j-n40" firstAttribute="top" secondItem="Xli-Wn-Ea3" secondAttribute="bottom" constant="27" id="xaP-6K-wq0"/>
                                                 <constraint firstAttribute="trailing" secondItem="p54-7s-Wfe" secondAttribute="trailing" id="zuo-NL-f3o"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1680,6 +1683,113 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="398-63-hjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1893.5999999999999" y="1327.8325123152711"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rdh-it-hKu">
+            <objects>
+                <viewController id="IzB-Wo-yIM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="een-OP-iZ5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png" translatesAutoresizingMaskIntoConstraints="NO" id="ns1-Ji-NDS" customClass="UIImageViewX" customModule="Wanto" customModuleProvider="target">
+                                <rect key="frame" x="87" y="195" width="200" height="200"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.25098039220000001" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPg-MW-Wzm" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
+                                <rect key="frame" x="227" y="335" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-MU-kKZ" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
+                                <rect key="frame" x="118" y="561" width="138" height="41"/>
+                                <color key="backgroundColor" red="1" green="0.25098039220000001" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="NUg-kS-T1I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstName lastName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="spj-31-JGT">
+                                <rect key="frame" x="0.0" y="392" width="375" height="76"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFm-OV-sxp">
+                                <rect key="frame" x="80" y="476" width="214" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ns1-Ji-NDS" firstAttribute="bottom" secondItem="jPg-MW-Wzm" secondAttribute="bottom" id="4NW-15-D0W"/>
+                            <constraint firstItem="spj-31-JGT" firstAttribute="top" secondItem="64S-ew-dUS" secondAttribute="top" constant="304" id="5Cx-3X-reL"/>
+                            <constraint firstItem="ns1-Ji-NDS" firstAttribute="top" secondItem="64S-ew-dUS" secondAttribute="top" constant="107" id="5j6-Jf-QGp"/>
+                            <constraint firstItem="KFm-OV-sxp" firstAttribute="centerX" secondItem="fcB-MU-kKZ" secondAttribute="centerX" id="7Nu-YF-HwP"/>
+                            <constraint firstItem="fcB-MU-kKZ" firstAttribute="leading" secondItem="64S-ew-dUS" secondAttribute="leading" constant="118" id="89W-Uz-D5G"/>
+                            <constraint firstItem="fcB-MU-kKZ" firstAttribute="top" secondItem="KFm-OV-sxp" secondAttribute="bottom" constant="55" id="Fba-t3-FgD"/>
+                            <constraint firstItem="spj-31-JGT" firstAttribute="centerX" secondItem="KFm-OV-sxp" secondAttribute="centerX" id="I5g-Yn-OiY"/>
+                            <constraint firstItem="ns1-Ji-NDS" firstAttribute="trailing" secondItem="jPg-MW-Wzm" secondAttribute="trailing" id="PGk-nx-ZXK"/>
+                            <constraint firstItem="KFm-OV-sxp" firstAttribute="leading" secondItem="64S-ew-dUS" secondAttribute="leading" constant="80" id="Skj-a6-xBv"/>
+                            <constraint firstItem="jPg-MW-Wzm" firstAttribute="top" secondItem="64S-ew-dUS" secondAttribute="top" constant="247" id="T8g-Nh-6d5"/>
+                            <constraint firstItem="KFm-OV-sxp" firstAttribute="top" secondItem="spj-31-JGT" secondAttribute="bottom" constant="8" symbolic="YES" id="UMP-QI-PYg"/>
+                            <constraint firstAttribute="trailing" secondItem="spj-31-JGT" secondAttribute="trailing" id="gc7-S9-5Z7"/>
+                            <constraint firstItem="ns1-Ji-NDS" firstAttribute="leading" secondItem="64S-ew-dUS" secondAttribute="leading" constant="87" id="gw0-jb-sMC"/>
+                            <constraint firstItem="ns1-Ji-NDS" firstAttribute="centerX" secondItem="spj-31-JGT" secondAttribute="centerX" id="lCH-9E-C6O"/>
+                            <constraint firstItem="64S-ew-dUS" firstAttribute="bottom" secondItem="fcB-MU-kKZ" secondAttribute="bottom" constant="127" id="q16-uz-yC6"/>
+                            <constraint firstItem="KFm-OV-sxp" firstAttribute="top" secondItem="ns1-Ji-NDS" secondAttribute="bottom" constant="81" id="qES-zf-s7J"/>
+                            <constraint firstItem="jPg-MW-Wzm" firstAttribute="leading" secondItem="64S-ew-dUS" secondAttribute="leading" constant="227" id="ukl-S1-6LD"/>
+                            <constraint firstItem="spj-31-JGT" firstAttribute="leading" secondItem="een-OP-iZ5" secondAttribute="leading" id="xCs-kR-EyC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="64S-ew-dUS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p27-io-y4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2629.5999999999999" y="1327.8325123152711"/>
         </scene>
         <!--Home-->
         <scene sceneID="WlS-Hp-YJP">
@@ -3200,9 +3310,9 @@
     <resources>
         <image name="LogoTransparent.png" width="840" height="790"/>
         <image name="Sally.jpg" width="3024" height="4032"/>
+        <image name="arrow-down-sign-to-navigate.png" width="512" height="512"/>
         <image name="bb.png" width="896" height="1510"/>
         <image name="capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png" width="4256" height="2832"/>
-        <image name="down-arrow.png" width="64" height="64"/>
         <image name="explore.png" width="32" height="32"/>
         <image name="girl.jpg" width="500" height="750"/>
         <image name="home.png" width="32" height="32"/>
