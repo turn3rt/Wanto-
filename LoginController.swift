@@ -80,9 +80,9 @@ class LoginController: UIViewController, UITextFieldDelegate {
             //unsuccessful login
             if error != nil {
                 self.signupErrorAlert(title: "Error!", message: String(describing: error!))
-            //successful login, asks if user has verified email
+                //successful login, asks if user has verified email
             } else if Auth.auth().currentUser?.isEmailVerified == true {
-                    self.performSegue(withIdentifier: "login", sender: nil)
+                self.performSegue(withIdentifier: "login", sender: nil)
             } else { //if authenticated = false, this code is executed
                 let alert = UIAlertController(title: "Email Verification Needed", message: "Please verify \(email!) by clicking the verification link provided in the email body.", preferredStyle: .alert)
                 let resendAction = UIAlertAction(title: "Resend", style: .destructive, handler: { (action) -> Void in

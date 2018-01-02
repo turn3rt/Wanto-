@@ -206,7 +206,7 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
                     self.storageRef.child(filePath).getData(maxSize: 10*1024*1024, completion: { (data, error) in
                         print(dbFullName + " has profile pic" )
 
-                        let userPhoto = UIImage(data: data!)
+                     //   let userPhoto = UIImage(data: data!)
 //                        dbPerson.profileImage = userPhoto!
 
                     })

@@ -73,15 +73,22 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
         
         
         
-        let userRef = Constants.refs.databaseUsers
-        userRef.queryOrdered(byChild: "Email").queryEqual(toValue: username).observeSingleEvent(of: .value) { (snapshot) in
-            if snapshot.value is NSNull {
-                print("we good fam no other user made a unique username")
-            } else {
-                print(snapshot.value)
-                print("oh shit user didn't make unique username")
-            }
-        }
+//        let takenUserRef = Constants.refs.takenUsernames
+//        takenUserRef.child(username!).observeSingleEvent(of: .value) { (snapshot) in
+//            if snapshot.exists() {
+//                print("oh shit username taken")
+//            } else {
+//                print("we good fam")
+//            }
+//        }
+//        userRef.queryOrdered(byChild: "Email").queryEqual(toValue: username).observeSingleEvent(of: .value) { (snapshot) in
+//            if snapshot.value is NSNull {
+//                print("we good fam no other user made a unique username")
+//            } else {
+//                print(snapshot.value)
+//                print("oh shit user didn't make unique username")
+//            }
+//        }
         
         //        let userName = the userName or email the user entered
 //        let usersRef = Firebase(url:"https://test.firebaseio.com/users")
@@ -111,8 +118,9 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
                 self.ref.child("Users").child(userID).setValue(["Username": username!,
                                                                 "Name": name!,
                                                                 "Email":email! ])
-                
-            
+                //DOUBLY CHECK CODE FOR PRODUCTION
+               // self.ref.child("takenUsernames").setValue(username!) //sets username to taken usernames in firebase, to check if they exist on login
+
 
                 Auth.auth().currentUser?.sendEmailVerification(completion: {(error) in
                     //self.signupErrorAlert(title: "Success!", message: "Verification email sent to: \(email!)")
