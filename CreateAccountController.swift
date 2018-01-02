@@ -71,9 +71,35 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
         let email = self.email.text
         let password = self.password.text
         
+        
+        
+        let userRef = Constants.refs.databaseUsers
+        userRef.queryOrdered(byChild: "Email").queryEqual(toValue: username).observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.value is NSNull {
+                print("we good fam no other user made a unique username")
+            } else {
+                print(snapshot.value)
+                print("oh shit user didn't make unique username")
+            }
+        }
+        
+        //        let userName = the userName or email the user entered
+//        let usersRef = Firebase(url:"https://test.firebaseio.com/users")
+//        usersRef.queryOrderedByChild("email").queryEqualToValue("\(userName!)")
+//            .observeSingleEventOfType(.Value, withBlock: { snapshot in
+//
+//                if ( snapshot.value is NSNull ) {
+//                    print("not found)") //didnt find it, ok to proceed
+//
+//                } else {
+//                    print(snapshot.value) //found it, stop!
+//                }
+//        }
+        
+        
+        
         if (name != "") && (email != "") && (password != "") && (username != "") {
             Auth.auth().createUser(withEmail: email!, password: password!, completion: {(user: User? , error) in
-                
                 //unsuccessful creation attempt, spits out error
                 if error != nil{
                     self.signupErrorAlert(title: "Error!", message: String(describing: error!))
@@ -81,11 +107,13 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
                 }
                 //successful account creation
                 let userID: String = user!.uid //gets UNIQUE user id
-                
+
                 self.ref.child("Users").child(userID).setValue(["Username": username!,
                                                                 "Name": name!,
                                                                 "Email":email! ])
                 
+            
+
                 Auth.auth().currentUser?.sendEmailVerification(completion: {(error) in
                     //self.signupErrorAlert(title: "Success!", message: "Verification email sent to: \(email!)")
                     let alert = UIAlertController(title: "Success!", message: "Email verification sent to \(email!). Confirm by clicking the link provided in the email body.", preferredStyle: .alert)
