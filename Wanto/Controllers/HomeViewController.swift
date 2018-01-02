@@ -89,6 +89,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
             let indexPath = self.tableView.indexPathForView(view: sender)!
             self.activeActivities[indexPath.row].isActive = false
             self.activeActivities[indexPath.row].countdownValue = 0
+            self.activeActivities[indexPath.row].timerIsRunning = false
                 self.ref.child(self.activeActivities[indexPath.row].id).setValue(["id": self.activeActivities[indexPath.row].id,
                                                                               "name": self.activeActivities[indexPath.row].name,
                                                                               "isActive": self.activeActivities[indexPath.row].isActive,
