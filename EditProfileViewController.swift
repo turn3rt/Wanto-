@@ -26,17 +26,15 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var textField: UITextField!
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        //getProfilePicture()
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         getProfilePicture()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUserInfo()
+        
         textField.delegate = self
-        //getProfilePicture()
         //MARK: keyboard notifications
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -64,11 +62,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func doneClick(_ sender: UIButtonX) {
-        
-        
-        
+        let nameField = self.textField.text
+        Constants.refs.databaseUsers.child(userID).updateChildValues(["Name" : nameField!])
         self.navigationController?.popViewController(animated: true)
-        
         
     }
     
@@ -93,36 +89,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     // MARK: - ImagePicker Delegate
-    
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//
-//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            profileImage.contentMode = .scaleAspectFit
-//            profileImage.image = pickedImage
-//
-//
-//            let imageName = NSUUID().uuidString
-//            let storageRef = Storage.storage().reference().child(userID).child("\(imageName).jpg")
-//
-//            if let profileImage = profileImage.image,let uploadData = UIImageJPEGRepresentation(profileImage, 0.1) {
-//
-//                storageRef.putData(uploadData, metadata: nil, completion: { (metadata, err) in
-//
-//                    if err != nil {
-//                        print(err!)
-//                        return
-//                    }
-//
-//                    if let profileImageUrl = metadata?.downloadURL()?.absoluteString {
-//
-//                        let values = ["name": name, "email": email, "profileImageUrl\(referenceNumber)": profileImageUrl]
-//                        self.registerUserIntoDatabaseWithUID(uid: userID, values: values as [String : AnyObject])
-//                    }
-//                })
-//            }
-//
-//
-//        }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -167,6 +133,21 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             }
         })
     }
+    
+    func getUserInfo() {
+        Constants.refs.databaseUsers.child(userID).observe(DataEventType.value) { (snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject]{
+                let dbName = dict["Name"] as? String ?? "Name not Found"
+                
+                self.nameLabel.text = dbName
+                
+            }
+        }
+        
+        
+        
+    }
+}
 //        func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
 //            profileImage.image = image
 //            dismiss(animated: true, completion: nil)
@@ -209,20 +190,4 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
          
          */
 //        dismiss(animated: true, completion: nil)
-    
-    
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        dismiss(animated: true, completion:nil)
-//    }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
