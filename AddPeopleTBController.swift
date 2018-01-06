@@ -95,7 +95,7 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
             personCell.userNameLabel.text = allUsersArray[indexPath.row].lastName
             
             if allUsersArray[indexPath.row].imageURL == "No ImageURL"{
-                personCell.profileImage.image = #imageLiteral(resourceName: "capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png")
+                personCell.profileImage.image = #imageLiteral(resourceName: "capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png") //default image is dude sillhouette
             } else {
                 let profileImageURL = URL(string: allUsersArray[indexPath.row].imageURL)
                 personCell.profileImage.kf.setImage(with: profileImageURL)
@@ -155,7 +155,7 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
         let newPerson = Person(firstName: contactProperty.contact.givenName,
                                lastName: contactProperty.contact.familyName,
-                               username: String(),
+                               username: "none", //assumes user is not in database, therefore no username
                                profileImage: #imageLiteral(resourceName: "capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png"),
                                imageURL: String(),
                                phoneNum: String())
@@ -175,14 +175,21 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
                 newPerson.profileImage = UIImage(data: contactProperty.contact.imageData!)!
             }
             
+            theContactName = contactProperty.contact.givenName + " " + contactProperty.contact.familyName
+            thePhoneNumber = (contactProperty.value as! CNPhoneNumber).stringValue
+            
+            newPerson.phoneNum = thePhoneNumber!
+            
+            allUsersArray.append(newPerson)
+            print("added " + theContactName! + " with phone num: " + thePhoneNumber!)
+            
+            //Constants.refs.databaseUsers.child(userID).child("Activities").child("people").childByAutoId()
+            
+            addPersonDelegate?.addPerson(data: newPerson)
+            
         }
         
-        theContactName = contactProperty.contact.givenName + " " + contactProperty.contact.familyName
-        thePhoneNumber = (contactProperty.value as! CNPhoneNumber).stringValue
-        
-        allUsersArray.append(newPerson)
-        print("added " + theContactName! + " with phone num: " + thePhoneNumber!)
-        addPersonDelegate?.addPerson(data: newPerson)
+       
 
         self.navigationController?.popViewController(animated: true)
     }

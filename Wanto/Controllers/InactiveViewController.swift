@@ -41,8 +41,15 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
 
     //MARK: Protocol Stubs
     func deletePerson(atIndexPath: Int) {
-        print("activity index to remove: " , atIndexPath)
+//        print("activity peopleNames count: " , peoplePhoneNumbers.count, " with peoplePhoneNum count: " , peoplePhoneNumbers.count)
+//
+//        print("activity index to remove: " , atIndexPath)
+//    
+//        peoplePhoneNumbers.remove(at: atIndexPath)
+//        peopleNames.remove(at: atIndexPath)
         newActivity.people.remove(at: atIndexPath)
+       
+        
         self.peopleCollection.reloadData()
     }
     func reorder(activity: Activity) {
@@ -51,6 +58,10 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
     }
     func addPerson(data: Person) {
         newActivity.people.append(data)
+        peopleNames.append(data.firstName + " " + data.lastName)
+        print("appened people names array with " + data.firstName + " " + data.lastName + " and phone number: " + data.phoneNum)
+        peoplePhoneNumbers.append(data.phoneNum)
+        
         self.peopleCollection.reloadData()
     }
     
@@ -89,6 +100,11 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
     var goDelegate: goDelegate? = nil
     var selectedCellIndex = Int()
 
+    //neccesary stuff to make firebase storage easier
+    var peopleNames = [String]()
+    var peoplePhoneNumbers = [String]()
+    
+    
     
     
     
@@ -470,6 +486,8 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
                 //DB references, generates unique key to be assigned to each activity unique to each user
                 let key = activitiesRef.childByAutoId().key
                 newActivity.id = key
+                
+                
                 let activityToAdd = ["id": newActivity.id,
                                      "name": newActivity.name,
                                      "isActive": newActivity.isActive,
@@ -484,15 +502,15 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
             
             if editSaveDelegate != nil {
                 editSaveDelegate?.saveActivity(data: newActivity)
-                let activityKey = activitiesRef.key
-                print("Activity key is: ", activityKey)
                 activitiesRef.child(newActivity.id).setValue([ "id": newActivity.id,
                                                                "name": newActivity.name,
                                                                "isActive": newActivity.isActive,
                                                                "locString": newActivity.locationString,
                                                                "locLat": newActivity.locLat,
                                                                "locLong": newActivity.locLong,
-                                                               "privacySetting": newActivity.privacySetting])
+                                                               "privacySetting": newActivity.privacySetting,
+                                                               "peopleNamesArray": peopleNames,
+                                                               "peoplePhoneNumArray": peoplePhoneNumbers])
             }
             
             
@@ -506,7 +524,7 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
 extension InactiveViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("Number of People in \(newActivity.name): \(newActivity.people.count)")
-        if newActivity.people.count == 0{
+        if newActivity.people.count == 0 {
             return 1
         } else {
             return newActivity.people.count

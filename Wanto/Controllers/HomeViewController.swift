@@ -186,6 +186,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
             let activityID = self.inactiveActivities[indexPath.row].id
             
             ref.child("Users").child(userID).child("Activities").child(activityID).removeValue()
+            print("removing activity with id: " + activityID)
             
             
             inactiveActivities.remove(at: indexPath.row)
@@ -214,7 +215,7 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Number of Activities: \(activeActivities.count)")
+        print("Number of Activities: \(inactiveActivities.count)")
         if section == 0 && activeActivities.count != 0 {
             return activeActivities.count
         } else {

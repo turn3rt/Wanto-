@@ -143,6 +143,7 @@ class activitySettingsController: UIViewController, UITableViewDelegate, UITable
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             //activity.people.remove(at: indexPath.row)
             deleteDelegate?.deletePerson(atIndexPath: indexPath.row)
+            print("index of person cell to delete: " + String(indexPath.row))
             self.tableView.reloadData()
             
         }
