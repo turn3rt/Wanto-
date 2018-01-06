@@ -29,6 +29,7 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
     
     var addPersonArray = [Person]()
     var allUsersArray = [Person]()
+    var userImageURL = String()
 
     
     var newActivity = Activity(id: String(),
@@ -89,6 +90,10 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
         } else {
             personCell.nameLabel.text = allUsersArray[indexPath.row].firstName
             personCell.userNameLabel.text = allUsersArray[indexPath.row].lastName
+            
+            
+            
+            
             return personCell
             
         }
@@ -143,6 +148,7 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
                                lastName: contactProperty.contact.familyName,
                                username: String(),
                                profileImage: #imageLiteral(resourceName: "capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png"),
+                               imageURL: String(),
                                phoneNum: String())
         
         //checks if person is already in activity array to prevent duplicates being added b/c users are dumbshits
@@ -190,24 +196,25 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
                                       lastName: String(),
                                       username: String (),
                                       profileImage: UIImage(),
+                                      imageURL: String(),
                                       phoneNum: String())
                 
                 let dbFullName = dict["Name"] as? String ?? "Name not found"
                 let dbUserName = dict["Username"] as? String ?? "Username not found"
-                let dbID = dict["id"] as? String ?? "No user ID"
-                
+                let dbUID = dict["uid"] as? String ?? "No user ID"
+               
                 dbPerson.firstName = dbFullName //first name is full name
                 dbPerson.lastName = dbUserName //last name is username b/c i'm a lazy fuck and don't want to change person model
                 //dbPerson.profileImage = dbProfilePic
                 
                 //getting images
                 if snapshot.hasChild("profilePic"){
-                    let filePath = "Users/\(dbID)/\("profilePic")"
+                    let filePath = "Users/\(dbUID)/\("profilePic")"
                     self.storageRef.child(filePath).getData(maxSize: 10*1024*1024, completion: { (data, error) in
                         print(dbFullName + " has profile pic" )
 
-                     //   let userPhoto = UIImage(data: data!)
-//                        dbPerson.profileImage = userPhoto!
+                        let userPhoto = UIImage(data: data!)
+                        dbPerson.profileImage = userPhoto!
 
                     })
                 }

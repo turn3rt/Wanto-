@@ -117,7 +117,8 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
 
                 self.ref.child("Users").child(userID).setValue(["Username": username!,
                                                                 "Name": name!,
-                                                                "Email":email! ])
+                                                                "Email":email!,
+                                                                "uid": userID ])
                 //DOUBLY CHECK CODE FOR PRODUCTION
                // self.ref.child("takenUsernames").setValue(username!) //sets username to taken usernames in firebase, to check if they exist on login
 

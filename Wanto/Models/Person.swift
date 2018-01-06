@@ -14,16 +14,18 @@ class Person{
     var lastName: String
     var username: String
     var profileImage: UIImage
+    var imageURL: String
     var phoneNum: String
 
    // var phoneNum: [String]
  
     
-    init(firstName: String,  lastName: String, username: String, profileImage: UIImage, phoneNum: String) {
+    init(firstName: String,  lastName: String, username: String, profileImage: UIImage, imageURL: String, phoneNum: String) {
         self.firstName = firstName
         self.lastName = lastName
         self.username = username
         self.profileImage = profileImage
+        self.imageURL = imageURL
         self.phoneNum = phoneNum
     }
 
