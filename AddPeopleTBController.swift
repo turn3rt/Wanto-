@@ -9,6 +9,9 @@
 import UIKit
 import Firebase
 import ContactsUI
+import Kingfisher
+
+
 
 
 protocol addPeopleDelegate{
@@ -91,11 +94,17 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
             personCell.nameLabel.text = allUsersArray[indexPath.row].firstName
             personCell.userNameLabel.text = allUsersArray[indexPath.row].lastName
             
-            
+            if allUsersArray[indexPath.row].imageURL == "No ImageURL"{
+                personCell.profileImage.image = #imageLiteral(resourceName: "capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png")
+            } else {
+                let profileImageURL = URL(string: allUsersArray[indexPath.row].imageURL)
+                personCell.profileImage.kf.setImage(with: profileImageURL)
+            }
+            print("the set userimageURL is: " + allUsersArray[indexPath.row].imageURL)
+            //personCell.profileImage.image = #imageLiteral(resourceName: "capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png")
             
             
             return personCell
-            
         }
         
     }
@@ -201,23 +210,24 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
                 
                 let dbFullName = dict["Name"] as? String ?? "Name not found"
                 let dbUserName = dict["Username"] as? String ?? "Username not found"
-                let dbUID = dict["uid"] as? String ?? "No user ID"
+                //let dbUID = dict["uid"] as? String ?? "No user ID"
+                let dbImageURL = dict ["profilePic"] as? String ?? "No ImageURL"
                
                 dbPerson.firstName = dbFullName //first name is full name
                 dbPerson.lastName = dbUserName //last name is username b/c i'm a lazy fuck and don't want to change person model
-                //dbPerson.profileImage = dbProfilePic
+                dbPerson.imageURL = dbImageURL //gets image URL from firebase
                 
                 //getting images
-                if snapshot.hasChild("profilePic"){
-                    let filePath = "Users/\(dbUID)/\("profilePic")"
-                    self.storageRef.child(filePath).getData(maxSize: 10*1024*1024, completion: { (data, error) in
-                        print(dbFullName + " has profile pic" )
-
-                        let userPhoto = UIImage(data: data!)
-                        dbPerson.profileImage = userPhoto!
-
-                    })
-                }
+//                if snapshot.hasChild("profilePic"){
+//                    let filePath = "Users/\(dbUID)/\("profilePic")"
+//                    self.storageRef.child(filePath).getData(maxSize: 10*1024*1024, completion: { (data, error) in
+//                        print(dbFullName + " has profile pic" )
+//
+//                        let userPhoto = UIImage(data: data!)
+//                        dbPerson.profileImage = userPhoto!
+//
+//                    })
+//                }
             
             
                 self.allUsersArray.append(dbPerson)
