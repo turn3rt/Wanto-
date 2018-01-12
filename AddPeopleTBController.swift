@@ -156,9 +156,8 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
         let newPerson = Person(firstName: contactProperty.contact.givenName,
                                lastName: contactProperty.contact.familyName,
                                username: "none", //assumes user is not in database, therefore no username
-                               profileImage: #imageLiteral(resourceName: "capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png"),
-                               imageURL: String(),
-                               phoneNum: String())
+                               imageURL: "none",
+                               phoneNum: (contactProperty.value as! CNPhoneNumber).stringValue)
         
         //checks if person is already in activity array to prevent duplicates being added b/c users are dumbshits
         if addPersonArray.contains(where: { $0.firstName == newPerson.firstName && $0.lastName == newPerson.lastName}) {
@@ -172,15 +171,14 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
             picker.present(alertController, animated: true, completion: nil)
         } else {
             if contactProperty.contact.imageDataAvailable == true {
-                newPerson.profileImage = UIImage(data: contactProperty.contact.imageData!)!
+                //newPerson.profileImage = UIImage(data: contactProperty.contact.imageData!)!
             }
             
             theContactName = contactProperty.contact.givenName + " " + contactProperty.contact.familyName
             thePhoneNumber = (contactProperty.value as! CNPhoneNumber).stringValue
             
-            newPerson.phoneNum = thePhoneNumber!
             
-            allUsersArray.append(newPerson)
+            //allUsersArray.append(newPerson)
             print("added " + theContactName! + " with phone num: " + thePhoneNumber!)
             
             //Constants.refs.databaseUsers.child(userID).child("Activities").child("people").childByAutoId()
@@ -211,7 +209,6 @@ class AddPeopleTBController: UIViewController, UITableViewDelegate, UITableViewD
                 let dbPerson = Person(firstName: String(),
                                       lastName: String(),
                                       username: String (),
-                                      profileImage: UIImage(),
                                       imageURL: String(),
                                       phoneNum: String())
                 

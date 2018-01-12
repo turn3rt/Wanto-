@@ -143,6 +143,11 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 let dbPrivacy = dict["privacySetting"] as? String ?? "Error"
                 let dbCountdown = dict["countdownValue"] as? Double ?? 00
                 let dbtimerIsRunning = dict["timerIsRunning"] as? Bool ?? false
+                let dbFirstNames = dict["peopleFirstNames"] as? [String] ?? ["first names nobody in activity"]
+                let dbLastNames = dict["peopleLastNames"] as? [String] ?? ["last names nobody in activity"]
+                let dbPhoneNums = dict["peoplePhoneNums"] as? [String] ?? ["none"]
+
+
                 
                 
                 //setting the data to new activity
@@ -157,6 +162,21 @@ class HomeViewController: UITableViewController, saveNewDelegate, saveDelegate, 
                 dbActivity.locationCoords = dbLocCoords
                 dbActivity.countdownValue = dbCountdown
                 dbActivity.timerIsRunning = dbtimerIsRunning
+                
+                //dealing with adding people to the new activity array
+                if dbPhoneNums[0] != "none"{
+                    for index in 0...dbPhoneNums.count - 1 {
+                        let dbPerson = Person(firstName: dbFirstNames[index],
+                                              lastName: dbLastNames[index],
+                                              username: "none",
+                                              imageURL: "none",
+                                              phoneNum: dbPhoneNums[index])
+                        
+                        dbActivity.people.append(dbPerson)
+                        
+                    }
+                }
+                
                 
                 if dbActivity.isActive == true {
                     self.activeActivities.append(dbActivity)

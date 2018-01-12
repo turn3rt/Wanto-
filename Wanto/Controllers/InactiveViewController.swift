@@ -48,7 +48,28 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
 //        peoplePhoneNumbers.remove(at: atIndexPath)
 //        peopleNames.remove(at: atIndexPath)
         newActivity.people.remove(at: atIndexPath)
-       
+        print(String(describing: newActivity.people))
+        print("count of new people in activity: " + String(describing: newActivity.people.count))
+        //update firebase arrays to reflect new activity changes
+        
+        var newFirstNames = [String]()
+        var newLastNames = [String]()
+        var newPhoneNums = [String]()
+        for index in 0...newActivity.people.count - 1 {
+            newFirstNames.append(newActivity.people[index].firstName)
+            newLastNames.append(newActivity.people[index].lastName)
+            newPhoneNums.append(newActivity.people[index].phoneNum)
+
+            firstNames = newFirstNames
+            lastNames = newLastNames
+            peoplePhoneNumbers = newPhoneNums
+            
+//          Why does this not work??
+//            firstNames[index] = newActivity.people[index].firstName
+//            lastNames[index] = newActivity.people[index].lastName
+//            peoplePhoneNumbers[index] = newActivity.people[index].phoneNum
+        }
+        
         
         self.peopleCollection.reloadData()
     }
@@ -58,9 +79,14 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
     }
     func addPerson(data: Person) {
         newActivity.people.append(data)
-        peopleNames.append(data.firstName + " " + data.lastName)
-        print("appened people names array with " + data.firstName + " " + data.lastName + " and phone number: " + data.phoneNum)
+        
+        //database managment below
+        firstNames.append(data.firstName)
+        lastNames.append(data.lastName)
         peoplePhoneNumbers.append(data.phoneNum)
+        
+        print("appened people names array with " + data.firstName + " " + data.lastName + " and phone number: " + data.phoneNum)
+        //peoplePhoneNumbers.append(data.phoneNum)
         
         self.peopleCollection.reloadData()
     }
@@ -100,8 +126,9 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
     var goDelegate: goDelegate? = nil
     var selectedCellIndex = Int()
 
-    //neccesary stuff to make firebase storage easier
-    var peopleNames = [String]()
+    //neccesary stuff to make firebase storage of people in activity easier
+    var firstNames = [String]()
+    var lastNames = [String]()
     var peoplePhoneNumbers = [String]()
     
     
@@ -494,7 +521,10 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
                                      "locString": newActivity.locationString,
                                      "locLat": newActivity.locLat,
                                      "locLong": newActivity.locLong,
-                                     "privacySetting": newActivity.privacySetting] as [String : Any]
+                                     "privacySetting": newActivity.privacySetting,
+                                     "peopleFirstNames": firstNames,
+                                     "peopleLastNames": lastNames,
+                                     "peoplePhoneNums": peoplePhoneNumbers] as [String : Any]
                 
                 activitiesRef.child(key).setValue(activityToAdd)
                 print("Activity saved to database & local: ", activityToAdd)
@@ -509,8 +539,9 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
                                                                "locLat": newActivity.locLat,
                                                                "locLong": newActivity.locLong,
                                                                "privacySetting": newActivity.privacySetting,
-                                                               "peopleNamesArray": peopleNames,
-                                                               "peoplePhoneNumArray": peoplePhoneNumbers])
+                                                               "peopleFirstNames": firstNames,
+                                                               "peopleLastNames": lastNames,
+                                                               "peoplePhoneNums": peoplePhoneNumbers])
             }
             
             
@@ -538,7 +569,7 @@ extension InactiveViewController: UICollectionViewDataSource{
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: personIdentifier, for: indexPath) as! PersonCell
             cell.name.text = newActivity.people[indexPath.row].firstName
-            cell.profileImage.image = newActivity.people[indexPath.row].profileImage
+            //cell.profileImage.image = newActivity.people[indexPath.row].profileImage
             return cell
         }
     }

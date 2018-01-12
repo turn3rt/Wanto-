@@ -61,26 +61,30 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
             print("Tapped Everyone")
             self.activity.privacySetting = "Everyone"
             self.privacySetting.setTitle(self.activity.privacySetting, for: .normal)
-            self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
-                                                        "name": self.activity.name,
-                                                        "isActive": self.activity.isActive,
-                                                        "locString": self.activity.locationString,
-                                                        "locLat": self.activity.locLat,
-                                                        "locLong": self.activity.locLong,
-                                                        "privacySetting": self.activity.privacySetting])
+            self.ref.child(self.activity.id).updateChildValues(["privacySetting":self.activity.privacySetting])
+
+//            self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
+//                                                        "name": self.activity.name,
+//                                                        "isActive": self.activity.isActive,
+//                                                        "locString": self.activity.locationString,
+//                                                        "locLat": self.activity.locLat,
+//                                                        "locLong": self.activity.locLong,
+//                                                        "privacySetting": self.activity.privacySetting])
         })
         let friends = UIAlertAction(title: "Friends", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             print("tapped friends")
             self.activity.privacySetting = "Friends"
             self.privacySetting.setTitle(self.activity.privacySetting, for: .normal)
-            self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
-                                                        "name": self.activity.name,
-                                                        "isActive": self.activity.isActive,
-                                                        "locString": self.activity.locationString,
-                                                        "locLat": self.activity.locLat,
-                                                        "locLong": self.activity.locLong,
-                                                        "privacySetting": self.activity.privacySetting])
+            self.ref.child(self.activity.id).updateChildValues(["privacySetting":self.activity.privacySetting])
+
+//            self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
+//                                                        "name": self.activity.name,
+//                                                        "isActive": self.activity.isActive,
+//                                                        "locString": self.activity.locationString,
+//                                                        "locLat": self.activity.locLat,
+//                                                        "locLong": self.activity.locLong,
+//                                                        "privacySetting": self.activity.privacySetting])
 
             
         })
@@ -89,13 +93,14 @@ class InactiveCell: UITableViewCell, MKMapViewDelegate {
             print("tapped only group")
             self.activity.privacySetting = "Only Group"
             self.privacySetting.setTitle(self.activity.privacySetting, for: .normal)
-            self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
-                                                        "name": self.activity.name,
-                                                        "isActive": self.activity.isActive,
-                                                        "locString": self.activity.locationString,
-                                                        "locLat": self.activity.locLat,
-                                                        "locLong": self.activity.locLong,
-                                                        "privacySetting": self.activity.privacySetting])
+            self.ref.child(self.activity.id).updateChildValues(["privacySetting":self.activity.privacySetting])
+//            self.ref.child(self.activity.id).setValue([ "id": self.activity.id,
+//                                                        "name": self.activity.name,
+//                                                        "isActive": self.activity.isActive,
+//                                                        "locString": self.activity.locationString,
+//                                                        "locLat": self.activity.locLat,
+//                                                        "locLong": self.activity.locLong,
+//                                                        "privacySetting": self.activity.privacySetting])
 
             
         })
