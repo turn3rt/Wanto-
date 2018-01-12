@@ -1701,7 +1701,7 @@
             </objects>
             <point key="canvasLocation" x="1893.5999999999999" y="1327.8325123152711"/>
         </scene>
-        <!--Edit Profile View Controller-->
+        <!--Edit Profile-->
         <scene sceneID="rdh-it-hKu">
             <objects>
                 <viewController id="IzB-Wo-yIM" customClass="EditProfileViewController" customModule="Wanto" customModuleProvider="target" sceneMemberID="viewController">
@@ -1709,6 +1709,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bb.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Uq-Bx-yBf">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4et-ms-9DE">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="FGN-11-Mgc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="backgroundColor" red="0.0" green="0.59889596700000003" blue="0.53408193589999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capitalizing_on_the_economic_potential_of_foreign_entrepreneurs_feature.png" translatesAutoresizingMaskIntoConstraints="NO" id="ns1-Ji-NDS" customClass="UIImageViewX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="87" y="195" width="200" height="200"/>
                                 <constraints>
@@ -1729,7 +1742,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPg-MW-Wzm" customClass="UIButtonX" customModule="Wanto" customModuleProvider="target">
                                 <rect key="frame" x="227" y="335" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="iEQ-1q-Vrg"/>
                                     <constraint firstAttribute="width" constant="60" id="r1Y-MQ-yQv"/>
@@ -1743,13 +1756,16 @@
                                         <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="-1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -1814,15 +1830,19 @@
                         <constraints>
                             <constraint firstItem="ns1-Ji-NDS" firstAttribute="centerX" secondItem="64S-ew-dUS" secondAttribute="centerX" id="0f4-vK-JFw"/>
                             <constraint firstItem="fcB-MU-kKZ" firstAttribute="centerX" secondItem="64S-ew-dUS" secondAttribute="centerX" id="42V-zg-W0m"/>
+                            <constraint firstItem="9Uq-Bx-yBf" firstAttribute="leading" secondItem="64S-ew-dUS" secondAttribute="leading" id="AYc-QV-HjO"/>
                             <constraint firstItem="64S-ew-dUS" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fcB-MU-kKZ" secondAttribute="bottom" constant="24" id="Aek-as-Tay"/>
                             <constraint firstItem="Dxm-0V-9xl" firstAttribute="centerX" secondItem="fcB-MU-kKZ" secondAttribute="centerX" id="Bad-YM-rko"/>
                             <constraint firstItem="Dxm-0V-9xl" firstAttribute="centerX" secondItem="spj-31-JGT" secondAttribute="centerX" id="C0P-cc-yrT"/>
                             <constraint firstItem="fcB-MU-kKZ" firstAttribute="top" secondItem="Dxm-0V-9xl" secondAttribute="bottom" constant="43" id="Jh3-UF-EDZ"/>
                             <constraint firstItem="64S-ew-dUS" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="fcB-MU-kKZ" secondAttribute="bottom" constant="127" id="SSS-4R-UHd"/>
                             <constraint firstItem="ns1-Ji-NDS" firstAttribute="top" relation="lessThanOrEqual" secondItem="64S-ew-dUS" secondAttribute="top" constant="107" id="VIm-Bs-VGa"/>
+                            <constraint firstItem="9Uq-Bx-yBf" firstAttribute="bottom" secondItem="64S-ew-dUS" secondAttribute="bottom" id="exy-kY-PDG"/>
                             <constraint firstItem="jPg-MW-Wzm" firstAttribute="trailing" secondItem="ns1-Ji-NDS" secondAttribute="trailing" id="fld-FU-3Hp"/>
+                            <constraint firstItem="9Uq-Bx-yBf" firstAttribute="trailing" secondItem="64S-ew-dUS" secondAttribute="trailing" id="ojq-6o-7ON"/>
                             <constraint firstItem="spj-31-JGT" firstAttribute="top" secondItem="ns1-Ji-NDS" secondAttribute="bottom" constant="-3" id="qQo-jA-UfY"/>
                             <constraint firstItem="Dxm-0V-9xl" firstAttribute="top" secondItem="spj-31-JGT" secondAttribute="bottom" constant="8" id="qSF-VO-qF6"/>
+                            <constraint firstItem="9Uq-Bx-yBf" firstAttribute="top" secondItem="64S-ew-dUS" secondAttribute="top" id="rOw-Zx-J09"/>
                             <constraint firstItem="jPg-MW-Wzm" firstAttribute="bottom" secondItem="ns1-Ji-NDS" secondAttribute="bottom" id="uOG-tY-qcr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="64S-ew-dUS"/>
@@ -1830,6 +1850,7 @@
                             <outletCollection property="gestureRecognizers" destination="aR5-tB-E4M" appends="YES" id="Reh-bv-f58"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="HZB-CI-uFY"/>
                     <connections>
                         <outlet property="nameLabel" destination="spj-31-JGT" id="28A-Dy-neS"/>
                         <outlet property="profileImage" destination="ns1-Ji-NDS" id="ebB-LN-6MD"/>

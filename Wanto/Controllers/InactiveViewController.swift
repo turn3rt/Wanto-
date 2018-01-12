@@ -38,45 +38,32 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
     var activitiesRef: DatabaseReference!
     var refHandle: UInt!
     let userID: String = (Auth.auth().currentUser?.uid)!
-
+    
     //MARK: Protocol Stubs
     func deletePerson(atIndexPath: Int) {
-//        print("activity peopleNames count: " , peoplePhoneNumbers.count, " with peoplePhoneNum count: " , peoplePhoneNumbers.count)
-//
-//        print("activity index to remove: " , atIndexPath)
-//    
-//        peoplePhoneNumbers.remove(at: atIndexPath)
-//        peopleNames.remove(at: atIndexPath)
+        //        print("activity peopleNames count: " , peoplePhoneNumbers.count, " with peoplePhoneNum count: " , peoplePhoneNumbers.count)
+        //
+        //        print("activity index to remove: " , atIndexPath)
+        //
+        //        peoplePhoneNumbers.remove(at: atIndexPath)
+        //        peopleNames.remove(at: atIndexPath)
         newActivity.people.remove(at: atIndexPath)
         print(String(describing: newActivity.people))
         print("count of new people in activity: " + String(describing: newActivity.people.count))
         //update firebase arrays to reflect new activity changes
         
-        var newFirstNames = [String]()
-        var newLastNames = [String]()
-        var newPhoneNums = [String]()
-        for index in 0...newActivity.people.count - 1 {
-            newFirstNames.append(newActivity.people[index].firstName)
-            newLastNames.append(newActivity.people[index].lastName)
-            newPhoneNums.append(newActivity.people[index].phoneNum)
-
-            firstNames = newFirstNames
-            lastNames = newLastNames
-            peoplePhoneNumbers = newPhoneNums
-            
-//          Why does this not work??
-//            firstNames[index] = newActivity.people[index].firstName
-//            lastNames[index] = newActivity.people[index].lastName
-//            peoplePhoneNumbers[index] = newActivity.people[index].phoneNum
-        }
+        prepPeopleForDatabase()
         
         
         self.peopleCollection.reloadData()
     }
+    
     func reorder(activity: Activity) {
         newActivity.people = activity.people
+        prepPeopleForDatabase()
         self.peopleCollection.reloadData()
     }
+    
     func addPerson(data: Person) {
         newActivity.people.append(data)
         
@@ -132,7 +119,31 @@ class InactiveViewController: UIViewController, CNContactPickerDelegate, CLLocat
     var peoplePhoneNumbers = [String]()
     
     
-    
+    func prepPeopleForDatabase(){
+        var newFirstNames = [String]()
+        var newLastNames = [String]()
+        var newPhoneNums = [String]()
+        if newActivity.people.count != 0 {
+            for index in 0...newActivity.people.count - 1 {
+                newFirstNames.append(newActivity.people[index].firstName)
+                newLastNames.append(newActivity.people[index].lastName)
+                newPhoneNums.append(newActivity.people[index].phoneNum)
+                
+                firstNames = newFirstNames
+                lastNames = newLastNames
+                peoplePhoneNumbers = newPhoneNums
+            }
+        } else {
+            newFirstNames.removeAll()
+            newLastNames.removeAll()
+            newPhoneNums.removeAll()
+            
+            firstNames = newFirstNames
+            lastNames = newLastNames
+            peoplePhoneNumbers = newPhoneNums
+            
+        }
+    }
     
     
    
